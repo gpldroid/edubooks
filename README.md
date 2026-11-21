@@ -36,7 +36,7 @@ This repository contains the initial bilingual (English/Arabic) public-facing we
 4. Set production branch to `main`.
 5. Select **No framework**.
 6. Leave the build command empty.
-7. Set the build output directory to `/` (repository root).
+7. Set the build output directory to `.` (repository root).
 8. Save and deploy.
 
 Cloudflare requires the account owner to authorize the GitHub integration and complete deployment from their dashboard.
