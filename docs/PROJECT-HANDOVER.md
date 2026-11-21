@@ -9,10 +9,11 @@ Store: https://edupdf.gumroad.com
 
 The project is not commercially launched. The six language-specific Gumroad products are unpublished drafts only. No approved final PDF editions are attached. The next developer/editor must preserve that state.
 
-Current GitHub work:
-- [PR #8 — footer store link and six SVG cover masters](https://github.com/gpldroid/edubooks/pull/8). Astro build validation passed for head commit `6751e3e2401e5d44274c6b70679484887e792154`; PR is open/draft at the time of this handover. Merge only after reviewing its diff.
-- [PR #7 — independent language-edition architecture](https://github.com/gpldroid/edubooks/pull/7). Separate open draft; reconcile/merge its editorial architecture document before migrating manuscripts.
-- The footer link is changed in the PR branch from the legacy Gumroad URL to `https://edupdf.gumroad.com`.
+GitHub changes merged to `main`:
+- [PR #8 — footer store link, six SVG cover masters, README and handover updates](https://github.com/gpldroid/edubooks/pull/8).
+- [PR #7 — independent language-edition architecture, Book 01 EN/FR/ES draft manuscripts, Book 01 source inventory and Book 02 source audit](https://github.com/gpldroid/edubooks/pull/7).
+- The footer now points to `https://edupdf.gumroad.com`.
+- Astro build validation passed on PR #8 before its documentation-only follow-up commits. Re-run the site build/deploy workflow after the merged commits.
 
 ## 2. Approved publishing model
 
@@ -22,7 +23,7 @@ Two titles, each as three separate, monolingual learner books:
 
 Each edition needs its own title/front matter, explanations, examples, exercises, answer key, glossary and back matter in its target language. Cross-language comparison activities must be rewritten as appropriate target-language exercises. Do not use automatic block splitting as the final editorial method.
 
-The architecture and migration policy are in `docs/editorial/independent-language-editions.md` (introduced in PR #7). Preserve the current multilingual Book 01 manuscript as a read-only migration source until all editions are reconciled.
+The architecture and migration policy are in `docs/editorial/independent-language-editions.md`. Book 01 has draft manuscripts at `content/books/01-language-foundations/{en,fr,es}/manuscript.md` and a migration inventory at `docs/editorial/book-01/source-inventory.md`. The original multilingual manuscript remains preserved. Book 02 has a source audit at `docs/editorial/book-02/source-audit.md`; its three separate manuscripts still need to be authored.
 
 ## 3. Gumroad store state
 
@@ -105,16 +106,14 @@ See `docs/EDITORIAL-RELEASE-CHECKLIST.md`.
 
 ## 7. Immediate next actions
 
-1. Review and merge PR #8 after confirming the footer URL and six SVG masters.
-2. Review PR #7; merge its architecture documentation and align this handover with the actual main branch.
-3. Convert SVG cover masters to PNG/JPEG, upload them to the six correct Gumroad drafts, and verify each product page.
-4. Confirm the intended pricing policy (uniform vs six supplied prices).
-5. Inventory Book 01 source and create three standalone language manuscripts without deleting the source.
-6. Audit Book 02 source and create three standalone manuscripts.
-7. Complete per-language editorial and pedagogical reviews.
-8. Build and proof six PDFs.
-9. Update website catalogue and attach approved PDFs to matching Gumroad drafts.
-10. Publish only after explicit release approval.
+1. Convert the six SVG cover masters to PNG/JPEG, upload each to its matching Gumroad draft and verify the product pages.
+2. Resolve the pricing conflict: the selected policy was `same` (uniform price), while six different amounts were supplied and are currently configured. Confirm one common EUR price or explicitly retain the six amounts.
+3. Continue Book 01 EN/FR/ES manuscripts, filling all missing units, exercises, answer keys and end matter; complete qualified language and pedagogical reviews.
+4. Author Book 02 EN/FR/ES manuscripts from the source audit and verify each vocabulary entry, example, exercise and answer key.
+5. Add per-edition PDF workflows/build configuration and generate six review candidates.
+6. Proofread and approve all six editions; complete rights, accessibility and commercial checks.
+7. Update website catalogue and attach approved PDFs to the matching Gumroad drafts.
+8. Publish only after explicit release authorization.
 
 ## 8. Safety and continuity
 
