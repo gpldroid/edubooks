@@ -26,18 +26,18 @@ const publishedBooks = books.filter((book) => book.status === 'published');
         <label class="search-label" for="category-filter" data-en="Learning area" data-fr="Domaine d’apprentissage" data-es="Área de aprendizaje" >Learning area</label>
         <select id="category-filter">
           <option value="all" data-en="All areas" data-fr="Tous les domaines" data-es="Todas las áreas" >All areas</option>
-          {categories.map((category) => <option value={category.slug} data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs} data-ar={category.nameAr}>{category.name}</option>)}
+          {categories.map((category) => <option value={category.slug} data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs} >{category.nameEn}</option>)}
         </select>
       </div>
       <div class="category-chips" aria-label="Learning areas">
-        {categories.map((category) => <a href={`${base}books/?category=${category.slug}`} class="category-chip" data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs} data-ar={category.nameAr}>{category.name}</a>)}
+        {categories.map((category) => <a href={`${base}books/?category=${category.slug}`} class="category-chip" data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs} >{category.nameEn}</a>)}
       </div>
       <div class="book-grid" id="book-grid">
         {publishedBooks.map((book) => (
           <article class="book-card" data-category={book.category} data-search={`${book.title} ${book.titleFr} ${book.titleEs} ${book.description} ${book.descriptionFr} ${book.descriptionEs}`.toLowerCase()}>
             <a href={`${base}books/${book.slug}/`} class="book-card-link">
               <div class="book-cover">{book.cover ? <img src={book.cover} alt="" loading="lazy" /> : <span>EduBooks</span>}</div>
-              <div class="book-card-copy"><span class="book-category">{categories.find((category) => category.slug === book.category)?.name ?? 'Learning'}</span><h2>{book.title}</h2><p>{book.description}</p></div>
+              <div class="book-card-copy"><span class="book-category">{categories.find((category) => category.slug === book.category)?.nameEn ?? 'Learning'}</span><h2>{book.title}</h2><p>{book.description}</p></div>
             </a>
           </article>
         ))}
