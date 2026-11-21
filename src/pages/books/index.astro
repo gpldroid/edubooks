@@ -30,7 +30,7 @@ const publishedBooks = books.filter((book) => book.status === 'published');
         </select>
       </div>
       <div class="category-chips" aria-label="Learning areas">
-        {categories.map((category) => <a href={`#${category.slug}`} class="category-chip">{category.name}</a>)}
+        {categories.map((category) => <a href={`${base}books/?category=${category.slug}`} class="category-chip" data-en={category.name} data-ar={category.nameAr}>{category.name}</a>)}
       </div>
       <div class="book-grid" id="book-grid">
         {publishedBooks.map((book) => (
