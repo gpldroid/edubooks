@@ -78,7 +78,7 @@ The repository is configured as a GitHub **project site**:
 
 In the repository, open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. This repository-level setting must be selected once in GitHub.
 
-After that, every push to `main` runs the workflow, builds Astro and deploys the static output. Monitor the run under the repository's **Actions** tab.
+After that, every push to `main` runs the workflow, builds Astro and deploys the static output. Monitor the run under the repository's **Actions** tab. The deployment workflow is already configured with `workflow_dispatch`, `pages: write` and `id-token: write` permissions.
 
 ## Catalogue and publication status
 
