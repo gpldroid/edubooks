@@ -48,7 +48,7 @@ const siteUrl = new URL(base, Astro.site).href;
         <button class="language-switch" type="button" data-lang-switch>العربية</button>
       </div>
     </header>
-    <main id="main" data-title-en={title} data-title-ar={titleAr}><slot /></main>
+    <main id="main" data-title-en={title} data-title-ar={titleAr} data-description-en={description} data-description-ar={descriptionAr}><slot /></main>
     <footer class="site-footer">
       <div class="container footer-main">
         <div><a class="brand brand-footer" href={base}><span class="brand-mark">E</span><span class="brand-name">Edu<span>Books</span><small>BY IMAD LIMRANI</small></span></a><p data-en="Thoughtful resources for a lifetime of learning." data-ar="موارد مدروسة لرحلة تعلم تستمر مدى الحياة.">Thoughtful resources for a lifetime of learning.</p></div>
@@ -68,6 +68,12 @@ const siteUrl = new URL(base, Astro.site).href;
         switcher.textContent = lang === 'ar' ? 'English' : 'العربية';
         const mainTitle = document.querySelector('main');
         document.title = lang === 'ar' ? (mainTitle?.dataset.titleAr || 'EduBooks — تعلم. مارس. تطور.') : (mainTitle?.dataset.titleEn || 'EduBooks — Learn. Practice. Grow.');
+        const description = lang === 'ar' ? mainTitle?.dataset.descriptionAr : mainTitle?.dataset.descriptionEn;
+        if (description) {
+          document.querySelector('meta[name="description"]')?.setAttribute('content', description);
+          document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
+        }
+        document.querySelector('meta[property="og:title"]')?.setAttribute('content', document.title);
       }
       switcher?.addEventListener('click', () => { lang = lang === 'en' ? 'ar' : 'en'; localStorage.setItem('edubooks-language', lang); applyLanguage(); });
       menu?.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); });
