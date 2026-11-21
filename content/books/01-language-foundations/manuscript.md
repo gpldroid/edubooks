@@ -271,7 +271,7 @@ These marks are important for reading and spelling. They do not all serve the sa
 | Diaeresis | In some names/borrowings | ë, ï, ü, ÿ | ü in güe and güi sequences |
 
 Examples:
-- French: **école**, **garçon**, ** Noël**.
+- French: **école**, **garçon**, **Noël**.
 - Spanish: **año**, **niño**, **pingüino**, **teléfono**.
 - English: names and borrowed words may preserve marks, but ordinary spelling does not use these systems in the same way.
 
