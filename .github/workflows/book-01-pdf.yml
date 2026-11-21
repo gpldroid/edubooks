@@ -1,50 +1,76 @@
-name: Build EduBooks Book 01 PDF proof
+name: Build EduBooks Book 01 PDF
 
 on:
   workflow_dispatch:
   push:
     paths:
       - 'content/books/01-language-foundations/manuscript.md'
+      - 'docs/production/**'
       - '.github/workflows/book-01-pdf.yml'
 
 permissions:
   contents: read
 
 jobs:
-  pdf-proof:
+  pdf:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install Pandoc and XeLaTeX
+      - name: Install PDF toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french poppler-utils
 
-      - name: Build review PDF
+      - name: Build designed PDF
         run: |
-          mkdir -p dist/book-proofs
+          mkdir -p dist/books
           pandoc content/books/01-language-foundations/manuscript.md \
             --from=gfm \
             --standalone \
             --toc \
+            --toc-depth=3 \
             --number-sections \
             --pdf-engine=xelatex \
+            --include-in-header=docs/production/latex-preamble.tex \
+            --include-before-body=docs/production/book-01-titlepage.tex \
+            --resource-path=. \
             -V mainfont="DejaVu Sans" \
+            -V geometry:paper=a4paper \
             -V geometry:margin=18mm \
             -V fontsize=10pt \
             -V colorlinks=true \
-            -V linkcolor=blue \
-            -V title="Language Foundations — EduBooks Review Proof" \
-            -V author="EduBooks Editorial Team" \
-            -V date="Draft — not for sale" \
-            -o dist/book-proofs/edubooks-book-01-language-foundations-draft.pdf
+            -V linkcolor=EduBooksTeal \
+            -V urlcolor=EduBooksTeal \
+            -V title="Language Foundations" \
+            -V subtitle="Start Communicating in English, French and Spanish" \
+            -V author="EduBooks" \
+            -V subject="Beginner multilingual language-learning workbook" \
+            -V keywords="English, French, Spanish, language learning, beginner, A1" \
+            -o dist/books/edubooks-book-01-language-foundations.pdf
 
-      - name: Upload PDF proof
+      - name: Validate PDF content and metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          PDF="dist/books/edubooks-book-01-language-foundations.pdf"
+          pdfinfo "$PDF" | tee dist/books/pdfinfo.txt
+          pdftotext "$PDF" dist/books/extracted.txt
+          test "$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')" -gt 10
+          grep -F "Language Foundations" dist/books/extracted.txt
+          grep -F "Français" dist/books/extracted.txt
+          grep -F "Español" dist/books/extracted.txt
+          for unit in 1 2 3 4 5 6 7 8 9 10; do
+            grep -F "Unit $unit" dist/books/extracted.txt >/dev/null
+          done
+          test "$(wc -w < dist/books/extracted.txt)" -gt 3000
+          echo "PDF validation passed."
+
+      - name: Upload PDF review candidate
         uses: actions/upload-artifact@v4
         with:
-          name: edubooks-book-01-pdf-proof
-          path: dist/book-proofs/edubooks-book-01-language-foundations-draft.pdf
+          name: edubooks-book-01-language-foundations-review-candidate
+          path: dist/books/edubooks-book-01-language-foundations.pdf
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 90
