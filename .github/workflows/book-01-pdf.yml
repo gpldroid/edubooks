@@ -43,9 +43,8 @@ jobs:
             -V colorlinks=true \
             -V linkcolor=EduBooksTeal \
             -V urlcolor=EduBooksTeal \
-            -V title="Language Foundations" \
-            -V subtitle="Start Communicating in English, French and Spanish" \
-            -V author="EduBooks" \
+            -V title-meta="Language Foundations" \
+            -V author-meta="EduBooks" \
             -V subject="Beginner multilingual language-learning workbook" \
             -V keywords="English, French, Spanish, language learning, beginner, A1" \
             -o dist/books/edubooks-book-01-language-foundations.pdf
