@@ -42,6 +42,7 @@ const siteUrl = new URL(base, Astro.site).href;
         <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
           <a href={base} data-en="Home" data-ar="الرئيسية">Home</a>
           <a href={`${base}#categories`} data-en="Explore" data-ar="استكشف">Explore</a>
+          <a href={`${base}books/`} data-en="Books" data-ar="الكتب">Books</a>
           <a href={`${base}about/`} data-en="About" data-ar="من نحن">About</a>
           <a href={`${base}faq/`} data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
           <a href={`${base}about/#contact`} data-en="Contact" data-ar="اتصل بنا">Contact</a>
@@ -66,6 +67,7 @@ const siteUrl = new URL(base, Astro.site).href;
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
         document.querySelectorAll('[data-en][data-ar]').forEach(el => { el.textContent = el.dataset[lang]; });
+        document.querySelectorAll('[data-placeholder-en][data-placeholder-ar]').forEach(el => { el.placeholder = lang === 'ar' ? el.dataset.placeholderAr : el.dataset.placeholderEn; });
         switcher.textContent = lang === 'ar' ? 'English' : 'العربية';
         const mainTitle = document.querySelector('main');
         document.title = lang === 'ar' ? (mainTitle?.dataset.titleAr || 'EduBooks — تعلم. مارس. تطور.') : (mainTitle?.dataset.titleEn || 'EduBooks — Learn. Practice. Grow.');
