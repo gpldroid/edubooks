@@ -44,7 +44,6 @@ jobs:
             --standalone \
             --toc \
             --toc-depth=3 \
-            --number-sections \
             --pdf-engine=xelatex \
             --include-in-header=docs/production/latex-preamble.tex \
             --include-before-body=docs/production/book-02-titlepage.tex \
