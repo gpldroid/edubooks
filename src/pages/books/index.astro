@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { books, categories } from '../../data/catalog';
+
+const base = import.meta.env.BASE_URL;
+const publishedBooks = books.filter((book) => book.status === 'published');
+---
+<BaseLayout
+  title="Explore Books — EduBooks"
+  titleAr="استكشف الكتب — EduBooks"
+  description="Browse the EduBooks digital learning library."
+  descriptionAr="تصفح مكتبة EduBooks للموارد التعليمية الرقمية."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">EDUBOOKS LIBRARY</span>
+      <h1 data-en="Explore the library" data-ar="استكشف المكتبة">Explore the library</h1>
+      <p data-en="Find practical learning resources by subject and learning area." data-ar="اعثر على موارد تعليمية عملية حسب المادة ومجال التعلم.">Find practical learning resources by subject and learning area.</p>
+    </div>
+  </section>
+  <section class="content-section">
+    <div class="container">
+      <div class="catalog-tools">
+        <label class="search-label" for="book-search" data-en="Search the library" data-ar="ابحث في المكتبة">Search the library</label>
+        <input id="book-search" type="search" placeholder="Search books..." data-placeholder-en="Search books..." data-placeholder-ar="ابحث عن كتاب..." autocomplete="off" />
+        <label class="search-label" for="category-filter" data-en="Learning area" data-ar="مجال التعلم">Learning area</label>
+        <select id="category-filter">
+          <option value="all" data-en="All areas" data-ar="كل المجالات">All areas</option>
+          {categories.map((category) => <option value={category.slug} data-en={category.name} data-ar={category.nameAr}>{category.name}</option>)}
+        </select>
+      </div>
+      <div class="category-chips" aria-label="Learning areas">
+        {categories.map((category) => <a href={`#${category.slug}`} class="category-chip">{category.name}</a>)}
+      </div>
+      <div class="book-grid" id="book-grid">
+        {publishedBooks.map((book) => (
+          <article class="book-card" data-category={book.category} data-search={`${book.title} ${book.titleAr} ${book.description} ${book.descriptionAr}`.toLowerCase()}>
+            <a href={`${base}books/${book.slug}/`} class="book-card-link">
+              <div class="book-cover">{book.cover ? <img src={book.cover} alt="" loading="lazy" /> : <span>EduBooks</span>}</div>
+              <div class="book-card-copy"><span class="book-category">{categories.find((category) => category.slug === book.category)?.name ?? 'Learning'}</span><h2>{book.title}</h2><p>{book.description}</p></div>
+            </a>
+          </article>
+        ))}
+      </div>
+      <p class="empty-state" id="empty-state" data-en="The first books are being prepared. Please check back soon." data-ar="الكتب الأولى قيد الإعداد. يرجى العودة قريباً.">The first books are being prepared. Please check back soon.</p>
+      <p class="no-results" id="no-results" hidden data-en="No books match your search." data-ar="لا توجد كتب تطابق بحثك.">No books match your search.</p>
+    </div>
+  </section>
+  <style>
+    .catalog-tools{display:grid;grid-template-columns:1fr 1.5fr 1fr 1fr;gap:12px;align-items:center;max-width:900px;margin:0 auto 22px}
+    .search-label{font-size:13px;font-weight:700;color:#183452}.catalog-tools input,.catalog-tools select{width:100%;min-width:0;padding:13px 14px;border:1px solid #dce4e8;border-radius:7px;background:#fff;color:#20354b;font:inherit}
+    .category-chips{display:flex;gap:9px;flex-wrap:wrap;margin:0 auto 28px;max-width:900px}.category-chip{padding:8px 12px;border:1px solid #dce4e8;border-radius:30px;font-size:12px;color:#386c68}
+    .book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.book-card{border:1px solid #e6ebed;border-radius:9px;overflow:hidden;background:#fff}.book-cover{height:210px;background:#f1f2ed;display:grid;place-items:center;color:#388b82;font-weight:800}.book-cover img{width:100%;height:100%;object-fit:cover}.book-card-copy{padding:20px}.book-category{font-size:11px;color:#388b82;font-weight:800}.book-card h2{font-size:20px;margin:9px 0;color:#183452}.book-card p{font-size:13px;margin:0}.empty-state,.no-results{text-align:center;padding:55px 15px;color:#657585;background:#f6f7f4;border-radius:9px}.no-results[hidden]{display:none}
+    @media(max-width:760px){.catalog-tools{grid-template-columns:1fr}.book-grid{grid-template-columns:1fr 1fr}.book-cover{height:170px}}
+    @media(max-width:460px){.book-grid{grid-template-columns:1fr}}
+  </style>
+  <script>
+    const search = document.querySelector<HTMLInputElement>('#book-search');
+    const filter = document.querySelector<HTMLSelectElement>('#category-filter');
+    const cards = [...document.querySelectorAll<HTMLElement>('.book-card')];
+    const empty = document.querySelector<HTMLElement>('#empty-state');
+    const noResults = document.querySelector<HTMLElement>('#no-results');
+    function filterBooks() {
+      const term = (search?.value || '').trim().toLowerCase();
+      const category = filter?.value || 'all';
+      let visible = 0;
+      cards.forEach((card) => {
+        const matchesText = (card.dataset.search || '').includes(term);
+        const matchesCategory = category === 'all' || card.dataset.category === category;
+        const show = matchesText && matchesCategory;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      if (empty) empty.hidden = cards.length > 0;
+      if (noResults) noResults.hidden = cards.length === 0 || visible > 0;
+    }
+    search?.addEventListener('input', filterBooks);
+    filter?.addEventListener('change', filterBooks);
+    filterBooks();
+  </script>
+</BaseLayout>
