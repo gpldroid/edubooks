@@ -471,7 +471,7 @@ Choose three short words in each language. Listen to a trusted pronunciation mod
 
 ---
 
-# Provisional answer key — Units 1–3
+# Answer Key — Units 1–3
 
 ## Unit 1
 - Exercise A: 1 L, 2 W, 3 R, 4 S.
