@@ -9,7 +9,8 @@ An independent digital educational publishing project by Imad Limrani.
 - HTML/CSS with lightweight browser JavaScript
 - English and Arabic interface with persisted language preference
 - Canonical URLs, Open Graph metadata and WebSite structured data
-- XML sitemap, robots.txt and custom 404 page\n- Typed book catalogue, category taxonomy and static book detail template
+- XML sitemap, robots.txt and custom 404 page
+- Typed book catalogue, category taxonomy and static book detail template
 - GitHub Actions build and deployment
 - GitHub Pages hosting (project site)
 
@@ -19,23 +20,29 @@ An independent digital educational publishing project by Imad Limrani.
 edubooks/
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml       # Build and deploy on every push to main
+│       └── deploy.yml
 ├── public/
 │   ├── favicon.svg
 │   ├── robots.txt
+│   ├── sitemap.xml
 │   └── .nojekyll
 ├── src/
-│   ├── data/\n│   │   └── catalog.ts      # Typed categories and published-book records\n│   ├── layouts/
-│   │   └── BaseLayout.astro # Shared metadata, navigation and footer
+│   ├── data/
+│   │   └── catalog.ts       # Typed categories and book records
+│   ├── layouts/
+│   │   └── BaseLayout.astro
 │   └── pages/
-│       ├── index.astro      # Home page\n│       └── books/\n│           ├── index.astro  # Searchable, filterable library\n│           └── [slug].astro # Static book detail template
+│       ├── index.astro
+│       ├── books/
+│       │   ├── index.astro # Searchable, filterable library
+│       │   └── [slug].astro # Static book detail template
 │       ├── about.astro
 │       ├── faq.astro
 │       ├── privacy.astro
-│       └── terms.astro
+│       ├── terms.astro
+│       └── 404.astro
 ├── astro.config.mjs
-├── package.json
-└── .gitignore
+└── package.json
 ```
 
 ## Local development
@@ -69,21 +76,22 @@ The repository is configured as a GitHub **project site**:
 
 ### One-time GitHub setting
 
-In the repository, open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. This is a required GitHub Pages repository setting; the workflow cannot switch it automatically.
+In the repository, open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. This repository-level setting must be selected once in GitHub.
 
 After that, every push to `main` runs the workflow, builds Astro and deploys the static output. Monitor the run under the repository's **Actions** tab.
 
-## Content and launch status
+## Catalogue and publication status
 
-The project foundation and informational pages are in place. Product listings, downloadable books, checkout, customer accounts and payment processing have intentionally not been enabled. Do not publish products until content rights, product quality, pricing, seller verification, payment eligibility, customer support and commercial policies have been checked.
+The catalogue currently contains the learning-area taxonomy and an empty book list. The library page, search/filter controls and static book detail template are ready for real records. No sample books, fake prices, download links, checkout or payment processing have been added.
 
-Before a public commercial launch:
+Only add a book when its content, cover and distribution rights are verified. Keep unpublished records in draft status until the product is reviewed and approved.
 
-- Verify the brand/trademark position in target markets. Retaining the EduBooks name does not imply trademark registration or exclusive rights.
+## Before commercial launch
+
+- Verify the brand/trademark position in target markets.
 - Publish a working customer-support contact channel.
 - Complete seller identity and payout verification directly in the chosen payment provider account.
 - Review final privacy, terms, product licence and refund information.
-- Add products only when their content and visual assets are original or properly licensed.
 - Never commit bank details, identity documents, passwords, API keys, access tokens or private customer information.
 
 ## Payment note
