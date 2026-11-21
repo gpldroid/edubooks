@@ -7,7 +7,9 @@ An independent digital educational publishing project by Imad Limrani.
 
 - Astro static site generator
 - HTML/CSS with lightweight browser JavaScript
-- English and Arabic interface
+- English and Arabic interface with persisted language preference
+- Canonical URLs, Open Graph metadata and WebSite structured data
+- XML sitemap, robots.txt and custom 404 page
 - GitHub Actions build and deployment
 - GitHub Pages hosting (project site)
 
