@@ -2,6 +2,12 @@ name: Build EduBooks Book 01 PDF
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'content/books/01-language-foundations/manuscript.md'
+      - 'docs/production/**'
+      - '.github/workflows/book-01-pdf.yml'
   push:
     paths:
       - 'content/books/01-language-foundations/manuscript.md'
