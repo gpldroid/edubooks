@@ -6,7 +6,8 @@ const {
   descriptionAr = 'موارد تعليمية عملية لمختلف مراحل رحلة التعلم.'
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const canonical = new URL(`${base}${Astro.url.pathname.replace(/^\\//, '')}`, Astro.site).href;
+const canonicalPath = Astro.url.pathname.startsWith(base) ? Astro.url.pathname : base + Astro.url.pathname.replace(/^\/+/, '');
+const canonical = new URL(canonicalPath, Astro.site).href;
 const siteUrl = new URL(base, Astro.site).href;
 ---
 <!doctype html>
