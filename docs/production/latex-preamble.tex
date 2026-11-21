@@ -1,0 +1,20 @@
+% EduBooks shared PDF design system — XeLaTeX preamble
+\usepackage{xcolor}
+\definecolor{EduBooksNavy}{HTML}{17324D}
+\definecolor{EduBooksTeal}{HTML}{168C88}
+\definecolor{EduBooksMuted}{HTML}{5B6573}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{EduBooksMuted}{EDUBOOKS}}
+\fancyhead[R]{\small\textcolor{EduBooksMuted}{\nouppercase{\leftmark}}}
+\fancyfoot[C]{\small\textcolor{EduBooksMuted}{\thepage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\usepackage{microtype}
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\color{EduBooksNavy}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\large\bfseries\color{EduBooksTeal}}{\thesubsection}{0.7em}{}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
