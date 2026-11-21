@@ -11,6 +11,7 @@ export function getStaticPaths() {
 
 const { book } = Astro.props;
 const category = categories.find((item) => item.slug === book.category);
+const hasCheckout = Boolean(book.gumroadUrl || book.paypalUrl);
 ---
 <BaseLayout
   title={`${book.title} — EduBooks`}
@@ -21,9 +22,12 @@ const category = categories.find((item) => item.slug === book.category);
   <section class="page-hero"><div class="container"><a href="../" class="back-link" data-en="← All books" data-ar="← جميع الكتب">← All books</a><span class="section-label">{category?.name ?? 'EduBooks'}</span><h1>{book.title}</h1><p>{book.description}</p></div></section>
   <section class="content-section"><div class="container detail-grid">
     <div class="detail-cover">{book.cover ? <img src={book.cover} alt={book.title} /> : <span>EduBooks</span>}</div>
-    <div><h2>{book.titleAr}</h2><p>{book.descriptionAr}</p><dl><dt>Category</dt><dd>{category?.name ?? book.category}</dd><dt>Format</dt><dd>{book.format}</dd><dt>Language</dt><dd>{book.language}</dd></dl>{book.downloadUrl && <a class="button" href={book.downloadUrl} rel="nofollow">Get this book</a>}</div>
+    <div><h2>{book.titleAr}</h2><p>{book.descriptionAr}</p><dl><dt>Category</dt><dd>{category?.name ?? book.category}</dd><dt>Format</dt><dd>{book.format}</dd><dt>Language</dt><dd>{book.language}</dd></dl>{book.gumroadUrl && <a class="button" href={book.gumroadUrl} target="_blank" rel="noopener noreferrer nofollow">Buy with Gumroad</a>}
+      {book.paypalUrl && <a class="button secondary" href={book.paypalUrl} target="_blank" rel="noopener noreferrer nofollow">Pay with PayPal</a>}
+      {!hasCheckout && <p class="availability-note">Purchase options will appear when this title is ready.</p>}
+      {book.downloadUrl && <a class="button" href={book.downloadUrl} rel="nofollow">Access digital file</a>}</div>
   </div></section>
   <style>
-    .back-link{display:block;color:#b9dcd5;margin-bottom:18px;font-size:13px}.detail-grid{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:50px;align-items:start}.detail-cover{min-height:380px;background:#f1f2ed;display:grid;place-items:center;color:#388b82;font-size:26px;font-weight:800}.detail-cover img{width:100%;height:auto}.detail-grid h2{color:#183452}.detail-grid dl{display:grid;grid-template-columns:120px 1fr;gap:10px;color:#657585}.detail-grid dt{font-weight:700}.detail-grid dd{margin:0}.button{display:inline-flex;padding:13px 18px;background:#183452;color:white;border-radius:6px}@media(max-width:650px){.detail-grid{grid-template-columns:1fr}}
+    .back-link{display:block;color:#b9dcd5;margin-bottom:18px;font-size:13px}.detail-grid{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:50px;align-items:start}.detail-cover{min-height:380px;background:#f1f2ed;display:grid;place-items:center;color:#388b82;font-size:26px;font-weight:800}.detail-cover img{width:100%;height:auto}.detail-grid h2{color:#183452}.detail-grid dl{display:grid;grid-template-columns:120px 1fr;gap:10px;color:#657585}.detail-grid dt{font-weight:700}.detail-grid dd{margin:0}.button{display:inline-flex;padding:13px 18px;background:#183452;color:white;border-radius:6px;margin:8px 8px 8px 0}.button.secondary{background:#388b82}.availability-note{font-size:13px;color:#657585}@media(max-width:650px){.detail-grid{grid-template-columns:1fr}}
   </style>
 </BaseLayout>
