@@ -82,7 +82,7 @@ After that, every push to `main` runs the workflow, builds Astro and deploys the
 
 ## Catalogue and publication status
 
-The catalogue currently contains the learning-area taxonomy and an empty book list. The library page, search/filter controls and static book detail template are ready for real records. No sample books, fake prices, download links, checkout or payment processing have been added.
+The catalogue currently contains the learning-area taxonomy and an empty book list. No book manuscript or sample product is being represented as an actual EduBooks publication. The library page, search/filter controls and static book detail template are ready for real records. No sample books, fake prices, download links, checkout or payment processing have been added.
 
 Only add a book when its content, cover and distribution rights are verified. Keep unpublished records in draft status until the product is reviewed and approved.
 
