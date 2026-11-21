@@ -60,6 +60,8 @@ const publishedBooks = books.filter((book) => book.status === 'published');
     const cards = [...document.querySelectorAll<HTMLElement>('.book-card')];
     const empty = document.querySelector<HTMLElement>('#empty-state');
     const noResults = document.querySelector<HTMLElement>('#no-results');
+    const requestedCategory = new URLSearchParams(window.location.search).get('category');
+    if (requestedCategory && filter?.querySelector(`option[value="${CSS.escape(requestedCategory)}"]`)) filter.value = requestedCategory;
     function filterBooks() {
       const term = (search?.value || '').trim().toLowerCase();
       const category = filter?.value || 'all';
