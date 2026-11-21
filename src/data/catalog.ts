@@ -39,4 +39,22 @@ export const categories: LearningCategory[] = [
 ];
 
 // Keep empty until real, reviewed and licensed products are ready for publication.
-export const books: Book[] = [];
+export const books: Book[] = [
+  {
+    slug: 'english-starter-a1',
+    title: 'English Starter A1',
+    titleAr: 'الإنجليزية للمبتدئين A1',
+    description: 'A practical beginner workbook with vocabulary, grammar, speaking practice and review activities.',
+    descriptionAr: 'كراسة عملية للمبتدئين تضم المفردات والقواعد والتحدث والتدريبات والمراجعة.',
+    category: 'language-learning',
+    language: 'bilingual',
+    format: 'PDF',
+    cover: '',
+    price: null,
+    currency: 'USD',
+    status: 'draft',
+    author: 'EduBooks Editorial Team',
+    pages: 0,
+    level: 'CEFR A1 target'
+  },
+];
