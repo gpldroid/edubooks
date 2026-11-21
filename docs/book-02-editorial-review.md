@@ -46,6 +46,13 @@ The three learning and explanation languages remain English, French and Spanish.
 - [ ] Verify contents, bookmarks, page breaks, font embedding and selectable text.
 - [ ] Confirm cover, author attribution, copyright, licence and edition metadata.
 
+## PDF production troubleshooting
+
+- The first PDF build failed before validation because the Book 02 title-page source contained doubled LaTeX command escapes (for example, `\\begin` rather than `\begin`).
+- The title-page commands have been corrected to standard single-backslash LaTeX syntax.
+- The PDF workflow has also been adjusted to avoid redundant automatic section numbering alongside the manuscript's unit labels.
+- A successful replacement build and artifact inspection are still required; no PDF proof is signed off yet.
+
 ## Reviewer sign-off
 
 | Language / area | Reviewer | Date | Status | Notes |
