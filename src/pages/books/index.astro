@@ -7,34 +7,34 @@ const publishedBooks = books.filter((book) => book.status === 'published');
 ---
 <BaseLayout
   title="Explore Books — EduBooks"
-  titleAr="استكشف الكتب — EduBooks"
+  
   description="Browse the EduBooks digital learning library."
-  descriptionAr="تصفح مكتبة EduBooks للموارد التعليمية الرقمية."
+  
 >
   <section class="page-hero">
     <div class="container">
       <span class="section-label">EDUBOOKS LIBRARY</span>
-      <h1 data-en="Explore the library" data-ar="استكشف المكتبة">Explore the library</h1>
-      <p data-en="Find practical learning resources by subject and learning area." data-ar="اعثر على موارد تعليمية عملية حسب المادة ومجال التعلم.">Find practical learning resources by subject and learning area.</p>
+      <h1 data-en="Explore the library" data-fr="Explorer la bibliothèque" data-es="Explorar la biblioteca" >Explore the library</h1>
+      <p data-en="Find practical learning resources by subject and learning area." data-fr="Trouvez des ressources pratiques par matière et domaine d’apprentissage." data-es="Encuentra recursos prácticos por materia y área de aprendizaje." >Find practical learning resources by subject and learning area.</p>
     </div>
   </section>
   <section class="content-section">
     <div class="container">
       <div class="catalog-tools">
-        <label class="search-label" for="book-search" data-en="Search the library" data-ar="ابحث في المكتبة">Search the library</label>
-        <input id="book-search" type="search" placeholder="Search books..." data-placeholder-en="Search books..." data-placeholder-ar="ابحث عن كتاب..." autocomplete="off" />
-        <label class="search-label" for="category-filter" data-en="Learning area" data-ar="مجال التعلم">Learning area</label>
+        <label class="search-label" for="book-search" data-en="Search the library" data-fr="Rechercher dans la bibliothèque" data-es="Buscar en la biblioteca" >Search the library</label>
+        <input id="book-search" type="search" placeholder="Search books..." data-placeholder-en="Search books..."  autocomplete="off" />
+        <label class="search-label" for="category-filter" data-en="Learning area" data-fr="Domaine d’apprentissage" data-es="Área de aprendizaje" >Learning area</label>
         <select id="category-filter">
-          <option value="all" data-en="All areas" data-ar="كل المجالات">All areas</option>
-          {categories.map((category) => <option value={category.slug} data-en={category.name} data-ar={category.nameAr}>{category.name}</option>)}
+          <option value="all" data-en="All areas" data-fr="Tous les domaines" data-es="Todas las áreas" >All areas</option>
+          {categories.map((category) => <option value={category.slug} data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs} data-ar={category.nameAr}>{category.name}</option>)}
         </select>
       </div>
       <div class="category-chips" aria-label="Learning areas">
-        {categories.map((category) => <a href={`${base}books/?category=${category.slug}`} class="category-chip" data-en={category.name} data-ar={category.nameAr}>{category.name}</a>)}
+        {categories.map((category) => <a href={`${base}books/?category=${category.slug}`} class="category-chip" data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs} data-ar={category.nameAr}>{category.name}</a>)}
       </div>
       <div class="book-grid" id="book-grid">
         {publishedBooks.map((book) => (
-          <article class="book-card" data-category={book.category} data-search={`${book.title} ${book.titleAr} ${book.description} ${book.descriptionAr}`.toLowerCase()}>
+          <article class="book-card" data-category={book.category} data-search={`${book.title} ${book.titleFr} ${book.titleEs} ${book.description} ${book.descriptionFr} ${book.descriptionEs}`.toLowerCase()}>
             <a href={`${base}books/${book.slug}/`} class="book-card-link">
               <div class="book-cover">{book.cover ? <img src={book.cover} alt="" loading="lazy" /> : <span>EduBooks</span>}</div>
               <div class="book-card-copy"><span class="book-category">{categories.find((category) => category.slug === book.category)?.name ?? 'Learning'}</span><h2>{book.title}</h2><p>{book.description}</p></div>
@@ -42,8 +42,8 @@ const publishedBooks = books.filter((book) => book.status === 'published');
           </article>
         ))}
       </div>
-      <p class="empty-state" id="empty-state" data-en="The first books are being prepared. Please check back soon." data-ar="الكتب الأولى قيد الإعداد. يرجى العودة قريباً.">The first books are being prepared. Please check back soon.</p>
-      <p class="no-results" id="no-results" hidden data-en="No books match your search." data-ar="لا توجد كتب تطابق بحثك.">No books match your search.</p>
+      <p class="empty-state" id="empty-state" data-en="The first books are being prepared. Please check back soon." data-fr="Les premiers livres sont en préparation. Revenez bientôt." data-es="Los primeros libros están en preparación. Vuelve pronto." >The first books are being prepared. Please check back soon.</p>
+      <p class="no-results" id="no-results" hidden data-en="No books match your search." data-fr="Aucun livre ne correspond à votre recherche." data-es="Ningún libro coincide con tu búsqueda." >No books match your search.</p>
     </div>
   </section>
   <style>
