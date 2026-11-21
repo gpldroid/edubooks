@@ -31,6 +31,13 @@
 5. Inspect tables, page breaks, contents links, bookmarks, running headers and page numbers in the generated PDF.
 6. Confirm the title page, author attribution, edition, copyright, licence and distribution terms.
 
+## Initial PDF proof inspection
+
+- The first automated review-candidate build completed successfully and produced a 28-page A4 PDF with selectable text and document metadata.
+- The cover, running header/footer and body-page rendering were inspected. The initial contents pages exposed redundant automatic section numbering alongside the manuscript's own unit numbers.
+- The PDF workflow has been adjusted to remove automatic section numbering. The replacement artifact must be inspected before this item can be signed off.
+- This technical inspection does not replace the required language, pedagogical, accessibility or rights reviews.
+
 ## Required independent review before commercial release
 A qualified native-level or equivalent professional reviewer should review each of English, French and Spanish. Record reviewer identity, date, corrections and sign-off in this report. Until that is done, do not describe the book as language-certified or professionally proofread.
 
