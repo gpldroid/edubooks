@@ -1,0 +1,50 @@
+name: Build EduBooks Book 01 PDF proof
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'content/books/01-language-foundations/manuscript.md'
+      - '.github/workflows/book-01-pdf.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  pdf-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Pandoc and XeLaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french
+
+      - name: Build review PDF
+        run: |
+          mkdir -p dist/book-proofs
+          pandoc content/books/01-language-foundations/manuscript.md \
+            --from=gfm \
+            --standalone \
+            --toc \
+            --number-sections \
+            --pdf-engine=xelatex \
+            -V mainfont="DejaVu Sans" \
+            -V geometry:margin=18mm \
+            -V fontsize=10pt \
+            -V colorlinks=true \
+            -V linkcolor=blue \
+            -V title="Language Foundations — EduBooks Review Proof" \
+            -V author="EduBooks Editorial Team" \
+            -V date="Draft — not for sale" \
+            -o dist/book-proofs/edubooks-book-01-language-foundations-draft.pdf
+
+      - name: Upload PDF proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: edubooks-book-01-pdf-proof
+          path: dist/book-proofs/edubooks-book-01-language-foundations-draft.pdf
+          if-no-files-found: error
+          retention-days: 30
