@@ -101,3 +101,13 @@ Gumroad's public payout documentation lists Morocco with MAD local bank payouts.
 ## Ownership
 
 EduBooks — an independent educational publishing project by Imad Limrani.
+
+
+## Payment integration readiness
+
+- Gumroad is the primary digital-product checkout and file-delivery platform.
+- PayPal may be offered as an additional checkout option when an active payment link is created for a specific book.
+- Product records can store the Gumroad product URL and PayPal payment URL. The product detail template displays only URLs explicitly assigned to that product.
+- Never publish a purchase button until the product is approved, priced, uploaded to Gumroad, and the checkout URL has been checked.
+- Keep buyer files and private credentials out of the Git repository. Use Gumroad's protected file delivery for paid PDFs.
+- No PayPal payment links are currently recorded in the connected account. Existing Gumroad products must be checked for relevance before use; do not repurpose unrelated products.
