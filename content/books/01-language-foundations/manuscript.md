@@ -513,7 +513,7 @@ This manuscript establishes the book structure and provides the opening three un
 |---|---|---|
 | Hello. | Bonjour. | Hola. |
 | Good morning. | Bonjour. | Buenos días. |
-| Good afternoon. | Bon après-midi. | Buenas tardes. |
+| Good afternoon. | Bonjour. | Buenas tardes. |
 | Good evening. | Bonsoir. | Buenas tardes / Buenas noches. |
 | Good night. | Bonne nuit. | Buenas noches. |
 | Goodbye. | Au revoir. | Adiós. |
