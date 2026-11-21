@@ -9,11 +9,11 @@ EduBooks develops standalone educational books in **English, French and Spanish*
 
 - Website: Astro 5, hosted on GitHub Pages.
 - Primary store: [EduBooks on Gumroad](https://edupdf.gumroad.com).
-- Footer store link: updated in [PR #8](https://github.com/gpldroid/edubooks/pull/8); merge is pending.
+- Footer store link: merged to `main`; it points to `https://edupdf.gumroad.com`.
 - Six Gumroad product drafts exist, localized descriptions and metadata have been added, and every product remains unpublished.
-- Six original SVG cover designs are included in `public/images/gumroad-covers/`. Gumroad's cover uploader rejected SVG; convert these to PNG/JPEG and upload them manually or through a supported image upload before release.
+- Six original SVG cover designs are included in `public/images/gumroad-covers/`. Gumroad's cover uploader rejected SVG; convert them to PNG/JPEG and upload them to the six matching product drafts. Cover attachment is not yet verified.
 - No final PDF files are attached to Gumroad. Do not attach review candidates.
-- The approved architecture for six independent editions is documented in [docs/editorial/independent-language-editions.md](docs/editorial/independent-language-editions.md) in PR #7. PR #7 is a separate open draft and must be merged/reconciled before manuscript migration.
+- The approved six-edition architecture and migration source audits are merged to `main` in [docs/editorial/](docs/editorial/). Book 01 now has three language-specific manuscript drafts; Book 02 has a source audit. These are editorial drafts, not approved sale editions.
 - All six editions remain blocked from sale until their individual editorial and production gates pass.
 
 ## Approved publication matrix
@@ -106,11 +106,16 @@ Verify **Settings → Pages → Build and deployment → Source: GitHub Actions*
 
 ### Book 01 — Language Foundations
 
-The legacy source is `content/books/01-language-foundations/manuscript.md`. It is a mixed English/French/Spanish manuscript and must be preserved as a migration source. It is not yet three approved standalone editions. Do not simply split headings; exercises, examples, instructions and answer keys need language-specific editorial adaptation.
+- Preserved multilingual source: `content/books/01-language-foundations/manuscript.md`.
+- Independent editorial drafts: `content/books/01-language-foundations/en/manuscript.md`, `fr/manuscript.md`, and `es/manuscript.md`.
+- Source inventory and review requirements: `docs/editorial/book-01/source-inventory.md`.
+- The three manuscripts are drafts requiring substantial editorial review and completion; they are not approved sale editions.
 
 ### Book 02 — Essential Vocabulary
 
-The second title is in the approved series plan. Audit its actual manuscript and draft PR before treating any edition as complete. The same three-edition editorial, review and PDF gates apply.
+- Source audit: `docs/editorial/book-02/source-audit.md`.
+- The current integrated trilingual draft must be authored/adapted into `content/books/02-essential-vocabulary/{en,fr,es}/manuscript.md`.
+- No independent Book 02 manuscripts have been approved or built yet.
 
 ## PDF production
 
