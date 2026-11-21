@@ -19,6 +19,12 @@ export type Book = {
   price: number | null;
   currency: 'USD';
   status: 'draft' | 'published';
+  author?: string;
+  pages?: number;
+  level?: string;
+  subjects?: string[];
+  gumroadUrl?: string;
+  paypalUrl?: string;
   downloadUrl?: string;
 };
 
