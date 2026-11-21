@@ -3,61 +3,90 @@
 **Learn. Practice. Grow.**  
 An independent digital educational publishing project by Imad Limrani.
 
-## Phase 1 — Brand and website foundation
+## Technology
 
-This repository contains the initial bilingual (English/Arabic) public-facing website and static-site foundation. It intentionally does not contain products, checkout links, customer accounts, downloads, analytics or payment credentials.
+- Astro static site generator
+- HTML/CSS with lightweight browser JavaScript
+- English and Arabic interface
+- GitHub Actions build and deployment
+- GitHub Pages hosting (project site)
 
-### Current structure
+## Project architecture
 
-- `index.html` — bilingual landing page and planned learning categories
-- `about.html` — project information and contact section
-- `faq.html` — project FAQ
-- `privacy.html` — initial privacy notice for the informational site
-- `terms.html` — initial website terms
-- `404.html` — branded not-found page
-- `assets/css/style.css` — responsive visual system
-- `assets/js/main.js` — language switcher and mobile navigation
-- `assets/images/favicon.svg` — brand icon
-- `_headers` — Cloudflare Pages security and cache headers
+```text
+edubooks/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml       # Build and deploy on every push to main
+├── public/
+│   ├── favicon.svg
+│   ├── robots.txt
+│   └── .nojekyll
+├── src/
+│   ├── layouts/
+│   │   └── BaseLayout.astro # Shared metadata, navigation and footer
+│   └── pages/
+│       ├── index.astro      # Home page
+│       ├── about.astro
+│       ├── faq.astro
+│       ├── privacy.astro
+│       └── terms.astro
+├── astro.config.mjs
+├── package.json
+└── .gitignore
+```
 
-### Technology
+## Local development
 
-- Static HTML, CSS and vanilla JavaScript
-- No build command or package installation required
-- English and Arabic interface switch
-- Responsive layout and reduced-motion support
-- Cloudflare Pages-compatible static output
+Requires Node.js 22 or newer (the deployment workflow uses Node.js 24).
 
-### Deploy to Cloudflare Pages
+```bash
+npm install
+npm run dev
+```
 
-1. Sign in to Cloudflare.
-2. Open **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
-3. Authorize GitHub and select `gpldroid/edubooks`.
-4. Set production branch to `main`.
-5. Select **No framework**.
-6. Leave the build command empty.
-7. Set the build output directory to `.` (repository root).
-8. Save and deploy.
+Create a production build and preview it locally:
 
-Cloudflare requires the account owner to authorize the GitHub integration and complete deployment from their dashboard.
+```bash
+npm run build
+npm run preview
+```
 
-### Commercial launch gates — not yet complete
+The generated static website is written to `dist/`.
 
-- Verify the final brand/trademark position in target markets. The owner has chosen to retain the EduBooks name; this repository does not imply trademark registration or exclusive rights.
-- Replace the placeholder contact email in `about.html` with a working address.
-- Create and verify the Gumroad creator account and Moroccan bank payout details in the account dashboard.
-- Confirm seller identity, address, bank account and payout eligibility.
-- Review final privacy, terms, product licence and refund information before enabling sales.
-- Add product catalogue and checkout links only after the above checks are complete.
-- Connect a custom domain only after its purchase and DNS access are available.
+## GitHub Pages configuration
 
-### Payment note
+The repository is configured as a GitHub **project site**:
 
-Gumroad's official payout documentation lists Morocco with MAD local bank payouts. This is a documented country-level capability, not confirmation that this specific creator account, identity or bank account has passed verification. Gumroad's published standard payout threshold is USD 100; confirm the current threshold and account-specific requirements in Payment Settings.
+- Repository: `gpldroid/edubooks`
+- Site origin: `https://gpldroid.github.io`
+- Astro base path: `/edubooks`
+- Expected public URL: `https://gpldroid.github.io/edubooks/`
+- Build output: `dist/`
+- Deployment trigger: pushes to `main` or manual workflow dispatch
 
-### No secrets
+### One-time GitHub setting
 
-Never commit bank details, identity documents, passwords, API keys, access tokens or private customer information to this repository.
+In the repository, open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. This is a required GitHub Pages repository setting; the workflow cannot switch it automatically.
+
+After that, every push to `main` runs the workflow, builds Astro and deploys the static output. Monitor the run under the repository's **Actions** tab.
+
+## Content and launch status
+
+The project foundation and informational pages are in place. Product listings, downloadable books, checkout, customer accounts and payment processing have intentionally not been enabled. Do not publish products until content rights, product quality, pricing, seller verification, payment eligibility, customer support and commercial policies have been checked.
+
+Before a public commercial launch:
+
+- Verify the brand/trademark position in target markets. Retaining the EduBooks name does not imply trademark registration or exclusive rights.
+- Publish a working customer-support contact channel.
+- Complete seller identity and payout verification directly in the chosen payment provider account.
+- Review final privacy, terms, product licence and refund information.
+- Add products only when their content and visual assets are original or properly licensed.
+- Never commit bank details, identity documents, passwords, API keys, access tokens or private customer information.
+
+## Payment note
+
+Gumroad's public payout documentation lists Morocco with MAD local bank payouts. This is a country-level capability only; it does not confirm that a particular seller account, identity or bank account is approved. Confirm current fees, thresholds and eligibility in the account's own payment settings before relying on it.
 
 ## Ownership
 
