@@ -9,7 +9,7 @@ An independent digital educational publishing project by Imad Limrani.
 - HTML/CSS with lightweight browser JavaScript
 - English and Arabic interface with persisted language preference
 - Canonical URLs, Open Graph metadata and WebSite structured data
-- XML sitemap, robots.txt and custom 404 page
+- XML sitemap, robots.txt and custom 404 page\n- Typed book catalogue, category taxonomy and static book detail template
 - GitHub Actions build and deployment
 - GitHub Pages hosting (project site)
 
@@ -25,10 +25,10 @@ edubooks/
 │   ├── robots.txt
 │   └── .nojekyll
 ├── src/
-│   ├── layouts/
+│   ├── data/\n│   │   └── catalog.ts      # Typed categories and published-book records\n│   ├── layouts/
 │   │   └── BaseLayout.astro # Shared metadata, navigation and footer
 │   └── pages/
-│       ├── index.astro      # Home page
+│       ├── index.astro      # Home page\n│       └── books/\n│           ├── index.astro  # Searchable, filterable library\n│           └── [slug].astro # Static book detail template
 │       ├── about.astro
 │       ├── faq.astro
 │       ├── privacy.astro
