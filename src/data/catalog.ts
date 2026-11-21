@@ -1,43 +1,11 @@
-export type LearningCategory = {
-  slug: string;
-  name: string;
-  nameAr: string;
-  description: string;
-  descriptionAr: string;
-};
-
-export type Book = {
-  slug: string;
-  title: string;
-  titleAr: string;
-  description: string;
-  descriptionAr: string;
-  category: string;
-  language: 'en' | 'ar' | 'bilingual';
-  format: 'PDF';
-  cover: string;
-  price: number | null;
-  currency: 'USD';
-  status: 'draft' | 'published';
-  author?: string;
-  pages?: number;
-  level?: string;
-  subjects?: string[];
-  gumroadUrl?: string;
-  paypalUrl?: string;
-  downloadUrl?: string;
-};
-
-// Category records are editorial taxonomy, not claims that products are available.
-export const categories: LearningCategory[] = [
-  { slug: 'language-learning', name: 'Language learning', nameAr: 'تعلم اللغات', description: 'Vocabulary, grammar, reading, writing and practical language exercises.', descriptionAr: 'المفردات والقواعد والقراءة والكتابة والتدريبات اللغوية العملية.' },
-  { slug: 'school-learning', name: 'School learning', nameAr: 'التعليم المدرسي', description: 'Subject guides, revision materials and practice sheets.', descriptionAr: 'أدلة المواد والمراجعة والتمارين التعليمية.' },
-  { slug: 'academic-guides', name: 'Academic guides', nameAr: 'الأدلة الأكاديمية', description: 'Study skills, research methods and reference guides.', descriptionAr: 'مهارات الدراسة ومناهج البحث والمراجع.' },
-  { slug: 'teacher-resources', name: 'Teacher resources', nameAr: 'موارد المعلمين', description: 'Lesson planning, classroom activities and assessment templates.', descriptionAr: 'تخطيط الدروس وأنشطة الفصل وقوالب التقييم.' },
-  { slug: 'early-learning', name: 'Early learning', nameAr: 'التعلم المبكر', description: 'Activities that support foundational skills and curiosity.', descriptionAr: 'أنشطة تدعم المهارات الأساسية والفضول.' },
-  { slug: 'lifelong-learning', name: 'Lifelong learning', nameAr: 'التعلم مدى الحياة', description: 'Digital literacy and professional learning guides.', descriptionAr: 'الثقافة الرقمية وأدلة التعلم المهني.' }
+export type LearningCategory = { slug:string; nameEn:string; nameFr:string; nameEs:string; descriptionEn:string; descriptionFr:string; descriptionEs:string; };
+export type Book = { slug:string; title:string; titleFr:string; titleEs:string; description:string; descriptionFr:string; descriptionEs:string; category:string; language:'en'|'fr'|'es'|'multilingual'; format:'PDF'; cover:string; price:number|null; currency:'USD'; status:'draft'|'published'; author?:string; pages?:number; level?:string; subjects?:string[]; gumroadUrl?:string; paypalUrl?:string; downloadUrl?:string; };
+export const categories:LearningCategory[]=[
+{slug:'language-learning',nameEn:'Language learning',nameFr:'Apprentissage des langues',nameEs:'Aprendizaje de idiomas',descriptionEn:'Vocabulary, grammar, reading, writing and practical language exercises.',descriptionFr:'Vocabulaire, grammaire, lecture, écriture et exercices pratiques.',descriptionEs:'Vocabulario, gramática, lectura, escritura y ejercicios prácticos.'},
+{slug:'school-learning',nameEn:'School learning',nameFr:'Apprentissage scolaire',nameEs:'Aprendizaje escolar',descriptionEn:'Subject guides, revision materials and practice sheets.',descriptionFr:'Guides par matière, révisions et fiches d’exercices.',descriptionEs:'Guías por asignatura, repasos y hojas de ejercicios.'},
+{slug:'academic-guides',nameEn:'Academic guides',nameFr:'Guides académiques',nameEs:'Guías académicas',descriptionEn:'Study skills, research methods and reference guides.',descriptionFr:'Méthodes de travail, recherche et guides de référence.',descriptionEs:'Técnicas de estudio, métodos de investigación y referencias.'},
+{slug:'teacher-resources',nameEn:'Teacher resources',nameFr:'Ressources pédagogiques',nameEs:'Recursos para docentes',descriptionEn:'Lesson planning, classroom activities and assessment templates.',descriptionFr:'Préparation des cours, activités et modèles d’évaluation.',descriptionEs:'Planificación de clases, actividades y modelos de evaluación.'},
+{slug:'early-learning',nameEn:'Early learning',nameFr:'Éveil et petite enfance',nameEs:'Aprendizaje temprano',descriptionEn:'Activities that support foundational skills and curiosity.',descriptionFr:'Activités pour développer les compétences fondamentales et la curiosité.',descriptionEs:'Actividades para desarrollar habilidades básicas y curiosidad.'},
+{slug:'lifelong-learning',nameEn:'Lifelong learning',nameFr:'Apprentissage continu',nameEs:'Aprendizaje permanente',descriptionEn:'Digital literacy and professional learning guides.',descriptionFr:'Culture numérique et guides de développement professionnel.',descriptionEs:'Alfabetización digital y guías de desarrollo profesional.'}
 ];
-
-// Keep empty until real, reviewed and licensed products are ready for publication.
-// No books are listed until the first educational title is authored and approved.
-export const books: Book[] = [];
+export const books:Book[]=[];
