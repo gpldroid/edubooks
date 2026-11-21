@@ -3,111 +3,136 @@
 **Learn. Practice. Grow.**  
 An independent multilingual digital educational publishing project by Imad Limrani.
 
-EduBooks creates practical digital learning books for broad audiences and levels. The first collection teaches and explains in **English, French and Spanish**. Arabic is intentionally excluded from the website and this series.
+EduBooks develops standalone educational books in **English, French and Spanish**. Each language edition is intended to be a complete, independent book—not one multilingual manuscript divided into language tabs. Arabic is outside the scope of this website and initial series.
+
+## Current project status — 2026-11-21
+
+- Website: Astro 5, hosted on GitHub Pages.
+- Primary store: [EduBooks on Gumroad](https://edupdf.gumroad.com).
+- Footer store link: updated in [PR #8](https://github.com/gpldroid/edubooks/pull/8); merge is pending.
+- Six Gumroad product drafts exist, localized descriptions and metadata have been added, and every product remains unpublished.
+- Six original SVG cover designs are included in `public/images/gumroad-covers/`. Gumroad's cover uploader rejected SVG; convert these to PNG/JPEG and upload them manually or through a supported image upload before release.
+- No final PDF files are attached to Gumroad. Do not attach review candidates.
+- The approved architecture for six independent editions is documented in [docs/editorial/independent-language-editions.md](docs/editorial/independent-language-editions.md) in PR #7. PR #7 is a separate open draft and must be merged/reconciled before manuscript migration.
+- All six editions remain blocked from sale until their individual editorial and production gates pass.
+
+## Approved publication matrix
+
+| Book | English | French | Spanish |
+|---|---|---|---|
+| 01 — Language Foundations | €5 | €7 | €5 |
+| 02 — Essential Vocabulary | €7 | €5 | €7 |
+
+The amounts above are the current draft prices in Gumroad. The earlier instruction selected a uniform-pricing policy but also supplied six different amounts; the actual created product drafts use the six listed amounts. Confirm pricing policy before any release.
+
+### Gumroad draft product links
+
+| Edition | Draft product |
+|---|---|
+| Book 01 — English | [Open draft](https://edupdf.gumroad.com/l/cawqiv) |
+| Book 01 — French | [Open draft](https://edupdf.gumroad.com/l/liyoos) |
+| Book 01 — Spanish | [Open draft](https://edupdf.gumroad.com/l/buayfx) |
+| Book 02 — English | [Open draft](https://edupdf.gumroad.com/l/pbeti) |
+| Book 02 — French | [Open draft](https://edupdf.gumroad.com/l/gtjaok) |
+| Book 02 — Spanish | [Open draft](https://edupdf.gumroad.com/l/ukzunh) |
+
+A separate legacy draft named **EduBooks** also exists. Do not delete or publish it without reviewing its contents.
 
 ## Project decisions
-- Brand: EduBooks; personal brand identity.
-- Sales model: both direct checkout and marketplace distribution.
-- Audience: broad; each book specifies its own target learner and level.
-- Learning languages: English, French and Spanish.
-- Explanation languages: English, French and Spanish.
-- Website hosting: GitHub Pages.
-- Cloudflare setup: deferred.
-- Primary digital checkout/delivery plan: Gumroad.
-- PayPal: optional additional payment route when a verified product-specific payment link is available.
 
-## Live website
-https://gpldroid.github.io/edubooks/
+- Brand: EduBooks.
+- Learning languages: English, French and Spanish.
+- Each book is delivered as three standalone monolingual editions.
+- Hosting: GitHub Pages; Cloudflare is deferred.
+- Primary checkout and protected digital delivery: Gumroad.
+- PayPal is optional only after a verified product-specific payment link is configured and tested.
+- No product is published until the release gates in `docs/EDITORIAL-RELEASE-CHECKLIST.md` pass.
 
 ## Technology
+
 - Astro 5 static site generator.
-- Lightweight HTML/CSS and browser JavaScript.
-- English, French and Spanish interface with persisted language preference.
-- Canonical URLs, Open Graph metadata and WebSite structured data.
-- XML sitemap, robots.txt and custom 404 page.
-- Typed book catalogue, category taxonomy and static book detail template.
+- HTML, CSS and browser JavaScript.
+- Multilingual interface with persisted language preference.
+- Canonical URLs, Open Graph metadata, sitemap, robots.txt and custom 404.
+- Typed catalogue and static book-detail templates.
 - GitHub Actions build and GitHub Pages deployment.
 - Pandoc + XeLaTeX PDF production pipeline.
 
-## Repository structure
-\`\`\`text
+## Repository map
+
+```text
 edubooks/
-├── .github/workflows/
-│   ├── deploy.yml
-│   └── book-01-pdf.yml
-├── content/books/
-│   └── 01-language-foundations/
-│       └── manuscript.md
+├── .github/workflows/       # site deployment and PDF production
+├── content/books/           # authoritative book manuscripts
 ├── docs/
 │   ├── PROJECT-HANDOVER.md
+│   ├── EDITORIAL-RELEASE-CHECKLIST.md
+│   ├── STORE-OPERATIONS.md
 │   ├── series-01-detailed-contents.md
 │   ├── book-01-editorial-review.md
-│   └── production/
-│       ├── BOOK-PDF-DESIGN-SYSTEM.md
-│       ├── BOOK-MANUSCRIPT-TEMPLATE.md
-│       ├── latex-preamble.tex
-│       └── book-01-titlepage.tex
-├── public/
-├── src/
-│   ├── data/catalog.ts
-│   ├── layouts/BaseLayout.astro
-│   └── pages/
+│   ├── editorial/           # language-edition architecture (PR #7)
+│   └── production/          # manuscript and PDF design system
+├── public/images/gumroad-covers/ # six original SVG cover masters
+├── src/data/catalog.ts
+├── src/layouts/BaseLayout.astro
+├── src/pages/
 ├── astro.config.mjs
 └── package.json
-\`\`\`
+```
 
-## Local website development
-Requires Node.js 22 or newer (the deployment workflow uses Node.js 24).
+## Local development
 
-\`\`\`bash
+Requirements: Node.js 22+ (CI uses Node.js 24).
+
+```bash
 npm install
 npm run dev
 npm run build
 npm run preview
-\`\`\`
+```
 
-The generated static website is written to \`dist/\`.
+Build output: `dist/`.
 
-## GitHub Pages configuration
-This repository is configured as a GitHub **project site**:
-- Repository: \`gpldroid/edubooks\`
-- Site origin: \`https://gpldroid.github.io\`
-- Astro base path: \`/edubooks\`
-- Public URL: \`https://gpldroid.github.io/edubooks/\`
-- Build output: \`dist/\`
+## GitHub Pages
 
-In GitHub, verify **Settings → Pages → Build and deployment → Source: GitHub Actions**. The deployment workflow runs on pushes to \`main\` and can be started manually.
+- Repository: `gpldroid/edubooks`
+- Site: https://gpldroid.github.io/edubooks/
+- Astro project-site base: `/edubooks`
+- Pages source: GitHub Actions
+
+Verify **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
 ## Book production status
 
 ### Book 01 — Language Foundations
-- Manuscript: \`content/books/01-language-foundations/manuscript.md\`
-- Ten units, exercises, answer key, integrated project, appendices and glossary are drafted.
-- The editorial report is \`docs/book-01-editorial-review.md\`.
-- The designed PDF is generated by \`.github/workflows/book-01-pdf.yml\`.
-- The workflow uploads a review-candidate PDF artifact for 90 days; it is not a permanent public sales file.
-- Publication remains gated on full PDF proof inspection, native-level English/French/Spanish review, rights checks and final product metadata.
 
-### Series 01 — six books
-The six detailed book outlines are in \`docs/series-01-detailed-contents.md\`. The proposed second book is **Essential Vocabulary**. Start its manuscript after the Book 01 review candidate has been inspected and its handover is accepted.
+The legacy source is `content/books/01-language-foundations/manuscript.md`. It is a mixed English/French/Spanish manuscript and must be preserved as a migration source. It is not yet three approved standalone editions. Do not simply split headings; exercises, examples, instructions and answer keys need language-specific editorial adaptation.
 
-## PDF production and shared design
-Use the standard template and design system in \`docs/production/\`. The production workflow creates an A4 PDF with a cover, table of contents, consistent typography, running headers, page numbers, embedded searchable text and automated content checks.
+### Book 02 — Essential Vocabulary
 
-Run it from **Actions → Build EduBooks Book 01 PDF → Run workflow**, or update the Book 01 manuscript or production design files. Download the artifact named \`edubooks-book-01-language-foundations-review-candidate\` from the successful run. GitHub Actions artifacts expire after 90 days.
+The second title is in the approved series plan. Audit its actual manuscript and draft PR before treating any edition as complete. The same three-edition editorial, review and PDF gates apply.
 
-## Project handover
-The continuation guide is **[docs/PROJECT-HANDOVER.md](docs/PROJECT-HANDOVER.md)**. It records project decisions, architecture, payment notes, build instructions, current status and next steps. If continuing in a new session, provide that file and this repository URL.
+## PDF production
 
-## Payment and commercial readiness
-- Gumroad is the intended primary checkout and protected digital-file delivery platform.
-- PayPal can be added only after a product-specific payment link is created and tested.
-- Morocco payout availability must be confirmed inside the seller's own provider account. Country-level availability does not guarantee individual seller or bank approval.
-- Never publish a purchase button until the PDF, price, licence, refund terms and checkout have been checked.
-- Keep API keys, access tokens, identity documents, bank details and buyer information out of Git.
+The current PDF workflow is `.github/workflows/book-01-pdf.yml`. Review-candidate artifacts are temporary Actions artifacts (90-day retention), not permanent sale files. Inspect the full PDF proof, embedded fonts, text extraction, page breaks, tables, links, accents, contents and accessibility. Do not upload a review candidate to Gumroad.
 
-## Publication policy
-Do not represent a draft or review-candidate PDF as a professionally certified or final publication. Do not claim official CEFR certification or endorsement. Publish only after language review, proofreading, PDF inspection, rights clearance and commercial checks.
+## Continuation guide
+
+Read these documents in order:
+1. [Project handover](docs/PROJECT-HANDOVER.md)
+2. [Independent language-edition architecture](docs/editorial/independent-language-editions.md)
+3. [Editorial release checklist](docs/EDITORIAL-RELEASE-CHECKLIST.md)
+4. [Gumroad store operations](docs/STORE-OPERATIONS.md)
+5. [Series outline](docs/series-01-detailed-contents.md)
+
+## Security and commercial policy
+
+- Keep API keys, access tokens, seller identity documents, bank details and buyer data out of Git.
+- Verify seller payout eligibility inside the seller account; country-level availability does not guarantee account approval.
+- Confirm price, currency, licence, refund terms, file delivery and checkout before launch.
+- Do not claim official CEFR certification or endorsement.
+- Keep all six products unpublished until each edition independently passes editorial, pedagogical, rights, PDF and accessibility review.
 
 ## Ownership
+
 EduBooks — an independent educational publishing project by Imad Limrani.
