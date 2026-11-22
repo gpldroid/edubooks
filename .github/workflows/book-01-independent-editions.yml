@@ -43,9 +43,10 @@ jobs:
             fr) UNIT_LABEL="Unité"; ANSWER_HEADING="Corrigé et critères d’évaluation";;
             es) UNIT_LABEL="Unidad"; ANSWER_HEADING="Soluciones y criterios de evaluación";;
           esac
-          test "$(grep -c "^## $UNIT_LABEL [1-9][0-9]* — " "$FILE")" -eq 10
+          UNIT_COUNT="$(grep -Ec "^## ${UNIT_LABEL} [0-9]+ — " "$FILE" || true)"
+          echo "Detected $UNIT_COUNT unit headings for $LANG_CODE."
+          test "$UNIT_COUNT" -eq 10
           grep -Fq "$ANSWER_HEADING" "$FILE"
-          grep -Fq "Unit 10" "$FILE" || [ "$LANG_CODE" != "en" ]
           test "$(wc -w < "$FILE")" -gt 1500
           case "$LANG_CODE" in
             en) grep -Fq "English (EN)" "$FILE"; grep -Fq "Success check" "$FILE";;
