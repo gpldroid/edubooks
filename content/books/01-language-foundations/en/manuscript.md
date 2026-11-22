@@ -259,6 +259,126 @@ Digital-style expressions such as “six fifteen” and “seven forty-five” a
 **Success check:** I can recognize common numbers, write a date clearly and ask or answer a simple time question.
 
 
+## Unit 7 — Personal Information and Questions
+
+**Learning goal:** You can ask and answer simple questions about a person's name, home, languages and contact details while respecting privacy.
+
+### Ask and answer
+Use **What** for things, **Where** for places, **When** for time, **Who** for people and **How** for manner or condition:
+- What is your first name?
+- Where do you live?
+- What languages do you speak?
+- When is your appointment?
+- How do you spell your surname?
+
+Many present-simple questions use **do** or **does**: “Do you live here?” / “Does she speak English?” After **does**, use the base verb: *Does she live…?*, not *Does she lives…?*
+
+### Personal details safely
+You may practise with fictional details. Do not share a real address, phone number or other private information in a public exercise. If a form asks for information you do not want to provide, ask why it is needed.
+
+### Practice
+1. Complete: “Where ____ you live?” (do / does)
+2. Complete: “____ she speak French?” (Do / Does)
+3. Correct: “Does he lives in London?”
+4. Match: What / Where / When / Who with thing / place / time / person.
+5. Write three questions for a fictional classmate and answer them with invented information.
+
+**Success check:** I can form basic questions and answer them without sharing private details.
+
+## Unit 8 — Classroom and Learning Language
+
+**Learning goal:** You can understand and use common instructions and ask for help during a lesson.
+
+### Useful classroom expressions
+- “Open your book, please.”
+- “Listen and repeat.”
+- “Work with a partner.”
+- “Write the answer.”
+- “Can you repeat that, please?”
+- “What does this word mean?”
+- “How do you pronounce this?”
+- “I don’t understand.”
+- “Could you speak more slowly?”
+
+A teacher may use an imperative for an instruction: **Open**, **Listen**, **Write**. Add *please* to make a request more polite. Use **Can you…?** or **Could you…?** when asking someone to do something.
+
+### Learning strategies
+When you do not understand, identify the problem: a word, an instruction, a sound or the whole idea. Ask one focused question. Keep a small vocabulary list with a short example, not only a translation.
+
+### Practice
+1. Choose the classroom instruction: (a) “Listen and repeat”; (b) “Where are you from?”
+2. Complete: “Could you speak more ____?” (slowly / slow)
+3. Write a polite request asking the teacher to repeat.
+4. Match: *pronounce* / *meaning* / *repeat* with say a sound clearly / what a word expresses / say again.
+5. Write three instructions for a partner completing a simple matching activity.
+
+**Success check:** I can follow common classroom instructions and ask for clarification politely.
+
+## Unit 9 — First Sentences
+
+**Learning goal:** You can build short affirmative and negative sentences with **be** and the present simple.
+
+### Sentence patterns
+With **be**:
+- I am a learner. / I’m a learner.
+- She is at home. / She’s at home.
+- They are ready. / They’re ready.
+
+With the present simple:
+- I study English.
+- He studies English.
+- We live in a city.
+
+For negatives with **be**, use **not**: “I am not tired.” For most present-simple verbs, use **do not / don’t** or **does not / doesn’t**: “I don’t work here.” / “She doesn’t work here.”
+
+Remember: after **doesn’t**, use the base verb: “She doesn’t study”, not “She doesn’t studies”.
+
+### Word order
+A basic English statement often follows: **subject + verb + other information**. Example: “My friend reads books.” A time phrase can appear at the beginning or end: “Every day, I practise” / “I practise every day.”
+
+### Practice
+1. Complete: “They ____ ready.” (is / are)
+2. Complete: “Mina ____ English every day.” (study / studies)
+3. Make negative: “I work here.”
+4. Correct: “He doesn’t likes tea.”
+5. Put in order: every morning / reads / she / a book.
+6. Write four sentences: two about a fictional person and two negative sentences.
+
+**Success check:** I can write simple statements and negatives with understandable word order.
+
+## Unit 10 — Integrated Beginner Project
+
+**Learning goal:** You can combine the skills from this book in a short personal introduction and a simple information exchange.
+
+### Project: My beginner profile
+Create a one-page profile for yourself or a fictional learner. Include:
+1. A name and a simple greeting.
+2. Three facts: origin, place of residence and languages.
+3. Two interests or everyday activities.
+4. One date or time for a fictional event.
+5. Three questions another learner could ask.
+6. A short dialogue of four to six lines.
+
+Use complete sentences. Check capital letters, spelling, the verb **be**, present-simple forms and question marks.
+
+### Speaking task
+Read your profile aloud. Pause between ideas. Ask a partner two questions and answer two questions. If you work alone, record both sides of the dialogue.
+
+### Self-assessment rubric
+Give yourself 1 point for each item:
+- My information is organized and easy to follow.
+- My sentences use a clear subject and verb.
+- I can ask and answer simple questions.
+- I use greetings and polite expressions.
+- I can say a date or time clearly.
+- I checked spelling and punctuation.
+
+**Interpretation:** 5–6 points: ready for a review conversation; 3–4: revise the items you missed; 0–2: repeat the relevant units and try again. This is a learning check, not an official language test.
+
+### Final reflection
+Which skill improved most? Which expression will you use in a real conversation? Choose one small goal for the next seven days.
+
+
 ## Answer key
 
 Not yet approved. A complete answer key must be authored after the exercises in this edition are finalized. The partial answers in the preserved source must not be copied without verification.
