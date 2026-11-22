@@ -8,7 +8,8 @@ Technical CI, editorial approval and public release are separate states.
 ## P0 — Website-only publication architecture
 - [x] Align public privacy, terms, FAQ and contact copy with the free website-only model.
 - [ ] Confirm there are no public Gumroad or PayPal links, checkout controls or paid-download flows.
-- [ ] Keep catalogue empty until approved full PDFs, preview PDFs and covers exist.
+- [x] Register all six existing language editions as review-only catalogue entries with cover assets and disabled PDF actions.
+- [ ] Convert an edition to `published` only after all release gates and owner approval.
 - [ ] Validate both preview and full-download paths for every published catalogue record.
 - [ ] Ensure preview opens in-browser and download serves the full PDF from EduBooks, respecting `/edubooks`.
 - [ ] Verify preview and download on desktop and mobile after Pages deployment.
@@ -70,7 +71,7 @@ Existing Gumroad drafts are historical external account state only. This reposit
 - PR #27 and PR #28 are merged; post-PR #27 Pages deployment and internal-only Book 01 PDF workflows succeeded.
 - Book 01 and Book 02 have six independent working manuscripts in total.
 - Book 02 matrix review artifacts passed automated technical validation; they are not final editions.
-- Public catalogue remains empty.
+- Public catalogue lists six review-only edition records; no edition is approved or downloadable.
 - Three historical, unapproved Book 01 PDFs have been removed from deployable public assets.
 - No edition is currently approved for public distribution.
 

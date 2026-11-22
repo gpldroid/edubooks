@@ -31,7 +31,8 @@ For each asset, record:
 
 ## Current release restrictions
 
-- The public catalogue must remain empty until the relevant edition passes every release gate.
+- Draft catalogue entries may identify editions under review, but must remain clearly marked, noindex, and without preview/download files.
+- An edition may change to `published` only after every release gate and owner authorization are documented.
 - Internal PDF review candidates must remain GitHub Actions artifacts and must not be copied to `public/`.
 - Historical PDFs removed from the public directory are not approved for reuse.
 - Do not add a permissive repository-wide `LICENSE` until the owner has selected a licence and confirmed that every included file can be distributed under it.

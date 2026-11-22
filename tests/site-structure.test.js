@@ -49,10 +49,11 @@ test('catalogue fields and localized category descriptions are consistent', () =
 
 test('book library requires localized metadata, a TOC and a bounded PDF sample', () => {
   const catalog = read('src/data/catalog.ts');
-  for (const token of ['export type BookTocItem', 'toc: BookTocItem[]', 'previewPdf: string', 'samplePageCount: number', 'validateBookCatalog']) {
+  for (const token of ['export type BookTocItem', 'toc: BookTocItem[]', 'previewPdf?: string', 'samplePageCount?: number', 'downloadPdf?: string', 'validateBookCatalog']) {
     assert.ok(catalog.includes(token), `Missing catalogue contract: ${token}`);
   }
-  assert.ok(catalog.includes('book.samplePageCount < 3 || book.samplePageCount > 5'));
+  assert.ok(catalog.includes('published samplePageCount must be from 3 to 5'));
+  assert.ok(catalog.includes('draft editions must not expose preview or download files'));
   assert.ok(catalog.includes("book.status !== 'draft' && book.status !== 'published'"));
 });
 
@@ -62,10 +63,12 @@ test('public book pages provide free browser PDF preview and direct full-PDF dow
   const route = read('src/pages/books/[slug].astro');
   const download = read('src/pages/books/[slug]/download.astro');
   const catalog = read('src/data/catalog.ts');
-  for (const token of ['data-en="Preview"', 'data-en="Download"']) assert.ok(card.includes(token), `Missing card action: ${token}`);
+  for (const token of ['data-en="View details"', 'review-status', 'data-en="In review"']) assert.ok(card.includes(token), `Missing review-only card action: ${token}`);
   for (const token of ['Table of contents', 'Preview PDF', 'Download PDF', 'book.previewPdf', 'download/']) assert.ok(detail.includes(token), `Missing free PDF reader feature: ${token}`);
   assert.ok(!detail.includes('PdfViewer'));
   assert.ok(route.includes("book.status === 'published'"));
+  assert.ok(detail.includes("book.status === 'published' && book.previewPdf"));
+  assert.ok(detail.includes('Editorial review in progress'));
   for (const token of ['downloadPdf', 'download', 'No account or payment is required']) assert.ok(download.includes(token), `Missing direct free download feature: ${token}`);
   assert.ok(!download.includes('setInterval'));
   assert.ok(catalog.includes("book.downloadPdf.startsWith('/books/')"));
@@ -88,8 +91,16 @@ test('inner-page typography refinements explicitly exclude the homepage', () => 
 
 test('draft manuscripts are not automatically promoted into the public catalogue', () => {
   const catalog = read('src/data/catalog.ts');
-  assert.ok(catalog.includes('export const books: Book[] = [];'));
-  assert.ok(!catalog.includes("status: 'published'"));
+  assert.ok(catalog.includes("...editions(foundationsBase, 'language-foundations')"));
+  assert.ok(catalog.includes("...editions(vocabularyBase, 'essential-vocabulary')"));
+  assert.ok(catalog.includes("(['en', 'fr', 'es'] as const)"));
+  assert.ok(catalog.includes("status: 'draft'"));
+  assert.ok(!catalog.includes("status: 'published',"));
+  assert.ok(catalog.includes('draft editions must not expose preview or download files'));
+  const detail = read('src/pages/books/[slug].astro');
+  const sitemap = read('src/pages/sitemap.xml.ts');
+  assert.ok(detail.includes('noindex,follow'));
+  assert.ok(sitemap.includes("book.status === 'published'"));
 });
 
 test('application source contains no unfinished implementation placeholders', () => {
