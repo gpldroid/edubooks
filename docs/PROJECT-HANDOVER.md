@@ -20,7 +20,7 @@ GitHub changes merged to `main`:
 
 - PR #13 is merged (mobile UI/PDF preview).
 - PR #12 is closed without merge; its four-page A1 sample preview failed only because the workflow required at least five pages.
-- PR #14 is the replacement draft. It changes the minimum to four pages and adds a fix-branch push trigger. Astro validation passed, but the dedicated PDF workflow has not yet been confirmed.
+- PR #14 is the replacement draft. It changes the minimum to four pages and adds a fix-branch push trigger. The exact Pandoc/XeLaTeX build passed locally: A4, four pages, 638 extracted words and all required text checks. Astro validation passed; the dedicated GitHub Actions artifact upload remains unconfirmed. The preview contains Arabic support text and is a legacy internal sample, not one of the six approved editions.
 - PR #15 is a draft repairing the corrupted Book 01 EN/FR/ES outline formatting and French/Spanish boilerplate. It does not complete the books.
 - PR #9 is a draft with three Book 02 manuscripts and three successful CI PDF builds. It is stacked on PR #1.
 - PR #4 is a successful legacy trilingual Book 01 PDF build, not a set of independent editions.
