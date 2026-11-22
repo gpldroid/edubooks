@@ -8,15 +8,14 @@ import { books, categories, validateBookCatalog } from '../../data/catalog';
 const catalogErrors = validateBookCatalog(books);
 if (catalogErrors.length > 0) throw new Error(catalogErrors.join('\n'));
 
-const publishedBooks = books.filter((book) => book.status === 'published');
-for (const book of publishedBooks) {
-  const previewFile = resolve(process.cwd(), 'public', book.previewPdf.slice(1));
-  const coverFile = resolve(process.cwd(), 'public', book.cover.slice(1));
-  if (!existsSync(previewFile)) throw new Error(`Missing PDF preview for "${book.slug}": ${book.previewPdf}`);
-  if (!existsSync(coverFile)) throw new Error(`Missing cover for "${book.slug}": ${book.cover}`);
-}
-
 export function getStaticPaths() {
+  const publishedBooks = books.filter((book) => book.status === 'published');
+  for (const book of publishedBooks) {
+    const previewFile = resolve(process.cwd(), 'public', book.previewPdf.slice(1));
+    const coverFile = resolve(process.cwd(), 'public', book.cover.slice(1));
+    if (!existsSync(previewFile)) throw new Error(`Missing PDF preview for "${book.slug}": ${book.previewPdf}`);
+    if (!existsSync(coverFile)) throw new Error(`Missing cover for "${book.slug}": ${book.cover}`);
+  }
   return publishedBooks.map((book) => ({ params: { slug: book.slug }, props: { book } }));
 }
 
