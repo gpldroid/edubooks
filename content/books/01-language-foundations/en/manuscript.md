@@ -455,3 +455,6 @@ Use the six-point self-assessment rubric in the unit. A profile can use fictiona
 ## Editorial and publication notice
 
 This is an in-progress editorial manuscript and is not approved for public distribution on the EduBooks website. It does not represent language certification. Examples, instructions, exercises, answer keys, references and rights must pass independent review before a final PDF, sample PDF or catalogue entry can be published.
+
+## Rights-holder declaration — 2026-11-22
+The owner has confirmed in writing in the project conversation that they hold the copyright and distribution rights for the texts and materials used in the six EduBooks editions and authorize preparation for free publication on the EduBooks website. This declaration records the owner's statement; it does not replace asset-level licence documentation, independent language and pedagogical review, accessibility checks, final PDF proof, or edition-specific release approval.
