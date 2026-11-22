@@ -8,9 +8,9 @@ const read = (path) => readFileSync(resolve(root, path), 'utf8');
 
 test('Astro project configuration preserves GitHub Pages project-site routing', () => {
   const config = read('astro.config.mjs');
-  assert.match(config, /site:\s*['"]https:\/\/gpldroid\.github\.io['"]/);
-  assert.match(config, /base:\s*['"]\/edubooks['"]/);
-  assert.match(config, /output:\s*['"]static['"]/);
+  assert.match(config, /site:\\s*['"]https:\\/\\/gpldroid\\.github\\.io['"]/);
+  assert.match(config, /base:\\s*['"]\\/edubooks['"]/);
+  assert.match(config, /output:\\s*['"]static['"]/);
 });
 
 test('all public routes and the shared layout exist', () => {
@@ -44,28 +44,64 @@ test('responsive design covers mobile, tablet, desktop and large-screen breakpoi
   for (const width of [380, 760, 1024, 1440, 1920, 2560]) {
     assert.ok(css.includes(`max-width: ${width}px`) || css.includes(`min-width: ${width}px`), `Missing breakpoint ${width}px`);
   }
-  assert.match(css, /\.mobile-tabbar/);
-  assert.match(css, /\.scroll-controls/);
+  assert.match(css, /\\.mobile-tabbar/);
+  assert.match(css, /\\.scroll-controls/);
   assert.match(css, /prefers-reduced-motion/);
-  assert.match(css, /env\(safe-area-inset-bottom\)/);
+  assert.match(css, /env\\(safe-area-inset-bottom\\)/);
 });
 
 test('catalogue fields and localized category descriptions are consistent', () => {
   const catalog = read('src/data/catalog.ts');
   const home = read('src/pages/index.astro');
-  assert.match(catalog, /descriptionEn:\s*string/);
-  assert.match(catalog, /descriptionFr:\s*string/);
-  assert.match(catalog, /descriptionEs:\s*string/);
-  assert.match(home, /category\.descriptionEn/);
-  assert.match(home, /category\.descriptionFr/);
-  assert.match(home, /category\.descriptionEs/);
+  assert.match(catalog, /descriptionEn:\\s*string/);
+  assert.match(catalog, /descriptionFr:\\s*string/);
+  assert.match(catalog, /descriptionEs:\\s*string/);
+  assert.match(home, /category\\.descriptionEn/);
+  assert.match(home, /category\\.descriptionFr/);
+  assert.match(home, /category\\.descriptionEs/);
+});
+
+test('book library requires a localized description, cover, TOC and a bounded PDF sample', () => {
+  const catalog = read('src/data/catalog.ts');
+  assert.match(catalog, /export type BookTocItem/);
+  assert.match(catalog, /toc:\\s*BookTocItem\\[\\]/);
+  assert.match(catalog, /previewPdf:\\s*string/);
+  assert.match(catalog, /samplePageCount:\\s*number/);
+  assert.match(catalog, /samplePageCount < 3 \\|\\| book.samplePageCount > 5/);
+  assert.match(catalog, /status === 'published'/);
+  assert.match(catalog, /validateBookCatalog/);
+});
+
+test('public book pages provide an in-page PDF preview and never render checkout controls', () => {
+  const card = read('src/components/books/BookCard.astro');
+  const detail = read('src/components/books/BookPreview.astro');
+  const viewer = read('src/components/books/PdfViewer.astro');
+  const route = read('src/pages/books/[slug].astro');
+  assert.match(card, /Read description &amp; preview/);
+  assert.match(detail, /Table of contents/);
+  assert.match(detail, /PdfViewer/);
+  assert.match(viewer, /<iframe/);
+  assert.match(viewer, /Open PDF in new tab/);
+  assert.match(route, /status === 'published'/);
+  for (const source of [card, detail, viewer, route]) {
+    assert.doesNotMatch(source, /gumroadUrl|paypalUrl|downloadUrl|Buy with Gumroad|Pay with PayPal|Access digital file/);
+  }
+});
+
+test('draft manuscripts are not automatically promoted into the public catalogue', () => {
+  const catalog = read('src/data/catalog.ts');
+  assert.match(catalog, /export const books: Book\\[\\] = \\[\\];/);
+  assert.doesNotMatch(catalog, /status:\\s*'published'/);
 });
 
 test('application source contains no unfinished implementation placeholders', () => {
   const sourceFiles = [
     'src/components/navigation/MobileTabBar.astro',
     'src/components/ui/ScrollControls.astro',
-    'src/components/ui/Icon3D.astro'
+    'src/components/ui/Icon3D.astro',
+    'src/components/books/BookCard.astro',
+    'src/components/books/BookPreview.astro',
+    'src/components/books/PdfViewer.astro'
   ];
   for (const path of sourceFiles) {
     const source = read(path);
