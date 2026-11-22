@@ -553,6 +553,3 @@ Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio
 
 # Nota editorial y condiciones de publicación
 **Estado de publicación en el sitio: NO AUTORIZADO PARA SU DIFUSIÓN.** Borrador de trabajo pendiente de revisión lingüística y pedagógica independiente, comprobación de derechos y accesibilidad, y prueba final del PDF. La distribución prevista será gratuita, mediante vista previa en el navegador y descarga directa desde EduBooks.
-
-## Declaración del titular de los derechos — 2026-11-22
-El propietario ha confirmado en la conversación del proyecto que posee los derechos de autor y distribución de los textos y materiales utilizados en las seis ediciones de EduBooks y que autoriza su preparación para una publicación gratuita en el sitio web de EduBooks. Esta declaración registra su afirmación; no sustituye la documentación de licencias de cada recurso, la revisión lingüística y pedagógica independiente, las comprobaciones de accesibilidad, la prueba final del PDF ni la aprobación de publicación de cada edición.
