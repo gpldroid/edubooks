@@ -379,9 +379,78 @@ Give yourself 1 point for each item:
 Which skill improved most? Which expression will you use in a real conversation? Choose one small goal for the next seven days.
 
 
-## Answer key
+## Answer key and assessment guidance
 
-Not yet approved. A complete answer key must be authored after the exercises in this edition are finalized. The partial answers in the preserved source must not be copied without verification.
+Answers below cover items with a defined answer. For personal, speaking and writing tasks, accept any response that fulfils the prompt, uses understandable English and demonstrates the stated learning goal. Do not mark a learner wrong for using a different personal detail.
+
+### Unit 1
+1. (a) listening; (b) writing; (c) reading; (d) speaking.
+2. Example: “I will study for 15 minutes on Monday, Wednesday and Friday and write three sentences each day.”
+3. Recall → learn → use.
+4. Individual plan; check that it includes three days and totals 15 minutes per session.
+5. Individual reflection; assess whether the learner identifies a skill and gives a reason.
+
+### Unit 2
+1. A, E, I, O, U.
+2. “My name is Sam and I live in London.”
+3. spell.
+4. (b) “Could you spell that, please?”
+5. BOOK; TAXI; NAME.
+6. Open dialogue; check that the spelling is confirmed accurately and the request is polite.
+
+### Unit 3
+1. hotel: 2; banana: 3; book: 1.
+2. (a) taxi.
+3. The first syllable, **TA**.
+4. English letters can represent different sounds, and the same sound can have different spellings.
+5–6. Individual pronunciation tasks; assess use of an audio model, syllable awareness and understandable speech rather than accent imitation.
+
+### Unit 4
+1. Good morning.
+2. please.
+3. “Excuse me.”
+4. (a) 2; (b) 3; (c) 1.
+5. Open dialogue; check greeting, question, polite request and thanks.
+
+### Unit 5
+1. am.
+2. lives.
+3. “I’m from…”
+4–5. Open tasks; check correct use of *I am*, *I’m from*, *I live in* and relevant question forms.
+
+### Unit 6
+1. fourteen; forty.
+2. 50.
+3. May 5, 2026.
+4. at.
+5. It’s quarter past six.
+6. Open sentence; check that the weekday/date/time are clear and consistent.
+
+### Unit 7
+1. do.
+2. Does.
+3. “Does he live in London?”
+4. What—thing; Where—place; When—time; Who—person.
+5. Open task; check question word order and privacy-safe fictional details.
+
+### Unit 8
+1. (a) “Listen and repeat.”
+2. slowly.
+3. Example: “Could you repeat that, please?”
+4. pronounce—say a sound clearly; meaning—what a word expresses; repeat—say again.
+5. Open task; check that the instructions are clear and actionable.
+
+### Unit 9
+1. are.
+2. studies.
+3. “I do not work here.” / “I don’t work here.”
+4. “He doesn’t like tea.”
+5. “She reads a book every morning.”
+6. Open task; check affirmative/negative forms and subject–verb agreement.
+
+### Unit 10
+Use the six-point self-assessment rubric in the unit. A profile can use fictional information. Do not require private personal data. The rubric is formative and is not an official proficiency assessment.
+
 
 ## Editorial and publication notice
 
