@@ -46,7 +46,7 @@ Live site: https://gpldroid.github.io/edubooks/
 ### Books 02–06
 - Detailed contents exist in docs/series-01-detailed-contents.md.
 - Book 02 proposed title: Essential Vocabulary.
-- Start Book 02 after the Book 01 production handover is accepted and its final PDF proof has been inspected.
+- Book 02 is now in parallel first-draft production on `work/book-02-independent-editions`; do not treat it as approved or sale-ready.
 
 ## 4. Build and deployment
 Requirements: Node.js 22+ (workflow currently uses Node.js 24).
