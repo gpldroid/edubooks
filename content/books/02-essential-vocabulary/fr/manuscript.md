@@ -539,11 +539,11 @@ Créez un portfolio en cinq parties : personnes, maison, alimentation, routine e
 
 # Fiche personnelle de vocabulaire
 
-| Date | Mot ou expression | Sens en contexte | Mon exemple | Révision 1 | Révision 2 | Révision 3 |
-|---|---|---|---|---|---|---|
-| | | | | | | |
-| | | | | | | |
-| | | | | | | |
+| Date | Mot ou expression | Sens en contexte | Exemple et dates de révision |
+|---|---|---|---|
+| | | | |
+| | | | |
+| | | | |
 
 # Petit glossaire
 - **Association de mots (collocation) :** combinaison de mots qui apparaît fréquemment ensemble.
