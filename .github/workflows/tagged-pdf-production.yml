@@ -79,6 +79,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          BOOK="${{ matrix.book }}"
+          LANG_CODE="${{ matrix.lang }}"
           INPUT="dist/tagged/${{ matrix.book }}/${{ matrix.lang }}/book-${{ matrix.book }}-${{ matrix.lang }}.docx"
           OUTDIR="$PWD/dist/tagged/${{ matrix.book }}/${{ matrix.lang }}"
           PROFILE="file://$RUNNER_TEMP/lo-profile-${{ matrix.book }}-${{ matrix.lang }}"
