@@ -232,7 +232,7 @@ p, li { line-height: 1.75; }
   .language-float {
     top: auto;
     right: max(12px, env(safe-area-inset-right));
-    bottom: calc(88px + 40px + 40px + 8px + env(safe-area-inset-bottom));
+    bottom: calc(88px + 40px + 40px + 20px + env(safe-area-inset-bottom));
     z-index: 30;
   }
   .language-menu {
