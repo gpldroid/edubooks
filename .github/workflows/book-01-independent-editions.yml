@@ -30,7 +30,16 @@ jobs:
       - name: Install PDF toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french texlive-lang-spanish poppler-utils
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french texlive-lang-spanish poppler-utils fonts-dejavu-core
+
+      - name: Capture font package and licence evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist/rights
+          dpkg-query -W -f='${Package} ${Version}\n' fonts-dejavu-core | tee dist/rights/dejavu-package-version.txt
+          test -s /usr/share/doc/fonts-dejavu-core/copyright
+          cp /usr/share/doc/fonts-dejavu-core/copyright dist/rights/dejavu-copyright.txt
 
       - name: Validate manuscript structure
         shell: bash
@@ -104,12 +113,15 @@ jobs:
           done
           TAGGED="$(pdfinfo "$PDF" | awk -F: '/^Tagged:/ {gsub(/^[ \t]+/, "", $2); print $2}')"
           WORDS="$(wc -w < "$TXT")"
+          sha256sum "$PDF" > "$PDF.sha256"
           {
             echo "Edition: Book 01 / $LANG_CODE"
             echo "Pages: $PAGES"
             echo "Extracted words: $WORDS"
             echo "Tagged PDF: ${TAGGED:-not reported}"
             echo "Font embedding: all detected fonts embedded"
+            echo "Font package: $(cat dist/rights/dejavu-package-version.txt)"
+            echo "PDF SHA-256: $(cut -d \" \" -f1 \"$PDF.sha256\")"
             echo "Accessibility status: NOT CERTIFIED; manual tagging, reading-order and screen-reader review remain required"
           } | tee "dist/books/$LANG_CODE/qa-report.txt"
           echo "Validated $LANG_CODE review candidate: $PAGES pages; tagged status: ${TAGGED:-not reported}."
@@ -125,6 +137,7 @@ jobs:
           pdfunite dist/previews/$LANG_CODE/page-*.pdf "dist/previews/edubooks-book-01-$LANG_CODE-sample-review-only.pdf"
           SAMPLE="dist/previews/edubooks-book-01-$LANG_CODE-sample-review-only.pdf"
           test "$(pdfinfo "$SAMPLE" | awk '/^Pages:/ {print $2}')" -eq 5
+          sha256sum "$SAMPLE" > "$SAMPLE.sha256"
           echo "Created a five-page internal sample for $LANG_CODE; it is not a public or sale file."
 
       - name: Upload internal sample preview
@@ -139,6 +152,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: book-01-${{ matrix.edition }}-review-candidate
-          path: dist/books/${{ matrix.edition }}/
+          path: |
+            dist/books/${{ matrix.edition }}/
+            dist/rights/
           if-no-files-found: error
           retention-days: 90
