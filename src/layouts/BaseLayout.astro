@@ -66,50 +66,104 @@ const siteUrl = new URL(base, Astro.site).href;
 <MobileTabBar base={base} />
 <ScrollControls />
 <script>
-const languageWidget=document.querySelector('[data-language-widget]');
-const languageToggle=document.querySelector('[data-lang-toggle]');
-const languageMenu=document.querySelector('[data-lang-menu]');
-const currentLanguage=document.querySelector('[data-lang-current]');
-const mobileMenu=document.querySelector('.menu-toggle');
-const nav=document.querySelector('.primary-nav');
-const supported=['en','fr','es'];
-let lang='en';
-try { const saved=localStorage.getItem('edubooks-language'); if(saved && supported.includes(saved)) lang=saved; } catch { /* Storage may be unavailable in restricted browsing contexts. */ }
-function applyLanguage(){
+const languageWidget=document.querySelector<HTMLElement>('[data-language-widget]');
+const languageToggle=document.querySelector<HTMLButtonElement>('[data-lang-toggle]');
+const languageMenu=document.querySelector<HTMLDivElement>('[data-lang-menu]');
+const currentLanguage=document.querySelector<HTMLElement>('[data-lang-current]');
+const mobileMenu=document.querySelector<HTMLButtonElement>('.menu-toggle');
+const nav=document.querySelector<HTMLElement>('.primary-nav');
+const supported=['en','fr','es'] as const;
+type SupportedLanguage=(typeof supported)[number];
+let lang:SupportedLanguage='en';
+try {
+  const saved=localStorage.getItem('edubooks-language');
+  if(saved && supported.includes(saved as SupportedLanguage)) lang=saved as SupportedLanguage;
+} catch {
+  // Storage may be unavailable in restricted browsing contexts.
+}
+function applyLanguage():void {
   document.documentElement.lang=lang;
   document.documentElement.dir='ltr';
-  document.querySelectorAll('[data-en]').forEach(el=>{const value=el.dataset[lang]||el.dataset.en;if(value!==undefined)el.textContent=value;});
-  document.querySelectorAll('[data-placeholder-en]').forEach(el=>{el.placeholder=el.dataset['placeholder'+lang.toUpperCase()]||el.dataset.placeholderEn||'';});
+  document.querySelectorAll<HTMLElement>('[data-en]').forEach((element)=>{
+    const value=element.dataset[lang]||element.dataset.en;
+    if(value!==undefined) element.textContent=value;
+  });
+  document.querySelectorAll<HTMLInputElement>('[data-placeholder-en]').forEach((element)=>{
+    element.placeholder=element.dataset['placeholder'+lang.toUpperCase()]||element.dataset.placeholderEn||'';
+  });
   if(currentLanguage) currentLanguage.textContent=lang.toUpperCase();
-  languageMenu?.querySelectorAll('[data-set-lang]').forEach(button=>{button.setAttribute('aria-pressed',String(button.dataset.setLang===lang));});
+  languageMenu?.querySelectorAll<HTMLButtonElement>('[data-set-lang]').forEach((button)=>{
+    button.setAttribute('aria-pressed',String(button.dataset.setLang===lang));
+  });
 }
-function closeLanguageMenu(){if(!languageMenu||!languageToggle)return;languageMenu.hidden=true;languageToggle.setAttribute('aria-expanded','false');}
-languageToggle?.addEventListener('click',()=>{if(!languageMenu)return;const willOpen=languageMenu.hidden;languageMenu.hidden=!willOpen;languageToggle.setAttribute('aria-expanded',String(willOpen));});
-languageMenu?.querySelectorAll('[data-set-lang]').forEach(button=>button.addEventListener('click',()=>{const next=button.dataset.setLang;if(!supported.includes(next))return;lang=next;try{localStorage.setItem('edubooks-language',lang);}catch{/* Keep the current selection for this page view. */}const scrollControls=document.querySelector('[data-scroll-controls]');
-const scrollTopButton=document.querySelector('[data-scroll-top]');
-const scrollBottomButton=document.querySelector('[data-scroll-bottom]');
-function updateScrollControls(){
-  if(!scrollControls)return;
-  const scrollable=document.documentElement.scrollHeight>window.innerHeight+160;
+function closeLanguageMenu():void {
+  if(!languageMenu||!languageToggle) return;
+  languageMenu.hidden=true;
+  languageToggle.setAttribute('aria-expanded','false');
+}
+languageToggle?.addEventListener('click',()=>{
+  if(!languageMenu) return;
+  const willOpen=languageMenu.hidden;
+  languageMenu.hidden=!willOpen;
+  languageToggle.setAttribute('aria-expanded',String(willOpen));
+});
+languageMenu?.querySelectorAll<HTMLButtonElement>('[data-set-lang]').forEach((button)=>{
+  button.addEventListener('click',()=>{
+    const next=button.dataset.setLang;
+    if(!next||!supported.includes(next as SupportedLanguage)) return;
+    lang=next as SupportedLanguage;
+    try {
+      localStorage.setItem('edubooks-language',lang);
+    } catch {
+      // Keep the current selection for this page view.
+    }
+    applyLanguage();
+    closeLanguageMenu();
+  });
+});
+document.addEventListener('click',(event:MouseEvent)=>{
+  const target=event.target;
+  if(target instanceof Node&&languageWidget&&!languageWidget.contains(target)) closeLanguageMenu();
+});
+document.addEventListener('keydown',(event:KeyboardEvent)=>{
+  if(event.key==='Escape') closeLanguageMenu();
+});
+mobileMenu?.addEventListener('click',()=>{
+  const open=nav?.classList.toggle('open')??false;
+  mobileMenu.setAttribute('aria-expanded',String(open));
+});
+nav?.querySelectorAll<HTMLAnchorElement>('a').forEach((link)=>{
+  link.addEventListener('click',()=>{
+    nav.classList.remove('open');
+    mobileMenu?.setAttribute('aria-expanded','false');
+  });
+});
+const scrollControls=document.querySelector<HTMLElement>('[data-scroll-controls]');
+const scrollTopButton=document.querySelector<HTMLButtonElement>('[data-scroll-top]');
+const scrollBottomButton=document.querySelector<HTMLButtonElement>('[data-scroll-bottom]');
+function updateScrollControls():void {
+  if(!scrollControls) return;
+  const scrollHeight=document.documentElement.scrollHeight;
+  const scrollable=scrollHeight>window.innerHeight+160;
   const nearTop=window.scrollY<180;
-  const nearBottom=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-120;
+  const nearBottom=window.innerHeight+window.scrollY>=scrollHeight-120;
   scrollControls.classList.toggle('is-visible',scrollable&&!nearTop);
-  if(scrollTopButton)scrollTopButton.disabled=nearTop;
-  if(scrollBottomButton)scrollBottomButton.disabled=nearBottom;
-  if(scrollBottomButton)scrollBottomButton.hidden=nearBottom;
-  if(scrollTopButton)scrollTopButton.hidden=nearTop;
+  if(scrollTopButton) {
+    scrollTopButton.disabled=nearTop;
+    scrollTopButton.hidden=nearTop;
+  }
+  if(scrollBottomButton) {
+    scrollBottomButton.disabled=nearBottom;
+    scrollBottomButton.hidden=nearBottom;
+  }
 }
-scrollTopButton?.addEventListener('click',()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
-scrollBottomButton?.addEventListener('click',()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+const scrollBehavior:ScrollBehavior=window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+scrollTopButton?.addEventListener('click',()=>window.scrollTo({top:0,behavior:scrollBehavior}));
+scrollBottomButton?.addEventListener('click',()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:scrollBehavior}));
 window.addEventListener('scroll',updateScrollControls,{passive:true});
 window.addEventListener('resize',updateScrollControls,{passive:true});
-updateScrollControls();
-applyLanguage();closeLanguageMenu();}));
-document.addEventListener('click',event=>{if(languageWidget&&!languageWidget.contains(event.target))closeLanguageMenu();});
-document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLanguageMenu();});
-mobileMenu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');mobileMenu.setAttribute('aria-expanded',String(open));});
-nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');mobileMenu?.setAttribute('aria-expanded','false');}));
 applyLanguage();
+updateScrollControls();
 </script>
 <style is:global>
 :root{font-family:"DM Sans",sans-serif;color:#20354b;background:#fff;font-synthesis:none;text-rendering:optimizeLegibility}*{box-sizing:border-box}body{margin:0}a{color:inherit;text-decoration:none}.container{width:min(1120px,calc(100% - 40px));margin:auto}
