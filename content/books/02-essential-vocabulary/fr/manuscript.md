@@ -1,20 +1,20 @@
 # Vocabulaire essentiel
 ## Développez votre français au quotidien
 
-**EduBooks · Multilingual Learning Series 01**  
-**Édition française · Target: A1–A2 approximate learning range; not an official CEFR certification.**  
-**Editorial status:** Independent-language working draft; requires qualified editorial and pedagogical review.
+**EduBooks · Collection d’apprentissage des langues 01**  
+**Édition française · Niveau indicatif : A1–A2 ; ce cahier ne constitue pas une certification officielle du CECRL.**  
+**Statut éditorial :** Version de travail autonome, à faire relire par des spécialistes de la langue et de la pédagogie.
 
 ## Publication note
 This is a self-study vocabulary workbook for familiar everyday situations. Vocabulary is selected for practical learning and is not presented as a statistically ranked frequency list. Regional alternatives are noted where useful. This is an independent resource and is not an official examination or certification.
 
-## Welcome
+## Bienvenue
 Bienvenue. Ce cahier vous aide à apprendre le vocabulaire utile à travers des situations quotidiennes. Apprenez des expressions complètes, entraînez-vous à voix haute et révisez de mémoire.
 
-## How to use this book
+## Comment utiliser ce cahier
 Lisez la situation. Étudiez chaque expression en contexte. Faites les exercices sans regarder les réponses, puis consultez le corrigé. Révisez après un jour, trois jours, une semaine et deux semaines.
 
-## Learning outcomes
+## Objectifs d’apprentissage
 À la fin, vous pourrez parler des personnes, du logement, des repas, des achats, des habitudes, des lieux, des voyages, du travail, des besoins courants, de la météo et de vos préférences ; utiliser des associations de mots fréquentes et organiser vos révisions.
 
 ## Contents
@@ -36,10 +36,10 @@ Lisez la situation. Étudiez chaque expression en contexte. Faites les exercices
 
 **Can-do:** Présenter des personnes, expliquer les liens familiaux et décrire un caractère.
 
-## Discover
+## Découvrir
 Voici ma cousine Maya. Elle habite près de nos grands-parents. Elle est sympathique et aime rencontrer des gens.
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - un proche
 - un cousin
 - une voisine
@@ -51,22 +51,22 @@ Voici ma cousine Maya. Elle habite près de nos grands-parents. Elle est sympath
 - serviable
 - bien s'entendre avec
 
-## Language focus
+## Point de langue
 Employez les déterminants possessifs (mon, ma, mes, leur, leurs) et le présent pour les faits habituels. Retenez l'expression « bien s'entendre avec quelqu'un ».
 
-## Guided practice
+## Exercices guidés
 1) Le frère de ma mère est mon ____. 2) Maya ____ près de nous (habiter). 3) Écrivez deux phrases sur deux personnes.
 
-## Answer check
+## Corrigé
 oncle; habite; réponses personnelles
 
-## Communicate
+## Communiquer
 Présentez deux personnes, leur lien avec vous et une qualité pour chacune.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 2 — La maison et les objets du quotidien
@@ -172,7 +172,7 @@ Je cherche une chemise bleue. Vous l'avez en taille moyenne ? Est-ce que je peux
 L'adjectif s'accorde généralement avec le nom : une chemise rouge, des chaussures rouges. Demandez le prix avec « Combien ça coûte ? ».
 
 ## Guided practice
-1) Ces chaussures sont ____ (cher). 2) Puis-je l'essayer ? Répondez par une formule naturelle. 3) Écrivez une question sur le prix.
+1) Ces chaussures sont ____ (cher, au féminin pluriel). 2) Puis-je l'essayer ? Répondez par une formule naturelle. 3) Écrivez une question sur le prix.
 
 ## Answer check
 chères; Oui, bien sûr / Oui, vous pouvez l'essayer; réponses personnelles
@@ -496,62 +496,62 @@ Enseignez cinq mots à un partenaire avec leur sens, une association et un exemp
 - [ ] I know which expressions I need to review.
 
 ---
-# Integrated Project — Vocabulary Portfolio
+# Projet intégré — Portfolio de vocabulaire
 
 Créez un portfolio en cinq parties : personnes, maison, alimentation, routine et loisirs. Pour chaque thème, notez huit mots, trois expressions courantes, trois phrases personnelles et un court dialogue. Ajoutez une date de révision à chaque nouvel élément.
 
-## Assessment criteria
+## Critères d’évaluation
 - Relevance and range of vocabulary.
 - Correct use of articles, agreement and verb forms.
 - Natural word combinations.
 - Clear communication in the target language.
 - A realistic review plan.
 
-# Final Review Test
+# Test de révision final
 
-1. Name a family member who is your mother's brother.
-2. Complete: There ____ two chairs in the room. (en) / Il ____ deux chaises. (fr) / ____ dos sillas. (es)
-3. Complete the phrase for a quantity: a ____ of water / un ____ d'eau / un ____ de agua.
-4. Complete: try it ____ / l'essayer / probármela.
-5. Write one sentence about a daily routine.
-6. Give two directions to a public place.
-7. Write one polite question at a hotel reception.
-8. Name one task at work or in a class.
-9. Write one sentence describing a simple symptom.
-10. Describe today's weather.
-11. Express a preference and give a reason.
-12. Complete the collocation: do ____ / faire ses ____ / hacer los ____.
+1. Comment appelle-t-on le frère de votre mère ?
+2. Complétez : Il ____ deux chaises dans la pièce.
+3. Complétez l’expression de quantité : un ____ d’eau.
+4. Complétez l’expression : essayer ____.
+5. Écrivez une phrase sur votre routine quotidienne.
+6. Donnez deux indications claires pour rejoindre un lieu public.
+7. Écrivez une question polie à poser à la réception d’un hôtel.
+8. Citez une tâche que vous effectuez au travail ou en cours.
+9. Écrivez une phrase décrivant un symptôme simple.
+10. Décrivez le temps qu’il fait aujourd’hui en une phrase.
+11. Exprimez une préférence et donnez une raison.
+12. Complétez l’expression : faire ses ____.
 
-# Final Review — Answer Key
+# Corrigé du test final
 
-1. Uncle / oncle / tío.
-2. are / y a / Hay.
-3. glass / verre / vaso.
-4. on / (l') / (la) — context-dependent; acceptable full phrase: try it on / l'essayer / probármela.
-5. Open response: check present tense and a clear routine.
-6. Open response: check imperative forms and sequence.
-7. Open response: check a polite, understandable question.
-8. Open response: accept relevant work or study vocabulary.
-9. Open response: accept a simple symptom phrase; this is language practice, not medical advice.
-10. Open response: check an appropriate weather expression.
-11. Open response: preference plus a reason.
-12. homework / devoirs / deberes.
+1. Oncle.
+2. a.
+3. verre.
+4. (l’) — par exemple : essayer le vêtement.
+5. Réponse libre : vérifier l’emploi du présent et la clarté de la routine.
+6. Réponse libre : vérifier l’emploi de l’impératif et l’ordre logique des indications.
+7. Réponse libre : vérifier la politesse et la clarté de la question.
+8. Réponse libre : accepter un vocabulaire pertinent du travail ou des études.
+9. Réponse libre : accepter une formulation simple d’un symptôme ; il s’agit d’un exercice linguistique, pas d’un conseil médical.
+10. Réponse libre : vérifier l’emploi d’une expression météorologique adaptée.
+11. Réponse libre : vérifier la présence d’une préférence et d’une justification.
+12. devoirs.
 
-# Personal Vocabulary Record
+# Fiche personnelle de vocabulaire
 
-| Date | Word or expression | Meaning in context | My example | Review 1 | Review 2 | Review 3 |
+| Date | Mot ou expression | Sens en contexte | Mon exemple | Révision 1 | Révision 2 | Révision 3 |
 |---|---|---|---|---|---|---|
 | | | | | | | |
 | | | | | | | |
 | | | | | | | |
 
-# Glossary
-- **Collocation:** a combination of words that commonly occurs together.
-- **Cognate:** a word related in form and meaning to a word in another language.
-- **False friend:** a similar-looking word with a different meaning or use.
-- **Word family:** words related by form and meaning but used in different grammatical roles.
-- **Retrieval practice:** recalling information without looking at the source.
-- **Spaced review:** revisiting information at increasing intervals.
+# Petit glossaire
+- **Association de mots (collocation) :** combinaison de mots qui apparaît fréquemment ensemble.
+- **Mot apparenté :** mot dont la forme et le sens sont liés à ceux d’un mot d’une autre langue.
+- **Faux ami :** mot ressemblant à un mot d’une autre langue, mais dont le sens ou l’emploi diffère.
+- **Famille de mots :** ensemble de mots apparentés par leur forme et leur sens, mais ayant des fonctions grammaticales différentes.
+- **Rappel actif :** fait de retrouver une information sans consulter le support.
+- **Révision espacée :** fait de revoir une information à des intervalles progressivement plus longs.
 
 # Editorial and Release Note
 This independent-language edition has been adapted for monolingual learning. The answer key is aligned to the closed-ended exercises included in this draft; open activities are assessed using the criteria above. Before publication, a qualified native-level language editor and a language-teaching reviewer must verify naturalness, regional usage, level progression, instructions, every exercise and every answer. Record reviewer names, dates and decisions in the editorial report. Check all cover assets, fonts, permissions and accessibility before release.
