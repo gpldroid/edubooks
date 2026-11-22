@@ -8,7 +8,7 @@ const items = [
   { label: "Books", fr: "Books", es: "Libros", href: base + "books/", key: "books", icon: "book" },
   { label: "FAQ", fr: "FAQ", es: "FAQ", href: base + "faq/", key: "faq", icon: "help" },
   { label: "About", fr: "À propos", es: "Acerca de", href: base + "about/", key: "about", icon: "user" }
-];
+] as const;
 const currentPath = Astro.url.pathname;
 const homePath = base.endsWith("/") ? base : `${base}/`;
 const active = currentPath.includes("/books") ? "books" : currentPath.includes("/faq") ? "faq" : currentPath.includes("/about") ? "about" : currentPath === homePath || currentPath === base ? "home" : "";
