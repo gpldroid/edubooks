@@ -25,6 +25,7 @@ GitHub changes merged to `main`:
 - PR #9 is a draft with three Book 02 manuscripts and three successful CI PDF builds. It is stacked on PR #1.
 - PR #4 is a successful legacy trilingual Book 01 PDF build, not a set of independent editions.
 - PR #1 is the draft integrated trilingual Book 02 source used as PR #9's base.
+- PR #16 updates this README and handover with the verified status and initial PDF QA findings.
 - No draft PR has been merged as part of this review. All Gumroad products remain unpublished, and no PDF is approved for attachment or sale.
 
 ## 2. Approved publishing model
@@ -100,7 +101,7 @@ Pages must use GitHub Actions as the deployment source. Do not add secrets to re
 ### Book 02 — Essential Vocabulary
 - PR #1 preserves the original integrated trilingual source and its legacy PDF workflow. It is still a draft.
 - PR #9 creates three separate EN/FR/ES working manuscripts, each with 12 units, localized practice, answer checks, an integrated project, final review test, answer key and glossary.
-- The PR #9 matrix CI passed for all three languages and generated review PDFs (EN 13 pages, FR 14 pages, ES 14 pages). Initial visual sampling found readable layouts, localized headings and embedded fonts. Full visual proof, language editing, pedagogy, answer-key reconciliation and rights review remain incomplete.
+- The PR #9 matrix CI passed for all three languages and generated review PDFs (EN 13 pages, FR 14 pages, ES 14 pages). Initial visual sampling found readable layouts, localized headings and embedded DejaVu Sans fonts, with no blank pages in the inspected samples. The Spanish editorial note continues onto a mostly empty final page; refine pagination. Full page-by-page proof, language editing, pedagogy, answer-key reconciliation and rights review remain incomplete.
 - PR #9 is based on PR #1's branch; preserve this dependency and do not merge out of order.
 
 ## 6. Release gates — each edition independently
