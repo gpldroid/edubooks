@@ -1,67 +1,69 @@
 # Book 02 — Essential Vocabulary: source audit and edition status
 
-**Status:** A complete trilingual working manuscript exists on draft PR #1. It is not merged to `main`, not split into three standalone language editions, and not approved for sale.
+**Status:** Three independent first-draft manuscripts are merged to `main`. A first exercise-to-answer cross-check is complete; two prompt alignment corrections are on PR #27. No edition is approved for sale.
 
-## Verified source
+## Verified source and integration
 
-- Draft PR: https://github.com/gpldroid/edubooks/pull/1
-- Branch: `feat/book-02-essential-vocabulary`
-- Head commit: `d96a60a3c2d0aa06c4ab548c7798616b292438f7`
-- Manuscript: `content/books/02-essential-vocabulary/manuscript.md` (PR branch only; 1,238 lines in the reviewed patch)
-- Editorial report: `docs/book-02-editorial-review.md` (PR branch only)
-- PDF workflow: `.github/workflows/book-02-pdf.yml` (PR branch only)
-- Title page: `docs/production/book-02-titlepage.tex` (PR branch only)
+- Original trilingual source preserved in the repository history and on `main`.
+- Independent edition integration: [PR #17](https://github.com/gpldroid/edubooks/pull/17).
+- Independent manuscripts:
+  - `content/books/02-essential-vocabulary/en/manuscript.md` — approximately 2,762 words.
+  - `content/books/02-essential-vocabulary/fr/manuscript.md` — approximately 3,106 words.
+  - `content/books/02-essential-vocabulary/es/manuscript.md` — approximately 2,905 words.
+- Production workflow: `.github/workflows/book-02-independent-editions.yml`.
+- Matrix CI: [run #44986040328](https://github.com/gpldroid/edubooks/actions/runs/44986040328) passed all three language jobs and uploaded separate review candidates.
 
-The manuscript patch identifies itself as a first complete working manuscript and internal review candidate. It contains 12 units, vocabulary content in English, French and Spanish, language-comparison notes, guided practice, communicative tasks, a review test, answer key and appendices. This is meaningful source material; it is not yet three independent books.
+Each manuscript contains twelve units with a localized welcome, learning outcomes, vocabulary in context, language focus, guided practice, answer checks, communicative tasks and self-assessment. A glossary and editorial release note are included. These are working drafts, not finished educational products.
 
 ## Unit inventory
 
-| Unit | Source title | Required adaptation |
-|---:|---|---|
-| 1 | People, Family and Relationships | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 2 | Home and Everyday Objects | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 3 | Food and Meals | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 4 | Clothing and Shopping | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 5 | Daily Routines | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 6 | Town, Places and Directions | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 7 | Travel and Accommodation | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 8 | Work and Study | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 9 | The Body and Health | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 10 | Weather, Seasons and Leisure | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 11 | Feelings, Preferences and Opinions | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
-| 12 | Build Your Vocabulary System | Rebuild examples, vocabulary presentation, exercises and answer key in target language |
+| Unit | English | French | Spanish |
+|---:|---|---|---|
+| 1 | People, Family and Relationships | Personnes, famille et relations | Personas, familia y relaciones |
+| 2 | Home and Everyday Objects | La maison et les objets du quotidien | La casa y los objetos cotidianos |
+| 3 | Food and Meals | Les aliments et les repas | La comida y las comidas |
+| 4 | Clothing and Shopping | Les vêtements et les achats | La ropa y las compras |
+| 5 | Daily Routines | Les activités quotidiennes | Las rutinas diarias |
+| 6 | Town, Places and Directions | La ville, les lieux et les directions | La ciudad, los lugares y las indicaciones |
+| 7 | Travel and Accommodation | Les voyages et l'hébergement | Los viajes y el alojamiento |
+| 8 | Work and Study | Le travail et les études | El trabajo y los estudios |
+| 9 | The Body and Basic Health Needs | Le corps et les besoins de santé courants | El cuerpo y las necesidades básicas de salud |
+| 10 | Weather, Seasons and Leisure | La météo, les saisons et les loisirs | El tiempo, las estaciones y el ocio |
+| 11 | Feelings, Preferences and Opinions | Les sentiments, les préférences et les opinions | Los sentimientos, las preferencias y las opiniones |
+| 12 | Build Your Vocabulary System | Construire son système de vocabulaire | Crear tu sistema de vocabulario |
 
-## Required independent outputs
+## First answer-key cross-check
 
-- `content/books/02-essential-vocabulary/en/manuscript.md`
-- `content/books/02-essential-vocabulary/fr/manuscript.md`
-- `content/books/02-essential-vocabulary/es/manuscript.md`
+A first prompt-to-answer crosswalk across all twelve units in EN/FR/ES is recorded in [answer-key-crosscheck-2026-11-22.md](answer-key-crosscheck-2026-11-22.md).
 
-These files do not exist on `main` at the time of this audit. The source manuscript and production workflow are still in PR #1. Keep PR #1 open as a draft until the content and production changes have been reviewed. Do not merge it simply because a CI build passes.
+Two alignment issues were corrected on PR #27:
+1. French Unit 10: the sentence now reads `Aujourd'hui, le temps est ____`, making both accepted answers (*beau* / *ensoleillé*) grammatical.
+2. Spanish Unit 9: the body-part clue now specifies `cabeza`, matching the single supplied answer.
+
+No other obvious prompt/key mismatch was identified in this first pass. Re-run the manuscript checks and PDF proof after PR #27 merges.
 
 ## Editorial and production work still required
 
-1. Review the complete trilingual manuscript against the approved Series 01 plan and editorial standards.
-2. Check all vocabulary selections, definitions, collocations, register and regional variants.
-3. Adapt and rewrite the content into three self-contained manuscripts. Avoid mechanical language-block splitting.
-4. Rewrite all instructions, examples, exercises, review tests and answer explanations in the edition language.
-5. Verify each exercise against its language-specific answer key.
-6. Complete independent professional English, French and Spanish review.
-7. Complete pedagogical, rights, accessibility and PDF proof reviews.
-8. Generate and inspect separate locale-specific PDF review candidates.
-9. Keep the matching Gumroad products unpublished until explicit release approval.
-
-## CI evidence
-
-For PR #1 head commit `d96a60a3c2d0aa06c4ab548c7798616b292438f7`, the recorded Astro build validation completed successfully (run #23). The Book 02 PDF workflow run #8 was cancelled; this is not a successful PDF build and does not establish manuscript or PDF approval.
+1. Qualified English, French and Spanish language editing for naturalness, vocabulary frequency, collocations, register and regional usage.
+2. Pedagogical review of the A1–A2 learning target, progression, unit balance, review test and assessment criteria.
+3. Full review of vocabulary selection and accepted answer variants.
+4. Correct the known Spanish editorial note that continues onto a mostly empty final page.
+5. Inspect every page of all three PDF proofs; verify page breaks, typography, headers, footers, tables, links and metadata.
+6. Complete rights, attribution and licence checks for text, fonts and visual assets.
+7. Complete accessibility review, including reading order, tagged structure and screen-reader behaviour.
+8. Record reviewer names, dates, decisions, source commit, workflow run and SHA-256 for each approved edition.
+9. Keep the matching Gumroad products unpublished until explicit release authorization.
 
 ## Release gate
 
-- [ ] PR #1 manuscript reviewed and merged only when editorially accepted.
-- [ ] Three standalone manuscripts complete.
+- [x] Three independent EN/FR/ES first-draft manuscripts merged.
+- [x] Twelve units in each edition.
+- [x] Matrix PDF workflow has previously passed CI and uploaded review candidates.
+- [x] First-pass exercise/answer-check crosswalk completed.
+- [ ] PR #27 corrections pass CI and fresh PDF builds.
 - [ ] Independent professional language review per edition.
-- [ ] Pedagogical and rights review per edition.
-- [ ] Separate PDF proofs, text extraction and accessibility checks per edition.
-- [ ] Explicit release approval.
+- [ ] Pedagogical, rights and accessibility review per edition.
+- [ ] Full-page PDF proof and documented sign-off.
+- [ ] Explicit owner authorization before commercial release.
 
-**Conclusion:** source audit complete; writing/adaptation of the three independent editions is not complete. The trilingual manuscript is a working source and review candidate, not three finished books.
+**Conclusion:** Book 02 is past the initial writing/integration stage, but remains a first-draft educational product. Technical builds and a first consistency check do not constitute native-level editing, pedagogical approval or release authorization.
