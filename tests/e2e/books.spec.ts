@@ -27,12 +27,12 @@ test('library search and category controls remain usable with review-only editio
 });
 
 test('draft edition details are noindex and keep all PDF actions disabled', async ({ page }) => {
-  await page.goto('/edubooks/books/language-foundations-fr/');
-  await expect(page.getByRole('heading', { name: 'Fondements de l’apprentissage des langues' })).toBeVisible();
+  await page.goto('/edubooks/books/language-foundations-en/');
+  await expect(page.getByRole('heading', { name: 'Language Foundations' })).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex,follow');
   await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
   await expect(page.locator('.edition-switch a')).toHaveCount(3);
-  await expect(page.getByText('Révision éditoriale en cours')).toBeVisible();
+  await expect(page.getByText('Editorial review in progress')).toBeVisible();
   await expect(page.locator('a[href$="/download/"], a[href$=".pdf"]')).toHaveCount(0);
 });
 
