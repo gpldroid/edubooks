@@ -1,6 +1,6 @@
 ## Latest execution update — 2026-11-22
 
-PR #25 contains the responsive library overflow fix, an updated category-navigation browser test, and a Book 01 workflow enhancement that creates five-page internal sample artifacts for EN/FR/ES. These sample PDFs are CI artifacts only; they are not public downloads or approved sale files. The catalogue intentionally remains empty until each edition passes its release gates. See [the technical audit and execution log](docs/TECHNICAL-AUDIT-2026-11-22.md) and [PR #25](https://github.com/gpldroid/edubooks/pull/25).
+PR #25 is merged to `main` (merge commit `2953b02`). The responsive library overflow fix and updated category-navigation browser test passed Astro validation, regression tests, production build and responsive Playwright checks in [run #45034301714](https://github.com/gpldroid/edubooks/actions/runs/45034301714). The Book 01 independent-edition workflow [#45034306841](https://github.com/gpldroid/edubooks/actions/runs/45034306841) passed for EN/FR/ES and uploaded internal sample and review-candidate artifacts. The catalogue remains intentionally empty; no review PDF is a public download or approved sale file. See [the technical audit](docs/TECHNICAL-AUDIT-2026-11-22.md), [Book 01 PDF proof report](docs/editorial/book-01/pdf-proof-2026-11-22.md), and [PR #25](https://github.com/gpldroid/edubooks/pull/25).
 
 ## Verified Book 01 production update — 2026-11-22
 
@@ -31,7 +31,7 @@ EduBooks develops standalone educational books in **English, French and Spanish*
 - Six Gumroad product drafts exist, localized descriptions and metadata have been added, and every product remains unpublished.
 - Six original SVG cover designs are included in `public/images/gumroad-covers/`. Gumroad's cover uploader rejected SVG; convert them to PNG/JPEG and upload them to the six matching product drafts. Cover attachment is not yet verified.
 - No final PDF files are attached to Gumroad. Do not attach review candidates.
-- The six-edition architecture and migration audits are merged to `main`. Book 01 has three language-specific outline drafts; their source formatting/localization repair was merged in [PR #15](https://github.com/gpldroid/edubooks/pull/15). They are not complete workbooks. Book 02 has three independent working manuscripts and three CI-generated PDF review candidates; the clean integration was merged in [PR #17](https://github.com/gpldroid/edubooks/pull/17), preserving the legacy source. None of these files is approved for sale.
+- The six-edition architecture and migration audits are merged to `main`. Book 01 now has complete first-draft manuscripts for all ten units in EN/FR/ES, integrated project tasks and answer guidance; [PR #19](https://github.com/gpldroid/edubooks/pull/19) is merged. The independent PDF matrix passed in run #45034306841. These remain working drafts pending qualified language, pedagogical, rights, accessibility and full-page proof. Book 02 has three independent working manuscripts and technical PDF review candidates from [PR #17](https://github.com/gpldroid/edubooks/pull/17). None of the six editions is approved for sale.
 - All six editions remain blocked from sale until their individual editorial and production gates pass.
 
 ## Approved publication matrix
@@ -136,6 +136,8 @@ Verify **Settings → Pages → Build and deployment → Source: GitHub Actions*
 | [#13](https://github.com/gpldroid/edubooks/pull/13) | Merged | Mobile UI and PDF preview improvements. |
 | [#12](https://github.com/gpldroid/edubooks/pull/12) | Closed, not merged | Preview PDF built, but validation incorrectly required at least five pages for a four-page sample extract. Superseded by PR #14. |
 | [#18](https://github.com/gpldroid/edubooks/pull/18) | Merged | Restores the four-page A1 internal preview workflow; CI passed and review artifact uploaded. |
+| [#19](https://github.com/gpldroid/edubooks/pull/19) | Merged | Completes first-draft Book 01 EN/FR/ES manuscripts and independent PDF matrix workflow; editorial approval remains pending. |
+| [#25](https://github.com/gpldroid/edubooks/pull/25) | Merged | Fixes mobile library overflow, updates category-link browser test and adds internal Book 01 sample artifacts. |
 | [#15](https://github.com/gpldroid/edubooks/pull/15) | Merged | Repairs Book 01 outline formatting and localizes French/Spanish draft labels; manuscripts remain outlines. |
 | [#17](https://github.com/gpldroid/edubooks/pull/17) | Merged | Adds independent Book 02 EN/FR/ES manuscripts and matrix PDF workflow; CI passed all three editions and uploaded review artifacts. |
 | [#4](https://github.com/gpldroid/edubooks/pull/4) | Merged | Legacy Book 01 trilingual-source PDF workflow; not a set of independent editions. |
@@ -151,7 +153,7 @@ PR #17 and PR #18 have been merged after all required CI jobs and artifact uploa
 - Preserved multilingual source: `content/books/01-language-foundations/manuscript.md`.
 - Independent editorial drafts: `content/books/01-language-foundations/en/manuscript.md`, `fr/manuscript.md`, and `es/manuscript.md`.
 - Source inventory and review requirements: `docs/editorial/book-01/source-inventory.md`.
-- The three language-specific files are outline-stage drafts, not complete learner books. Their formatting/localization correction was merged in PR #15. They still need full explanations, examples, exercises, answer keys, target-language editing and pedagogical review.
+- The three language-specific files are complete first drafts across ten units, with explanations, examples, practice, communicative tasks, success criteria and answer guidance. PR #19 and the independent PDF matrix are merged/technically validated. The answer keys still need full reconciliation; qualified language and pedagogical review, rights checks, accessibility proof and full-resolution visual review remain outstanding. See [the PDF technical proof report](docs/editorial/book-01/pdf-proof-2026-11-22.md).
 
 ### Book 02 — Essential Vocabulary
 

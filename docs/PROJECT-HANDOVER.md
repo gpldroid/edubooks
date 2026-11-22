@@ -1,5 +1,7 @@
 ## Current verified status — 2026-11-22 (supersedes older status notes below)
 
+PR #19 (Book 01 full first drafts) and PR #25 (mobile library stability) are merged to `main`. PR #25 merge commit: `2953b02`. Astro validation and responsive Playwright run #45034301714 passed. Book 01 matrix run #45034306841 passed all EN/FR/ES jobs and uploaded review candidates plus five-page internal sample artifacts. A limited technical proof found 10-page EN, 11-page FR and 10-page ES PDFs, A4 page size, searchable text and embedded DejaVu Sans fonts. No fully blank pages were found in overview inspection. See `docs/editorial/book-01/pdf-proof-2026-11-22.md`. A French Unit 3 answer-key mismatch is corrected on branch `editorial/book-01-proof-and-handover`; that correction still needs a fresh PDF build. All editorial, pedagogical, rights, accessibility and full-resolution proof gates remain open. No product is approved for sale.
+
 PR #22 is merged. Its Astro validation passed, and the Book 01 PDF publishing workflow completed successfully:
 
 - Run [#44996350390](https://github.com/gpldroid/edubooks/actions/runs/44996350390): success.
@@ -32,7 +34,7 @@ GitHub changes merged to `main`:
 
 - PR #17 is merged: three independent Book 02 EN/FR/ES manuscripts, language matrix PDF workflow and layout safeguards. Run #44986040328 passed all three jobs and uploaded three review-candidate PDFs.
 - PR #18 is merged: four-page English Starter A1 internal preview workflow. Run #44986069717 passed and uploaded its review artifact. This is a legacy internal sample, not one of the six editions.
-- PR #19 is open as a draft: first complete Book 01 EN/FR/ES content across all ten units, answer guidance and a new independent PDF matrix workflow. Astro validation is still running; do not merge until all required checks pass and the PDF matrix workflow has been run successfully.
+- PR #19 is merged: first-draft Book 01 EN/FR/ES content across all ten units and the independent PDF matrix workflow are on `main`. Run #45034306841 passed all three language jobs and uploaded review artifacts. Qualified language and pedagogical review, full answer-key reconciliation, rights, accessibility and full-page visual proof remain open.
 - PR #15, #16, #1 and #4 are merged as documented in the README. PR #17 and #14 were superseded/closed; their clean replacements are #17 and #18.
 - Astro validation and Book 01 legacy PDF workflow also passed in the PR #17 CI cycle.
 - Technical CI success does not constitute editorial, pedagogical, visual, rights or accessibility approval. No final PDFs are approved, no PDF is attached to Gumroad, and all six products remain unpublished.
@@ -45,7 +47,7 @@ Two titles, each as three separate, monolingual learner books:
 
 Each edition needs its own title/front matter, explanations, examples, exercises, answer key, glossary and back matter in its target language. Cross-language comparison activities must be rewritten as appropriate target-language exercises. Do not use automatic block splitting as the final editorial method.
 
-The architecture and migration policy are in `docs/editorial/independent-language-editions.md`. Book 01 has three outline-stage manuscripts at `content/books/01-language-foundations/{en,fr,es}/manuscript.md`. Their current main-branch files were found to have every character split onto its own line; PR #15 repairs that formatting and localizes French/Spanish metadata and boilerplate. Even after that repair, these remain outlines and need full lesson authoring. The original multilingual manuscript remains preserved. Book 02 has a 1,238-line trilingual source on PR #1 (`feat/book-02-essential-vocabulary`) and three independent first-draft manuscripts now merged to `main` by PR #17. PR #17 also adds the matrix PDF workflow and layout safeguards; the original trilingual source remains preserved. See `docs/editorial/book-02/source-audit.md` and PR #9 for the migration record.
+The architecture and migration policy are in `docs/editorial/independent-language-editions.md`. Book 01 has three complete first-draft manuscripts at `content/books/01-language-foundations/{en,fr,es}/manuscript.md`, covering ten units each with localized explanations, examples, exercises, communicative tasks and answer guidance. PR #19 and its matrix workflow are merged; qualified review and release gates remain outstanding. The original multilingual manuscript remains preserved. Book 02 has a 1,238-line trilingual source on PR #1 (`feat/book-02-essential-vocabulary`) and three independent first-draft manuscripts now merged to `main` by PR #17. PR #17 also adds the matrix PDF workflow and layout safeguards; the original trilingual source remains preserved. See `docs/editorial/book-02/source-audit.md` and PR #9 for the migration record.
 
 ## 3. Gumroad store state
 
@@ -102,7 +104,7 @@ Pages must use GitHub Actions as the deployment source. Do not add secrets to re
 
 ### Book 01 — Language Foundations
 - Legacy source: `content/books/01-language-foundations/manuscript.md`; it contains mixed English, French and Spanish content.
-- The independent EN/FR/ES files on `main` are outline-stage drafts, not complete books. A source-format defect split their body into single-character lines; PR #15 repairs this and localizes French/Spanish front matter and status text.
+- The independent EN/FR/ES files on `main` are complete first drafts, not approved final books. PR #19 is merged; answer-key reconciliation and independent editorial/pedagogical review remain outstanding.
 - The current Book 01 PDF workflow still builds the legacy trilingual source. PR #4 produced a 28-page A4 review candidate with embedded fonts, but it is not three independent editions.
 - PR #15 is merged; the manuscripts remain incomplete. After that, author all missing lessons, exercises, assessment material and answer keys before designing separate PDF workflows.
 - Existing editorial report: `docs/book-01-editorial-review.md`. No language, pedagogical, rights or accessibility sign-off is complete.
@@ -115,7 +117,7 @@ Pages must use GitHub Actions as the deployment source. Do not add secrets to re
 
 ## 5A. Remaining work register
 
-Use docs/REMAINING-WORK-REGISTER.md as the prioritized checklist for all unfinished work. Book 01 remains outline-stage; Book 02 remains three technical review candidates. Full-page visual proof is deliberately editable and pending. No edition is approved for sale.
+Use docs/REMAINING-WORK-REGISTER.md as the prioritized checklist for all unfinished work. Book 01 has complete first-draft manuscripts and technically validated PDF review candidates; Book 02 remains three technical review candidates. Full-page visual proof is deliberately editable and pending. No edition is approved for sale.
 
 ## 6. Release gates — each edition independently
 
