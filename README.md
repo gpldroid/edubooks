@@ -122,6 +122,7 @@ Verify **Settings → Pages → Build and deployment → Source: GitHub Actions*
 | [#9](https://github.com/gpldroid/edubooks/pull/9) | Open draft | EN/FR/ES Book 02 builds passed and produced review PDFs. It is stacked on PR #1's source branch. |
 | [#4](https://github.com/gpldroid/edubooks/pull/4) | Open draft | Book 01 legacy trilingual-source PDF workflow passed; not a set of independent language editions. |
 | [#1](https://github.com/gpldroid/edubooks/pull/1) | Open draft | Preserved integrated trilingual Book 02 source; dependency/base for PR #9. |
+| [#16](https://github.com/gpldroid/edubooks/pull/16) | Open draft | README and project handover update based on this review. |
 
 Do not merge or publish any of these drafts automatically. PR #14 and PR #15 should be reviewed and tested before merge. PR #9 must be reconciled with its PR #1 base dependency. PR #4 is not a substitute for the three standalone Book 01 editions.
 
@@ -139,6 +140,7 @@ Do not merge or publish any of these drafts automatically. PR #14 and PR #15 sho
 - Source audit: `docs/editorial/book-02/source-audit.md`.
 - Three separate first-draft manuscripts now exist in `content/books/02-essential-vocabulary/{en,fr,es}/manuscript.md` on PR #9. CI successfully built EN, FR and ES PDF review candidates (13, 14 and 14 pages respectively); the PDFs are temporary review artifacts, not sale files.
 - The manuscript structure includes 12 units, localized practice and answer checks, an integrated project, final test, answer key and glossary. These drafts still require qualified language and pedagogical review, answer-key verification, rights clearance and complete visual/accessibility proof.
+- Initial PDF spot-check: title/contents and sampled lesson pages are readable; no blank pages or obvious font/overflow defects were seen in the inspected samples, and DejaVu Sans is embedded. The Spanish editorial note continues onto a mostly empty final page; refine pagination before final proof. This is a limited spot-check, not a full page-by-page sign-off.
 - PR #9 is a stacked draft based on PR #1's preserved trilingual source branch. Keep both unmerged until the dependency and source-preservation plan is reviewed.
 
 ## PDF production
