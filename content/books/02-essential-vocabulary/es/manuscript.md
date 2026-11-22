@@ -366,7 +366,7 @@ Me duele la cabeza y tengo dolor de garganta. ¿Hay una farmacia cerca de aquí?
 Usa «me duele» con un sustantivo singular y «me duelen» con plural. Estas expresiones sirven para practicar el idioma, no son consejos médicos.
 
 ## Práctica guiada
-1) Me duele la ____ (parte del cuerpo). 2) Tengo ____ (síntoma: tos). 3) Pregunta dónde está la farmacia más cercana.
+1) Me duele la ____ (cabeza). 2) Tengo ____ (síntoma: tos). 3) Pregunta dónde está la farmacia más cercana.
 
 ## Soluciones
 cabeza; tos; ¿Dónde está la farmacia más cercana?
