@@ -17,7 +17,7 @@
 
 | Asset class | Repository evidence | Rights finding | Release status |
 |---|---|---|---|
-| Six current catalogue covers | Self-contained SVG source; vector shapes, gradients and text; no linked raster image or external resource found in inspected cover | No creator/source/creation record or explicit asset-level rights entry is recorded. Owner confirmation is still required for these exact six files. | **Hold** |
+| Six current catalogue covers | Self-contained SVG source; vector shapes, gradients and text; no linked raster image or external resource found in inspected cover | Owner explicitly confirmed in this conversation on 2026-11-22 that they own the rights to use and distribute all six files on the website and embed them in the PDFs. This is an owner declaration; the six paths and permitted uses are now recorded below. | **Owner-confirmed; itemized record captured** |
 | Six legacy Gumroad-format covers | Self-contained SVG files under `public/images/gumroad-covers/`; not part of the website-only release flow | These are legacy sales-oriented assets. Their creator/source and licence evidence are not recorded. Do not reuse or publish as part of this release without separate clearance. | **Exclude from release** |
 | PDF fonts | Workflows install TeX Live font packages and pass `DejaVu Sans` as the PDF main font; QA confirms embedding in internal candidates | No font binary is committed. Exact installed package/version and corresponding DejaVu licence notice have not yet been captured in the release evidence. Embedding success is not a licence audit. | **Hold pending package/licence evidence** |
 | SVG text font fallback | SVG files declare `Arial,sans-serif`; no font file is embedded or bundled | This is a font-family fallback declaration, not evidence of a distributed Arial font file. Confirm no separately supplied font asset is added before release. | **No bundled font identified** |
@@ -40,8 +40,21 @@
 
 This is a repository/source inspection, not legal advice, a copyright ownership determination, a plagiarism report, a native-language proofread, a pedagogical approval, or an accessibility certification. No final publication permission is inferred from this audit.
 
-## Outstanding owner confirmations
+## Owner confirmation recorded — 2026-11-22
 
-- Confirm that the six current catalogue SVG covers are original EduBooks artwork created for this project and that you control the rights to distribute them on the website and embed them in the PDFs.
-- Confirm whether any third-party text, quotations, illustrations, icons or other visual assets appear in the six manuscripts or their final layout; if yes, provide the source/licence/permission record for each.
-- Confirm that the legacy Gumroad-format SVG covers are excluded from this website-only release unless separately cleared.
+The owner confirmed that they hold the rights to use and distribute the six current SVG covers under `public/covers/` on the EduBooks website and to embed them in the six PDF editions. This confirmation covers these exact six project cover files and these stated uses:
+
+- `public/covers/language-foundations-en.svg`
+- `public/covers/language-foundations-fr.svg`
+- `public/covers/language-foundations-es.svg`
+- `public/covers/essential-vocabulary-en.svg`
+- `public/covers/essential-vocabulary-fr.svg`
+- `public/covers/essential-vocabulary-es.svg`
+
+The legacy files under `public/images/gumroad-covers/` remain excluded from this website release unless separately cleared.
+
+## Remaining rights checks
+
+- Complete itemized review of any third-party text, quotations, examples, icons or visual elements in the manuscripts and final PDF layouts. Owner's blanket declaration for the texts/materials is recorded in the rights register, but any third-party material must still have its source and permitted-use evidence checked.
+- Capture the exact DejaVu font package/version installed by CI and archive its licence/copyright notice.
+- Confirm whether any third-party font is fetched at runtime; if so, record its provider and licence or remove it.
