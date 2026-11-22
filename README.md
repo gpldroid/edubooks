@@ -38,6 +38,7 @@ EduBooks is a **free, website-only PDF library**. Readers will be able to open a
 - Remaining work: [docs/REMAINING-WORK-REGISTER.md](docs/REMAINING-WORK-REGISTER.md)
 - PDF design/accessibility requirements: [docs/production/BOOK-PDF-DESIGN-SYSTEM.md](docs/production/BOOK-PDF-DESIGN-SYSTEM.md)
 - Experimental tagged-PDF route and limitations: [docs/production/EXPERIMENTAL-TAGGED-PDF-ROUTE.md](docs/production/EXPERIMENTAL-TAGGED-PDF-ROUTE.md)
+- Six A4 tagged-PDF build report and release blockers: [docs/editorial/experimental-tagged-six-edition-build-2026-11-22.md](docs/editorial/experimental-tagged-six-edition-build-2026-11-22.md)
 
 
 ## The first collection
