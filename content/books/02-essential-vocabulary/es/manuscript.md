@@ -538,10 +538,10 @@ Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio
 
 # Registro personal de vocabulario
 
-| Fecha | Palabra o expresión | Significado en contexto | Mi ejemplo | Repaso 1 | Repaso 2 | Repaso 3 |
-|---|---|---|---|---|---|---|
-| | | | | | | |
-| | | | | | | |
+| Fecha | Palabra o expresión | Significado en contexto | Ejemplo y fechas de repaso |
+|---|---|---|---|
+| | | | |
+| | | | |
 
 # Glosario
 - **Colocación:** combinación de palabras que suele aparecer junta.
