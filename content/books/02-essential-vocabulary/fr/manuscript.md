@@ -172,10 +172,10 @@ Je cherche une chemise bleue. Vous l'avez en taille moyenne ? Est-ce que je peux
 L'adjectif s'accorde généralement avec le nom : une chemise rouge, des chaussures rouges. Demandez le prix avec « Combien ça coûte ? ».
 
 ## Exercices guidés
-1) Ces chaussures sont ____ (cher, au féminin pluriel). 2) Puis-je l'essayer ? Répondez par une formule naturelle. 3) Écrivez une question sur le prix.
+1) Ces chaussures sont ____ (cher, au féminin pluriel). 2) Puis-je les essayer ? Répondez par une formule naturelle. 3) Écrivez une question sur le prix.
 
 ## Corrigé
-chères; Oui, bien sûr / Oui, vous pouvez l'essayer; réponses personnelles
+chères; Oui, bien sûr / Oui, vous pouvez les essayer; réponses personnelles
 
 ## Communiquer
 Jouez le rôle du client et du vendeur : choisissez un article, vérifiez la taille et payez.
