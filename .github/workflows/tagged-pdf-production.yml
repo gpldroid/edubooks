@@ -1,0 +1,121 @@
+name: Experimental Tagged PDF Production — Six Editions
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'content/books/**'
+      - '.github/workflows/tagged-pdf-production.yml'
+      - 'docs/production/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tagged-pdf-production
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - book: '01'
+            slug: language-foundations
+            lang: en
+            label: English
+          - book: '01'
+            slug: language-foundations
+            lang: fr
+            label: French
+          - book: '01'
+            slug: language-foundations
+            lang: es
+            label: Spanish
+          - book: '02'
+            slug: essential-vocabulary
+            lang: en
+            label: English
+          - book: '02'
+            slug: essential-vocabulary
+            lang: fr
+            label: French
+          - book: '02'
+            slug: essential-vocabulary
+            lang: es
+            label: Spanish
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install tagged-PDF toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils fonts-dejavu-core python3-docx librsvg2-bin
+
+      - name: Build DOCX source with localized metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.lang }}"
+          BOOK="${{ matrix.book }}"
+          FILE="content/books/${{ matrix.book }}-${{ matrix.slug }}/$LANG_CODE/manuscript.md"
+          case "$LANG_CODE" in
+            en) LANG_TAG="en-GB";;
+            fr) LANG_TAG="fr-FR";;
+            es) LANG_TAG="es-ES";;
+          esac
+          mkdir -p "dist/tagged/$BOOK/$LANG_CODE"
+          mkdir -p dist
+          /usr/bin/python3 .github/scripts/create_pdf_reference_docx.py
+          pandoc "$FILE" --from=gfm --to=docx --standalone --reference-doc=dist/edubooks-reference.docx \
+            -V lang="$LANG_TAG" \
+            -V title="EduBooks — Book $BOOK — ${{ matrix.label }} Edition" \
+            -V author="EduBooks" \
+            -o "dist/tagged/$BOOK/$LANG_CODE/book-$BOOK-$LANG_CODE.docx"
+          test -s "dist/tagged/$BOOK/$LANG_CODE/book-$BOOK-$LANG_CODE.docx"
+          COVER="public/covers/$([ "$BOOK" = "01" ] && echo "language-foundations" || echo "essential-vocabulary")-$LANG_CODE.svg"
+          test -s "$COVER"
+          rsvg-convert -w 1600 "$COVER" -o "dist/tagged/$BOOK/$LANG_CODE/cover.png"
+          /usr/bin/python3 .github/scripts/add_cover_page.py "dist/tagged/$BOOK/$LANG_CODE/book-$BOOK-$LANG_CODE.docx" "dist/tagged/$BOOK/$LANG_CODE/cover.png"
+
+      - name: Export tagged PDF using LibreOffice
+        shell: bash
+        run: |
+          set -euo pipefail
+          BOOK="${{ matrix.book }}"
+          LANG_CODE="${{ matrix.lang }}"
+          INPUT="dist/tagged/${{ matrix.book }}/${{ matrix.lang }}/book-${{ matrix.book }}-${{ matrix.lang }}.docx"
+          OUTDIR="$PWD/dist/tagged/${{ matrix.book }}/${{ matrix.lang }}"
+          PROFILE="file://$RUNNER_TEMP/lo-profile-${{ matrix.book }}-${{ matrix.lang }}"
+          libreoffice -env:UserInstallation="$PROFILE" --headless --convert-to 'pdf:writer_pdf_Export:{"UseTaggedPDF":{"type":"boolean","value":"true"}}' --outdir "$OUTDIR" "$INPUT"
+          PDF="$OUTDIR/book-${{ matrix.book }}-${{ matrix.lang }}.pdf"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee "$OUTDIR/pdfinfo.txt"
+          TAGGED="$(pdfinfo "$PDF" | awk -F: '/^Tagged:/ {gsub(/^[ \t]+/, "", $2); print $2}')"
+          test "$TAGGED" = "yes"
+          pdffonts "$PDF" | tee "$OUTDIR/pdffonts.txt"
+          pdffonts "$PDF" | awk 'NR > 2 && $(NF-4) != "yes" {bad=1} END {exit bad}'
+          pdftotext "$PDF" "$OUTDIR/extracted.txt"
+          test "$(wc -w < "$OUTDIR/extracted.txt")" -gt 1000
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          test "$PAGES" -ge 8
+          sha256sum "$PDF" > "$PDF.sha256"
+          {
+            echo "Edition: Book $BOOK / $LANG_CODE"
+            echo "Pages: $PAGES"
+            echo "Tagged PDF: $TAGGED"
+            echo "Font embedding: verified by pdffonts"
+            echo "SHA-256: $(sha256sum "$PDF" | awk '{print $1}')"
+            echo "Status: EXPERIMENTAL TAGGED BUILD; semantic correctness and PDF/UA not certified"
+          } | tee "$OUTDIR/qa-report.txt"
+
+      - name: Upload experimental tagged PDF for human QA
+        uses: actions/upload-artifact@v4
+        with:
+          name: tagged-book-${{ matrix.book }}-${{ matrix.lang }}-experimental
+          path: dist/tagged/${{ matrix.book }}/${{ matrix.lang }}/
+          if-no-files-found: error
+          retention-days: 90

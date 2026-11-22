@@ -539,11 +539,26 @@ Create a five-part portfolio: people, home, food, daily routine and leisure. For
 
 # Personal Vocabulary Record
 
-| Date | Word or expression | Meaning in context | My example | Review 1 | Review 2 | Review 3 |
-|---|---|---|---|---|---|---|
-| | | | | | | |
-| | | | | | | |
-| | | | | | | |
+**Vocabulary record 1**
+- Date: ______________________________
+- Word or expression: ______________________________
+- Meaning in context: ______________________________
+- My example: ______________________________
+- Review dates 1 / 2 / 3: ______________________________
+
+**Vocabulary record 2**
+- Date: ______________________________
+- Word or expression: ______________________________
+- Meaning in context: ______________________________
+- My example: ______________________________
+- Review dates 1 / 2 / 3: ______________________________
+
+**Vocabulary record 3**
+- Date: ______________________________
+- Word or expression: ______________________________
+- Meaning in context: ______________________________
+- My example: ______________________________
+- Review dates 1 / 2 / 3: ______________________________
 
 # Glossary
 - **Collocation:** a combination of words that commonly occurs together.
