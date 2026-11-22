@@ -16,12 +16,12 @@ const siteUrl = new URL(base, Astro.site).href;
 <meta name="theme-color" content="#142b4a" /><meta name="description" content={description} />
 <meta name="robots" content="index, follow, max-image-preview:large" /><link rel="canonical" href={canonical} />
 <meta name="author" content="Imad Limrani" /><meta property="og:type" content="website" /><meta property="og:title" content={title} />
-<meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:site_name" content="EduBooks" />
+<meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:site_name" content="EduBooks" /><meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary" /><title>{title}</title>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"EduBooks","url":siteUrl,"description":description,"inLanguage":["en","fr","es"],"publisher":{"@type":"Person","name":"Imad Limrani"}})} />
 <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" /><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 </head>
 <body class={Astro.url.pathname === base || Astro.url.pathname === `${base}index.html` ? 'home-page' : 'inner-page'}>
 <a class="skip-link" href="#main" data-en="Skip to content" data-fr="Aller au contenu" data-es="Ir al contenido">Skip to content</a>
@@ -86,11 +86,22 @@ function applyLanguage():void {
   document.documentElement.dir='ltr';
   document.querySelectorAll<HTMLElement>('[data-en]').forEach((element)=>{
     const value=element.dataset[lang]||element.dataset.en;
-    if(value!==undefined) element.textContent=value;
+    if(value===undefined) return;
+    const directText=[...element.childNodes].find((node)=>node.nodeType===Node.TEXT_NODE&&node.textContent?.trim());
+    if(directText) directText.textContent=value;
+    else if(element.children.length===0) element.textContent=value;
   });
   document.querySelectorAll<HTMLInputElement>('[data-placeholder-en]').forEach((element)=>{
     element.placeholder=element.dataset['placeholder'+lang.toUpperCase()]||element.dataset.placeholderEn||'';
   });
+  const main=document.querySelector<HTMLElement>('main');
+  const heading=main?.querySelector<HTMLElement>('h1');
+  const firstParagraph=main?.querySelector<HTMLElement>('p');
+  const title=lang==='en' ? main?.dataset.titleEn : heading?.textContent?.trim()+' — EduBooks';
+  if(title) document.title=title;
+  const description=lang==='en' ? main?.dataset.descriptionEn : firstParagraph?.textContent?.trim();
+  const descriptionMeta=document.querySelector<HTMLMetaElement>('meta[name="description"]');
+  if(description&&descriptionMeta) descriptionMeta.content=description;
   if(currentLanguage) currentLanguage.textContent=lang.toUpperCase();
   languageMenu?.querySelectorAll<HTMLButtonElement>('[data-set-lang]').forEach((button)=>{
     button.setAttribute('aria-pressed',String(button.dataset.setLang===lang));
