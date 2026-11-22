@@ -10,7 +10,7 @@ EduBooks is a **free PDF library distributed only through its website**. Readers
 
 Do not revive old store setup or pricing instructions. Existing Gumroad drafts are historical account state only; do not modify, attach files to or publish them.
 
-The catalogue is intentionally empty. No edition is approved for public release yet. Legacy Book 01 PDFs under `public/books/` remain present but are not approved final editions. Do not expose them in the catalogue or represent them as final.
+The catalogue is intentionally empty. No edition is approved for public release yet. Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory. Do not restore or reuse them without a new documented review.
 
 Read [the site-only publishing model](SITE-ONLY-PUBLISHING-MODEL.md) before changing publication code.
 
@@ -34,7 +34,7 @@ Learning and explanation languages are English, French and Spanish. Arabic is ou
 - Post-PR #27 deployment and internal workflow verification passed: [Pages run #45045145911](https://github.com/gpldroid/edubooks/actions/runs/45045145911), [Book 01 review run #45045145899](https://github.com/gpldroid/edubooks/actions/runs/45045145899), [internal-only legacy workflow run #45045145880](https://github.com/gpldroid/edubooks/actions/runs/45045145880).
 - Book 02 EN/FR/ES review PDFs passed technical matrix checks in [run #45044583560](https://github.com/gpldroid/edubooks/actions/runs/45044583560).
 - Public catalogue in `src/data/catalog.ts` is empty. Do not add entries until approved full PDF, sample PDF and cover exist and are verified.
-- Existing Book 01 PDFs in `public/books/` are legacy public artifacts; no approval is recorded for their use.
+- Historical, unapproved Book 01 PDFs have been removed from deployable public assets; no edition is approved for public release.
 - No approved final PDF or preview is registered in the catalogue.
 
 ## 4. Manuscript and PDF status

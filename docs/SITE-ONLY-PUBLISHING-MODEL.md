@@ -38,7 +38,7 @@ A successful build does not constitute editorial approval.
 - Validate language, metadata, file existence, size, page count and SHA-256 during release.
 - Preview PDFs must be clearly identified samples containing only intended sample pages.
 - Never link GitHub Actions review artifacts from public pages.
-- Do not treat the legacy PDFs in `public/books/` as approved final files without a new documented review.
+- Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory; do not restore or reuse them without a new documented review.
 
 ## Build and deployment
 - Authoritative manuscripts: `content/books/<book-id>/<language>/manuscript.md`.
@@ -50,5 +50,8 @@ A successful build does not constitute editorial approval.
 ## Per-edition release evidence
 Record book ID, language, qualified language reviewer/date, pedagogical reviewer/date, rights review, accessibility and visual proof, source commit, workflow run, final and preview filenames/page counts/SHA-256, public URLs, owner authorization and publication date.
 
-## Current state
-As of 2026-11-22, the catalogue is empty and no edition is approved for public distribution. Book 01 legacy PDFs remain in `public/books/` but are unapproved. Book 02 PDFs are internal GitHub Actions review artifacts. All six manuscripts remain in editorial production.
+## Current state — 2026-11-22
+- The catalogue is empty and no edition is approved for public distribution.
+- Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory.
+- Book 01 and Book 02 have six independent working manuscripts. CI-generated PDFs are review candidates only.
+- Rights, qualified language and pedagogical review, accessibility, full-page proof and owner approval remain mandatory before any edition is published.

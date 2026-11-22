@@ -1,5 +1,7 @@
 # EduBooks technical audit and execution log — 2026-11-22
 
+> **Historical audit snapshot — superseded on 2026-11-22.** This document records an earlier project state and must not be used as the current release checklist. The active distribution policy is the free, website-only PDF library described in [SITE-ONLY-PUBLISHING-MODEL.md](SITE-ONLY-PUBLISHING-MODEL.md). The current catalogue remains empty; unapproved legacy PDFs have been removed from the deployable public directory. See [PROJECT-HANDOVER.md](PROJECT-HANDOVER.md) and [REMAINING-WORK-REGISTER.md](REMAINING-WORK-REGISTER.md) for current status.
+
 ## Scope
 Repository: https://github.com/gpldroid/edubooks  
 Default branch: `main`  

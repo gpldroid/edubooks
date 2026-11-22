@@ -556,4 +556,4 @@ Create a five-part portfolio: people, home, food, daily routine and leisure. For
 # Editorial and Release Note
 This independent-language edition has been adapted for monolingual learning. The answer key is aligned to the closed-ended exercises included in this draft; open activities are assessed using the criteria above. Before publication, a qualified native-level language editor and a language-teaching reviewer must verify naturalness, regional usage, level progression, instructions, every exercise and every answer. Record reviewer names, dates and decisions in the editorial report. Check all cover assets, fonts, permissions and accessibility before release.
 
-**Release status: NOT APPROVED FOR SALE.** This is an editorial working draft pending independent human review and final PDF proof.
+**Website release status: NOT APPROVED FOR PUBLICATION.** This is an editorial working draft pending independent language and pedagogical review, rights and accessibility checks, and final PDF proof. The intended distribution is free browser preview and direct PDF download on EduBooks.

@@ -6,14 +6,14 @@
 Technical CI, editorial approval and public release are separate states.
 
 ## P0 — Website-only publication architecture
-- [ ] Remove residual store/purchase/pricing language from public pages and metadata.
+- [x] Align public privacy, terms, FAQ and contact copy with the free website-only model.
 - [ ] Confirm there are no public Gumroad or PayPal links, checkout controls or paid-download flows.
 - [ ] Keep catalogue empty until approved full PDFs, preview PDFs and covers exist.
 - [ ] Validate both preview and full-download paths for every published catalogue record.
 - [ ] Ensure preview opens in-browser and download serves the full PDF from EduBooks, respecting `/edubooks`.
 - [ ] Verify preview and download on desktop and mobile after Pages deployment.
 - [ ] Keep internal review artifacts outside `public/`; never link GitHub Actions artifacts publicly.
-- [ ] Treat the three existing Book 01 PDFs in `public/books/` as legacy, unapproved artifacts until re-reviewed.
+- [x] Remove three unapproved legacy Book 01 PDFs from deployable public assets.
 
 ## P1 — Book 01: Language Foundations (EN / FR / ES)
 - [x] Complete first-draft manuscripts across ten units in each language.
@@ -71,7 +71,7 @@ Existing Gumroad drafts are historical external account state only. This reposit
 - Book 01 and Book 02 have six independent working manuscripts in total.
 - Book 02 matrix review artifacts passed automated technical validation; they are not final editions.
 - Public catalogue remains empty.
-- Three legacy Book 01 PDFs remain in `public/books/` and are not approved final files.
+- Three historical, unapproved Book 01 PDFs have been removed from deployable public assets.
 - No edition is currently approved for public distribution.
 
 **Release principle:** publish each edition only after its language, pedagogy, rights, accessibility and visual proof are complete. Once approved, offer it free as browser preview plus direct PDF download.
