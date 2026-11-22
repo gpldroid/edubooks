@@ -8,7 +8,7 @@ const coverUrl = `${base}${book.cover.slice(1)}`;
 ---
 <article class="book-card" data-category={book.category} data-search={searchable}>
   <a href={detailUrl} class="book-card-link" aria-label={`View ${book.title} details`}>
-    <div class="book-cover"><img src={coverUrl} alt={book.coverAlt} loading="lazy" decoding="async"><span class="preview-badge" data-en="EDITION DETAILS" data-fr="DÉTAILS DE L’ÉDITION" data-es="DETALLES DE LA EDICIÓN">BOOK DETAILS</span></div>
+    <div class="book-cover"><img src={coverUrl} alt={book.coverAlt} loading="lazy" decoding="async"><span class="preview-badge" data-en="EDITION DETAILS" data-fr="DÉTAILS DE L’ÉDITION" data-es="DETALLES DE LA EDICIÓN">EDITION DETAILS</span></div>
   </a>
   <div class="book-card-copy">
     <div class="book-card-meta"><span class="book-category" data-en={category?.nameEn ?? 'Learning'} data-fr={category?.nameFr ?? 'Apprentissage'} data-es={category?.nameEs ?? 'Aprendizaje'}>{category?.nameEn ?? 'Learning'}</span><span class="edition-pill">{book.language.toUpperCase()}</span></div>
@@ -25,7 +25,7 @@ const coverUrl = `${base}${book.cover.slice(1)}`;
 .book-card:hover{z-index:2;transform:translateY(-6px) rotateX(1.2deg) rotateY(-1deg);border-color:#c9ded8;box-shadow:0 22px 38px rgb(16 31 50 / 13%),0 7px 13px rgb(16 31 50 / 6%)}
 .book-card[hidden]{display:none}
 .book-card-link{display:block;color:inherit;text-decoration:none;transform:translateZ(8px)}
-.book-cover{position:relative;display:grid;place-items:center;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(145deg,#edf4f1,#e4ece9)}
+.book-cover{position:relative;display:grid;place-items:center;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(145deg,#edf4f1,#e4ece9)}
 .book-cover img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .3s ease}
 .book-card:hover .book-cover img{transform:scale(1.035)}
 .preview-badge{position:absolute;right:12px;bottom:12px;padding:6px 10px;border-radius:999px;background:#183452;color:#fff;font-size:10px;font-weight:800;letter-spacing:.06em;box-shadow:0 4px 10px rgb(0 0 0 / 15%)}
