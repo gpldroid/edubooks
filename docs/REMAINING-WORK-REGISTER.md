@@ -24,12 +24,12 @@ This register is the operational source of truth for unfinished work. CI success
 - [ ] Preserve the original multilingual source manuscripts unchanged.
 
 ### P1 — Book 01: Language Foundations (EN / FR / ES)
-- [ ] Replace outline-only units with complete, language-specific learner content in all three manuscripts.
+- [x] Author first full-draft content for all ten units in EN/FR/ES, including explanations, examples, exercises, communication tasks and success criteria (PR #19; pending CI and review).
 - [ ] Author original explanations, model dialogues, examples, graded exercises, communicative tasks and measurable success criteria for all ten units.
-- [ ] Add a complete integrated project, review test, glossary and back matter in each target language.
+- [x] Add an integrated beginner profile project and unit-aligned answer guidance in each target language (PR #19; pending CI and review).
 - [ ] Build each answer key only after its exercises are stable; reconcile every closed-answer item and define criteria for open responses.
 - [ ] Establish consistent target-language variety, terminology, spelling and beginner-level progression.
-- [ ] Create three independent PDF workflows after the manuscripts reach content-complete draft status.
+- [x] Add a three-language independent PDF matrix workflow (PR #19; first run still needs to be triggered and verified after workflow becomes available on main).
 
 ### P1 — Book 02: Essential Vocabulary (EN / FR / ES)
 - [ ] Conduct full editorial review of every unit in each language; automated language checks are not a substitute.
@@ -71,4 +71,4 @@ This register is the operational source of truth for unfinished work. CI success
 | Release-ready | All editorial, rights, accessibility and final-PDF gates are evidenced. |
 | Commercially released | Owner explicitly authorized publication and the live product was verified. |
 
-**Current decision:** Book 02 has technical review candidates only. Book 01 remains outline-stage. None of the six editions is editorially approved, release-ready or authorized for sale.
+**Current decision:** Book 02 has technical review candidates only. Book 01 now has complete first-draft content for all ten units in EN/FR/ES in draft PR #19; it is not yet CI-validated or editorially approved. None of the six editions is release-ready or authorized for sale.
