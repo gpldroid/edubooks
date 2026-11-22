@@ -32,7 +32,7 @@ jobs:
       - name: Install PDF toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french poppler-utils
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french texlive-lang-spanish poppler-utils
 
       - name: Build designed PDF
         shell: bash
