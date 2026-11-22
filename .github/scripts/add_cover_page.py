@@ -24,4 +24,15 @@ cover_para.paragraph_format.space_after = Mm(0)
 run = cover_para.add_run()
 run.add_picture(cover_path, width=Mm(174))
 run.add_break(WD_BREAK.PAGE)
+# Keep the reusable vocabulary record on a fresh page rather than squeezing
+# it into the remaining space after the answer key.
+for paragraph in doc.paragraphs:
+    if paragraph.text.strip() in {
+        "Personal Vocabulary Record",
+        "Fiche personnelle de vocabulaire",
+        "Registro personal de vocabulario",
+    }:
+        paragraph.paragraph_format.page_break_before = True
+
 doc.save(docx_path)
+
