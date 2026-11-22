@@ -1,81 +1,97 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { books, categories } from '../../data/catalog';
+import BookCard from '../../components/books/BookCard.astro';
+import { books, categories, validateBookCatalog } from '../../data/catalog';
 
 const base = import.meta.env.BASE_URL;
+const catalogErrors = validateBookCatalog(books);
+if (catalogErrors.length > 0) throw new Error(catalogErrors.join('\\n'));
 const publishedBooks = books.filter((book) => book.status === 'published');
 ---
 <BaseLayout
   title="Explore Books — EduBooks"
-  
   description="Browse the EduBooks digital learning library."
-  
 >
   <section class="page-hero">
     <div class="container">
       <span class="section-label">EDUBOOKS LIBRARY</span>
-      <h1 data-en="Explore the library" data-fr="Explorer la bibliothèque" data-es="Explorar la biblioteca" >Explore the library</h1>
-      <p data-en="Find practical learning resources by subject and learning area." data-fr="Trouvez des ressources pratiques par matière et domaine d’apprentissage." data-es="Encuentra recursos prácticos por materia y área de aprendizaje." >Find practical learning resources by subject and learning area.</p>
+      <h1 data-en="Explore the library" data-fr="Explorer la bibliothèque" data-es="Explorar la biblioteca">Explore the library</h1>
+      <p data-en="Discover practical learning books, read their contents and explore sample pages before choosing your next resource." data-fr="Découvrez des livres pratiques, consultez leur sommaire et lisez quelques pages avant de choisir votre prochaine ressource." data-es="Descubre libros prácticos, consulta su índice y lee algunas páginas antes de elegir tu próximo recurso.">Discover practical learning books, read their contents and explore sample pages before choosing your next resource.</p>
     </div>
   </section>
-  <section class="content-section">
+
+  <section class="content-section" aria-labelledby="catalog-heading">
     <div class="container">
+      <h2 class="visually-hidden" id="catalog-heading" data-en="Available books" data-fr="Livres disponibles" data-es="Libros disponibles">Available books</h2>
       <div class="catalog-tools">
-        <label class="search-label" for="book-search" data-en="Search the library" data-fr="Rechercher dans la bibliothèque" data-es="Buscar en la biblioteca" >Search the library</label>
-        <input id="book-search" type="search" placeholder="Search books..." data-placeholder-en="Search books..."  autocomplete="off" />
-        <label class="search-label" for="category-filter" data-en="Learning area" data-fr="Domaine d’apprentissage" data-es="Área de aprendizaje" >Learning area</label>
-        <select id="category-filter">
-          <option value="all" data-en="All areas" data-fr="Tous les domaines" data-es="Todas las áreas" >All areas</option>
-          {categories.map((category) => <option value={category.slug} data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs} >{category.nameEn}</option>)}
-        </select>
+        <div class="catalog-field">
+          <label class="search-label" for="book-search" data-en="Search the library" data-fr="Rechercher dans la bibliothèque" data-es="Buscar en la biblioteca">Search the library</label>
+          <input id="book-search" type="search" placeholder="Search books..." data-placeholder-en="Search books..." data-placeholder-fr="Rechercher des livres..." data-placeholder-es="Buscar libros..." autocomplete="off">
+        </div>
+        <div class="catalog-field">
+          <label class="search-label" for="category-filter" data-en="Learning area" data-fr="Domaine d’apprentissage" data-es="Área de aprendizaje">Learning area</label>
+          <select id="category-filter">
+            <option value="all" data-en="All areas" data-fr="Tous les domaines" data-es="Todas las áreas">All areas</option>
+            {categories.map((category) => <option value={category.slug} data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs}>{category.nameEn}</option>)}
+          </select>
+        </div>
       </div>
+
       <div class="category-chips" aria-label="Learning areas">
-        {categories.map((category) => <a href={`${base}books/?category=${category.slug}`} class="category-chip" data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs} >{category.nameEn}</a>)}
+        {categories.map((category) => <a href={`${base}books/?category=${category.slug}`} class="category-chip" data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs}>{category.nameEn}</a>)}
       </div>
-      <div class="book-grid" id="book-grid">
-        {publishedBooks.map((book) => (
-          <article class="book-card" data-category={book.category} data-search={`${book.title} ${book.titleFr} ${book.titleEs} ${book.description} ${book.descriptionFr} ${book.descriptionEs}`.toLowerCase()}>
-            <a href={`${base}books/${book.slug}/`} class="book-card-link">
-              <div class="book-cover">{book.cover ? <img src={book.cover} alt="" loading="lazy" /> : <span>EduBooks</span>}</div>
-              <div class="book-card-copy"><span class="book-category">{categories.find((category) => category.slug === book.category)?.nameEn ?? 'Learning'}</span><h2>{book.title}</h2><p>{book.description}</p></div>
-            </a>
-          </article>
-        ))}
-      </div>
-      <p class="empty-state" id="empty-state" data-en="The first books are being prepared. Please check back soon." data-fr="Les premiers livres sont en préparation. Revenez bientôt." data-es="Los primeros libros están en preparación. Vuelve pronto." >The first books are being prepared. Please check back soon.</p>
-      <p class="no-results" id="no-results" hidden data-en="No books match your search." data-fr="Aucun livre ne correspond à votre recherche." data-es="Ningún libro coincide con tu búsqueda." >No books match your search.</p>
+
+      {publishedBooks.length > 0 ? (
+        <div class="book-grid" id="book-grid">
+          {publishedBooks.map((book) => <BookCard book={book} category={categories.find((item) => item.slug === book.category)} base={base} />)}
+        </div>
+      ) : (
+        <div class="empty-state" id="empty-state">
+          <span class="empty-state-mark" aria-hidden="true">E</span>
+          <h2 data-en="The library is being prepared" data-fr="La bibliothèque est en préparation" data-es="La biblioteca está en preparación">The library is being prepared</h2>
+          <p data-en="Our first books are going through editorial and quality review. Published titles will appear here with a full description, table of contents and an in-page PDF preview." data-fr="Nos premiers livres sont en cours de révision éditoriale et qualité. Les titres publiés apparaîtront ici avec une description complète, un sommaire et un aperçu PDF intégré." data-es="Nuestros primeros libros están en revisión editorial y de calidad. Los títulos publicados aparecerán aquí con descripción completa, índice y vista previa PDF integrada.">Our first books are going through editorial and quality review. Published titles will appear here with a full description, table of contents and an in-page PDF preview.</p>
+        </div>
+      )}
+      <p class="no-results" id="no-results" hidden data-en="No books match your search." data-fr="Aucun livre ne correspond à votre recherche." data-es="Ningún libro coincide con tu búsqueda.">No books match your search.</p>
     </div>
   </section>
+
   <style>
-    .catalog-tools{display:grid;grid-template-columns:1fr 1.5fr 1fr 1fr;gap:12px;align-items:center;max-width:900px;margin:0 auto 22px}
-    .search-label{font-size:13px;font-weight:700;color:#183452}.catalog-tools input,.catalog-tools select{width:100%;min-width:0;padding:13px 14px;border:1px solid #dce4e8;border-radius:7px;background:#fff;color:#20354b;font:inherit}
-    .category-chips{display:flex;gap:9px;flex-wrap:wrap;margin:0 auto 28px;max-width:900px}.category-chip{padding:8px 12px;border:1px solid #dce4e8;border-radius:30px;font-size:12px;color:#386c68}
-    .book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.book-card{border:1px solid #e6ebed;border-radius:9px;overflow:hidden;background:#fff}.book-cover{height:210px;background:#f1f2ed;display:grid;place-items:center;color:#388b82;font-weight:800}.book-cover img{width:100%;height:100%;object-fit:cover}.book-card-copy{padding:20px}.book-category{font-size:11px;color:#388b82;font-weight:800}.book-card h2{font-size:20px;margin:9px 0;color:#183452}.book-card p{font-size:13px;margin:0}.empty-state,.no-results{text-align:center;padding:55px 15px;color:#657585;background:#f6f7f4;border-radius:9px}.no-results[hidden]{display:none}
-    @media(max-width:760px){.catalog-tools{grid-template-columns:1fr}.book-grid{grid-template-columns:1fr 1fr}.book-cover{height:170px}}
-    @media(max-width:460px){.book-grid{grid-template-columns:1fr}}
+    .catalog-tools{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;max-width:900px;margin:0 auto 22px}
+    .catalog-field{display:grid;gap:7px}.search-label{font-size:13px;font-weight:700;color:#183452}
+    .catalog-tools input,.catalog-tools select{width:100%;min-width:0;min-height:48px;padding:11px 14px;border:1px solid #dce4e8;border-radius:9px;background:#fff;color:#20354b;font:inherit}
+    .category-chips{display:flex;gap:9px;flex-wrap:wrap;margin:0 auto 28px;max-width:900px}.category-chip{padding:8px 12px;border:1px solid #dce4e8;border-radius:30px;font-size:12px;color:#386c68;text-decoration:none}
+    .book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .empty-state{max-width:760px;margin:30px auto;padding:clamp(30px,6vw,64px);text-align:center;background:linear-gradient(145deg,#f5f8f7,#edf4f2);border:1px solid #e0ebe8;border-radius:20px}
+    .empty-state-mark{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 18px;border-radius:16px;background:#183452;color:#fff;font-weight:800;font-size:25px}
+    .empty-state h2{font-size:clamp(24px,3vw,34px);color:#183452;margin:0 0 10px}.empty-state p{max-width:570px;margin:0 auto;color:#586a7a}
+    .no-results{text-align:center;padding:35px 15px;color:#657585;background:#f6f7f4;border-radius:9px}.no-results[hidden]{display:none}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:760px){.catalog-tools{grid-template-columns:1fr}.book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:480px){.book-grid{grid-template-columns:1fr}}
   </style>
   <script>
     const search = document.querySelector<HTMLInputElement>('#book-search');
     const filter = document.querySelector<HTMLSelectElement>('#category-filter');
     const cards = [...document.querySelectorAll<HTMLElement>('.book-card')];
-    const empty = document.querySelector<HTMLElement>('#empty-state');
     const noResults = document.querySelector<HTMLElement>('#no-results');
     const requestedCategory = new URLSearchParams(window.location.search).get('category');
     if (requestedCategory && filter?.querySelector(`option[value="${CSS.escape(requestedCategory)}"]`)) filter.value = requestedCategory;
+
     function filterBooks() {
-      const term = (search?.value || '').trim().toLowerCase();
+      const term = (search?.value || '').trim().toLocaleLowerCase();
       const category = filter?.value || 'all';
       let visible = 0;
       cards.forEach((card) => {
-        const matchesText = (card.dataset.search || '').includes(term);
+        const matchesText = (card.dataset.search || '').toLocaleLowerCase().includes(term);
         const matchesCategory = category === 'all' || card.dataset.category === category;
         const show = matchesText && matchesCategory;
         card.hidden = !show;
-        if (show) visible++;
+        if (show) visible += 1;
       });
-      if (empty) empty.hidden = cards.length > 0;
-      if (noResults) noResults.hidden = cards.length === 0 || visible > 0;
+      if (noResults) noResults.hidden = visible > 0 || cards.length === 0;
     }
+
     search?.addEventListener('input', filterBooks);
     filter?.addEventListener('change', filterBooks);
     filterBooks();
