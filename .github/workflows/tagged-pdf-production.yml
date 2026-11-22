@@ -68,6 +68,8 @@ jobs:
             es) LANG_TAG="es-ES";;
           esac
           mkdir -p "dist/tagged/$BOOK/$LANG_CODE"
+          mkdir -p dist
+          /usr/bin/python3 .github/scripts/create_pdf_reference_docx.py
           pandoc "$FILE" --from=gfm --to=docx --standalone --toc \
             -V lang="$LANG_TAG" \
             -V title="EduBooks — Book $BOOK — ${{ matrix.label }} Edition" \
