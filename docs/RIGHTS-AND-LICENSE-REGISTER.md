@@ -10,7 +10,7 @@ No book edition may enter the public catalogue until rights and attribution have
 
 | Material | Evidence required | Status |
 |---|---|---|
-| Manuscript text | Author/rights-holder confirmation and record of any third-party excerpts | Pending per edition |
+| Manuscript text | Author/rights-holder confirmation and record of any third-party excerpts | Owner confirmation received 2026-11-22 for all six editions; third-party excerpts still require itemized source review |
 | Illustrations and cover artwork | Creator, source, licence/permission and required attribution | Pending per asset |
 | Fonts | Font family, source and licence compatible with PDF embedding and web use | Review required |
 | Icons and interface assets | Source and applicable licence | Review required |
@@ -40,4 +40,4 @@ For each asset, record:
 
 ## Approval record
 
-No edition-level rights approval is recorded by this register. Complete and attach evidence before any public release. Owner sign-off is a separate required gate.
+The owner confirmed on 2026-11-22 that they hold copyright and distribution rights for the texts and materials used in all six editions and authorize preparation for free publication on EduBooks. This is recorded as an owner declaration in this internal register, not as learner-facing book content. It does not replace itemized asset/source records, independent review, accessibility and PDF proof, or edition-specific release approval.

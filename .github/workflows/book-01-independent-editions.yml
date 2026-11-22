@@ -6,6 +6,7 @@ on:
     paths:
       - 'content/books/01-language-foundations/**'
       - 'docs/production/latex-preamble.tex'
+      - 'docs/RIGHTS-AND-LICENSE-REGISTER.md'
       - '.github/workflows/book-01-independent-editions.yml'
 
 permissions:
