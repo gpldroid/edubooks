@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p dist/review
           pandoc content/books/english-starter-a1/preview.md \
-            --from=gfm+raw_tex \
+            --from=markdown+raw_tex+pipe_tables+fenced_code_blocks+strikeout+task_lists+autolink_bare_uris \
             --standalone \
             --pdf-engine=xelatex \
             -V mainfont="DejaVu Sans" \
