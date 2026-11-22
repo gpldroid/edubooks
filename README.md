@@ -88,7 +88,7 @@ edubooks/
 ├── public/books/             # approved full downloadable PDFs only
 ├── public/previews/          # approved sample/preview PDFs
 ├── public/images/            # cover artwork
-├── src/data/catalog.ts       # public catalogue; currently empty
+├── src/data/catalog.ts       # six independent draft editions; publication disabled
 ├── src/pages/
 ├── astro.config.mjs
 └── package.json
