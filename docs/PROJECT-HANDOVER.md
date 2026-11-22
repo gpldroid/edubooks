@@ -10,7 +10,7 @@ EduBooks is a **free PDF library distributed only through its website**. Readers
 
 Do not revive old store setup or pricing instructions. Existing Gumroad drafts are historical account state only; do not modify, attach files to or publish them.
 
-The catalogue is intentionally empty. No edition is approved for public release yet. Legacy Book 01 PDFs under `public/books/` remain present but are not approved final editions. Do not expose them in the catalogue or represent them as final.
+The catalogue is intentionally empty. No edition is approved for public release yet. Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory. Do not restore or reuse them without a new documented review.
 
 Read [the site-only publishing model](SITE-ONLY-PUBLISHING-MODEL.md) before changing publication code.
 
