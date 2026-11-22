@@ -1,5 +1,11 @@
-name: Publish Book 01 PDF files to the public library
+name: Build Book 01 PDFs for internal review only
+
 on:
+  pull_request:
+    paths:
+      - 'content/books/01-language-foundations/**'
+      - 'docs/production/latex-preamble.tex'
+      - '.github/workflows/publish-book-01-pdfs.yml'
   push:
     branches: [main]
     paths:
@@ -8,29 +14,29 @@ on:
       - '.github/workflows/publish-book-01-pdfs.yml'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
-  group: publish-book-01-pdfs
-  cancel-in-progress: false
+  group: book-01-internal-pdf-review
+  cancel-in-progress: true
 jobs:
-  build-and-publish:
-    if: github.ref == 'refs/heads/main'
+  build-and-review:
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
         uses: actions/checkout@v6
         with:
-          ref: main
-          fetch-depth: 0
+          ref: ${{ github.sha }}
+          fetch-depth: 1
       - name: Install PDF toolchain
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french texlive-lang-spanish poppler-utils
-      - name: Build and validate three independent editions
+      - name: Build and validate three independent review editions
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p public/books
+          mkdir -p build/review/books
           for lang in en fr es; do
             case "$lang" in
               en) title="Language Foundations — English Edition"; tag="en-GB"; unit="Unit"; answer="Answer key";;
@@ -38,7 +44,7 @@ jobs:
               es) title="Fundamentos del aprendizaje de idiomas — Edición española"; tag="es-ES"; unit="Unidad"; answer="Soluciones";;
             esac
             source="content/books/01-language-foundations/$lang/manuscript.md"
-            output="public/books/edubooks-book-01-$lang.pdf"
+            output="build/review/books/edubooks-book-01-$lang.pdf"
             count="$(grep -Ec "^## ${unit} [0-9]+ — " "$source" || true)"
             test "$count" -eq 10
             pandoc "$source" --from=gfm --standalone --toc --toc-depth=2 --pdf-engine=xelatex \
@@ -49,18 +55,41 @@ jobs:
             test -s "$output"
             pages="$(pdfinfo "$output" | awk '/^Pages:/ {print $2}')"
             test "$pages" -ge 10
-            pdftotext "$output" "/tmp/$lang.txt"
-            grep -Fq "$answer" "/tmp/$lang.txt"
-            for n in {1..10}; do grep -Fq "$unit $n" "/tmp/$lang.txt"; done
-            echo "$lang: $pages pages validated"
+            pdftotext "$output" "build/review/books/$lang.txt"
+            grep -Fq "$answer" "build/review/books/$lang.txt"
+            for n in {1..10}; do grep -Fq "$unit $n" "build/review/books/$lang.txt"; done
+            echo "$lang: $pages pages validated for internal review"
           done
-      - name: Commit validated PDFs
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/books/edubooks-book-01-*.pdf
-          if git diff --cached --quiet; then echo "PDF files are already current."; exit 0; fi
-          git commit -m "Publish validated Book 01 PDF editions to library"
-          git push origin HEAD:main
+          (cd build/review/books && sha256sum edubooks-book-01-*.pdf > SHA256SUMS.txt)
+      - name: Upload English review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-01-en-review-candidate
+          path: build/review/books/edubooks-book-01-en.pdf
+          if-no-files-found: error
+          retention-days: 90
+      - name: Upload French review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-01-fr-review-candidate
+          path: build/review/books/edubooks-book-01-fr.pdf
+          if-no-files-found: error
+          retention-days: 90
+      - name: Upload Spanish review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-01-es-review-candidate
+          path: build/review/books/edubooks-book-01-es.pdf
+          if-no-files-found: error
+          retention-days: 90
+      - name: Upload checksums and extracted text
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-01-review-manifest
+          path: |
+            build/review/books/SHA256SUMS.txt
+            build/review/books/en.txt
+            build/review/books/fr.txt
+            build/review/books/es.txt
+          if-no-files-found: error
+          retention-days: 90

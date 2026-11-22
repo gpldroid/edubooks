@@ -1,6 +1,10 @@
 ## Current verified status — 2026-11-22 (supersedes older status notes below)
 
-PR #19 (Book 01 full first drafts) and PR #25 (mobile library stability) are merged to `main`. PR #25 merge commit: `2953b02`. Astro validation and responsive Playwright run #45034301714 passed. Book 01 matrix run #45034306841 passed all EN/FR/ES jobs and uploaded review candidates plus five-page internal sample artifacts. A limited technical proof found 10-page EN, 11-page FR and 10-page ES PDFs, A4 page size, searchable text and embedded DejaVu Sans fonts. No fully blank pages were found in overview inspection. See `docs/editorial/book-01/pdf-proof-2026-11-22.md`. A French Unit 3 answer-key mismatch is corrected on branch `editorial/book-01-proof-and-handover`; that correction still needs a fresh PDF build. All editorial, pedagogical, rights, accessibility and full-resolution proof gates remain open. No product is approved for sale.
+PR #25 and PR #26 are merged to `main`. PR #26 corrected the French Book 01 Unit 3 answer key and its regenerated French PDF was checked in run [#45035163849](https://github.com/gpldroid/edubooks/actions/runs/45035163849): 11 A4 pages, searchable text, embedded DejaVu Sans fonts, and the corrected answer appears in the PDF. First-pass answer-key cross-checks are documented for Book 01 (ten units per language) and Book 02 (twelve units per language). Two Book 02 prompt/answer alignment fixes (French Unit 10 and Spanish Unit 9) and a safety change to the Book 01 PDF workflow are in PR #27.
+
+Important workflow safety event: merging PR #26 triggered the legacy `publish-book-01-pdfs.yml` workflow, which rebuilt and committed PDFs to `public/books/`. The previous public PDF blobs were restored in commit `20d1c51572e224a75397982ab4933e694a8fb9c7`. Those earlier public files pre-existed this event and are not approved final editions. PR #27 changes the workflow to read-only internal artifact builds; no Gumroad product was published. See `docs/editorial/book-01/pdf-proof-2026-11-22.md`, `docs/editorial/book-01/answer-key-reconciliation-2026-11-22.md`, and `docs/editorial/book-02/answer-key-crosscheck-2026-11-22.md`.
+
+All editions still require qualified language and pedagogical review, rights review, accessibility proof and full-resolution visual inspection. No edition is approved for sale.
 
 PR #22 is merged. Its Astro validation passed, and the Book 01 PDF publishing workflow completed successfully:
 
@@ -34,9 +38,10 @@ GitHub changes merged to `main`:
 
 - PR #17 is merged: three independent Book 02 EN/FR/ES manuscripts, language matrix PDF workflow and layout safeguards. Run #44986040328 passed all three jobs and uploaded three review-candidate PDFs.
 - PR #18 is merged: four-page English Starter A1 internal preview workflow. Run #44986069717 passed and uploaded its review artifact. This is a legacy internal sample, not one of the six editions.
-- PR #19 is merged: first-draft Book 01 EN/FR/ES content across all ten units and the independent PDF matrix workflow are on `main`. Run #45034306841 passed all three language jobs and uploaded review artifacts. Qualified language and pedagogical review, full answer-key reconciliation, rights, accessibility and full-page visual proof remain open.
+- PR #19 is merged: first-draft Book 01 EN/FR/ES content across all ten units and the independent PDF matrix workflow are on `main`. Run #45034306841 passed all three language jobs. PR #26 later corrected the French Unit 3 key and the updated PDF was verified in run #45035163849. First-pass answer-key cross-checks are documented; qualified language and pedagogical review, rights, accessibility and full-page visual proof remain open.
 - PR #15, #16, #1 and #4 are merged as documented in the README. PR #17 and #14 were superseded/closed; their clean replacements are #17 and #18.
 - Astro validation and Book 01 legacy PDF workflow also passed in the PR #17 CI cycle.
+- PR #26 is merged; PR #27 is the active review branch for Book 02 prompt corrections and converting the Book 01 PDF workflow to internal-only artifacts.
 - Technical CI success does not constitute editorial, pedagogical, visual, rights or accessibility approval. No final PDFs are approved, no PDF is attached to Gumroad, and all six products remain unpublished.
 
 ## 2. Approved publishing model
@@ -134,13 +139,13 @@ Use docs/REMAINING-WORK-REGISTER.md as the prioritized checklist for all unfinis
 
 See `docs/EDITORIAL-RELEASE-CHECKLIST.md`.
 
-## Book 02 — independent editions integration (2026-11-22)\n\nThe original trilingual source has been preserved on `main` (PR #1). Three separate first-draft manuscripts, the matrix PDF workflow, and edition-specific layout safeguards are being integrated on a clean mainline branch because the original PR #9 became conflicted after the source and documentation merges. The last completed matrix run #44974894348 passed all three jobs (EN/FR/ES), including manuscript checks, PDF builds, PDF validation and artifact uploads. It produced three review-candidate artifacts (EN, FR, ES). These are technical build candidates only, not approved books. The old combined-language PDF workflow is retired in favour of the three-edition matrix workflow. Full-page visual proof is deliberately deferred and remains editable; one known issue is the Spanish editorial note continuing onto a mostly empty last page.\n\n## 7. Immediate next actions
+## Book 02 — independent editions integration (2026-11-22)\n\nThe original trilingual source has been preserved on `main` (PR #1). Three separate first-draft manuscripts and the matrix PDF workflow are merged. Run #44974894348 passed all three jobs and uploaded review candidates. The first answer-key cross-check in PR #27 found two prompt/answer alignment issues, now corrected in the French Unit 10 and Spanish Unit 9 manuscripts. A known layout issue remains: the Spanish editorial note continues onto a mostly empty final page. Full-page visual proof is still required.\n\n## 7. Immediate next actions
 
 1. Convert the six SVG cover masters to PNG/JPEG, upload each to its matching Gumroad draft and verify the product pages.
 2. Resolve the pricing conflict: the selected policy was `same` (uniform price), while six different amounts were supplied and are currently configured. Confirm one common EUR price or explicitly retain the six amounts.
-3. Book 01 EN/FR/ES outline formatting is repaired and merged in PR #15; complete the actual lesson content, exercises and answer keys before generating separate sale-edition PDFs.
+3. Book 01 first-draft lessons are complete and its first answer-key reconciliation is recorded. Obtain qualified independent language and pedagogical review, then complete rights, accessibility and full-page PDF proof.
 4. Rebuild PR #14's A1 preview fix on a clean branch and confirm the dedicated PDF artifact; it is a legacy internal sample, not a catalogue edition.
-5. Integrate the three Book 02 independent manuscripts and their CI workflow on this clean mainline branch. The former PR #9 branch became conflicted after mainline merges; this replacement integration PR preserves its manuscripts without overwriting newer project documentation.
+5. Complete CI for PR #27, verify the internal-only Book 01 PDF workflow and the two Book 02 prompt corrections, then continue Book 02 editorial and visual review.
 6. Confirm all EN/FR/ES matrix jobs and review artifacts on the replacement PR. Keep the full-page visual proof editable for a later pass; correct the known Spanish final-page spill before final export.
 7. Obtain qualified English, French and Spanish editorial/pedagogical review, reconcile every answer key, and complete rights/accessibility checks for all six editions.
 8. Update catalogue and attach approved PDFs to matching Gumroad drafts only after explicit owner approval; publish only after a separate explicit release authorization.

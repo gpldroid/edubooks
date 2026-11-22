@@ -1,21 +1,13 @@
-## Verified technical update — 2026-11-22
+## Verified technical and editorial update — 2026-11-22
 
-- [x] Merge PR #25: mobile library overflow and category test correction; Astro validation, regression tests, build and responsive Playwright all passed in run #45034301714.
-- [x] Verify Book 01 independent PDF matrix run #45034306841: EN/FR/ES builds, output validation and internal sample/review artifact uploads all succeeded.
-- [x] Download and technically inspect the three review PDFs: A4, selectable text, embedded DejaVu Sans fonts, 10/11/10 pages, and no completely blank pages in overview proof.
-- [x] Record the technical PDF proof and limitations in docs/editorial/book-01/pdf-proof-2026-11-22.md.
-- [ ] Rebuild the French PDF after the targeted Unit 3 answer-key correction on the current review branch; inspect the new artifact before considering that correction proven in PDF.
-
-- [x] Merge PR #22: separate information-only Preview and timed Download routes; inner-page typography is scoped separately from the homepage.
-- [x] Run [PDF publishing #44996350390](https://github.com/gpldroid/edubooks/actions/runs/44996350390): EN/FR/ES Book 01 PDFs built, validated and committed to `public/books/`.
-- [x] Confirm the three files exist on GitHub: EN 79,833 bytes; FR 84,973 bytes; ES 80,334 bytes.
-- [x] Run [Pages deployment #44996350403](https://github.com/gpldroid/edubooks/actions/runs/44996350403): build and deploy succeeded for commit `38dd982`.
-- [ ] Deploy again from a commit that includes bot commit `838acdc`; the successful Pages run above predates the PDF commit, so the current Pages artifact is not yet confirmed to contain the PDFs.
-- [ ] Create and validate 3–5-page preview PDFs for each Book 01 language and add them under `public/previews/`.
-- [ ] Verify all three SVG cover masters and convert/approve production cover formats before catalogue publication.
-- [ ] Add Book 01 EN/FR/ES catalogue records only after descriptions, localized TOCs, level, page counts, cover paths and preview PDF paths have been verified.
-- [ ] Keep catalogue publication status at draft until documented editorial, pedagogical, rights, accessibility and full-page visual review is complete.
-- [ ] Update stale historical status notes in this register/handover when each stage is completed.
+- [x] Merge PR #25 and verify mobile library fix, regression suite, Astro build and responsive Playwright.
+- [x] Merge PR #26 and verify the corrected French Book 01 Unit 3 answer in the regenerated PDF; see run [#45035163849](https://github.com/gpldroid/edubooks/actions/runs/45035163849).
+- [x] Cross-check all ten Book 01 unit practice/answer-key sections in EN/FR/ES; record the scope and limits in `docs/editorial/book-01/answer-key-reconciliation-2026-11-22.md`.
+- [x] Complete first-pass cross-check of all twelve Book 02 unit answer-check sections in EN/FR/ES; two prompt fixes (FR U10, ES U9) are on PR #27.
+- [x] Restore the three pre-existing public PDF blobs after legacy workflow run #45035693412 refreshed them; restoration commit: `20d1c51572e224a75397982ab4933e694a8fb9c7`.
+- [ ] Merge PR #27 only after Astro, manuscript checks and internal-only PDF artifact builds pass. It removes public PDF commits and grants the workflow read-only repository permissions.
+- [ ] Verify the latest main-branch Pages deployment after PR #27 and the restoration commit.
+- [ ] Keep Gumroad products unpublished; do not attach any review artifact.
 
 # EduBooks — Remaining Work Register
 
@@ -46,13 +38,13 @@ This register is the operational source of truth for unfinished work. CI success
 - [x] Author first full-draft content for all ten units in EN/FR/ES, including explanations, examples, exercises, communication tasks and success criteria (PR #19 merged; matrix CI passed in run #45034306841).
 - [x] Complete first-draft authoring of original explanations, examples, exercises, communicative tasks and measurable success criteria for all ten units; professional language and pedagogy review remains open.
 - [x] Add an integrated beginner profile project and unit-aligned answer guidance in each target language (PR #19; pending CI and review).
-- [ ] Build each answer key only after its exercises are stable; reconcile every closed-answer item and define criteria for open responses.
+- [x] Complete first-pass exercise/answer-key cross-check for all ten units in EN/FR/ES; see the reconciliation report. Qualified reviewers must still verify naturalness and pedagogical acceptance criteria.
 - [ ] Establish consistent target-language variety, terminology, spelling and beginner-level progression.
 - [x] Add and verify the three-language independent PDF matrix workflow (PR #19; run #45034306841 passed all EN/FR/ES jobs and uploaded artifacts).
 
 ### P1 — Book 02: Essential Vocabulary (EN / FR / ES)
 - [ ] Conduct full editorial review of every unit in each language; automated language checks are not a substitute.
-- [ ] Verify every exercise and answer-key item against the final prompt, including accepted variants.
+- [x] Complete first-pass prompt/answer-check crosswalk for all 12 units in EN/FR/ES; two clear alignment issues corrected on PR #27. Re-run checks after merge and retain qualified language review.
 - [ ] Review grammar, idiomaticity, register, regional vocabulary and level progression.
 - [ ] Fix the known Spanish editorial note spilling onto a mostly empty final page.
 - [ ] Inspect every page of all three PDFs, not only sampled pages; verify contents, page breaks, typography, headers, footers and links.
@@ -90,4 +82,4 @@ This register is the operational source of truth for unfinished work. CI success
 | Release-ready | All editorial, rights, accessibility and final-PDF gates are evidenced. |
 | Commercially released | Owner explicitly authorized publication and the live product was verified. |
 
-**Current decision:** Book 01 has complete first-draft content for all ten units in EN/FR/ES; its independent PDF matrix passed technically and the three review candidates received a limited technical/overview proof. One French Unit 3 answer-key mismatch has been corrected in the current review branch and requires a fresh PDF build. Qualified language and pedagogical review, full answer-key reconciliation, rights/accessibility checks and final visual proof remain outstanding. Book 02 has technical review candidates only. None of the six editions is release-ready or authorized for sale.
+**Current decision:** Book 01 has complete first-draft content, a first-pass answer-key reconciliation and a corrected French PDF proof. Book 02 has three independent working manuscripts and a first-pass answer-key cross-check; two prompt/answer alignment corrections are under CI in PR #27. The Book 01 PDF workflow is being changed to internal artifacts only because its previous main-branch workflow automatically committed review builds to `public/books/`. The legacy public files were restored to their prior blobs. Qualified language and pedagogical review, rights/accessibility checks and full-page visual proof remain outstanding for all editions. None is release-ready or authorized for sale.
