@@ -6,7 +6,7 @@
 **Estado editorial:** Borrador independiente pendiente de revisión lingüística y pedagógica especializada.
 
 ## Nota de publicación
-This is a self-study vocabulary workbook for familiar everyday situations. Vocabulary is selected for practical learning and is not presented as a statistically ranked frequency list. Regional alternatives are noted where useful. This is an independent resource and is not an official examination or certification.
+Este cuaderno de autoaprendizaje ofrece vocabulario útil para situaciones cotidianas. La selección prioriza las necesidades prácticas y no constituye una clasificación estadística de frecuencia. Se indican variantes regionales cuando resultan útiles. Este recurso independiente no sustituye ningún examen ni certificación oficial.
 
 ## Bienvenida
 Te damos la bienvenida. Este cuaderno enseña vocabulario útil mediante situaciones cotidianas. Aprende expresiones completas, practica en voz alta y repasa de memoria.
@@ -17,7 +17,7 @@ Lee la situación. Estudia cada expresión en contexto. Haz las actividades sin 
 ## Objetivos de aprendizaje
 Al terminar, podrás hablar de personas, vivienda, comida, compras, rutinas, lugares, viajes, trabajo, necesidades básicas, tiempo y preferencias; usar combinaciones frecuentes y organizar tus repasos.
 
-## Contents
+## Índice
 1. Personas, familia y relaciones
 2. La casa y los objetos cotidianos
 3. La comida y las comidas
@@ -32,9 +32,9 @@ Al terminar, podrás hablar de personas, vivienda, comida, compras, rutinas, lug
 12. Crear tu sistema de vocabulario
 
 ---
-# Unit 1 — Personas, familia y relaciones
+# Unidad 1 — Personas, familia y relaciones
 
-**Can-do:** Presentar a personas, explicar parentescos y describir el carácter.
+**Objetivo:** Presentar a personas, explicar parentescos y describir el carácter.
 
 ## Descubre
 Esta es mi prima Maya. Vive cerca de nuestros abuelos. Es amable y le gusta conocer gente.
@@ -69,9 +69,9 @@ Presenta a dos personas, explica qué relación tienen contigo y menciona una cu
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 2 — La casa y los objetos cotidianos
+# Unidad 2 — La casa y los objetos cotidianos
 
-**Can-do:** Nombrar habitaciones y objetos y explicar dónde están.
+**Objetivo:** Nombrar habitaciones y objetos y explicar dónde están.
 
 ## Descubre
 Las llaves están sobre la mesa. La cocina está al lado del salón. Hay una lámpara junto al sofá.
@@ -108,9 +108,9 @@ Describe una habitación con cinco objetos y tres expresiones de lugar.
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 3 — La comida y las comidas
+# Unidad 3 — La comida y las comidas
 
-**Can-do:** Hablar de comidas, gustos, cantidades y pedidos educados.
+**Objetivo:** Hablar de comidas, gustos, cantidades y pedidos educados.
 
 ## Descubre
 Para desayunar tomo fruta y pan. En la cafetería quisiera un bocadillo y un vaso de agua, por favor.
@@ -147,9 +147,9 @@ Representa una visita a una cafetería: pide algo, haz una pregunta y solicita l
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 4 — La ropa y las compras
+# Unidad 4 — La ropa y las compras
 
-**Can-do:** Describir ropa y preguntar por el color, la talla y el precio.
+**Objetivo:** Describir ropa y preguntar por el color, la talla y el precio.
 
 ## Descubre
 Busco una camisa azul. ¿La tiene en talla mediana? ¿Me la puedo probar?
@@ -186,9 +186,9 @@ Cliente y dependiente: busca una prenda, comprueba la talla y paga.
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 5 — Las rutinas diarias
+# Unidad 5 — Las rutinas diarias
 
-**Can-do:** Describir un día habitual y decir con qué frecuencia haces algo.
+**Objetivo:** Describir un día habitual y decir con qué frecuencia haces algo.
 
 ## Descubre
 Normalmente me despierto a las siete, desayuno y voy al trabajo. A veces estudio por la noche.
@@ -225,9 +225,9 @@ Entrevista a un compañero sobre un día laborable y cuenta tres datos.
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 6 — La ciudad, los lugares y las indicaciones
+# Unidad 6 — La ciudad, los lugares y las indicaciones
 
-**Can-do:** Preguntar dónde están los lugares y dar indicaciones sencillas.
+**Objetivo:** Preguntar dónde están los lugares y dar indicaciones sencillas.
 
 ## Descubre
 La biblioteca está enfrente del parque. Sigue todo recto, gira a la izquierda en el banco y cruza la calle.
@@ -264,9 +264,9 @@ Explica cómo llegar desde una estación hasta un lugar público.
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 7 — Los viajes y el alojamiento
+# Unidad 7 — Los viajes y el alojamiento
 
-**Can-do:** Hablar de transporte, reservas y necesidades básicas en un hotel.
+**Objetivo:** Hablar de transporte, reservas y necesidades básicas en un hotel.
 
 ## Descubre
 Tengo una reserva para dos noches. ¿A qué hora sale el tren? ¿Está incluido el desayuno?
@@ -302,9 +302,9 @@ Representa la llegada a un hotel y confirma las fechas y el desayuno.
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 8 — El trabajo y los estudios
+# Unidad 8 — El trabajo y los estudios
 
-**Can-do:** Nombrar tareas, lugares y horarios.
+**Objetivo:** Nombrar tareas, lugares y horarios.
 
 ## Descubre
 Trabajo en una oficina. Tenemos una reunión a las nueve y estoy estudiando una asignatura nueva este trimestre.
@@ -341,9 +341,9 @@ Describe un día de trabajo o estudio y pregunta por una fecha límite.
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 9 — El cuerpo y las necesidades básicas de salud
+# Unidad 9 — El cuerpo y las necesidades básicas de salud
 
-**Can-do:** Nombrar partes del cuerpo y describir síntomas sencillos o necesidades.
+**Objetivo:** Nombrar partes del cuerpo y describir síntomas sencillos o necesidades.
 
 ## Descubre
 Me duele la cabeza y tengo dolor de garganta. ¿Hay una farmacia cerca de aquí?
@@ -380,9 +380,9 @@ Practica cómo pedir una cita y explicar un síntoma sencillo.
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 10 — El tiempo, las estaciones y el ocio
+# Unidad 10 — El tiempo, las estaciones y el ocio
 
-**Can-do:** Describir el tiempo y organizar un plan de ocio.
+**Objetivo:** Describir el tiempo y organizar un plan de ocio.
 
 ## Descubre
 Hoy hace sol, así que vamos a dar un paseo. Si mañana llueve, podemos ver una película.
@@ -419,9 +419,9 @@ Acordad una actividad, un lugar y una hora; después proponed un plan alternativ
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 11 — Los sentimientos, las preferencias y las opiniones
+# Unidad 11 — Los sentimientos, las preferencias y las opiniones
 
-**Can-do:** Describir emociones, expresar gustos y dar una razón sencilla.
+**Objetivo:** Describir emociones, expresar gustos y dar una razón sencilla.
 
 ## Descubre
 Me gusta aprender idiomas porque es útil. A veces me pongo nervioso al hablar, pero sigo practicando.
@@ -458,9 +458,9 @@ Habla de una actividad y responde con respeto a una opinión diferente.
 - [ ] Sé qué expresiones necesito repasar.
 
 ---
-# Unit 12 — Crear tu sistema de vocabulario
+# Unidad 12 — Crear tu sistema de vocabulario
 
-**Can-do:** Usar colocaciones, familias de palabras y repasos espaciados.
+**Objetivo:** Usar colocaciones, familias de palabras y repasos espaciados.
 
 ## Descubre
 Aprende una expresión, crea un ejemplo personal y comprueba lo que recuerdas mañana, dentro de tres días y dentro de una semana.
