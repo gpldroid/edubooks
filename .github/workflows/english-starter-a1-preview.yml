@@ -2,6 +2,13 @@ name: Build English Starter A1 review preview
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - 'fix/**'
+    paths:
+      - 'content/books/english-starter-a1/preview.md'
+      - 'docs/editorial/english-starter-a1-review.md'
+      - '.github/workflows/english-starter-a1-preview.yml'
   pull_request:
     paths:
       - 'content/books/english-starter-a1/preview.md'
@@ -27,7 +34,7 @@ jobs:
         run: |
           mkdir -p dist/review
           pandoc content/books/english-starter-a1/preview.md \
-            --from=markdown+raw_tex+pipe_tables+fenced_code_blocks+strikeout+task_lists+autolink_bare_uris \
+            --from=gfm \
             --standalone \
             --pdf-engine=xelatex \
             -V mainfont="DejaVu Sans" \
@@ -52,6 +59,7 @@ jobs:
           grep -F "Sample 3 — Everyday Objects and This/That" dist/review/extracted.txt
           grep -F "Sample 4 — Daily Routines" dist/review/extracted.txt
           grep -F "not approved for commercial distribution" dist/review/extracted.txt
+          # The four approved sample sections currently render as a four-page extract.
           test "$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')" -ge 4
           test "$(wc -w < dist/review/extracted.txt)" -gt 250
           echo "Review preview PDF validation passed."
