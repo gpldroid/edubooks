@@ -100,6 +100,27 @@ jobs:
           done
           echo "Validated $LANG_CODE review candidate: $PAGES pages."
 
+      - name: Create five-page internal sample preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-01-$LANG_CODE-review-candidate.pdf"
+          mkdir -p "dist/previews/$LANG_CODE"
+          pdfseparate -f 1 -l 5 "$PDF" "dist/previews/$LANG_CODE/page-%d.pdf"
+          pdfunite dist/previews/$LANG_CODE/page-*.pdf "dist/previews/edubooks-book-01-$LANG_CODE-sample-review-only.pdf"
+          SAMPLE="dist/previews/edubooks-book-01-$LANG_CODE-sample-review-only.pdf"
+          test "$(pdfinfo "$SAMPLE" | awk '/^Pages:/ {print $2}')" -eq 5
+          echo "Created a five-page internal sample for $LANG_CODE; it is not a public or sale file."
+
+      - name: Upload internal sample preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-01-${{ matrix.edition }}-sample-review-only
+          path: dist/previews/edubooks-book-01-${{ matrix.edition }}-sample-review-only.pdf
+          if-no-files-found: error
+          retention-days: 90
+
       - name: Upload review candidate
         uses: actions/upload-artifact@v4
         with:
