@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 const homePath = '/edubooks/';
 
-test('does not create horizontal overflow at target device widths', async ({ page }) => {
+test('does not create horizontal overflow at target device widths', async ({ page }, testInfo) => {
   const widths = [320, 360, 390, 430, 768, 1024, 1280, 1366, 1440, 1920, 2560];
 
   for (const width of widths) {
@@ -17,6 +17,13 @@ test('does not create horizontal overflow at target device widths', async ({ pag
       dimensions.document,
       `Horizontal overflow at viewport width ${width}px: ${JSON.stringify(dimensions)}`
     ).toBeLessThanOrEqual(dimensions.viewport + 1);
+    if ([390, 768, 1366, 1920, 2560].includes(width)) {
+      await page.screenshot({
+        path: testInfo.outputPath(`responsive-${width}.png`),
+        fullPage: true,
+        animations: 'disabled'
+      });
+    }
   }
 });
 
