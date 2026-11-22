@@ -45,7 +45,12 @@ jobs:
           LANG_CODE="${{ matrix.edition }}"
           FILE="content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md"
           test -s "$FILE"
-          test "$(grep -c '^# Unit [0-9][0-9]* — ' "$FILE")" -eq 12
+          case "$LANG_CODE" in
+            en) UNIT_HEADING="Unit";;
+            fr) UNIT_HEADING="Unité";;
+            es) UNIT_HEADING="Unidad";;
+          esac
+          test "$(grep -c "^# $UNIT_HEADING [0-9][0-9]* — " "$FILE")" -eq 12
           test "$(grep -c '^## ' "$FILE")" -ge 70
           test "$(wc -w < "$FILE")" -gt 1200
 
