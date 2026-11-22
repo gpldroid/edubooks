@@ -1,20 +1,20 @@
 # Vocabulario esencial
 ## Amplía tu español de todos los días
 
-**EduBooks · Multilingual Learning Series 01**  
-**Edición española · Target: A1–A2 approximate learning range; not an official CEFR certification.**  
-**Editorial status:** Independent-language working draft; requires qualified editorial and pedagogical review.
+**EduBooks · Colección de aprendizaje de idiomas 01**  
+**Edición española · Nivel orientativo: A1–A2; este cuaderno no es una certificación oficial del MCER.**  
+**Estado editorial:** Borrador independiente pendiente de revisión lingüística y pedagógica especializada.
 
 ## Publication note
 This is a self-study vocabulary workbook for familiar everyday situations. Vocabulary is selected for practical learning and is not presented as a statistically ranked frequency list. Regional alternatives are noted where useful. This is an independent resource and is not an official examination or certification.
 
-## Welcome
+## Bienvenida
 Te damos la bienvenida. Este cuaderno enseña vocabulario útil mediante situaciones cotidianas. Aprende expresiones completas, practica en voz alta y repasa de memoria.
 
-## How to use this book
+## Cómo utilizar este cuaderno
 Lee la situación. Estudia cada expresión en contexto. Haz las actividades sin mirar las respuestas y después consulta las soluciones. Repasa al cabo de un día, tres días, una semana y dos semanas.
 
-## Learning outcomes
+## Objetivos de aprendizaje
 Al terminar, podrás hablar de personas, vivienda, comida, compras, rutinas, lugares, viajes, trabajo, necesidades básicas, tiempo y preferencias; usar combinaciones frecuentes y organizar tus repasos.
 
 ## Contents
@@ -36,10 +36,10 @@ Al terminar, podrás hablar de personas, vivienda, comida, compras, rutinas, lug
 
 **Can-do:** Presentar a personas, explicar parentescos y describir el carácter.
 
-## Discover
+## Descubre
 Esta es mi prima Maya. Vive cerca de nuestros abuelos. Es amable y le gusta conocer gente.
 
-## Vocabulary in context
+## Vocabulario en contexto
 - un familiar
 - un primo
 - una vecina
@@ -51,22 +51,22 @@ Esta es mi prima Maya. Vive cerca de nuestros abuelos. Es amable y le gusta cono
 - servicial
 - llevarse bien con
 
-## Language focus
+## Punto de lengua
 Usa los posesivos (mi, tu, su, nuestro) y el presente para hablar de hechos habituales. Aprende la expresión «llevarse bien con alguien».
 
-## Guided practice
+## Práctica guiada
 1) El hermano de mi madre es mi ____. 2) Maya ____ cerca de nosotros (vivir). 3) Escribe dos frases sobre dos personas.
 
-## Answer check
+## Soluciones
 tío; vive; respuestas personales
 
-## Communicate
+## Comunica
 Presenta a dos personas, explica qué relación tienen contigo y menciona una cualidad de cada una.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 2 — La casa y los objetos cotidianos
@@ -94,7 +94,7 @@ Las llaves están sobre la mesa. La cocina está al lado del salón. Hay una lá
 Usa hay para expresar existencia y estar para localizar algo concreto. Utiliza en, sobre, debajo de, detrás de y al lado de.
 
 ## Guided practice
-1) ____ dos sillas en la cocina. 2) Las llaves están ____ la mesa (on). 3) Escribe tres frases de ubicación.
+1) ____ dos sillas en la cocina. 2) Las llaves están ____ la mesa (encima de). 3) Escribe tres frases de ubicación.
 
 ## Answer check
 Hay; sobre / encima de; respuestas personales
@@ -172,7 +172,7 @@ Busco una camisa azul. ¿La tiene en talla mediana? ¿Me la puedo probar?
 Los adjetivos concuerdan normalmente con el sustantivo: una camisa roja, unos zapatos rojos. Pregunta el precio con «¿Cuánto cuesta?».
 
 ## Guided practice
-1) Estas botas son muy ____ (expensive). 2) ¿Me puedo ____ la chaqueta? 3) Escribe una pregunta sobre el precio.
+1) Estas botas son muy ____ (caras). 2) ¿Me puedo ____ la chaqueta? 3) Escribe una pregunta sobre el precio.
 
 ## Answer check
 caras; probar; respuestas personales
@@ -366,7 +366,7 @@ Me duele la cabeza y tengo dolor de garganta. ¿Hay una farmacia cerca de aquí?
 Usa «me duele» con un sustantivo singular y «me duelen» con plural. Estas expresiones sirven para practicar el idioma, no son consejos médicos.
 
 ## Guided practice
-1) Me duele la ____ (head). 2) Tengo ____ (a cough). 3) Pregunta dónde está la farmacia más cercana.
+1) Me duele la ____ (parte del cuerpo). 2) Tengo ____ (síntoma: tos). 3) Pregunta dónde está la farmacia más cercana.
 
 ## Answer check
 cabeza; tos; ¿Dónde está la farmacia más cercana?
@@ -405,7 +405,7 @@ Hoy hace sol, así que vamos a dar un paseo. Si mañana llueve, podemos ver una 
 Para hablar del tiempo usa hace frío, hace sol o llueve. Para proponer un plan, usa «podemos…» o «vamos a…».
 
 ## Guided practice
-1) Hoy está ____ (cloudy). 2) En invierno hace ____. 3) Invita a un amigo a salir.
+1) Hoy está ____ (con nubes). 2) En invierno hace ____. 3) Invita a un amigo a salir.
 
 ## Answer check
 nublado; frío; respuestas personales
@@ -444,7 +444,7 @@ Me gusta aprender idiomas porque es útil. A veces me pongo nervioso al hablar, 
 Usa gustar con la estructura adecuada: me gusta el libro / me gustan los libros. Distingue estar aburrido (sentir aburrimiento) de ser aburrido (causar aburrimiento).
 
 ## Guided practice
-1) La película es ____ (boring). 2) Me gusta leer ____ es relajante. 3) Da una opinión con una razón.
+1) La película es ____ (que causa aburrimiento). 2) Me gusta leer ____ es relajante. 3) Da una opinión con una razón.
 
 ## Answer check
 aburrida; porque; respuestas personales
@@ -481,7 +481,7 @@ Aprende una expresión, crea un ejemplo personal y comprueba lo que recuerdas ma
 Aprende palabras en grupos naturales. Una forma parecida no garantiza el mismo significado. Repasa intentando recordar sin mirar la respuesta.
 
 ## Guided practice
-1) ____ los deberes. 2) Prestar ____. 3) ¿Actually en inglés significa lo mismo que actualmente en español?
+1) ____ los deberes. 2) Prestar ____. 3) ¿La palabra inglesa «actually» significa lo mismo que «actualmente»?
 
 ## Answer check
 hacer; atención; no: actually significa «en realidad»; actualmente significa «en este momento»
@@ -495,62 +495,62 @@ Enseña cinco palabras a un compañero con significado, combinación frecuente y
 - [ ] I know which expressions I need to review.
 
 ---
-# Integrated Project — Vocabulary Portfolio
+# Proyecto integrado — Portafolio de vocabulario
 
 Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio. Para cada tema, anota ocho palabras, tres expresiones frecuentes, tres frases propias y un diálogo breve. Añade una fecha de repaso a cada elemento.
 
-## Assessment criteria
+## Criterios de evaluación
 - Relevance and range of vocabulary.
 - Correct use of articles, agreement and verb forms.
 - Natural word combinations.
 - Clear communication in the target language.
 - A realistic review plan.
 
-# Final Review Test
+# Prueba final de repaso
 
-1. Name a family member who is your mother's brother.
-2. Complete: There ____ two chairs in the room. (en) / Il ____ deux chaises. (fr) / ____ dos sillas. (es)
-3. Complete the phrase for a quantity: a ____ of water / un ____ d'eau / un ____ de agua.
-4. Complete: try it ____ / l'essayer / probármela.
-5. Write one sentence about a daily routine.
-6. Give two directions to a public place.
-7. Write one polite question at a hotel reception.
-8. Name one task at work or in a class.
-9. Write one sentence describing a simple symptom.
-10. Describe today's weather.
-11. Express a preference and give a reason.
-12. Complete the collocation: do ____ / faire ses ____ / hacer los ____.
+1. ¿Cómo se llama el hermano de tu madre?
+2. Completa: ____ dos sillas en la habitación.
+3. Completa la expresión de cantidad: un ____ de agua.
+4. Completa la expresión: probarse ____.
+5. Escribe una frase sobre tu rutina diaria.
+6. Da dos indicaciones claras para llegar a un lugar público.
+7. Escribe una pregunta cortés para la recepción de un hotel.
+8. Nombra una tarea que realizas en el trabajo o en clase.
+9. Escribe una frase que describa un síntoma sencillo.
+10. Describe el tiempo que hace hoy en una frase.
+11. Expresa una preferencia y da una razón.
+12. Completa la expresión: hacer los ____.
 
-# Final Review — Answer Key
+# Soluciones de la prueba final
 
-1. Uncle / oncle / tío.
-2. are / y a / Hay.
-3. glass / verre / vaso.
-4. on / (l') / (la) — context-dependent; acceptable full phrase: try it on / l'essayer / probármela.
-5. Open response: check present tense and a clear routine.
-6. Open response: check imperative forms and sequence.
-7. Open response: check a polite, understandable question.
-8. Open response: accept relevant work or study vocabulary.
-9. Open response: accept a simple symptom phrase; this is language practice, not medical advice.
-10. Open response: check an appropriate weather expression.
-11. Open response: preference plus a reason.
-12. homework / devoirs / deberes.
+1. Tío.
+2. Hay.
+3. Vaso.
+4. la — por ejemplo: probarse la camisa.
+5. Respuesta abierta: comprobar el uso del presente y que la rutina sea clara.
+6. Respuesta abierta: comprobar el uso del imperativo y el orden lógico de las indicaciones.
+7. Respuesta abierta: comprobar que la pregunta sea cortés y comprensible.
+8. Respuesta abierta: aceptar vocabulario pertinente del trabajo o los estudios.
+9. Respuesta abierta: aceptar una expresión sencilla de un síntoma; es una actividad lingüística, no un consejo médico.
+10. Respuesta abierta: comprobar el uso de una expresión meteorológica adecuada.
+11. Respuesta abierta: comprobar que haya una preferencia y una razón.
+12. deberes.
 
-# Personal Vocabulary Record
+# Registro personal de vocabulario
 
-| Date | Word or expression | Meaning in context | My example | Review 1 | Review 2 | Review 3 |
+| Fecha | Palabra o expresión | Significado en contexto | Mi ejemplo | Repaso 1 | Repaso 2 | Repaso 3 |
 |---|---|---|---|---|---|---|
 | | | | | | | |
 | | | | | | | |
 | | | | | | | |
 
-# Glossary
-- **Collocation:** a combination of words that commonly occurs together.
-- **Cognate:** a word related in form and meaning to a word in another language.
-- **False friend:** a similar-looking word with a different meaning or use.
-- **Word family:** words related by form and meaning but used in different grammatical roles.
-- **Retrieval practice:** recalling information without looking at the source.
-- **Spaced review:** revisiting information at increasing intervals.
+# Glosario
+- **Colocación:** combinación de palabras que suele aparecer junta.
+- **Cognado:** palabra relacionada por su forma y significado con otra de un idioma distinto.
+- **Falso amigo:** palabra parecida a otra de distinto idioma, pero con otro significado o uso.
+- **Familia de palabras:** conjunto de palabras relacionadas por su forma y significado que cumplen distintas funciones gramaticales.
+- **Práctica de recuperación:** recordar información sin consultar el material.
+- **Repaso espaciado:** volver a estudiar la información en intervalos cada vez mayores.
 
 # Editorial and Release Note
 This independent-language edition has been adapted for monolingual learning. The answer key is aligned to the closed-ended exercises included in this draft; open activities are assessed using the criteria above. Before publication, a qualified native-level language editor and a language-teaching reviewer must verify naturalness, regional usage, level progression, instructions, every exercise and every answer. Record reviewer names, dates and decisions in the editorial report. Check all cover assets, fonts, permissions and accessibility before release.
