@@ -1,5 +1,11 @@
 name: Publish Book 01 PDF files to the public library
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/books/01-language-foundations/**'
+      - 'docs/production/latex-preamble.tex'
+      - '.github/workflows/publish-book-01-pdfs.yml'
   workflow_dispatch:
 permissions:
   contents: write
