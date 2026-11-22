@@ -145,6 +145,111 @@ Practica con un modelo y observa tanto el ritmo como la tilde escrita.
 **Criterio de logro:** Puedo contar sílabas en palabras conocidas, localizar la sílaba tónica y practicar con un modelo oral.
 
 
+## Unidad 4 — Saludos y cortesía
+
+**Objetivo:** Podrás saludar a alguien, elegir una expresión cortés y cerrar un intercambio cotidiano breve.
+
+### 4.1 Saludar según la situación
+Puedes decir **Hola**, **Buenos días**, **Buenas tardes** y **Buenas noches**. **Hola** sirve en muchas situaciones. **Buenos días** se utiliza por la mañana; **buenas tardes**, desde después del mediodía hasta el atardecer, aproximadamente; **buenas noches** se usa por la noche y también para despedirse al final del día.
+
+Para despedirte, puedes decir **Adiós**, **Hasta luego**, **Hasta pronto** o **Que tengas un buen día**. La elección depende de la situación y de la relación.
+
+### 4.2 Expresiones de cortesía
+- **Por favor** acompaña una petición educada.
+- **Gracias / Muchas gracias** expresan agradecimiento.
+- **De nada** responde a un agradecimiento.
+- **Disculpe / Disculpa** sirven para llamar la atención o interrumpir con educación.
+- **Lo siento** expresa una disculpa o pesar.
+
+**Disculpe** suele ser más formal que **disculpa**. En algunos lugares también se usa **perdón** para pedir que repitan algo o para disculparse brevemente.
+
+### 4.3 Un diálogo breve
+A: Buenos días. ¿Cómo está?  
+B: Muy bien, gracias. ¿Y usted?  
+A: Bien, gracias. Disculpe, ¿está libre este asiento?  
+B: Sí, claro.  
+A: Muchas gracias.  
+B: De nada.
+
+### Actividades
+1. Elige un saludo apropiado para las 9:00: Buenos días / Buenas noches.
+2. Completa: «Un vaso de agua, ____ ____».
+3. ¿Qué expresión puedes usar para llamar la atención con educación: «Disculpe» o «De nada»?
+4. Relaciona: (a) Gracias; (b) Lo siento; (c) Hola — (1) saludo; (2) agradecimiento; (3) disculpa.
+5. Escribe un diálogo de cuatro intervenciones: saluda, pregunta cómo está la otra persona, haz una petición cortés y da las gracias.
+
+**Criterio de logro:** Puedo iniciar y terminar un intercambio breve y utilizar expresiones básicas de cortesía.
+
+## Unidad 5 — Presentarse
+
+**Objetivo:** Podrás presentarte con tu nombre, origen, lugar de residencia y una afición.
+
+### 5.1 Modelos útiles
+- «Me llamo Lina». / «Soy Lina».
+- «Soy de Marruecos». (origen)
+- «Vivo en Rabat». (residencia actual)
+- «Hablo árabe y un poco de español».
+- «Estoy aprendiendo español».
+- «Me gusta la música y leer».
+
+Usa **ser de** para hablar del origen y **vivir en** para indicar dónde resides. No confundas «Soy de Rabat» con «Vivo en Rabat»: pueden expresar información diferente.
+
+### 5.2 Preguntar a otra persona
+- «¿Cómo te llamas?»
+- «¿De dónde eres?»
+- «¿Dónde vives?»
+- «¿Qué idiomas hablas?»
+- «¿Qué te gusta hacer?»
+
+En un primer encuentro, haz preguntas amables y respeta si la otra persona no quiere compartir datos personales. Puedes inventar información para practicar.
+
+### 5.3 Presentación modelo
+«Hola. Me llamo Lina. Soy de Marruecos y vivo en Rabat. Hablo árabe y francés. Estoy aprendiendo español porque me gusta conocer otras culturas. También me gusta leer».
+
+### Actividades
+1. Completa: «Yo ____ de España». (soy / es)
+2. Completa: «Ella ____ en Madrid». (vive / vivo)
+3. Elige la expresión de origen: «Vivo de México» / «Soy de México».
+4. Escribe tres frases para presentar a una persona ficticia.
+5. Escribe dos preguntas que puedes hacer a un compañero nuevo.
+
+**Criterio de logro:** Puedo presentarme con cuatro o cinco frases claras y formular dos preguntas sencillas.
+
+## Unidad 6 — Números, fechas y hora
+
+**Objetivo:** Podrás reconocer números frecuentes, expresar una fecha sencilla y preguntar o decir la hora.
+
+### 6.1 Números de uso cotidiano
+Practica estos grupos:
+- 0–10: cero, uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez.
+- 11–20: once, doce, trece, catorce, quince, dieciséis, diecisiete, dieciocho, diecinueve, veinte.
+- Decenas: treinta, cuarenta, cincuenta, sesenta, setenta, ochenta, noventa, cien.
+
+Presta atención a la escritura de **dieciséis**, **veintidós**, **veintitrés** y **veintiséis**, que llevan tilde. Practica primero los números en voz alta y después escríbelos.
+
+### 6.2 Fechas
+En español es habitual escribir día, mes y año: **5 de mayo de 2026**. Los días de la semana y los meses se escriben normalmente con minúscula: *lunes*, *mayo*. Para preguntar la fecha, puedes decir «¿Qué fecha es hoy?» o «¿Qué día es hoy?».
+
+### 6.3 Decir la hora
+- «Es la una.»
+- «Son las tres.»
+- «Son las cuatro y media.» (4:30)
+- «Son las seis y cuarto.» (6:15)
+- «Son las ocho menos cuarto.» (7:45)
+
+Para indicar cuándo ocurre una actividad, utiliza **a**: «La clase empieza a las nueve». En muchos contextos también se usa el formato digital: «Son las siete y cuarenta y cinco».
+
+### Actividades
+1. Escribe 16 y 60 con letras.
+2. ¿Qué número corresponde a *ochenta*: 18 o 80?
+3. Escribe la fecha 5 de mayo de 2026 con palabras.
+4. Completa: «La clase empieza ____ las 8:30».
+5. Expresa 6:15 con «y cuarto».
+6. Escribe una frase con un día, una fecha y una hora para una cita ficticia.
+
+**Criterio de logro:** Puedo reconocer números frecuentes, escribir una fecha claramente y preguntar o decir la hora.
+
+
 ## Soluciones
 
 Aún no está aprobado. Se deberá elaborar una clave de respuestas completa después de finalizar los ejercicios de esta edición. No se deben copiar sin verificar las respuestas parciales de la fuente conservada.
