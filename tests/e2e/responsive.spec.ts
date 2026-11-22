@@ -127,5 +127,5 @@ test('footer social icons keep fixed touch targets and wrap without overflow', a
   });
   expect(dimensions.width).toBe(43);
   expect(dimensions.height).toBe(43);
-  expect(dimensions.display).toBe('inline-grid');
+  expect(dimensions.display).toBe('grid');
 });
