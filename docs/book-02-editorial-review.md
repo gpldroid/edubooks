@@ -5,7 +5,7 @@
 **Series:** EduBooks Multilingual Learning Series 01  
 **Target:** A1–A2 approximate learning target; not official CEFR certification  
 **Languages:** English, French and Spanish  
-**Status:** First complete working manuscript / internal review candidate — not approved for sale.
+**Status:** Three independent first-draft manuscripts / technical PDF review candidates — not approved for sale.
 
 ## Editorial basis and project compliance
 
@@ -69,3 +69,32 @@ The three learning and explanation languages remain English, French and Spanish.
 **Current decision: review candidate only — not approved for sale.**
 
 Publication requires independent language review in all three languages, pedagogical review, correction of issues, final PDF proof inspection, rights clearance and approval of author attribution, edition and licence. Do not describe the book as certified or professionally proofread until the corresponding reviews are actually completed.
+
+## Independent-edition migration audit (2026-11-22)
+
+The source structure has now been checked programmatically: 1,239 lines, 12 units, and the expected Discover, Guided practice, Communicate and Self-check sections in all 12 units (Unit 12 uses a numbered instructional structure). The source includes trilingual vocabulary tables and examples, but most instructions, grammar explanations, pronunciation notes, practice prompts, project directions, review-test prompts and answer-key commentary are primarily in English.
+
+**Consequence:** extracting table columns alone would not create independent French and Spanish learner books. The three editions require target-language re-authoring and localized exercise/answer-key alignment. A migration plan is maintained at `docs/editorial/book-02/independent-editions-plan.md` on the working branch `work/book-02-independent-editions`.
+
+No language, pedagogical, rights or accessibility review is being marked complete by this automated source audit. The original integrated trilingual source is now preserved on `main` (PR #1); the independent-edition manuscripts remain working drafts and are not approved for commercial release.
+
+
+## Independent monolingual drafts and language-alignment pass (2026-11-22)
+
+Created and revised three separate first-draft manuscripts:
+- `content/books/02-essential-vocabulary/en/manuscript.md`
+- `content/books/02-essential-vocabulary/fr/manuscript.md`
+- `content/books/02-essential-vocabulary/es/manuscript.md`
+
+Each has 12 units, target-language instructions and practice, 12 unit-level answer checks, a portfolio project, a monolingual final review test and a corresponding answer key. The French and Spanish front matter, section headings, self-checks, assessment criteria, glossary and release notes were localized after an audit found residual English template text. The English final test was also made English-only. Unit 12 retains limited English comparison because it explicitly teaches false friends; the foreign-language terms are the subject matter, not untranslated instructions.
+
+A first audit of unit-level closed-answer pairs found the keyed responses aligned with the prompts in the current draft. This is an internal consistency pass, not native-level proof. Human reviewers must verify naturalness, grammar, level progression, regional usage and every answer before release.
+
+The matrix PDF workflow `.github/workflows/book-02-independent-editions.yml` checks language-specific section headings and all 12 unit answer-check sections before building one PDF per language. The first complete build passed for all three languages and produced review artifacts. Visual PDF inspection found a two-page TOC spill and untranslated default/heading labels in the FR/ES candidates; these were corrected by localizing the unit labels and Pandoc language metadata and limiting the TOC to top-level headings. A further French Unit 4 prompt/key agreement issue (plural direct object pronoun) was corrected. The latest CI run must pass on the final source commit before its artifacts can replace the earlier candidates. CI validation and this internal consistency review do not certify native-level editorial quality.
+
+
+A final-review audit also found two French cloze prompts whose wording did not align cleanly with their keyed completions; both prompts were rewritten and explicit CI assertions were added for representative prompt/key pairs in EN, FR and ES. An incremental YAML edit corrupted the workflow and failed before jobs were created, so the full workflow was rewritten cleanly. Duplicate push-triggered matrix runs were removed; PR validation is now the single CI gate. The latest completed matrix run #44974894348 passed all three language jobs (EN/FR/ES), including manuscript structure/language checks, PDF builds, PDF output validation and artifact uploads. This is technical CI evidence only and does not constitute editorial approval.
+
+## Visual proof status and future adjustment
+
+The PDF pipeline has produced three technical review candidates. Full-page visual proofreading is intentionally a later, editable production pass; typography, spacing, page breaks, table widths, running headers/footers, TOC depth and cover/layout details may be adjusted after the reviewer pass. The currently known Spanish editorial-note spill onto a mostly empty final page remains open for correction before final PDF export. Do not block manuscript integration on the final visual polish, but do not approve the PDFs for sale until the visual proof is complete.

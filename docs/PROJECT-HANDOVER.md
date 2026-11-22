@@ -119,15 +119,15 @@ Pages must use GitHub Actions as the deployment source. Do not add secrets to re
 
 See `docs/EDITORIAL-RELEASE-CHECKLIST.md`.
 
-## 7. Immediate next actions
+## Book 02 — independent editions integration (2026-11-22)\n\nThe original trilingual source has been preserved on `main` (PR #1). Three separate first-draft manuscripts, the matrix PDF workflow, and edition-specific layout safeguards are being integrated on a clean mainline branch because the original PR #9 became conflicted after the source and documentation merges. The last completed matrix run #44974894348 passed all three jobs (EN/FR/ES), including manuscript checks, PDF builds, PDF validation and artifact uploads. It produced three review-candidate artifacts (EN, FR, ES). These are technical build candidates only, not approved books. The old combined-language PDF workflow is retired in favour of the three-edition matrix workflow. Full-page visual proof is deliberately deferred and remains editable; one known issue is the Spanish editorial note continuing onto a mostly empty last page.\n\n## 7. Immediate next actions
 
 1. Convert the six SVG cover masters to PNG/JPEG, upload each to its matching Gumroad draft and verify the product pages.
 2. Resolve the pricing conflict: the selected policy was `same` (uniform price), while six different amounts were supplied and are currently configured. Confirm one common EUR price or explicitly retain the six amounts.
-3. Review and merge PR #15 only after confirming the reconstructed Book 01 markdown reads correctly; then author complete EN/FR/ES lessons, exercises and answer keys.
-4. Run the dedicated A1 preview workflow on PR #14 and verify the four-page PDF artifact before considering that fix complete.
-5. Review PR #9's three Book 02 manuscripts and PDFs in full; obtain qualified English, French and Spanish review, verify every answer key and resolve its PR #1 base dependency.
-6. Create separate Book 01 PDF workflows only after the three manuscripts are complete; do not treat PR #4's legacy trilingual PDF as a standalone edition.
-7. Complete full PDF proof, accessibility and rights checks for all six editions.
+3. Book 01 EN/FR/ES outline formatting is repaired and merged in PR #15; complete the actual lesson content, exercises and answer keys before generating separate sale-edition PDFs.
+4. Rebuild PR #14's A1 preview fix on a clean branch and confirm the dedicated PDF artifact; it is a legacy internal sample, not a catalogue edition.
+5. Integrate the three Book 02 independent manuscripts and their CI workflow on this clean mainline branch. The former PR #9 branch became conflicted after mainline merges; this replacement integration PR preserves its manuscripts without overwriting newer project documentation.
+6. Confirm all EN/FR/ES matrix jobs and review artifacts on the replacement PR. Keep the full-page visual proof editable for a later pass; correct the known Spanish final-page spill before final export.
+7. Obtain qualified English, French and Spanish editorial/pedagogical review, reconcile every answer key, and complete rights/accessibility checks for all six editions.
 8. Update catalogue and attach approved PDFs to matching Gumroad drafts only after explicit owner approval; publish only after a separate explicit release authorization.
 
 ## 8. Safety and continuity
