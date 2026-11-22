@@ -1,4 +1,7 @@
 ---
+import '../styles/site.css';
+import MobileTabBar from '../components/navigation/MobileTabBar.astro';
+import ScrollControls from '../components/ui/ScrollControls.astro';
 const { title = 'EduBooks — Learn. Practice. Grow.', description = 'Practical digital learning resources for every stage of the learning journey.' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonicalPath = Astro.url.pathname.startsWith(base) ? Astro.url.pathname : base + Astro.url.pathname.replace(/^\/+/, '');
@@ -46,7 +49,7 @@ const siteUrl = new URL(base, Astro.site).href;
 </div>
 </div>
 <main id="main" data-title-en={title} data-description-en={description}><slot /></main>
-<footer class="site-footer"><div class="container footer-main">
+<footer id="page-bottom" class="site-footer"><div class="container footer-main">
 <div class="footer-brand-column"><a class="brand brand-footer" href={base}><span class="brand-mark">E</span><span class="brand-name">Edu<span>Books</span><small>BY IMAD LIMRANI</small></span></a><p data-en="Thoughtful resources for a lifetime of learning." data-fr="Des ressources conçues pour apprendre tout au long de la vie." data-es="Recursos útiles para aprender durante toda la vida.">Thoughtful resources for a lifetime of learning.</p>
 <div class="social-block"><span class="social-heading" data-en="Follow EduBooks" data-fr="Suivre EduBooks" data-es="Sigue a EduBooks">Follow EduBooks</span><nav class="social-icons" aria-label="EduBooks social media">
 <a class="social-icon social-pinterest" href="https://www.pinterest.com/laracheblog" target="_blank" rel="noopener noreferrer" aria-label="Pinterest — opens in a new tab" title="Pinterest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.2a9.8 9.8 0 0 0-3.57 18.93c-.02-.78 0-1.72.2-2.57l1.4-5.95s-.35-.7-.35-1.73c0-1.62.94-2.83 2.1-2.83.99 0 1.47.74 1.47 1.63 0 .99-.63 2.47-.95 3.84-.27 1.15.58 2.09 1.72 2.09 2.07 0 3.66-2.18 3.66-5.33 0-2.79-2-4.74-4.85-4.74-3.3 0-5.24 2.47-5.24 5.02 0 .99.38 2.05.86 2.63.1.12.12.23.09.36l-.32 1.3c-.05.21-.17.26-.39.16-1.45-.67-2.36-2.78-2.36-4.48 0-3.64 2.64-6.99 7.62-6.99 4 0 7.11 2.85 7.11 6.66 0 3.97-2.5 7.16-5.97 7.16-1.17 0-2.27-.61-2.65-1.33l-.72 2.75c-.26 1.01-.97 2.28-1.44 3.05.88.27 1.81.41 2.77.41a9.8 9.8 0 0 0 0-19.6z" fill="currentColor"/></svg></a>
@@ -60,6 +63,8 @@ const siteUrl = new URL(base, Astro.site).href;
 </nav></div></div>
 <div class="footer-links"><a href={`${base}about/`} data-en="About" data-fr="À propos" data-es="Acerca de">About</a><a href={`${base}faq/`} data-en="FAQ" data-fr="FAQ" data-es="Preguntas">FAQ</a><a href={`${base}privacy/`} data-en="Privacy" data-fr="Confidentialité" data-es="Privacidad">Privacy</a><a href={`${base}terms/`} data-en="Terms" data-fr="Conditions" data-es="Términos">Terms</a></div>
 </div><div class="container footer-bottom"><span>© {new Date().getFullYear()} EduBooks · <span data-en="All rights reserved." data-fr="Tous droits réservés." data-es="Todos los derechos reservados.">All rights reserved.</span></span><span data-en="An independent educational publishing project by Imad Limrani." data-fr="Un projet indépendant d’édition éducative numérique par Imad Limrani." data-es="Un proyecto independiente de publicación educativa digital de Imad Limrani.">An independent educational publishing project by Imad Limrani.</span></div></footer>
+<MobileTabBar base={base} />
+<ScrollControls />
 <script>
 const languageWidget=document.querySelector('[data-language-widget]');
 const languageToggle=document.querySelector('[data-lang-toggle]');
@@ -80,7 +85,26 @@ function applyLanguage(){
 }
 function closeLanguageMenu(){if(!languageMenu||!languageToggle)return;languageMenu.hidden=true;languageToggle.setAttribute('aria-expanded','false');}
 languageToggle?.addEventListener('click',()=>{if(!languageMenu)return;const willOpen=languageMenu.hidden;languageMenu.hidden=!willOpen;languageToggle.setAttribute('aria-expanded',String(willOpen));});
-languageMenu?.querySelectorAll('[data-set-lang]').forEach(button=>button.addEventListener('click',()=>{const next=button.dataset.setLang;if(!supported.includes(next))return;lang=next;try{localStorage.setItem('edubooks-language',lang);}catch{/* Keep the current selection for this page view. */}applyLanguage();closeLanguageMenu();}));
+languageMenu?.querySelectorAll('[data-set-lang]').forEach(button=>button.addEventListener('click',()=>{const next=button.dataset.setLang;if(!supported.includes(next))return;lang=next;try{localStorage.setItem('edubooks-language',lang);}catch{/* Keep the current selection for this page view. */}const scrollControls=document.querySelector('[data-scroll-controls]');
+const scrollTopButton=document.querySelector('[data-scroll-top]');
+const scrollBottomButton=document.querySelector('[data-scroll-bottom]');
+function updateScrollControls(){
+  if(!scrollControls)return;
+  const scrollable=document.documentElement.scrollHeight>window.innerHeight+160;
+  const nearTop=window.scrollY<180;
+  const nearBottom=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-120;
+  scrollControls.classList.toggle('is-visible',scrollable&&!nearTop);
+  if(scrollTopButton)scrollTopButton.disabled=nearTop;
+  if(scrollBottomButton)scrollBottomButton.disabled=nearBottom;
+  if(scrollBottomButton)scrollBottomButton.hidden=nearBottom;
+  if(scrollTopButton)scrollTopButton.hidden=nearTop;
+}
+scrollTopButton?.addEventListener('click',()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+scrollBottomButton?.addEventListener('click',()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+window.addEventListener('scroll',updateScrollControls,{passive:true});
+window.addEventListener('resize',updateScrollControls,{passive:true});
+updateScrollControls();
+applyLanguage();closeLanguageMenu();}));
 document.addEventListener('click',event=>{if(languageWidget&&!languageWidget.contains(event.target))closeLanguageMenu();});
 document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLanguageMenu();});
 mobileMenu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');mobileMenu.setAttribute('aria-expanded',String(open));});
@@ -182,5 +206,11 @@ applyLanguage();
 @media(prefers-reduced-motion:reduce){.publication-card,.practice-card{transition:none}.publication-card:hover,.practice-card:hover{transform:none}}
 
 @media(max-width:760px){.menu-toggle{display:block;margin-inline-start:auto}.primary-nav{display:none;position:absolute;top:81px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;box-shadow:0 15px 20px #10203018}.primary-nav.open{display:flex}.primary-nav a:focus-visible,.language-switch:focus-visible,.menu-toggle:focus-visible,.button:focus-visible{outline:3px solid #70b9ae;outline-offset:3px}.nav-wrap{gap:12px}.brand{min-width:0}.hero{padding:60px 0}.hero-grid,.intro-grid,.principles-wrap,.newsletter-wrap{grid-template-columns:1fr;gap:30px}.hero-art{min-height:220px}.category-grid{grid-template-columns:1fr}.footer-main,.footer-bottom{flex-direction:column}.footer-brand-column{max-width:none}.footer-links{flex-wrap:wrap}.section-pad{padding:60px 0}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}.language-globe svg{animation:none}}
+
+.icon-3d{display:inline-grid;width:var(--icon-size,28px);height:var(--icon-size,28px);place-items:center;border:1px solid #ffffff55;border-radius:10px;background:linear-gradient(145deg,#ffffff2b,#ffffff0c);color:currentColor;box-shadow:0 4px 0 #07182b44,0 7px 13px #07182b25,inset 0 1px 0 #ffffff65;transform:perspective(320px) rotateX(5deg);transition:transform .18s ease,box-shadow .18s ease}
+.icon-3d svg{width:68%;height:68%;filter:drop-shadow(0 2px 1px #07182b44)}
+.icon-3d:hover{transform:perspective(320px) rotateX(0) translateY(-2px);box-shadow:0 6px 0 #07182b44,0 10px 16px #07182b25,inset 0 1px 0 #ffffff65}
+.scroll-control[hidden]{display:none}
+.scroll-control:disabled{opacity:0;pointer-events:none}
 </style>
 </body></html>
