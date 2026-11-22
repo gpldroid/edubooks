@@ -117,7 +117,7 @@ Verify **Settings → Pages → Build and deployment → Source: GitHub Actions*
 |---|---|---|
 | [#13](https://github.com/gpldroid/edubooks/pull/13) | Merged | Mobile UI and PDF preview improvements. |
 | [#12](https://github.com/gpldroid/edubooks/pull/12) | Closed, not merged | Preview PDF built, but validation incorrectly required at least five pages for a four-page sample extract. Superseded by PR #14. |
-| [#14](https://github.com/gpldroid/edubooks/pull/14) | Open draft | Corrects the minimum page count to four and adds a fix-branch push trigger. Astro build validation passed; dedicated PDF preview workflow has not yet been confirmed. |
+| [#14](https://github.com/gpldroid/edubooks/pull/14) | Open draft | Corrects the minimum page count to four and adds a fix-branch push trigger. Local Pandoc/XeLaTeX build passed (4-page A4 PDF, 638 extracted words, all seven text checks); the dedicated GitHub Actions artifact upload remains unconfirmed. |
 | [#15](https://github.com/gpldroid/edubooks/pull/15) | Open draft | Repairs character-per-line corruption and localizes French/Spanish Book 01 draft labels. The underlying manuscripts remain outlines. |
 | [#9](https://github.com/gpldroid/edubooks/pull/9) | Open draft | EN/FR/ES Book 02 builds passed and produced review PDFs. It is stacked on PR #1's source branch. |
 | [#4](https://github.com/gpldroid/edubooks/pull/4) | Open draft | Book 01 legacy trilingual-source PDF workflow passed; not a set of independent language editions. |
@@ -145,7 +145,7 @@ Do not merge or publish any of these drafts automatically. PR #14 and PR #15 sho
 
 ## PDF production
 
-The Book 01 workflow `.github/workflows/book-01-pdf.yml` currently builds the preserved trilingual source, not three independent sale editions. PR #4 produced a 28-page A4 review candidate with embedded fonts; it is useful as a source/reference proof only and does not satisfy the standalone-edition requirement. PR #9 produced three Book 02 review candidates with embedded DejaVu Sans fonts and localized front matter/section labels. Only sampled pages and technical properties have been checked so far; full-page editorial and accessibility proof remains outstanding. PR #14 proposes the Book 01 A1 preview page-count fix; its dedicated preview workflow still needs a successful run. All artifacts are temporary Actions artifacts, not permanent sale files. Never upload a review candidate to Gumroad.
+The Book 01 workflow `.github/workflows/book-01-pdf.yml` currently builds the preserved trilingual source, not three independent sale editions. PR #4 produced a 28-page A4 review candidate with embedded fonts; it is useful as a source/reference proof only and does not satisfy the standalone-edition requirement. PR #9 produced three Book 02 review candidates with embedded DejaVu Sans fonts and localized front matter/section labels. Only sampled pages and technical properties have been checked so far; full-page editorial and accessibility proof remains outstanding. PR #14 fixes the four-page A1 preview threshold. The exact build and validation passed locally (4-page A4, 638 words, all required text checks), but the GitHub Actions artifact-upload workflow still needs a confirmed run. This legacy preview contains Arabic support text and is not one of the approved six language editions. All artifacts are temporary Actions artifacts, not permanent sale files. Never upload a review candidate to Gumroad.
 
 ## Continuation guide
 
