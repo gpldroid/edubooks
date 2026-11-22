@@ -127,17 +127,24 @@ document.addEventListener('click',(event:MouseEvent)=>{
   if(target instanceof Node&&languageWidget&&!languageWidget.contains(target)) closeLanguageMenu();
 });
 document.addEventListener('keydown',(event:KeyboardEvent)=>{
-  if(event.key==='Escape') closeLanguageMenu();
+  if(event.key==='Escape') { closeLanguageMenu(); closeMobileMenu(); }
 });
+function closeMobileMenu():void {
+  nav?.classList.remove('open');
+  mobileMenu?.setAttribute('aria-expanded','false');
+  mobileMenu?.setAttribute('aria-label','Open navigation');
+}
 mobileMenu?.addEventListener('click',()=>{
   const open=nav?.classList.toggle('open')??false;
   mobileMenu.setAttribute('aria-expanded',String(open));
+  mobileMenu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
 });
 nav?.querySelectorAll<HTMLAnchorElement>('a').forEach((link)=>{
-  link.addEventListener('click',()=>{
-    nav.classList.remove('open');
-    mobileMenu?.setAttribute('aria-expanded','false');
-  });
+  link.addEventListener('click',closeMobileMenu);
+});
+document.addEventListener('click',(event:MouseEvent)=>{
+  const target=event.target;
+  if(target instanceof Node&&nav&&mobileMenu&&!nav.contains(target)&&!mobileMenu.contains(target)) closeMobileMenu();
 });
 const scrollControls=document.querySelector<HTMLElement>('[data-scroll-controls]');
 const scrollTopButton=document.querySelector<HTMLButtonElement>('[data-scroll-top]');
