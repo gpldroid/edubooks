@@ -158,10 +158,10 @@ export function validateBookCatalog(catalog: readonly Book[]): string[] {
     }
 
     if (book.status === 'published') {
-      if (!book.previewPdf?.startsWith('/previews/') || !book.previewPdf.endsWith('.pdf') || book.previewPdf.includes('..')) {
+      if (!book.previewPdf || !book.previewPdf.startsWith('/previews/') || !book.previewPdf.endsWith('.pdf') || book.previewPdf.includes('..')) {
         errors.push(`${prefix}: published editions require a safe PDF preview under /previews/.`);
       }
-      if (!book.downloadPdf?.startsWith('/books/') || !book.downloadPdf.endsWith('.pdf') || book.downloadPdf.includes('..')) {
+      if (!book.downloadPdf || !book.downloadPdf.startsWith('/books/') || !book.downloadPdf.endsWith('.pdf') || book.downloadPdf.includes('..')) {
         errors.push(`${prefix}: published editions require a full PDF under /books/.`);
       }
       if (!Number.isInteger(book.samplePageCount) || (book.samplePageCount ?? 0) < 3 || (book.samplePageCount ?? 0) > 5) {
