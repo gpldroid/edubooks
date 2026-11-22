@@ -56,20 +56,30 @@ test('book library requires localized metadata, a TOC and a bounded PDF sample',
   assert.ok(catalog.includes("book.status !== 'draft' && book.status !== 'published'"));
 });
 
-test('public book pages provide an in-page PDF preview and never render checkout controls', () => {
+test('public book pages separate information-only previews from timed PDF downloads', () => {
   const card = read('src/components/books/BookCard.astro');
   const detail = read('src/components/books/BookPreview.astro');
-  const viewer = read('src/components/books/PdfViewer.astro');
   const route = read('src/pages/books/[slug].astro');
-  for (const [source, token] of [[card, 'Read description &amp; preview'], [detail, 'Table of contents'], [detail, 'PdfViewer'], [viewer, '<iframe'], [viewer, 'Open PDF in new tab']]) {
-    assert.ok(source.includes(token), `Missing preview feature: ${token}`);
-  }
+  const download = read('src/pages/books/[slug]/download.astro');
+  for (const token of ['data-en="Preview"', 'data-en="Download"']) assert.ok(card.includes(token), `Missing card action: ${token}`);
+  for (const token of ['Table of contents', 'Preview includes the book description and table of contents only', 'download/']) assert.ok(detail.includes(token), `Missing information-only preview feature: ${token}`);
+  assert.ok(!detail.includes('PdfViewer'));
   assert.ok(route.includes("book.status === 'published'"));
-  for (const source of [card, detail, viewer, route]) {
-    for (const forbidden of ['gumroadUrl', 'paypalUrl', 'downloadUrl', 'Buy with Gumroad', 'Pay with PayPal', 'Access digital file']) {
+  for (const token of ['download-timer', 'setInterval', 'download-link', 'download']) assert.ok(download.includes(token), `Missing timed-download feature: ${token}`);
+  for (const source of [card, detail, route, download]) {
+    for (const forbidden of ['gumroadUrl', 'paypalUrl', 'Buy with Gumroad', 'Pay with PayPal', 'Access digital file']) {
       assert.ok(!source.includes(forbidden), `Commercial control leaked into public template: ${forbidden}`);
     }
   }
+});
+
+test('inner-page typography refinements explicitly exclude the homepage', () => {
+  const layout = read('src/layouts/BaseLayout.astro');
+  const css = read('src/styles/site.css');
+  assert.ok(layout.includes("'home-page' : 'inner-page'"));
+  assert.ok(css.includes('body.inner-page .page-hero h1'));
+  assert.ok(css.includes('body.inner-page .content-section h2'));
+  assert.ok(!css.includes('body.home-page'));
 });
 
 test('draft manuscripts are not automatically promoted into the public catalogue', () => {

@@ -1,0 +1,66 @@
+name: Publish Book 01 PDF files to the public library
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/books/01-language-foundations/**'
+      - 'docs/production/latex-preamble.tex'
+      - '.github/workflows/publish-book-01-pdfs.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-book-01-pdfs
+  cancel-in-progress: false
+jobs:
+  build-and-publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Install PDF toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french texlive-lang-spanish poppler-utils
+      - name: Build and validate three independent editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public/books
+          for lang in en fr es; do
+            case "$lang" in
+              en) title="Language Foundations — English Edition"; tag="en-GB"; unit="Unit"; answer="Answer key";;
+              fr) title="Fondements de l’apprentissage des langues — Édition française"; tag="fr-FR"; unit="Unité"; answer="Corrigé";;
+              es) title="Fundamentos del aprendizaje de idiomas — Edición española"; tag="es-ES"; unit="Unidad"; answer="Soluciones";;
+            esac
+            source="content/books/01-language-foundations/$lang/manuscript.md"
+            output="public/books/edubooks-book-01-$lang.pdf"
+            count="$(grep -Ec "^## ${unit} [0-9]+ — " "$source" || true)"
+            test "$count" -eq 10
+            pandoc "$source" --from=gfm --standalone --toc --toc-depth=2 --pdf-engine=xelatex \
+              --include-in-header=docs/production/latex-preamble.tex --resource-path=. \
+              -V mainfont="DejaVu Sans" -V lang="$tag" -V geometry:paper=a4paper \
+              -V geometry:margin=18mm -V fontsize=10pt -V colorlinks=true \
+              -V title="$title" -V author="EduBooks" -o "$output"
+            test -s "$output"
+            pages="$(pdfinfo "$output" | awk '/^Pages:/ {print $2}')"
+            test "$pages" -ge 10
+            pdftotext "$output" "/tmp/$lang.txt"
+            grep -Fq "$answer" "/tmp/$lang.txt"
+            for n in {1..10}; do grep -Fq "$unit $n" "/tmp/$lang.txt"; done
+            echo "$lang: $pages pages validated"
+          done
+      - name: Commit validated PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/books/edubooks-book-01-*.pdf
+          if git diff --cached --quiet; then echo "PDF files are already current."; exit 0; fi
+          git commit -m "Publish validated Book 01 PDF editions to library"
+          git push origin HEAD:main

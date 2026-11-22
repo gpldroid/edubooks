@@ -36,6 +36,7 @@ export type Book = {
   toc: BookTocItem[];
   previewPdf: string;
   samplePageCount: number;
+  downloadPdf?: string;
   // Commercial fields are retained for backwards-compatible editorial metadata only.
   // Public templates intentionally never render checkout or download links.
   price?: number | null;
