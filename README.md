@@ -19,13 +19,25 @@ EduBooks is a **free, website-only PDF library**. Readers will be able to open a
 
 - Website: Astro 5, hosted at https://gpldroid.github.io/edubooks/.
 - Repository: https://github.com/gpldroid/edubooks.
-- PR #32 and PR #33 established the six draft catalogue entries, rights register and internal PDF review pipeline. PR #36 added per-edition PDF QA evidence and a modest Book 02 pagination refinement; it is merged in commit `1481cfa77540f9426ed9ee973810a73ac1099b67`.
-- The public catalogue in `src/data/catalog.ts` contains six separate draft entries: Book 01 EN/FR/ES and Book 02 EN/FR/ES. None is marked published.
-- `public/books/` and `public/previews/` remain absent; no public PDF downloads or samples are exposed.
-- Latest internal review builds: [Book 01 workflow #45078048226](https://github.com/gpldroid/edubooks/actions/runs/45078048226), [Book 02 workflow #45078048251](https://github.com/gpldroid/edubooks/actions/runs/45078048251). Both generated three language PDFs and five-page internal samples; QA reports confirm embedded fonts and report `Tagged: no`.
-- Astro validation and responsive browser tests passed in [workflow #45078048273](https://github.com/gpldroid/edubooks/actions/runs/45078048273).
-- These PDFs remain internal review candidates only. They are not final public editions, and no GitHub Actions artifact is linked from the site.
-- No edition is approved for public release. Qualified language and pedagogical reviews, itemized asset-rights evidence, accessibility remediation/testing, final visual proof and edition-specific owner authorization remain mandatory.
+- The catalogue contains six independent draft editions: Book 01 EN/FR/ES and Book 02 EN/FR/ES. All six remain `draft`; public downloads are not approved.
+- The owner confirmed rights to use and distribute the six current catalogue covers in `public/covers/` on the website and embedded in PDFs. The exact six file paths and allowed uses are recorded in the rights register and asset audit. Legacy Gumroad-format covers remain excluded.
+- An AI-assisted first-pass review of all six manuscripts is documented in [the six-edition editorial review](docs/editorial/ai-assisted-six-edition-review-2026-11-22.md). Structural scan: Book 01 has 10 units per language; Book 02 has 12 units per language; no TODO/FIXME/placeholder markers or explicit external URLs were detected. This is not professional proofreading, plagiarism clearance or pedagogical sign-off.
+- Existing answer-key reports document first-pass checks and corrections: Book 01 French Unit 3; Book 02 French Unit 10 and Spanish Unit 9. Fresh PDFs must be checked against the final source manuscripts.
+- PDF workflows now explicitly install `fonts-dejavu-core`, archive its package version and copyright/licence notice, and record SHA-256 sidecars for full PDFs and five-page samples. These are internal review artifacts only.
+- The previous six review candidates embedded their fonts but reported `Tagged: no`. Current Pandoc/XeLaTeX output is not certified as PDF/UA or screen-reader accessible. Semantic tagging, reading-order checks and screen-reader testing remain release blockers.
+- Qualified EN/FR/ES language review, independent pedagogical review, itemized third-party source/asset clearance, full-page visual proof and exact-checksum owner approval remain required.
+- No final PDFs or samples have been copied to `public/books/` or `public/previews/`; no catalogue entry has been marked `published`. Do not link GitHub Actions artifacts from the public site.
+
+## Latest release audit and evidence
+
+- AI-assisted review: [docs/editorial/ai-assisted-six-edition-review-2026-11-22.md](docs/editorial/ai-assisted-six-edition-review-2026-11-22.md)
+- Rights and licences: [docs/RIGHTS-AND-LICENSE-REGISTER.md](docs/RIGHTS-AND-LICENSE-REGISTER.md)
+- Asset audit: [docs/editorial/asset-rights-audit-2026-11-22.md](docs/editorial/asset-rights-audit-2026-11-22.md)
+- Release checklist: [docs/EDITORIAL-RELEASE-CHECKLIST.md](docs/EDITORIAL-RELEASE-CHECKLIST.md)
+- Remaining work: [docs/REMAINING-WORK-REGISTER.md](docs/REMAINING-WORK-REGISTER.md)
+- PDF design/accessibility requirements: [docs/production/BOOK-PDF-DESIGN-SYSTEM.md](docs/production/BOOK-PDF-DESIGN-SYSTEM.md)
+
+
 ## The first collection
 
 | Book | English | French | Spanish | Draft scope |
