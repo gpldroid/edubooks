@@ -71,7 +71,7 @@ Existing Gumroad drafts are historical external account state only. This reposit
 - Book 01 and Book 02 have six independent working manuscripts in total.
 - Book 02 matrix review artifacts passed automated technical validation; they are not final editions.
 - Public catalogue remains empty.
-- Three legacy Book 01 PDFs remain in `public/books/` and are not approved final files.
+- Three historical, unapproved Book 01 PDFs have been removed from deployable public assets.
 - No edition is currently approved for public distribution.
 
 **Release principle:** publish each edition only after its language, pedagogy, rights, accessibility and visual proof are complete. Once approved, offer it free as browser preview plus direct PDF download.
