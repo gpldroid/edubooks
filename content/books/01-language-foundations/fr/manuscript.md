@@ -35,7 +35,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 ## État d’avancement des unités
 
-### Unit 1 — Bien commencer : comment fonctionne l’apprentissage des langues
+### Unité 1 — Bien commencer : comment fonctionne l’apprentissage des langues
 
 **Statut :** plan initial propre à cette langue ; les exercices complets, les exemples et la vérification du corrigé restent à élaborer.
 
@@ -43,7 +43,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 **Travaux éditoriaux :** rédiger les explications et les exemples dans la langue cible ; créer des activités originales ; définir des critères de réussite clairs ; préparer et vérifier le corrigé ; obtenir une évaluation indépendante.
 
-### Unit 2 — L’alphabet et l’épellation
+### Unité 2 — L’alphabet et l’épellation
 
 **Statut :** plan initial propre à cette langue ; les exercices complets, les exemples et la vérification du corrigé restent à élaborer.
 
@@ -51,7 +51,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 **Travaux éditoriaux :** rédiger les explications et les exemples dans la langue cible ; créer des activités originales ; définir des critères de réussite clairs ; préparer et vérifier le corrigé ; obtenir une évaluation indépendante.
 
-### Unit 3 — Premiers sons et prononciation
+### Unité 3 — Premiers sons et prononciation
 
 **Statut :** plan initial propre à cette langue ; les exercices complets, les exemples et la vérification du corrigé restent à élaborer.
 
@@ -59,7 +59,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 **Travaux éditoriaux :** rédiger les explications et les exemples dans la langue cible ; créer des activités originales ; définir des critères de réussite clairs ; préparer et vérifier le corrigé ; obtenir une évaluation indépendante.
 
-### Unit 4 — Salutations et politesse
+### Unité 4 — Salutations et politesse
 
 **Statut :** contenu planifié à partir de la source multilingue conservée ; rédaction dans la langue cible et refonte des exercices encore nécessaires.
 
@@ -67,7 +67,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 **Travaux éditoriaux :** rédiger les explications et les exemples dans la langue cible ; créer des activités originales ; définir des critères de réussite clairs ; préparer et vérifier le corrigé ; obtenir une évaluation indépendante.
 
-### Unit 5 — Se présenter
+### Unité 5 — Se présenter
 
 **Statut :** contenu planifié à partir de la source multilingue conservée ; rédaction dans la langue cible et refonte des exercices encore nécessaires.
 
@@ -75,7 +75,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 **Travaux éditoriaux :** rédiger les explications et les exemples dans la langue cible ; créer des activités originales ; définir des critères de réussite clairs ; préparer et vérifier le corrigé ; obtenir une évaluation indépendante.
 
-### Unit 6 — Nombres, dates et heure
+### Unité 6 — Nombres, dates et heure
 
 **Statut :** contenu planifié à partir de la source multilingue conservée ; rédaction dans la langue cible et refonte des exercices encore nécessaires.
 
@@ -83,7 +83,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 **Travaux éditoriaux :** rédiger les explications et les exemples dans la langue cible ; créer des activités originales ; définir des critères de réussite clairs ; préparer et vérifier le corrigé ; obtenir une évaluation indépendante.
 
-### Unit 7 — Informations personnelles et questions
+### Unité 7 — Informations personnelles et questions
 
 **Statut :** contenu planifié à partir de la source multilingue conservée ; rédaction dans la langue cible et refonte des exercices encore nécessaires.
 
@@ -91,7 +91,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 **Travaux éditoriaux :** rédiger les explications et les exemples dans la langue cible ; créer des activités originales ; définir des critères de réussite clairs ; préparer et vérifier le corrigé ; obtenir une évaluation indépendante.
 
-### Unit 8 — Langue de la classe et de l’apprentissage
+### Unité 8 — Langue de la classe et de l’apprentissage
 
 **Statut :** contenu planifié à partir de la source multilingue conservée ; rédaction dans la langue cible et refonte des exercices encore nécessaires.
 
@@ -99,7 +99,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 **Travaux éditoriaux :** rédiger les explications et les exemples dans la langue cible ; créer des activités originales ; définir des critères de réussite clairs ; préparer et vérifier le corrigé ; obtenir une évaluation indépendante.
 
-### Unit 9 — Les premières phrases
+### Unité 9 — Les premières phrases
 
 **Statut :** contenu planifié à partir de la source multilingue conservée ; rédaction dans la langue cible et refonte des exercices encore nécessaires.
 
@@ -107,7 +107,7 @@ Définir des objectifs réalistes ; comprendre les quatre compétences ; travail
 
 **Travaux éditoriaux :** rédiger les explications et les exemples dans la langue cible ; créer des activités originales ; définir des critères de réussite clairs ; préparer et vérifier le corrigé ; obtenir une évaluation indépendante.
 
-### Unit 10 — Projet intégré pour débutants
+### Unité 10 — Projet intégré pour débutants
 
 **Statut :** contenu planifié à partir de la source multilingue conservée ; rédaction dans la langue cible et refonte des exercices encore nécessaires.
 
