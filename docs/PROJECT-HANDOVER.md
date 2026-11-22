@@ -23,7 +23,7 @@ Two titles, each as three separate, monolingual learner books:
 
 Each edition needs its own title/front matter, explanations, examples, exercises, answer key, glossary and back matter in its target language. Cross-language comparison activities must be rewritten as appropriate target-language exercises. Do not use automatic block splitting as the final editorial method.
 
-The architecture and migration policy are in `docs/editorial/independent-language-editions.md`. Book 01 has draft manuscripts at `content/books/01-language-foundations/{en,fr,es}/manuscript.md` and a migration inventory at `docs/editorial/book-01/source-inventory.md`. The original multilingual manuscript remains preserved. Book 02 has a source audit at `docs/editorial/book-02/source-audit.md`; its three separate manuscripts still need to be authored.
+The architecture and migration policy are in `docs/editorial/independent-language-editions.md`. Book 01 has draft manuscripts at `content/books/01-language-foundations/{en,fr,es}/manuscript.md` and a migration inventory at `docs/editorial/book-01/source-inventory.md`. The original multilingual manuscript remains preserved. Book 02 has a 1,238-line trilingual working manuscript on draft PR #1 (`feat/book-02-essential-vocabulary`), not on `main`. PR #1 remains open/draft. The three separate manuscripts still need to be authored/adapted. See `docs/editorial/book-02/source-audit.md` for verified details.
 
 ## 3. Gumroad store state
 
