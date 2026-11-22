@@ -7,7 +7,7 @@ on:
     branches-ignore: [main]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -21,6 +21,18 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Commit generated npm lockfile on the working branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/responsive-3d-ui-audit'
+        run: |
+          git add package-lock.json
+          if git diff --cached --quiet; then
+            echo "package-lock.json is already up to date"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: add npm dependency lockfile"
+            git push origin HEAD
+          fi
       - name: Export generated npm lockfile for reproducible install
         uses: actions/upload-artifact@v4
         with:
