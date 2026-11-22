@@ -225,3 +225,51 @@ p, li { line-height: 1.75; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .button-3d:hover, .button-3d:active, .scroll-control:hover, .scroll-control:active { transform: none; }
 }
+
+
+/* Mobile language selector sits directly above the scroll controls. */
+@media (max-width: 760px) {
+  .language-float {
+    top: auto;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: calc(88px + 40px + 40px + 8px + env(safe-area-inset-bottom));
+    z-index: 30;
+  }
+  .language-menu {
+    bottom: calc(100% + 8px);
+    top: auto;
+  }
+}
+
+/* Keep footer social links independent from generic footer-link sizing. */
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+}
+.site-footer .social-icons .social-icon {
+  display: inline-grid;
+  flex: 0 0 43px;
+  width: 43px;
+  min-width: 43px;
+  max-width: 43px;
+  height: 43px;
+  min-height: 43px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.site-footer .social-icons .social-icon svg {
+  display: block;
+  width: 23px;
+  height: 23px;
+  max-width: none;
+  flex: none;
+}
