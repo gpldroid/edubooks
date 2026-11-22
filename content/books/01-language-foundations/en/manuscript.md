@@ -33,91 +33,424 @@ Set realistic goals; understand the four skills; practise spelling, pronunciatio
 9. First Sentences
 10. Integrated Beginner Project
 
-## Unit development status
+## Unit 1 — Start Here: How Languages Work
 
-### Unit 1 — Start Here: How Languages Work
+**Learning goal:** By the end of this unit, you can set one measurable language-learning goal, plan a 15-minute session and identify listening, speaking, reading and writing.
 
-**Status:** Initial language-specific outline; full exercises, examples and answer-key reconciliation still required.
+### 1.1 Four skills, one learning cycle
+- **Listening:** understand a short spoken message. Start with a short recording; listen once for the situation and again for key words.
+- **Speaking:** communicate aloud. Repeat a model, then change one detail to make it true for you.
+- **Reading:** understand written information. Look at the title first, predict the topic and underline words that carry meaning.
+- **Writing:** communicate in text. Begin with a clear sentence; check capitals, spelling and end punctuation.
 
-**Unit purpose:** Set a realistic goal, plan a short study session and identify the four language skills.
+The skills support one another. Read a short dialogue, listen to it if audio is available, say one line aloud and write a new line using the same pattern.
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+### 1.2 Make a useful goal
+A useful goal says what you will do, how often and how you will know you succeeded. “Learn English” is too broad. “On Monday, Wednesday and Friday, I will study for 15 minutes and write three sentences about my day” is measurable.
 
-### Unit 2 — The Alphabet and Spelling
+Use a small routine:
+1. **Recall (3 minutes):** write or say what you remember without looking.
+2. **Learn (7 minutes):** study a small set of words or one pattern.
+3. **Use (5 minutes):** make sentences or speak in a short role-play.
 
-**Status:** Initial language-specific outline; full exercises, examples and answer-key reconciliation still required.
+Short, regular practice is usually easier to maintain than one very long session. If you miss a day, restart with the next planned session; do not try to “repay” every missed minute.
 
-**Unit purpose:** Recognize letters, spell a name and ask how a word is written.
+### 1.3 Your learning record
+Record the date, skill practised, task completed and one point to review. Example: “Tuesday — reading — understood a short notice — review the word *closed*.”
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+### Practice
+1. Match each task to a skill: (a) listen to a station announcement; (b) write a message; (c) read a menu; (d) ask for directions aloud.
+2. Improve this goal: “I want to get better.”
+3. Put the routine in a sensible order: use / recall / learn.
+4. Write a 15-minute plan for three days this week.
+5. Reflection: Which skill feels easiest today? Which needs more practice? Give one reason for each.
 
-### Unit 3 — First Sounds and Pronunciation
+**Success check:** I can name the four skills, write one measurable goal and describe a short study routine.
 
-**Status:** Initial language-specific outline; full exercises, examples and answer-key reconciliation still required.
+## Unit 2 — The Alphabet and Spelling
 
-**Unit purpose:** Notice basic sound and spelling patterns and practise clear pronunciation.
+**Learning goal:** You can recognize the English alphabet, spell a name or simple word, and ask someone to repeat or spell information.
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+### 2.1 Letters and letter names
+English uses 26 letters. The written letter and its name are not always the same as the sound it represents inside a word. For example, the letter name of **A** is /eɪ/, while the vowel sound in *cat* is different. Learn letter names for spelling; learn word pronunciation separately.
 
-### Unit 4 — Greetings and Politeness
+The alphabet is:
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 
-**Status:** Planned from the preserved multilingual source; target-language authoring and exercise redesign required.
+Useful spelling groups to practise aloud:
+- A, H, J, K
+- B, C, D, E, G, P, T, V
+- I, Y
+- Q, U, W
+These are practice groups, not pronunciation rules. Listen to a reliable model when possible.
 
-**Unit purpose:** Set realistic goals; understand the four skills; practise spelling, pronunciation, greetings, introductions, numbers, dates, personal information, classroom language and first sentences.
+### 2.2 Ask and clarify
+- “How do you spell your name?”
+- “Could you spell that, please?”
+- “Could you say that again?”
+- “Is that B or P?”
+- “Thank you. Let me check: M-A-R-I-A.”
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+Use **capital letters** for the first letter of a person's name and for the pronoun **I**. In ordinary sentences, use a capital at the beginning and a full stop at the end.
 
-### Unit 5 — Introducing Yourself
+### 2.3 Spelling strategies
+Say the word slowly, identify each letter, then check the whole word. For unfamiliar words, divide the word into smaller parts. Do not assume that English spelling always tells you the pronunciation: *name*, *have* and *said* show different vowel spellings.
 
-**Status:** Planned from the preserved multilingual source; target-language authoring and exercise redesign required.
+### Practice
+1. Write the five vowels in the English alphabet.
+2. Correct the sentence: “my name is sam and i live in london”
+3. Complete the question: “How do you ____ your surname?”
+4. Choose the clearest clarification: (a) “Again?” (b) “Could you spell that, please?”
+5. Spell these words using capital letters: book, taxi, name.
+6. Write a two-line dialogue in which one person asks for a name and checks its spelling.
 
-**Unit purpose:** Set realistic goals; understand the four skills; practise spelling, pronunciation, greetings, introductions, numbers, dates, personal information, classroom language and first sentences.
+**Success check:** I can use the alphabet to spell a short word and ask politely for clarification.
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+## Unit 3 — First Sounds and Pronunciation
 
-### Unit 6 — Numbers, Dates and Time
+**Learning goal:** You can use a simple listen–notice–repeat routine, identify syllables and practise word stress without expecting English spelling to be a perfect pronunciation guide.
 
-**Status:** Planned from the preserved multilingual source; target-language authoring and exercise redesign required.
+### 3.1 Sounds and spelling
+A **letter** is a written symbol; a **sound** is what you hear and say. One letter can represent different sounds, and one sound can have different spellings. Compare:
+- *cat* and *name*: the letter **a** has different vowel sounds.
+- *see* and *sea*: different spellings can represent the same vowel sound.
+- *phone*: the first sound is represented by the two letters **ph**.
 
-**Unit purpose:** Set realistic goals; understand the four skills; practise spelling, pronunciation, greetings, introductions, numbers, dates, personal information, classroom language and first sentences.
+Use a dictionary with audio or a trusted recording for a new word. Listen before repeating.
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+### 3.2 Syllables
+A syllable is a beat in a spoken word. Say the word naturally and tap the beats:
+- book (1)
+- ta-xi (2)
+- ho-tel (2)
+- ba-na-na (3)
 
-### Unit 7 — Personal Information and Questions
+Do not add extra vowel sounds between consonants unless they belong to the word. Practise slowly first, then return to a natural rhythm.
 
-**Status:** Planned from the preserved multilingual source; target-language authoring and exercise redesign required.
+### 3.3 Word stress
+In many English words, one syllable is more prominent. Dictionaries often mark the stressed syllable. Practise the stress pattern as well as individual sounds:
+- **TA**xi (first syllable)
+- ho**TEL** (second syllable)
+- **BA**nana (first syllable in common pronunciation)
 
-**Unit purpose:** Set realistic goals; understand the four skills; practise spelling, pronunciation, greetings, introductions, numbers, dates, personal information, classroom language and first sentences.
+Stress can vary by accent. The examples are common models, not a claim that every English speaker sounds identical.
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+### 3.4 A three-step pronunciation routine
+1. **Listen:** hear the whole word or phrase.
+2. **Notice:** identify the number of syllables and the stressed beat.
+3. **Repeat and record:** say it, compare with the model and try again. Focus on being understandable, not on copying an accent.
 
-### Unit 8 — Classroom and Learning Language
+### Practice
+1. How many syllables do you hear in *hotel*, *banana* and *book*?
+2. Which word has two syllables? (a) taxi (b) name (c) book
+3. In the common model **TA**xi, which syllable is stressed?
+4. Explain in one sentence why English spelling cannot always predict pronunciation.
+5. Choose two words from this unit. Find an audio model, listen twice and record your own attempt.
+6. Read aloud: “Hello. My name is Alex. I am learning English.” Mark the stressed syllables you notice.
 
-**Status:** Planned from the preserved multilingual source; target-language authoring and exercise redesign required.
+**Success check:** I can count syllables in familiar words, notice a stressed beat and use a model to practise pronunciation.
 
-**Unit purpose:** Set realistic goals; understand the four skills; practise spelling, pronunciation, greetings, introductions, numbers, dates, personal information, classroom language and first sentences.
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+## Unit 4 — Greetings and Politeness
 
-### Unit 9 — First Sentences
+**Learning goal:** You can greet someone, choose a suitable polite expression and close a short everyday exchange.
 
-**Status:** Planned from the preserved multilingual source; target-language authoring and exercise redesign required.
+### 4.1 Greetings depend on the situation
+Common greetings include **Hello**, **Hi**, **Good morning**, **Good afternoon** and **Good evening**. *Hi* is informal. *Hello* works in many situations. Use *Good morning* earlier in the day; the exact time people change to *Good afternoon* or *Good evening* varies.
 
-**Unit purpose:** Set realistic goals; understand the four skills; practise spelling, pronunciation, greetings, introductions, numbers, dates, personal information, classroom language and first sentences.
+To ask how someone is, say “How are you?” Common replies include “I’m fine, thanks”, “I’m well, thank you” and “I’m okay”. A brief “And you?” returns the question.
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+### 4.2 Polite words
+- **Please** makes a request more polite: “A coffee, please.”
+- **Thank you / Thanks** show gratitude.
+- **You’re welcome** responds to thanks.
+- **Excuse me** gets attention or introduces a polite interruption.
+- **Sorry** apologizes or expresses regret.
 
-### Unit 10 — Integrated Beginner Project
+### 4.3 A short exchange
+A: Good morning. How are you?  
+B: I’m fine, thanks. And you?  
+A: Very well, thank you.  
+B: Excuse me, is this seat free?  
+A: Yes, it is.  
+B: Thank you.  
+A: You’re welcome.
 
-**Status:** Planned from the preserved multilingual source; target-language authoring and exercise redesign required.
+Notice that a polite question often sounds more natural than a direct command.
 
-**Unit purpose:** Set realistic goals; understand the four skills; practise spelling, pronunciation, greetings, introductions, numbers, dates, personal information, classroom language and first sentences.
+### Practice
+1. Choose a suitable greeting for 9:00 a.m.: Good morning / Good night.
+2. Complete: “A glass of water, ____.”
+3. What can you say before asking a stranger for help: “Excuse me” or “You’re welcome”?
+4. Match: (a) Thank you; (b) Sorry; (c) Hello — (1) greeting; (2) gratitude; (3) apology.
+5. Write a four-line dialogue: greet someone, ask how they are, make a polite request and say thank you.
 
-**Editorial tasks:** author target-language explanations and examples; write original practice activities; add clear success criteria; prepare and reconcile the answer key; obtain independent review.
+**Success check:** I can begin and close a short exchange and use basic polite expressions appropriately.
 
-## Answer key
+## Unit 5 — Introducing Yourself
 
-Not yet approved. A complete answer key must be authored after the exercises in this edition are finalized. The partial answers in the preserved source must not be copied without verification.
+**Learning goal:** You can give a simple introduction with your name, where you are from, where you live and one interest.
+
+### 5.1 Useful introduction patterns
+- “My name is Lina.” / “I’m Lina.”
+- “I’m from Morocco.” (origin)
+- “I live in Rabat.” (current home)
+- “I speak Arabic and a little English.”
+- “I’m learning English.”
+- “I like music and reading.”
+
+Use **I am / I’m** before a name or description. Use **I live in** before a town or country where you live. Use **I’m from** to talk about origin.
+
+### 5.2 Ask another person
+- “What’s your name?”
+- “Where are you from?”
+- “Where do you live?”
+- “What languages do you speak?”
+- “What do you like doing?”
+
+For a first meeting, keep questions friendly and allow the other person not to answer personal questions. You may invent details for practice.
+
+### 5.3 Model introduction
+“Hello. I’m Lina. I’m from Morocco, and I live in Rabat. I speak Arabic and French. I’m learning English because I want to communicate when I travel. I like reading.”
+
+### Practice
+1. Complete: “I ____ from Spain.” (am / is)
+2. Complete: “She ____ in Madrid.” (live / lives)
+3. Choose the correct phrase for origin: “I live from…” / “I’m from…”
+4. Write three sentences introducing a fictional learner.
+5. Write two questions you can ask a new classmate.
+
+**Success check:** I can introduce myself in four or five clear sentences and ask two simple questions.
+
+## Unit 6 — Numbers, Dates and Time
+
+**Learning goal:** You can recognize common numbers, give a simple date and ask or answer the time.
+
+### 6.1 Numbers for everyday use
+Practise these number groups:
+- 0–10: zero, one, two, three, four, five, six, seven, eight, nine, ten.
+- 11–20: eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty.
+- Tens: thirty, forty, fifty, sixty, seventy, eighty, ninety, one hundred.
+
+Pay attention to similar forms such as **thirteen / thirty**, **fourteen / forty** and **fifteen / fifty**. The stressed syllable helps distinguish many teen numbers from the corresponding tens.
+
+### 6.2 Dates
+In British English, dates are commonly written day–month–year: **5 May 2026**. In American English, month–day–year is common: **May 5, 2026**. Say the month clearly to avoid confusion with all-numeric dates.
+
+Months begin with a capital letter: January, February, March. Days also begin with a capital: Monday, Tuesday.
+
+### 6.3 Asking the time
+- “What time is it?”
+- “It’s three o’clock.”
+- “It’s half past four.” (4:30)
+- “It’s quarter past six.” (6:15)
+- “It’s quarter to eight.” (7:45)
+
+Digital-style expressions such as “six fifteen” and “seven forty-five” are also common. Use **at** with a clock time: “The lesson starts at nine.”
+
+### Practice
+1. Write 14 and 40 in words.
+2. Which number is fifty: 15 / 50?
+3. Write 5 May 2026 in a common American date format.
+4. Complete: “The class starts ____ 8:30.”
+5. Write 6:15 using “quarter past”.
+6. Write one sentence with a day, a date and a time for a fictional appointment.
+
+**Success check:** I can recognize common numbers, write a date clearly and ask or answer a simple time question.
+
+
+## Unit 7 — Personal Information and Questions
+
+**Learning goal:** You can ask and answer simple questions about a person's name, home, languages and contact details while respecting privacy.
+
+### Ask and answer
+Use **What** for things, **Where** for places, **When** for time, **Who** for people and **How** for manner or condition:
+- What is your first name?
+- Where do you live?
+- What languages do you speak?
+- When is your appointment?
+- How do you spell your surname?
+
+Many present-simple questions use **do** or **does**: “Do you live here?” / “Does she speak English?” After **does**, use the base verb: *Does she live…?*, not *Does she lives…?*
+
+### Personal details safely
+You may practise with fictional details. Do not share a real address, phone number or other private information in a public exercise. If a form asks for information you do not want to provide, ask why it is needed.
+
+### Practice
+1. Complete: “Where ____ you live?” (do / does)
+2. Complete: “____ she speak French?” (Do / Does)
+3. Correct: “Does he lives in London?”
+4. Match: What / Where / When / Who with thing / place / time / person.
+5. Write three questions for a fictional classmate and answer them with invented information.
+
+**Success check:** I can form basic questions and answer them without sharing private details.
+
+## Unit 8 — Classroom and Learning Language
+
+**Learning goal:** You can understand and use common instructions and ask for help during a lesson.
+
+### Useful classroom expressions
+- “Open your book, please.”
+- “Listen and repeat.”
+- “Work with a partner.”
+- “Write the answer.”
+- “Can you repeat that, please?”
+- “What does this word mean?”
+- “How do you pronounce this?”
+- “I don’t understand.”
+- “Could you speak more slowly?”
+
+A teacher may use an imperative for an instruction: **Open**, **Listen**, **Write**. Add *please* to make a request more polite. Use **Can you…?** or **Could you…?** when asking someone to do something.
+
+### Learning strategies
+When you do not understand, identify the problem: a word, an instruction, a sound or the whole idea. Ask one focused question. Keep a small vocabulary list with a short example, not only a translation.
+
+### Practice
+1. Choose the classroom instruction: (a) “Listen and repeat”; (b) “Where are you from?”
+2. Complete: “Could you speak more ____?” (slowly / slow)
+3. Write a polite request asking the teacher to repeat.
+4. Match: *pronounce* / *meaning* / *repeat* with say a sound clearly / what a word expresses / say again.
+5. Write three instructions for a partner completing a simple matching activity.
+
+**Success check:** I can follow common classroom instructions and ask for clarification politely.
+
+## Unit 9 — First Sentences
+
+**Learning goal:** You can build short affirmative and negative sentences with **be** and the present simple.
+
+### Sentence patterns
+With **be**:
+- I am a learner. / I’m a learner.
+- She is at home. / She’s at home.
+- They are ready. / They’re ready.
+
+With the present simple:
+- I study English.
+- He studies English.
+- We live in a city.
+
+For negatives with **be**, use **not**: “I am not tired.” For most present-simple verbs, use **do not / don’t** or **does not / doesn’t**: “I don’t work here.” / “She doesn’t work here.”
+
+Remember: after **doesn’t**, use the base verb: “She doesn’t study”, not “She doesn’t studies”.
+
+### Word order
+A basic English statement often follows: **subject + verb + other information**. Example: “My friend reads books.” A time phrase can appear at the beginning or end: “Every day, I practise” / “I practise every day.”
+
+### Practice
+1. Complete: “They ____ ready.” (is / are)
+2. Complete: “Mina ____ English every day.” (study / studies)
+3. Make negative: “I work here.”
+4. Correct: “He doesn’t likes tea.”
+5. Put in order: every morning / reads / she / a book.
+6. Write four sentences: two about a fictional person and two negative sentences.
+
+**Success check:** I can write simple statements and negatives with understandable word order.
+
+## Unit 10 — Integrated Beginner Project
+
+**Learning goal:** You can combine the skills from this book in a short personal introduction and a simple information exchange.
+
+### Project: My beginner profile
+Create a one-page profile for yourself or a fictional learner. Include:
+1. A name and a simple greeting.
+2. Three facts: origin, place of residence and languages.
+3. Two interests or everyday activities.
+4. One date or time for a fictional event.
+5. Three questions another learner could ask.
+6. A short dialogue of four to six lines.
+
+Use complete sentences. Check capital letters, spelling, the verb **be**, present-simple forms and question marks.
+
+### Speaking task
+Read your profile aloud. Pause between ideas. Ask a partner two questions and answer two questions. If you work alone, record both sides of the dialogue.
+
+### Self-assessment rubric
+Give yourself 1 point for each item:
+- My information is organized and easy to follow.
+- My sentences use a clear subject and verb.
+- I can ask and answer simple questions.
+- I use greetings and polite expressions.
+- I can say a date or time clearly.
+- I checked spelling and punctuation.
+
+**Interpretation:** 5–6 points: ready for a review conversation; 3–4: revise the items you missed; 0–2: repeat the relevant units and try again. This is a learning check, not an official language test.
+
+### Final reflection
+Which skill improved most? Which expression will you use in a real conversation? Choose one small goal for the next seven days.
+
+
+## Answer key and assessment guidance
+
+Answers below cover items with a defined answer. For personal, speaking and writing tasks, accept any response that fulfils the prompt, uses understandable English and demonstrates the stated learning goal. Do not mark a learner wrong for using a different personal detail.
+
+### Unit 1
+1. (a) listening; (b) writing; (c) reading; (d) speaking.
+2. Example: “I will study for 15 minutes on Monday, Wednesday and Friday and write three sentences each day.”
+3. Recall → learn → use.
+4. Individual plan; check that it includes three days and totals 15 minutes per session.
+5. Individual reflection; assess whether the learner identifies a skill and gives a reason.
+
+### Unit 2
+1. A, E, I, O, U.
+2. “My name is Sam and I live in London.”
+3. spell.
+4. (b) “Could you spell that, please?”
+5. BOOK; TAXI; NAME.
+6. Open dialogue; check that the spelling is confirmed accurately and the request is polite.
+
+### Unit 3
+1. hotel: 2; banana: 3; book: 1.
+2. (a) taxi.
+3. The first syllable, **TA**.
+4. English letters can represent different sounds, and the same sound can have different spellings.
+5–6. Individual pronunciation tasks; assess use of an audio model, syllable awareness and understandable speech rather than accent imitation.
+
+### Unit 4
+1. Good morning.
+2. please.
+3. “Excuse me.”
+4. (a) 2; (b) 3; (c) 1.
+5. Open dialogue; check greeting, question, polite request and thanks.
+
+### Unit 5
+1. am.
+2. lives.
+3. “I’m from…”
+4–5. Open tasks; check correct use of *I am*, *I’m from*, *I live in* and relevant question forms.
+
+### Unit 6
+1. fourteen; forty.
+2. 50.
+3. May 5, 2026.
+4. at.
+5. It’s quarter past six.
+6. Open sentence; check that the weekday/date/time are clear and consistent.
+
+### Unit 7
+1. do.
+2. Does.
+3. “Does he live in London?”
+4. What—thing; Where—place; When—time; Who—person.
+5. Open task; check question word order and privacy-safe fictional details.
+
+### Unit 8
+1. (a) “Listen and repeat.”
+2. slowly.
+3. Example: “Could you repeat that, please?”
+4. pronounce—say a sound clearly; meaning—what a word expresses; repeat—say again.
+5. Open task; check that the instructions are clear and actionable.
+
+### Unit 9
+1. are.
+2. studies.
+3. “I do not work here.” / “I don’t work here.”
+4. “He doesn’t like tea.”
+5. “She reads a book every morning.”
+6. Open task; check affirmative/negative forms and subject–verb agreement.
+
+### Unit 10
+Use the six-point self-assessment rubric in the unit. A profile can use fictional information. Do not require private personal data. The rubric is formative and is not an official proficiency assessment.
+
 
 ## Editorial and publication notice
 

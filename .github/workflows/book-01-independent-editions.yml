@@ -1,0 +1,108 @@
+name: Build Book 01 Independent Language Editions
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'content/books/01-language-foundations/**'
+      - 'docs/production/latex-preamble.tex'
+      - '.github/workflows/book-01-independent-editions.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: book-01-independent-editions
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        edition: [en, fr, es]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install PDF toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-lang-french texlive-lang-spanish poppler-utils
+
+      - name: Validate manuscript structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          FILE="content/books/01-language-foundations/$LANG_CODE/manuscript.md"
+          test -s "$FILE"
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit"; ANSWER_HEADING="Answer key and assessment guidance";;
+            fr) UNIT_LABEL="Unité"; ANSWER_HEADING="Corrigé et critères d’évaluation";;
+            es) UNIT_LABEL="Unidad"; ANSWER_HEADING="Soluciones y criterios de evaluación";;
+          esac
+          test "$(grep -c "^## $UNIT_LABEL [1-9][0-9]* — " "$FILE")" -eq 10
+          grep -Fq "$ANSWER_HEADING" "$FILE"
+          grep -Fq "Unit 10" "$FILE" || [ "$LANG_CODE" != "en" ]
+          test "$(wc -w < "$FILE")" -gt 1500
+          case "$LANG_CODE" in
+            en) grep -Fq "English (EN)" "$FILE"; grep -Fq "Success check" "$FILE";;
+            fr) grep -Fq "Français (FR)" "$FILE"; grep -Fq "Critère de réussite" "$FILE";;
+            es) grep -Fq "Español (ES)" "$FILE"; grep -Fq "Criterio de logro" "$FILE";;
+          esac
+
+      - name: Build independent PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          case "$LANG_CODE" in
+            en) BOOK_TITLE="Language Foundations — English Edition"; LANG_TAG="en-GB";;
+            fr) BOOK_TITLE="Fondements de l’apprentissage des langues — Édition française"; LANG_TAG="fr-FR";;
+            es) BOOK_TITLE="Fundamentos del aprendizaje de idiomas — Edición española"; LANG_TAG="es-ES";;
+          esac
+          mkdir -p "dist/books/$LANG_CODE"
+          pandoc "content/books/01-language-foundations/$LANG_CODE/manuscript.md" \
+            --from=gfm --standalone --toc --toc-depth=2 --pdf-engine=xelatex \
+            --include-in-header=docs/production/latex-preamble.tex \
+            --resource-path=. \
+            -V mainfont="DejaVu Sans" -V lang="$LANG_TAG" \
+            -V geometry:paper=a4paper -V geometry:margin=18mm \
+            -V fontsize=10pt -V colorlinks=true \
+            -V title="$BOOK_TITLE" -V author="EduBooks" \
+            -V subject="Independent beginner language-learning workbook" \
+            -V keywords="language learning,beginner,Pre-A1,A1,$LANG_CODE" \
+            -o "dist/books/$LANG_CODE/edubooks-book-01-$LANG_CODE-review-candidate.pdf"
+
+      - name: Validate PDF output
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-01-$LANG_CODE-review-candidate.pdf"
+          TXT="dist/books/$LANG_CODE/extracted.txt"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          test "$PAGES" -ge 10
+          pdftotext "$PDF" "$TXT"
+          test "$(wc -w < "$TXT")" -gt 1400
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit"; grep -Fq "Answer key" "$TXT";;
+            fr) UNIT_LABEL="Unité"; grep -Fq "Corrigé" "$TXT";;
+            es) UNIT_LABEL="Unidad"; grep -Fq "Soluciones" "$TXT";;
+          esac
+          for unit in 1 2 3 4 5 6 7 8 9 10; do
+            grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
+          done
+          echo "Validated $LANG_CODE review candidate: $PAGES pages."
+
+      - name: Upload review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-01-${{ matrix.edition }}-review-candidate
+          path: dist/books/${{ matrix.edition }}/*.pdf
+          if-no-files-found: error
+          retention-days: 90
