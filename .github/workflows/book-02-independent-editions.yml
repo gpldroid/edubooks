@@ -70,7 +70,7 @@ jobs:
               test "$(grep -c '^## Corrigé$' "$FILE")" -eq 12
               grep -Fq '2. Complétez : Il y ____ deux chaises' "$FILE"
               grep -Fq '2. a.' "$FILE"
-              grep -Fq '4. Puis-je ____ ?' "$FILE"
+              grep -Fq '4. Complétez : Puis-je ____ ?' "$FILE"
               grep -Fq '4. l’essayer.' "$FILE"
               ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
               ;;
