@@ -6,7 +6,7 @@
 Technical CI, editorial approval and public release are separate states.
 
 ## P0 — Website-only publication architecture
-- [ ] Remove residual store/purchase/pricing language from public pages and metadata.
+- [x] Align public privacy, terms, FAQ and contact copy with the free website-only model.
 - [ ] Confirm there are no public Gumroad or PayPal links, checkout controls or paid-download flows.
 - [ ] Keep catalogue empty until approved full PDFs, preview PDFs and covers exist.
 - [ ] Validate both preview and full-download paths for every published catalogue record.
