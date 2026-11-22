@@ -71,7 +71,7 @@ Technical CI, editorial approval and public release are separate states.
 - [ ] Complete itemized third-party source/quotation/asset clearance.
 - [ ] Inspect every rendered PDF page at full resolution; current workflows still create technical QA artifacts, not AI visual sign-off.
 - [ ] Implement semantic PDF tagging with correct document language, heading hierarchy, link annotations, reading order and alt text; validate with a PDF accessibility checker and screen reader. Existing XeLaTeX/Pandoc output reports `Tagged: no`; this is a hard release blocker.
-- [ ] Rebuild all six final candidates, verify content and fonts, and record page counts, source commit, workflow run and SHA-256.
+- [x] Rebuild all six internal review candidates; verify manuscript structure, searchable text and embedded fonts; record page counts, package version, source commit, workflow runs and SHA-256 in `docs/editorial/six-edition-pdf-rebuild-report-2026-11-22.md`.\n- [ ] Rebuild the six final publication PDFs after all language, pedagogical, visual and accessibility corrections; current hashes are review-candidate hashes only.
 - [ ] Obtain owner approval for the exact six final PDF checksums.
 - [ ] Only then publish six full PDFs and six previews, update catalogue status and deploy GitHub Pages.
 
