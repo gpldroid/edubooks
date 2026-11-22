@@ -454,4 +454,4 @@ Use the six-point self-assessment rubric in the unit. A profile can use fictiona
 
 ## Editorial and publication notice
 
-This is an in-progress editorial manuscript. It is not a finished educational product, does not represent language certification, and must not be offered for sale. Examples, instructions, exercises, answer keys, references and rights must pass independent review before PDF release.
+This is an in-progress editorial manuscript and is not approved for public distribution on the EduBooks website. It does not represent language certification. Examples, instructions, exercises, answer keys, references and rights must pass independent review before a final PDF, sample PDF or catalogue entry can be published.
