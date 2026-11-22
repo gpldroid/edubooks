@@ -1,5 +1,11 @@
 ## Verified technical update — 2026-11-22
 
+- [x] Merge PR #25: mobile library overflow and category test correction; Astro validation, regression tests, build and responsive Playwright all passed in run #45034301714.
+- [x] Verify Book 01 independent PDF matrix run #45034306841: EN/FR/ES builds, output validation and internal sample/review artifact uploads all succeeded.
+- [x] Download and technically inspect the three review PDFs: A4, selectable text, embedded DejaVu Sans fonts, 10/11/10 pages, and no completely blank pages in overview proof.
+- [x] Record the technical PDF proof and limitations in docs/editorial/book-01/pdf-proof-2026-11-22.md.
+- [ ] Rebuild the French PDF after the targeted Unit 3 answer-key correction on the current review branch; inspect the new artifact before considering that correction proven in PDF.
+
 - [x] Merge PR #22: separate information-only Preview and timed Download routes; inner-page typography is scoped separately from the homepage.
 - [x] Run [PDF publishing #44996350390](https://github.com/gpldroid/edubooks/actions/runs/44996350390): EN/FR/ES Book 01 PDFs built, validated and committed to `public/books/`.
 - [x] Confirm the three files exist on GitHub: EN 79,833 bytes; FR 84,973 bytes; ES 80,334 bytes.
@@ -37,12 +43,12 @@ This register is the operational source of truth for unfinished work. CI success
 - [ ] Preserve the original multilingual source manuscripts unchanged.
 
 ### P1 — Book 01: Language Foundations (EN / FR / ES)
-- [x] Author first full-draft content for all ten units in EN/FR/ES, including explanations, examples, exercises, communication tasks and success criteria (PR #19; pending CI and review).
-- [ ] Author original explanations, model dialogues, examples, graded exercises, communicative tasks and measurable success criteria for all ten units.
+- [x] Author first full-draft content for all ten units in EN/FR/ES, including explanations, examples, exercises, communication tasks and success criteria (PR #19 merged; matrix CI passed in run #45034306841).
+- [x] Complete first-draft authoring of original explanations, examples, exercises, communicative tasks and measurable success criteria for all ten units; professional language and pedagogy review remains open.
 - [x] Add an integrated beginner profile project and unit-aligned answer guidance in each target language (PR #19; pending CI and review).
 - [ ] Build each answer key only after its exercises are stable; reconcile every closed-answer item and define criteria for open responses.
 - [ ] Establish consistent target-language variety, terminology, spelling and beginner-level progression.
-- [x] Add a three-language independent PDF matrix workflow (PR #19; first run still needs to be triggered and verified after workflow becomes available on main).
+- [x] Add and verify the three-language independent PDF matrix workflow (PR #19; run #45034306841 passed all EN/FR/ES jobs and uploaded artifacts).
 
 ### P1 — Book 02: Essential Vocabulary (EN / FR / ES)
 - [ ] Conduct full editorial review of every unit in each language; automated language checks are not a substitute.
@@ -84,4 +90,4 @@ This register is the operational source of truth for unfinished work. CI success
 | Release-ready | All editorial, rights, accessibility and final-PDF gates are evidenced. |
 | Commercially released | Owner explicitly authorized publication and the live product was verified. |
 
-**Current decision:** Book 02 has technical review candidates only. Book 01 now has complete first-draft content for all ten units in EN/FR/ES in draft PR #19; it is not yet CI-validated or editorially approved. None of the six editions is release-ready or authorized for sale.
+**Current decision:** Book 01 has complete first-draft content for all ten units in EN/FR/ES; its independent PDF matrix passed technically and the three review candidates received a limited technical/overview proof. One French Unit 3 answer-key mismatch has been corrected in the current review branch and requires a fresh PDF build. Qualified language and pedagogical review, full answer-key reconciliation, rights/accessibility checks and final visual proof remain outstanding. Book 02 has technical review candidates only. None of the six editions is release-ready or authorized for sale.
