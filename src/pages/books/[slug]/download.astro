@@ -1,8 +1,8 @@
 ---
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import { books, validateBookCatalog } from '../../../../data/catalog';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { books, validateBookCatalog } from '../../../data/catalog';
 const errors = validateBookCatalog(books);
 if (errors.length) throw new Error(errors.join('\\n'));
 export function getStaticPaths() {
