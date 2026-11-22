@@ -31,6 +31,7 @@ EduBooks is a **free, website-only PDF library**. Readers will be able to open a
 ## Latest release audit and evidence
 
 - AI-assisted review: [docs/editorial/ai-assisted-six-edition-review-2026-11-22.md](docs/editorial/ai-assisted-six-edition-review-2026-11-22.md)
+- Six rebuilt internal PDFs, page counts, font evidence and SHA-256: [docs/editorial/six-edition-pdf-rebuild-report-2026-11-22.md](docs/editorial/six-edition-pdf-rebuild-report-2026-11-22.md)
 - Rights and licences: [docs/RIGHTS-AND-LICENSE-REGISTER.md](docs/RIGHTS-AND-LICENSE-REGISTER.md)
 - Asset audit: [docs/editorial/asset-rights-audit-2026-11-22.md](docs/editorial/asset-rights-audit-2026-11-22.md)
 - Release checklist: [docs/EDITORIAL-RELEASE-CHECKLIST.md](docs/EDITORIAL-RELEASE-CHECKLIST.md)
