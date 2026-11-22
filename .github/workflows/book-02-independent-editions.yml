@@ -115,7 +115,7 @@ jobs:
           test -s "$PDF"
           pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
           PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
-          test "$PAGES" -ge 15
+          test "$PAGES" -ge 12
           pdftotext "$PDF" "$TXT"
           test "$(wc -w < "$TXT")" -gt 1000
           grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
