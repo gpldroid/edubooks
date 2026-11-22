@@ -2,7 +2,7 @@
 
 **Status:** Experimental; not an approved publication pipeline.
 
-The existing Pandoc/XeLaTeX build produced searchable PDFs with embedded fonts but reported `Tagged: no`. This workflow tests a separate path: Pandoc converts each of the six Markdown manuscripts to DOCX, then LibreOffice exports a PDF with its tagged-PDF option enabled.
+The existing Pandoc/XeLaTeX build produced searchable PDFs with embedded fonts but reported `Tagged: no`. This workflow tests a separate path: Pandoc converts each Markdown manuscript to DOCX using an A4 EduBooks reference template, inserts the matching owner-confirmed localized SVG cover, then LibreOffice exports a tagged PDF.
 
 ## Automated gates
 
