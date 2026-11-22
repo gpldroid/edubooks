@@ -1,3 +1,15 @@
+## Current verified status — 2026-11-22 (supersedes older status notes below)
+
+PR #22 is merged. Its Astro validation passed, and the Book 01 PDF publishing workflow completed successfully:
+
+- Run [#44996350390](https://github.com/gpldroid/edubooks/actions/runs/44996350390): success.
+- Bot commit [838acdc](https://github.com/gpldroid/edubooks/commit/838acdc46bbdb1523cbb99c7b27038e78f85ef8a) added three PDFs under `public/books/`: EN (79,833 bytes), FR (84,973 bytes), ES (80,334 bytes).
+- Pages run [#44996350403](https://github.com/gpldroid/edubooks/actions/runs/44996350403): build and deploy succeeded for commit `38dd982`, which predates the PDF bot commit. Do not assume those PDFs are present in the currently deployed Pages artifact. Trigger and verify a deployment from a commit containing the PDFs.
+
+The catalog in `src/data/catalog.ts` is currently empty. `public/previews/` does not exist. Six SVG cover masters exist under `public/images/gumroad-covers/`; they are source artwork, not confirmed final production covers. The three PDF files are generated build outputs, not editorially approved editions. No language, pedagogy, full-page visual, accessibility or rights sign-off is recorded. Do not mark these books as published and do not attach them to Gumroad.
+
+Preview pages must remain information-only (description and table of contents). The dedicated download page has a ten-second countdown. Typography refinements are scoped to inner pages; homepage styles must remain unchanged. Gumroad and PayPal integration/publication remain deferred by owner instruction.
+
 # EduBooks — Project Handover and Continuation Guide
 
 Last updated: 2026-11-22  
