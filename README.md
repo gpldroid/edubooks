@@ -22,7 +22,7 @@ EduBooks is a **free, website-only PDF library**. Readers will be able to open a
 - Main branch includes PR #27 (internal-only PDF review builds) and PR #28 (post-merge deployment verification).
 - Latest verified deployment after PR #27: [workflow run #45045145911](https://github.com/gpldroid/edubooks/actions/runs/45045145911).
 - The public catalogue in `src/data/catalog.ts` is intentionally empty. Do not list a book until its three language editions have passed the release gates and the corresponding public PDF and cover assets exist.
-- Three legacy Book 01 PDFs remain under `public/books/`. They are historical, unapproved files and must not be presented as final books or added to the catalogue.
+- Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory. No book edition is currently approved or exposed in the public catalogue.
 - Book 01 and Book 02 each have English, French and Spanish working manuscripts. Technical PDF review artifacts are not final public editions.
 - No edition is currently approved for public release. No Gumroad or PayPal integration is to be developed for this project.
 
@@ -73,7 +73,7 @@ edubooks/
 │   ├── SITE-ONLY-PUBLISHING-MODEL.md
 │   ├── editorial/            # audits and edition-specific review records
 │   └── production/           # manuscript and PDF design system
-├── public/books/             # approved full downloadable PDFs only (legacy files currently remain)
+├── public/books/             # approved full downloadable PDFs only
 ├── public/previews/          # approved sample/preview PDFs
 ├── public/images/            # cover artwork
 ├── src/data/catalog.ts       # public catalogue; currently empty
