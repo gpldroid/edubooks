@@ -22,7 +22,8 @@ The Book 01 workflow jobs completed successfully. The revised workflow has read-
 - PR #27 did not add or replace files under `public/books/`. Existing files in that directory remain legacy public artifacts; they are not approved final editions.
 - Book 02 EN/FR/ES review-candidate PDFs were built and validated in PR CI run [45044583560](https://github.com/gpldroid/edubooks/actions/runs/45044583560). The automated checks are technical checks only.
 - The French Book 02 final page still has excess whitespace and needs a considered pagination/layout refinement; do not add filler content merely to fill the page.
-- All six Gumroad products remain unpublished. No review artifact may be attached to a product. No edition is approved for commercial sale.
+- The owner has since retired the commercial model. EduBooks is now a free website-only PDF library: browser preview plus direct download. Gumroad and PayPal are out of scope; do not modify historical seller drafts.
+- No edition is approved for public distribution yet. Existing PDFs remain legacy artifacts, not final editions.
 
 ## Next production sequence
 
@@ -30,6 +31,6 @@ The Book 01 workflow jobs completed successfully. The revised workflow has read-
 2. Refine the Book 02 French PDF pagination and inspect every page of all three Book 02 review PDFs.
 3. Complete qualified English, French and Spanish language review, then pedagogical, rights, accessibility and full-page visual gates for each edition.
 4. Rebuild final proofs and record source commit, workflow run, output filename and SHA-256 for each edition.
-5. Keep the catalogue empty and the six store drafts unpublished until the owner explicitly approves each edition and its commercial release.
+5. Keep the catalogue empty until an edition has an approved full PDF, sample PDF and cover. Publish approved editions on the website only, with free browser preview and direct download.
 
-**Decision:** Technical merge and website deployment are complete. Editorial approval, final PDF approval and commercial publication are not complete.
+**Decision:** Technical merge and website deployment are complete. The active distribution model is free website-only PDF access. Editorial approval and final PDF approval are still outstanding; no edition is ready for public distribution.
