@@ -73,10 +73,10 @@ Présentez deux personnes, leur lien avec vous et une qualité pour chacune.
 
 **Can-do:** Nommer les pièces et les objets et indiquer leur emplacement.
 
-## Discover
+## Découvrir
 Les clés sont sur la table. La cuisine est à côté du salon. Il y a une lampe près du canapé.
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - appartement
 - chambre
 - salle de bains
@@ -90,32 +90,32 @@ Les clés sont sur la table. La cuisine est à côté du salon. Il y a une lampe
 - à côté de
 - sous
 
-## Language focus
+## Point de langue
 Employez « il y a » pour présenter un élément ou plusieurs. Utilisez dans, sur, sous, derrière et à côté de pour situer un objet.
 
-## Guided practice
+## Exercices guidés
 1) Il ____ deux chaises. 2) Les clés sont ____ la table (sur). 3) Écrivez trois phrases de localisation.
 
-## Answer check
+## Corrigé
 y a; sur; réponses personnelles
 
-## Communicate
+## Communiquer
 Décrivez une pièce avec cinq objets et trois expressions de lieu.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 3 — Les aliments et les repas
 
 **Can-do:** Parler des repas, des goûts, des quantités et commander poliment.
 
-## Discover
+## Découvrir
 Au petit-déjeuner, je prends des fruits et du pain. Au café, je voudrais un sandwich et un verre d'eau, s'il vous plaît.
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - petit-déjeuner
 - déjeuner
 - dîner
@@ -129,32 +129,32 @@ Au petit-déjeuner, je prends des fruits et du pain. Au café, je voudrais un sa
 - menu
 - addition
 
-## Language focus
+## Point de langue
 Apprenez les articles partitifs du, de la, de l' avec les aliments. Pour une demande polie, utilisez « Je voudrais… ».
 
-## Guided practice
+## Exercices guidés
 1) Un ____ d'eau. 2) Je voudrais ____ pomme. 3) Écrivez une commande polie au café.
 
-## Answer check
+## Corrigé
 verre; une; réponses personnelles
 
-## Communicate
+## Communiquer
 Jouez une scène au café : commandez, posez une question et demandez l'addition.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 4 — Les vêtements et les achats
 
 **Can-do:** Décrire des vêtements et demander la couleur, la taille et le prix.
 
-## Discover
+## Découvrir
 Je cherche une chemise bleue. Vous l'avez en taille moyenne ? Est-ce que je peux l'essayer ?
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - chemise
 - tee-shirt
 - pantalon
@@ -168,32 +168,32 @@ Je cherche une chemise bleue. Vous l'avez en taille moyenne ? Est-ce que je peux
 - cher
 - essayer
 
-## Language focus
+## Point de langue
 L'adjectif s'accorde généralement avec le nom : une chemise rouge, des chaussures rouges. Demandez le prix avec « Combien ça coûte ? ».
 
-## Guided practice
+## Exercices guidés
 1) Ces chaussures sont ____ (cher, au féminin pluriel). 2) Puis-je l'essayer ? Répondez par une formule naturelle. 3) Écrivez une question sur le prix.
 
-## Answer check
+## Corrigé
 chères; Oui, bien sûr / Oui, vous pouvez l'essayer; réponses personnelles
 
-## Communicate
+## Communiquer
 Jouez le rôle du client et du vendeur : choisissez un article, vérifiez la taille et payez.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 5 — Les activités quotidiennes
 
 **Can-do:** Décrire une journée habituelle et la fréquence des activités.
 
-## Discover
+## Découvrir
 Je me réveille généralement à sept heures, je prends mon petit-déjeuner et je vais au travail. J'étudie parfois le soir.
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - se réveiller
 - se lever
 - s'habiller
@@ -207,32 +207,32 @@ Je me réveille généralement à sept heures, je prends mon petit-déjeuner et 
 - souvent
 - parfois
 
-## Language focus
+## Point de langue
 Utilisez le présent pour les habitudes. Les verbes pronominaux se construisent avec un pronom : je me réveille, tu te réveilles.
 
-## Guided practice
+## Exercices guidés
 1) Elle ____ à cinq heures (finir). 2) Complétez : Je ____ lève tôt. 3) Écrivez trois phrases sur votre routine.
 
-## Answer check
+## Corrigé
 finit; me; réponses personnelles
 
-## Communicate
+## Communiquer
 Interrogez un partenaire sur sa journée et présentez trois informations.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 6 — La ville, les lieux et les directions
 
 **Can-do:** Demander où se trouvent les lieux et indiquer un itinéraire simple.
 
-## Discover
+## Découvrir
 La bibliothèque est en face du parc. Allez tout droit, tournez à gauche à la banque et traversez la rue.
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - bibliothèque
 - gare
 - pharmacie
@@ -246,32 +246,32 @@ La bibliothèque est en face du parc. Allez tout droit, tournez à gauche à la 
 - tout droit
 - traverser
 
-## Language focus
+## Point de langue
 Utilisez « Où se trouve… ? » pour demander un lieu et l'impératif pour guider : allez, tournez, traversez.
 
-## Guided practice
+## Exercices guidés
 1) Tournez à ____ à la prochaine rue. 2) Le café est ____ la banque et le magasin. 3) Donnez deux indications.
 
-## Answer check
+## Corrigé
 gauche; entre; réponses personnelles
 
-## Communicate
+## Communiquer
 Expliquez le chemin entre une gare et un lieu public.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 7 — Les voyages et l'hébergement
 
 **Can-do:** Parler des transports, des réservations et des besoins à l'hôtel.
 
-## Discover
+## Découvrir
 J'ai une réservation pour deux nuits. À quelle heure le train part-il ? Le petit-déjeuner est-il compris ?
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - billet
 - quai
 - horaire
@@ -285,32 +285,32 @@ J'ai une réservation pour deux nuits. À quelle heure le train part-il ? Le pet
 - enregistrer
 - libérer
 
-## Language focus
+## Point de langue
 Utilisez « avoir une réservation » et « À quelle heure… ? » pour demander un horaire. À l'hôtel, « faire le check-in » peut être remplacé par « s'enregistrer ».
 
-## Guided practice
+## Exercices guidés
 1) J'ai une ____ à l'hôtel. 2) À quelle heure ____ le bus ? (partir) 3) Écrivez une question à la réception.
 
-## Answer check
+## Corrigé
 réservation; part; réponses personnelles
 
-## Communicate
+## Communiquer
 Jouez une arrivée à l'hôtel et confirmez les dates et le petit-déjeuner.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 8 — Le travail et les études
 
 **Can-do:** Nommer les tâches, les lieux et les horaires habituels.
 
-## Discover
+## Découvrir
 Je travaille dans un bureau. Nous avons une réunion à neuf heures et j'étudie une nouvelle matière ce semestre.
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - bureau
 - collègue
 - réunion
@@ -324,32 +324,32 @@ Je travaille dans un bureau. Nous avons une réunion à neuf heures et j'étudie
 - prendre des notes
 - travailler dans
 
-## Language focus
+## Point de langue
 Employez un/une devant un nom dénombrable singulier. Le présent peut décrire une situation actuelle ou habituelle selon le contexte.
 
-## Guided practice
+## Exercices guidés
 1) Nous avons ____ réunion. 2) Il ____ l'anglais ce mois-ci (étudier). 3) Écrivez un emploi du temps.
 
-## Answer check
+## Corrigé
 une; étudie; réponses personnelles
 
-## Communicate
+## Communiquer
 Décrivez une journée de travail ou d'études et demandez une date limite.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 9 — Le corps et les besoins de santé courants
 
 **Can-do:** Nommer des parties du corps et décrire un symptôme simple ou un besoin.
 
-## Discover
+## Découvrir
 J'ai mal à la tête et j'ai mal à la gorge. Y a-t-il une pharmacie près d'ici ?
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - tête
 - gorge
 - ventre
@@ -363,32 +363,32 @@ J'ai mal à la tête et j'ai mal à la gorge. Y a-t-il une pharmacie près d'ici
 - rendez-vous
 - pharmacie
 
-## Language focus
+## Point de langue
 Pour exprimer une douleur, utilisez « avoir mal à » : j'ai mal à la tête. Ces expressions servent à apprendre la langue et ne constituent pas un conseil médical.
 
-## Guided practice
+## Exercices guidés
 1) J'ai mal à la ____. (head) 2) Il a ____ (a cough). 3) Demandez où se trouve la pharmacie la plus proche.
 
-## Answer check
+## Corrigé
 tête; une toux; Où se trouve la pharmacie la plus proche ?
 
-## Communicate
+## Communiquer
 Entraînez-vous à demander un rendez-vous et à expliquer un symptôme simple.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 10 — La météo, les saisons et les loisirs
 
 **Can-do:** Décrire le temps et organiser une activité de loisir.
 
-## Discover
+## Découvrir
 Il fait beau aujourd'hui ; allons nous promener. S'il pleut demain, nous pouvons regarder un film.
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - ensoleillé
 - nuageux
 - pluvieux
@@ -402,32 +402,32 @@ Il fait beau aujourd'hui ; allons nous promener. S'il pleut demain, nous pouvons
 - aller nager
 - prendre des photos
 
-## Language focus
+## Point de langue
 Pour la météo, dites « il fait froid » ou « il pleut ». Pour proposer une activité, utilisez « On peut… » ou « Allons… ».
 
-## Guided practice
+## Exercices guidés
 1) Aujourd'hui, il fait ____ (sunny). 2) En hiver, il fait souvent ____. 3) Invitez un ami à sortir.
 
-## Answer check
+## Corrigé
 beau / ensoleillé; froid; réponses personnelles
 
-## Communicate
+## Communiquer
 Choisissez une activité, un lieu et une heure, puis proposez une solution s'il pleut.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 11 — Les sentiments, les préférences et les opinions
 
 **Can-do:** Décrire des émotions, exprimer ses goûts et donner une raison simple.
 
-## Discover
+## Découvrir
 J'aime apprendre les langues parce que c'est utile. Je suis parfois nerveux quand je parle, mais je continue à pratiquer.
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - heureux
 - triste
 - fatigué
@@ -441,32 +441,32 @@ J'aime apprendre les langues parce que c'est utile. Je suis parfois nerveux quan
 - à mon avis
 - parce que
 
-## Language focus
+## Point de langue
 Utilisez « aimer/préférer + nom ou infinitif ». Distinguez « ennuyeux » (qui provoque l'ennui) et « ennuyé » (qui ressent l'ennui).
 
-## Guided practice
+## Exercices guidés
 1) Ce film est ____ (boring). 2) J'aime lire ____ c'est reposant. 3) Donnez un avis avec une raison.
 
-## Answer check
+## Corrigé
 ennuyeux; parce que; réponses personnelles
 
-## Communicate
+## Communiquer
 Discutez d'une activité et répondez poliment à un avis différent.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Unit 12 — Construire son système de vocabulaire
 
 **Can-do:** Utiliser les collocations, les familles de mots et la révision espacée.
 
-## Discover
+## Découvrir
 Apprenez une expression, créez un exemple personnel, puis testez votre mémoire demain, dans trois jours et dans une semaine.
 
-## Vocabulary in context
+## Vocabulaire en contexte
 - prendre une décision
 - faire ses devoirs
 - prendre une photo
@@ -478,22 +478,22 @@ Apprenez une expression, créez un exemple personnel, puis testez votre mémoire
 - réviser
 - carnet
 
-## Language focus
+## Point de langue
 Apprenez les mots en expressions complètes. Une ressemblance orthographique ne garantit pas le même sens. Révisez en essayant de retrouver le mot sans regarder.
 
-## Guided practice
+## Exercices guidés
 1) ____ ses devoirs. 2) Faire ____ à. 3) L'anglais actually signifie-t-il la même chose que le français actuellement ?
 
-## Answer check
+## Corrigé
 faire; attention; non : actually signifie « en fait », actuellement signifie « en ce moment »
 
-## Communicate
+## Communiquer
 Enseignez cinq mots à un partenaire avec leur sens, une association et un exemple.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoévaluation
+- [ ] Je peux employer le vocabulaire dans une phrase complète.
+- [ ] Je peux réaliser l’activité sans recopier l’exemple.
+- [ ] Je sais quelles expressions je dois réviser.
 
 ---
 # Projet intégré — Portfolio de vocabulaire
@@ -501,11 +501,11 @@ Enseignez cinq mots à un partenaire avec leur sens, une association et un exemp
 Créez un portfolio en cinq parties : personnes, maison, alimentation, routine et loisirs. Pour chaque thème, notez huit mots, trois expressions courantes, trois phrases personnelles et un court dialogue. Ajoutez une date de révision à chaque nouvel élément.
 
 ## Critères d’évaluation
-- Relevance and range of vocabulary.
-- Correct use of articles, agreement and verb forms.
-- Natural word combinations.
-- Clear communication in the target language.
-- A realistic review plan.
+- Pertinence et variété du vocabulaire.
+- Emploi correct des articles, des accords et des formes verbales.
+- Associations de mots naturelles.
+- Communication claire en français.
+- Plan de révision réaliste.
 
 # Test de révision final
 
@@ -556,4 +556,4 @@ Créez un portfolio en cinq parties : personnes, maison, alimentation, routine e
 # Editorial and Release Note
 This independent-language edition has been adapted for monolingual learning. The answer key is aligned to the closed-ended exercises included in this draft; open activities are assessed using the criteria above. Before publication, a qualified native-level language editor and a language-teaching reviewer must verify naturalness, regional usage, level progression, instructions, every exercise and every answer. Record reviewer names, dates and decisions in the editorial report. Check all cover assets, fonts, permissions and accessibility before release.
 
-**Release status: NOT APPROVED FOR SALE.** This is an editorial working draft pending independent human review and final PDF proof.
+**Statut de publication : VENTE NON AUTORISÉE.** Cette version de travail doit faire l’objet d’une révision humaine indépendante et d’une vérification finale du PDF.
