@@ -56,16 +56,20 @@ test('book library requires localized metadata, a TOC and a bounded PDF sample',
   assert.ok(catalog.includes("book.status !== 'draft' && book.status !== 'published'"));
 });
 
-test('public book pages separate information-only previews from timed PDF downloads', () => {
+test('public book pages provide free browser PDF preview and direct full-PDF download', () => {
   const card = read('src/components/books/BookCard.astro');
   const detail = read('src/components/books/BookPreview.astro');
   const route = read('src/pages/books/[slug].astro');
   const download = read('src/pages/books/[slug]/download.astro');
+  const catalog = read('src/data/catalog.ts');
   for (const token of ['data-en="Preview"', 'data-en="Download"']) assert.ok(card.includes(token), `Missing card action: ${token}`);
-  for (const token of ['Table of contents', 'Preview includes the book description and table of contents only', 'download/']) assert.ok(detail.includes(token), `Missing information-only preview feature: ${token}`);
+  for (const token of ['Table of contents', 'Preview PDF', 'Download PDF', 'book.previewPdf', 'download/']) assert.ok(detail.includes(token), `Missing free PDF reader feature: ${token}`);
   assert.ok(!detail.includes('PdfViewer'));
   assert.ok(route.includes("book.status === 'published'"));
-  for (const token of ['download-timer', 'setInterval', 'download-link', 'download']) assert.ok(download.includes(token), `Missing timed-download feature: ${token}`);
+  for (const token of ['downloadPdf', 'download', 'No account or payment is required']) assert.ok(download.includes(token), `Missing direct free download feature: ${token}`);
+  assert.ok(!download.includes('setInterval'));
+  assert.ok(catalog.includes("book.downloadPdf.startsWith('/books/')"));
+  assert.ok(catalog.includes("book.previewPdf.startsWith('/previews/')"));
   for (const source of [card, detail, route, download]) {
     for (const forbidden of ['gumroadUrl', 'paypalUrl', 'Buy with Gumroad', 'Pay with PayPal', 'Access digital file']) {
       assert.ok(!source.includes(forbidden), `Commercial control leaked into public template: ${forbidden}`);
