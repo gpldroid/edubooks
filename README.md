@@ -5,7 +5,7 @@ An independent multilingual digital educational publishing project by Imad Limra
 
 EduBooks develops standalone educational books in **English, French and Spanish**. Each language edition is intended to be a complete, independent book—not one multilingual manuscript divided into language tabs. Arabic is outside the scope of this website and initial series.
 
-## Current project status — 2026-11-21
+## Current project status — 2026-11-22
 
 - Website: Astro 5, hosted on GitHub Pages.
 - Primary store: [EduBooks on Gumroad](https://edupdf.gumroad.com).
@@ -13,7 +13,7 @@ EduBooks develops standalone educational books in **English, French and Spanish*
 - Six Gumroad product drafts exist, localized descriptions and metadata have been added, and every product remains unpublished.
 - Six original SVG cover designs are included in `public/images/gumroad-covers/`. Gumroad's cover uploader rejected SVG; convert them to PNG/JPEG and upload them to the six matching product drafts. Cover attachment is not yet verified.
 - No final PDF files are attached to Gumroad. Do not attach review candidates.
-- The approved six-edition architecture and migration source audits are merged to `main` in [docs/editorial/](docs/editorial/). Book 01 now has three language-specific manuscript drafts; Book 02 has a source audit. These are editorial drafts, not approved sale editions.
+- The six-edition architecture and migration audits are merged to `main`. Book 01 has three language-specific outline drafts; their source formatting/localization repair is proposed in [PR #15](https://github.com/gpldroid/edubooks/pull/15). They are not complete workbooks. Book 02 has three independent working manuscripts and three CI-generated PDF review candidates in [PR #9](https://github.com/gpldroid/edubooks/pull/9); that PR is still a draft and is based on the legacy source branch from PR #1. None of these files is approved for sale.
 - All six editions remain blocked from sale until their individual editorial and production gates pass.
 
 ## Approved publication matrix
@@ -111,6 +111,21 @@ Build output: `dist/`. Pull requests run Astro/TypeScript diagnostics, project r
 
 Verify **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
+## Current pull-request status — 2026-11-22
+
+| PR | Status | Review result / dependency |
+|---|---|---|
+| [#13](https://github.com/gpldroid/edubooks/pull/13) | Merged | Mobile UI and PDF preview improvements. |
+| [#12](https://github.com/gpldroid/edubooks/pull/12) | Closed, not merged | Preview PDF built, but validation incorrectly required at least five pages for a four-page sample extract. Superseded by PR #14. |
+| [#14](https://github.com/gpldroid/edubooks/pull/14) | Open draft | Corrects the minimum page count to four and adds a fix-branch push trigger. Local Pandoc/XeLaTeX build passed (4-page A4 PDF, 638 extracted words, all seven text checks); the dedicated GitHub Actions artifact upload remains unconfirmed. |
+| [#15](https://github.com/gpldroid/edubooks/pull/15) | Open draft | Repairs character-per-line corruption and localizes French/Spanish Book 01 draft labels. The underlying manuscripts remain outlines. |
+| [#9](https://github.com/gpldroid/edubooks/pull/9) | Open draft | EN/FR/ES Book 02 builds passed and produced review PDFs. It is stacked on PR #1's source branch. |
+| [#4](https://github.com/gpldroid/edubooks/pull/4) | Open draft | Book 01 legacy trilingual-source PDF workflow passed; not a set of independent language editions. |
+| [#1](https://github.com/gpldroid/edubooks/pull/1) | Open draft | Preserved integrated trilingual Book 02 source; dependency/base for PR #9. |
+| [#16](https://github.com/gpldroid/edubooks/pull/16) | Open draft | README and project handover update based on this review. |
+
+Do not merge or publish any of these drafts automatically. PR #14 and PR #15 should be reviewed and tested before merge. PR #9 must be reconciled with its PR #1 base dependency. PR #4 is not a substitute for the three standalone Book 01 editions.
+
 ## Book production status
 
 ### Book 01 — Language Foundations
@@ -118,17 +133,19 @@ Verify **Settings → Pages → Build and deployment → Source: GitHub Actions*
 - Preserved multilingual source: `content/books/01-language-foundations/manuscript.md`.
 - Independent editorial drafts: `content/books/01-language-foundations/en/manuscript.md`, `fr/manuscript.md`, and `es/manuscript.md`.
 - Source inventory and review requirements: `docs/editorial/book-01/source-inventory.md`.
-- The three manuscripts are drafts requiring substantial editorial review and completion; they are not approved sale editions.
+- The three language-specific files are outline-stage drafts, not complete learner books. They still need full explanations, examples, exercises, answer keys, target-language editing and pedagogical review. Their formatting/localization correction is proposed in PR #15; it has not been merged.
 
 ### Book 02 — Essential Vocabulary
 
 - Source audit: `docs/editorial/book-02/source-audit.md`.
-- The current integrated trilingual draft must be authored/adapted into `content/books/02-essential-vocabulary/{en,fr,es}/manuscript.md`.
-- No independent Book 02 manuscripts have been approved or built yet.
+- Three separate first-draft manuscripts now exist in `content/books/02-essential-vocabulary/{en,fr,es}/manuscript.md` on PR #9. CI successfully built EN, FR and ES PDF review candidates (13, 14 and 14 pages respectively); the PDFs are temporary review artifacts, not sale files.
+- The manuscript structure includes 12 units, localized practice and answer checks, an integrated project, final test, answer key and glossary. These drafts still require qualified language and pedagogical review, answer-key verification, rights clearance and complete visual/accessibility proof.
+- Initial PDF spot-check: title/contents and sampled lesson pages are readable; no blank pages or obvious font/overflow defects were seen in the inspected samples, and DejaVu Sans is embedded. The Spanish editorial note continues onto a mostly empty final page; refine pagination before final proof. This is a limited spot-check, not a full page-by-page sign-off.
+- PR #9 is a stacked draft based on PR #1's preserved trilingual source branch. Keep both unmerged until the dependency and source-preservation plan is reviewed.
 
 ## PDF production
 
-The current PDF workflow is `.github/workflows/book-01-pdf.yml`. Review-candidate artifacts are temporary Actions artifacts (90-day retention), not permanent sale files. Inspect the full PDF proof, embedded fonts, text extraction, page breaks, tables, links, accents, contents and accessibility. Do not upload a review candidate to Gumroad.
+The Book 01 workflow `.github/workflows/book-01-pdf.yml` currently builds the preserved trilingual source, not three independent sale editions. PR #4 produced a 28-page A4 review candidate with embedded fonts; it is useful as a source/reference proof only and does not satisfy the standalone-edition requirement. PR #9 produced three Book 02 review candidates with embedded DejaVu Sans fonts and localized front matter/section labels. Only sampled pages and technical properties have been checked so far; full-page editorial and accessibility proof remains outstanding. PR #14 fixes the four-page A1 preview threshold. The exact build and validation passed locally (4-page A4, 638 words, all required text checks), but the GitHub Actions artifact-upload workflow still needs a confirmed run. This legacy preview contains Arabic support text and is not one of the approved six language editions. All artifacts are temporary Actions artifacts, not permanent sale files. Never upload a review candidate to Gumroad.
 
 ## Continuation guide
 
