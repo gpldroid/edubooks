@@ -35,7 +35,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 ## Estado de desarrollo de las unidades
 
-### Unit 1 — Primeros pasos: cómo funciona el aprendizaje de idiomas
+### Unidad 1 — Primeros pasos: cómo funciona el aprendizaje de idiomas
 
 **Estado:** Esquema inicial para esta lengua; todavía hay que desarrollar los ejercicios y ejemplos completos y comprobar las soluciones.
 
@@ -43,7 +43,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 **Tareas editoriales:** redactar explicaciones y ejemplos en la lengua de destino; crear actividades originales; añadir criterios de logro claros; preparar y comprobar las soluciones; obtener una revisión independiente.
 
-### Unit 2 — El alfabeto y cómo deletrear
+### Unidad 2 — El alfabeto y cómo deletrear
 
 **Estado:** Esquema inicial para esta lengua; todavía hay que desarrollar los ejercicios y ejemplos completos y comprobar las soluciones.
 
@@ -51,7 +51,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 **Tareas editoriales:** redactar explicaciones y ejemplos en la lengua de destino; crear actividades originales; añadir criterios de logro claros; preparar y comprobar las soluciones; obtener una revisión independiente.
 
-### Unit 3 — Primeros sonidos y pronunciación
+### Unidad 3 — Primeros sonidos y pronunciación
 
 **Estado:** Esquema inicial para esta lengua; todavía hay que desarrollar los ejercicios y ejemplos completos y comprobar las soluciones.
 
@@ -59,7 +59,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 **Tareas editoriales:** redactar explicaciones y ejemplos en la lengua de destino; crear actividades originales; añadir criterios de logro claros; preparar y comprobar las soluciones; obtener una revisión independiente.
 
-### Unit 4 — Saludos y cortesía
+### Unidad 4 — Saludos y cortesía
 
 **Estado:** Contenido previsto a partir de la fuente multilingüe conservada; todavía requiere redacción en la lengua de destino y adaptación de las actividades.
 
@@ -67,7 +67,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 **Tareas editoriales:** redactar explicaciones y ejemplos en la lengua de destino; crear actividades originales; añadir criterios de logro claros; preparar y comprobar las soluciones; obtener una revisión independiente.
 
-### Unit 5 — Presentarse
+### Unidad 5 — Presentarse
 
 **Estado:** Contenido previsto a partir de la fuente multilingüe conservada; todavía requiere redacción en la lengua de destino y adaptación de las actividades.
 
@@ -75,7 +75,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 **Tareas editoriales:** redactar explicaciones y ejemplos en la lengua de destino; crear actividades originales; añadir criterios de logro claros; preparar y comprobar las soluciones; obtener una revisión independiente.
 
-### Unit 6 — Números, fechas y hora
+### Unidad 6 — Números, fechas y hora
 
 **Estado:** Contenido previsto a partir de la fuente multilingüe conservada; todavía requiere redacción en la lengua de destino y adaptación de las actividades.
 
@@ -83,7 +83,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 **Tareas editoriales:** redactar explicaciones y ejemplos en la lengua de destino; crear actividades originales; añadir criterios de logro claros; preparar y comprobar las soluciones; obtener una revisión independiente.
 
-### Unit 7 — Información personal y preguntas
+### Unidad 7 — Información personal y preguntas
 
 **Estado:** Contenido previsto a partir de la fuente multilingüe conservada; todavía requiere redacción en la lengua de destino y adaptación de las actividades.
 
@@ -91,7 +91,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 **Tareas editoriales:** redactar explicaciones y ejemplos en la lengua de destino; crear actividades originales; añadir criterios de logro claros; preparar y comprobar las soluciones; obtener una revisión independiente.
 
-### Unit 8 — Lenguaje del aula y del aprendizaje
+### Unidad 8 — Lenguaje del aula y del aprendizaje
 
 **Estado:** Contenido previsto a partir de la fuente multilingüe conservada; todavía requiere redacción en la lengua de destino y adaptación de las actividades.
 
@@ -99,7 +99,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 **Tareas editoriales:** redactar explicaciones y ejemplos en la lengua de destino; crear actividades originales; añadir criterios de logro claros; preparar y comprobar las soluciones; obtener una revisión independiente.
 
-### Unit 9 — Las primeras frases
+### Unidad 9 — Las primeras frases
 
 **Estado:** Contenido previsto a partir de la fuente multilingüe conservada; todavía requiere redacción en la lengua de destino y adaptación de las actividades.
 
@@ -107,7 +107,7 @@ Establecer objetivos realistas; comprender las cuatro destrezas; trabajar el alf
 
 **Tareas editoriales:** redactar explicaciones y ejemplos en la lengua de destino; crear actividades originales; añadir criterios de logro claros; preparar y comprobar las soluciones; obtener una revisión independiente.
 
-### Unit 10 — Proyecto integrado para principiantes
+### Unidad 10 — Proyecto integrado para principiantes
 
 **Estado:** Contenido previsto a partir de la fuente multilingüe conservada; todavía requiere redacción en la lengua de destino y adaptación de las actividades.
 
