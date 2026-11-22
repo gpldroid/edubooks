@@ -445,6 +445,3 @@ Utilisez la grille d’autoévaluation à six points de l’unité. Le profil pe
 ## Note éditoriale et conditions de publication
 
 Ce manuscrit éditorial est en cours d’élaboration et n’est pas approuvé pour diffusion publique sur le site EduBooks. Il ne constitue aucune certification linguistique. Les exemples, consignes, exercices, corrigés, références et droits doivent faire l’objet d’une vérification indépendante avant la publication d’un PDF final, d’un extrait PDF ou d’une fiche au catalogue.
-
-## Déclaration du titulaire des droits — 2026-11-22
-Le propriétaire a confirmé dans la conversation du projet détenir les droits d’auteur et de diffusion des textes et des éléments utilisés dans les six éditions EduBooks, et autoriser leur préparation en vue d’une publication gratuite sur le site EduBooks. Cette déclaration consigne son affirmation ; elle ne remplace pas la documentation des licences de chaque élément, la révision linguistique et pédagogique indépendante, les contrôles d’accessibilité, la vérification finale du PDF ni l’autorisation de publication propre à chaque édition.
