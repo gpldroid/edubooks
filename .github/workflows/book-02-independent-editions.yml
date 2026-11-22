@@ -8,20 +8,12 @@ on:
       - 'docs/production/latex-preamble.tex'
       - 'docs/production/book-02-layout.tex'
       - '.github/workflows/book-02-independent-editions.yml'
-  push:
-    branches:
-      - work/book-02-independent-editions
-    paths:
-      - 'content/books/02-essential-vocabulary/**'
-      - 'docs/production/latex-preamble.tex'
-      - 'docs/production/book-02-layout.tex'
-      - '.github/workflows/book-02-independent-editions.yml'
 
 permissions:
   contents: read
 
 concurrency:
-  group: book-02-independent-editions-${{ github.ref }}
+  group: book-02-independent-editions
   cancel-in-progress: true
 
 jobs:
