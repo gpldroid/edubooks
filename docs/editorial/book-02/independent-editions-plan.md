@@ -62,3 +62,22 @@ Cross-language comparison activities in the source must be rewritten as target-l
 ## 5. Current decision
 
 No independent Book 02 edition is complete yet. No reviewer sign-off is inferred from automated checks. The existing trilingual PDF is only a review candidate and does not satisfy the three-edition requirement. Keep PR #1 in Draft state, do not merge to `main`, and keep all Gumroad products unpublished.
+
+
+## 6. First independent manuscript drafts authored
+
+Three separate monolingual working drafts have been created:
+
+- `content/books/02-essential-vocabulary/en/manuscript.md`
+- `content/books/02-essential-vocabulary/fr/manuscript.md`
+- `content/books/02-essential-vocabulary/es/manuscript.md`
+
+Each draft contains the same 12-topic progression, localized front matter, target-language instructions, vocabulary selection, language focus, guided practice, unit-level answer checks, communicative tasks, self-checks, an integrated portfolio project, a final review test, a final answer key, a vocabulary record and a glossary.
+
+These are substantive first drafts, not certified translations and not final editorially approved books. The answer checks are aligned to the exercises included in each draft. Open tasks are assessed with stated criteria. Qualified language and pedagogical reviewers must still check idiomaticity, grammar, level, regional choices and answer validity.
+
+## 7. Automated PDF pipeline
+
+Added `.github/workflows/book-02-independent-editions.yml`. It runs a separate matrix job for EN, FR and ES; checks that each manuscript contains 12 unit headings and required project/test/answer-key/release sections; builds an individual XeLaTeX PDF; extracts text; checks page count and unit presence; and uploads each PDF as a review-candidate artifact.
+
+A green workflow means the technical build and automated structural checks passed. It does not replace human editorial approval.
