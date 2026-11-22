@@ -20,6 +20,7 @@ GitHub changes merged to `main`:
 
 - PR #17 is merged: three independent Book 02 EN/FR/ES manuscripts, language matrix PDF workflow and layout safeguards. Run #44986040328 passed all three jobs and uploaded three review-candidate PDFs.
 - PR #18 is merged: four-page English Starter A1 internal preview workflow. Run #44986069717 passed and uploaded its review artifact. This is a legacy internal sample, not one of the six editions.
+- PR #19 is open as a draft: first complete Book 01 EN/FR/ES content across all ten units, answer guidance and a new independent PDF matrix workflow. Astro validation is still running; do not merge until all required checks pass and the PDF matrix workflow has been run successfully.
 - PR #15, #16, #1 and #4 are merged as documented in the README. PR #17 and #14 were superseded/closed; their clean replacements are #17 and #18.
 - Astro validation and Book 01 legacy PDF workflow also passed in the PR #17 CI cycle.
 - Technical CI success does not constitute editorial, pedagogical, visual, rights or accessibility approval. No final PDFs are approved, no PDF is attached to Gumroad, and all six products remain unpublished.
