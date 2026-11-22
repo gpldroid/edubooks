@@ -2,6 +2,13 @@ name: Build English Starter A1 review preview
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - 'fix/**'
+    paths:
+      - 'content/books/english-starter-a1/preview.md'
+      - 'docs/editorial/english-starter-a1-review.md'
+      - '.github/workflows/english-starter-a1-preview.yml'
   pull_request:
     paths:
       - 'content/books/english-starter-a1/preview.md'
