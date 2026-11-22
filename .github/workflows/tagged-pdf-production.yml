@@ -71,15 +71,15 @@ jobs:
           mkdir -p dist
           /usr/bin/python3 .github/scripts/create_pdf_reference_docx.py
           pandoc "$FILE" --from=gfm --to=docx --standalone --toc --reference-doc=dist/edubooks-reference.docx \
-          COVER="public/covers/$([ "$BOOK" = "01" ] && echo "language-foundations" || echo "essential-vocabulary")-$LANG_CODE.svg"
-          test -s "$COVER"
-          rsvg-convert -w 1600 "$COVER" -o "dist/tagged/$BOOK/$LANG_CODE/cover.png"
-          /usr/bin/python3 .github/scripts/add_cover_page.py "dist/tagged/$BOOK/$LANG_CODE/book-$BOOK-$LANG_CODE.docx" "dist/tagged/$BOOK/$LANG_CODE/cover.png"
             -V lang="$LANG_TAG" \
             -V title="EduBooks — Book $BOOK — ${{ matrix.label }} Edition" \
             -V author="EduBooks" \
             -o "dist/tagged/$BOOK/$LANG_CODE/book-$BOOK-$LANG_CODE.docx"
           test -s "dist/tagged/$BOOK/$LANG_CODE/book-$BOOK-$LANG_CODE.docx"
+          COVER="public/covers/$([ "$BOOK" = "01" ] && echo "language-foundations" || echo "essential-vocabulary")-$LANG_CODE.svg"
+          test -s "$COVER"
+          rsvg-convert -w 1600 "$COVER" -o "dist/tagged/$BOOK/$LANG_CODE/cover.png"
+          /usr/bin/python3 .github/scripts/add_cover_page.py "dist/tagged/$BOOK/$LANG_CODE/book-$BOOK-$LANG_CODE.docx" "dist/tagged/$BOOK/$LANG_CODE/cover.png"
 
       - name: Export tagged PDF using LibreOffice
         shell: bash
