@@ -1,0 +1,65 @@
+name: Build English Starter A1 review preview
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'content/books/english-starter-a1/preview.md'
+      - 'docs/editorial/english-starter-a1-review.md'
+      - '.github/workflows/english-starter-a1-preview.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install PDF toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended poppler-utils
+
+      - name: Build review-only preview PDF
+        run: |
+          mkdir -p dist/review
+          pandoc content/books/english-starter-a1/preview.md \
+            --from=markdown+raw_tex+pipe_tables+fenced_code_blocks+strikeout+task_lists+autolink_bare_uris \
+            --standalone \
+            --pdf-engine=xelatex \
+            -V mainfont="DejaVu Sans" \
+            -V geometry:paper=a4paper \
+            -V geometry:margin=18mm \
+            -V fontsize=10pt \
+            -V colorlinks=true \
+            -V linkcolor=teal \
+            -o dist/review/edubooks-english-starter-a1-preview-review-only.pdf
+
+      - name: Validate PDF and preview structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          PDF="dist/review/edubooks-english-starter-a1-preview-review-only.pdf"
+          pdfinfo "$PDF" | tee dist/review/pdfinfo.txt
+          pdftotext "$PDF" dist/review/extracted.txt
+          grep -F "English Starter A1" dist/review/extracted.txt
+          grep -F "Review preview — not for sale" dist/review/extracted.txt
+          grep -F "Sample 1 — Hello!" dist/review/extracted.txt
+          grep -F "Sample 2 — Personal Information" dist/review/extracted.txt
+          grep -F "Sample 3 — Everyday Objects and This/That" dist/review/extracted.txt
+          grep -F "Sample 4 — Daily Routines" dist/review/extracted.txt
+          grep -F "not approved for commercial distribution" dist/review/extracted.txt
+          test "$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')" -ge 4
+          test "$(wc -w < dist/review/extracted.txt)" -gt 250
+          echo "Review preview PDF validation passed."
+
+      - name: Upload review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: english-starter-a1-review-preview
+          path: dist/review/edubooks-english-starter-a1-preview-review-only.pdf
+          if-no-files-found: error
+          retention-days: 30
