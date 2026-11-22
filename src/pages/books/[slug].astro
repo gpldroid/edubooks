@@ -9,14 +9,15 @@ const catalogErrors = validateBookCatalog(books);
 if (catalogErrors.length > 0) throw new Error(catalogErrors.join('\n'));
 
 export function getStaticPaths() {
-  const publishedBooks = books.filter((book) => book.status === 'published');
-  for (const book of publishedBooks) {
-    const previewFile = resolve(process.cwd(), 'public', book.previewPdf.slice(1));
+  for (const book of books) {
     const coverFile = resolve(process.cwd(), 'public', book.cover.slice(1));
-    if (!existsSync(previewFile)) throw new Error(`Missing PDF preview for "${book.slug}": ${book.previewPdf}`);
     if (!existsSync(coverFile)) throw new Error(`Missing cover for "${book.slug}": ${book.cover}`);
+    if (book.status === 'published') {
+      const previewFile = resolve(process.cwd(), 'public', (book.previewPdf ?? '').slice(1));
+      if (!existsSync(previewFile)) throw new Error(`Missing PDF preview for "${book.slug}": ${book.previewPdf}`);
+    }
   }
-  return publishedBooks.map((book) => ({ params: { slug: book.slug }, props: { book } }));
+  return books.map((book) => ({ params: { slug: book.slug }, props: { book } }));
 }
 
 const { book } = Astro.props;
