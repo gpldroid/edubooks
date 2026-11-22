@@ -6,15 +6,15 @@ import BookPreview from '../../components/books/BookPreview.astro';
 import { books, categories, validateBookCatalog } from '../../data/catalog';
 
 const catalogErrors = validateBookCatalog(books);
-if (catalogErrors.length > 0) throw new Error(catalogErrors.join('\n'));
+if (catalogErrors.length > 0) throw new Error(catalogErrors.join('\\n'));
 
 export function getStaticPaths() {
   for (const book of books) {
     const coverFile = resolve(process.cwd(), 'public', book.cover.slice(1));
-    if (!existsSync(coverFile)) throw new Error(`Missing cover for "${book.slug}": ${book.cover}`);
+    if (!existsSync(coverFile)) throw new Error('Missing cover for "' + book.slug + '": ' + book.cover);
     if (book.status === 'published') {
       const previewFile = resolve(process.cwd(), 'public', (book.previewPdf ?? '').slice(1));
-      if (!existsSync(previewFile)) throw new Error(`Missing PDF preview for "${book.slug}": ${book.previewPdf}`);
+      if (!existsSync(previewFile)) throw new Error('Missing PDF preview for "' + book.slug + '": ' + book.previewPdf);
     }
   }
   return books.map((book) => ({ params: { slug: book.slug }, props: { book } }));
@@ -22,9 +22,37 @@ export function getStaticPaths() {
 
 const { book } = Astro.props;
 const category = categories.find((item) => item.slug === book.category);
+const editionFamily = books.filter((item) => item.slug.replace(/-(en|fr|es)$/, '') === book.slug.replace(/-(en|fr|es)$/, ''));
+const alternates = editionFamily.map((item) => ({
+  lang: item.language,
+  href: new URL(import.meta.env.BASE_URL + 'books/' + item.slug + '/', Astro.site).href
+}));
+const defaultEdition = editionFamily.find((item) => item.language === 'en');
+if (defaultEdition) alternates.push({
+  lang: 'x-default',
+  href: new URL(import.meta.env.BASE_URL + 'books/' + defaultEdition.slug + '/', Astro.site).href
+});
 ---
-<BaseLayout title={`${book.title} — EduBooks`} description={book.description}>
-  <section class="page-hero"><div class="container"><a href={`${import.meta.env.BASE_URL}books/`} class="back-link" data-en="← All books" data-fr="← Tous les livres" data-es="← Todos los libros">← All books</a><span class="section-label" data-en={category?.nameEn ?? 'EduBooks'} data-fr={category?.nameFr ?? 'EduBooks'} data-es={category?.nameEs ?? 'EduBooks'}>{category?.nameEn ?? 'EduBooks'}</span><h1 data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</h1><p data-en={book.description} data-fr={book.descriptionFr} data-es={book.descriptionEs}>{book.description}</p></div></section>
+<BaseLayout title={book.title + ' — EduBooks'} description={book.description} robots={book.status === 'published' ? undefined : 'noindex,follow'} alternates={alternates}>
+  <section class="page-hero">
+    <div class="container">
+      <a href={import.meta.env.BASE_URL + 'books/'} class="back-link" data-en="← All books" data-fr="← Tous les livres" data-es="← Todos los libros">← All books</a>
+      <span class="section-label" data-en={category?.nameEn ?? 'EduBooks'} data-fr={category?.nameFr ?? 'EduBooks'} data-es={category?.nameEs ?? 'EduBooks'}>{category?.nameEn ?? 'EduBooks'}</span>
+      <h1 data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</h1>
+      <p data-en={book.description} data-fr={book.descriptionFr} data-es={book.descriptionEs}>{book.description}</p>
+      <nav class="edition-switch" aria-label="Available language editions">
+        <span data-en="Language edition" data-fr="Édition linguistique" data-es="Edición lingüística">Language edition</span>
+        {editionFamily.map((edition) => <a href={import.meta.env.BASE_URL + 'books/' + edition.slug + '/'} aria-current={edition.slug === book.slug ? 'page' : undefined} class:list={{ active: edition.slug === book.slug }}>{edition.language.toUpperCase()}</a>)}
+      </nav>
+    </div>
+  </section>
   <section class="content-section"><div class="container"><BookPreview book={book} base={import.meta.env.BASE_URL} /></div></section>
-  <style>.back-link{display:inline-flex;color:#b9dcd5;margin-bottom:18px;font-size:13px;text-decoration:none}</style>
+  <style>
+    .back-link{display:inline-flex;color:#b9dcd5;margin-bottom:18px;font-size:13px;text-decoration:none}
+    .edition-switch{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:18px}
+    .edition-switch>span{color:#d8e8e5;font-size:12px;font-weight:700;margin-right:4px}
+    .edition-switch a{display:grid;place-items:center;min-width:42px;min-height:36px;padding:6px 10px;border:1px solid rgb(255 255 255 / 25%);border-radius:8px;color:#fff;text-decoration:none;font-size:11px;font-weight:800}
+    .edition-switch a.active{background:#fff;color:#183452;border-color:#fff}
+    .edition-switch a:focus-visible{outline:3px solid #9ed3ca;outline-offset:2px}
+  </style>
 </BaseLayout>
