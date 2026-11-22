@@ -443,6 +443,3 @@ Utiliza la rúbrica de autoevaluación de seis puntos incluida en la unidad. El 
 ## Nota editorial y condiciones de publicación
 
 Este manuscrito editorial está en desarrollo y no está aprobado para su difusión pública en el sitio web de EduBooks. No constituye una certificación lingüística. Los ejemplos, instrucciones, ejercicios, soluciones, referencias y derechos deben someterse a una revisión independiente antes de publicar el PDF final, la muestra PDF o la ficha del catálogo.
-
-## Declaración del titular de los derechos — 2026-11-22
-El propietario ha confirmado en la conversación del proyecto que posee los derechos de autor y distribución de los textos y materiales utilizados en las seis ediciones de EduBooks y que autoriza su preparación para una publicación gratuita en el sitio web de EduBooks. Esta declaración registra su afirmación; no sustituye la documentación de licencias de cada recurso, la revisión lingüística y pedagógica independiente, las comprobaciones de accesibilidad, la prueba final del PDF ni la aprobación de publicación de cada edición.
