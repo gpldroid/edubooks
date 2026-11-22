@@ -41,3 +41,16 @@ For each asset, record:
 ## Approval record
 
 The owner confirmed on 2026-11-22 that they hold copyright and distribution rights for the texts and materials used in all six editions and authorize preparation for free publication on EduBooks. This is recorded as an owner declaration in this internal register, not as learner-facing book content. It does not replace itemized asset/source records, independent review, accessibility and PDF proof, or edition-specific release approval.
+
+## Additional owner confirmation — six catalogue covers (2026-11-22)
+
+The owner explicitly confirmed that they hold the rights to use and distribute all six current catalogue covers in `public/covers/` on the EduBooks website and to embed them in the six PDF editions:
+
+- `public/covers/language-foundations-en.svg`
+- `public/covers/language-foundations-fr.svg`
+- `public/covers/language-foundations-es.svg`
+- `public/covers/essential-vocabulary-en.svg`
+- `public/covers/essential-vocabulary-fr.svg`
+- `public/covers/essential-vocabulary-es.svg`
+
+This owner confirmation is recorded for the six named cover files and stated uses. It does not extend to legacy Gumroad covers, font packages, third-party excerpts or any other asset not named above. Legacy files under `public/images/gumroad-covers/` remain excluded from this website release unless separately cleared.
