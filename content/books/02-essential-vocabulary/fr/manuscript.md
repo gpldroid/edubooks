@@ -6,7 +6,7 @@
 **Statut éditorial :** Version de travail autonome, à faire relire par des spécialistes de la langue et de la pédagogie.
 
 ## Note de publication
-This is a self-study vocabulary workbook for familiar everyday situations. Vocabulary is selected for practical learning and is not presented as a statistically ranked frequency list. Regional alternatives are noted where useful. This is an independent resource and is not an official examination or certification.
+Ce cahier d’autoapprentissage propose du vocabulaire utile dans des situations quotidiennes. La sélection privilégie les besoins pratiques et ne constitue pas un classement statistique de fréquence. Des variantes régionales sont indiquées lorsqu’elles sont utiles. Cette ressource indépendante ne remplace aucun examen ni aucune certification officielle.
 
 ## Bienvenue
 Bienvenue. Ce cahier vous aide à apprendre le vocabulaire utile à travers des situations quotidiennes. Apprenez des expressions complètes, entraînez-vous à voix haute et révisez de mémoire.
@@ -17,7 +17,7 @@ Lisez la situation. Étudiez chaque expression en contexte. Faites les exercices
 ## Objectifs d’apprentissage
 À la fin, vous pourrez parler des personnes, du logement, des repas, des achats, des habitudes, des lieux, des voyages, du travail, des besoins courants, de la météo et de vos préférences ; utiliser des associations de mots fréquentes et organiser vos révisions.
 
-## Contents
+## Sommaire
 1. Personnes, famille et relations
 2. La maison et les objets du quotidien
 3. Les aliments et les repas
@@ -32,9 +32,9 @@ Lisez la situation. Étudiez chaque expression en contexte. Faites les exercices
 12. Construire son système de vocabulaire
 
 ---
-# Unit 1 — Personnes, famille et relations
+# Unité 1 — Personnes, famille et relations
 
-**Can-do:** Présenter des personnes, expliquer les liens familiaux et décrire un caractère.
+**Objectif :** Présenter des personnes, expliquer les liens familiaux et décrire un caractère.
 
 ## Découvrir
 Voici ma cousine Maya. Elle habite près de nos grands-parents. Elle est sympathique et aime rencontrer des gens.
@@ -69,9 +69,9 @@ Présentez deux personnes, leur lien avec vous et une qualité pour chacune.
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 2 — La maison et les objets du quotidien
+# Unité 2 — La maison et les objets du quotidien
 
-**Can-do:** Nommer les pièces et les objets et indiquer leur emplacement.
+**Objectif :** Nommer les pièces et les objets et indiquer leur emplacement.
 
 ## Découvrir
 Les clés sont sur la table. La cuisine est à côté du salon. Il y a une lampe près du canapé.
@@ -108,9 +108,9 @@ Décrivez une pièce avec cinq objets et trois expressions de lieu.
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 3 — Les aliments et les repas
+# Unité 3 — Les aliments et les repas
 
-**Can-do:** Parler des repas, des goûts, des quantités et commander poliment.
+**Objectif :** Parler des repas, des goûts, des quantités et commander poliment.
 
 ## Découvrir
 Au petit-déjeuner, je prends des fruits et du pain. Au café, je voudrais un sandwich et un verre d'eau, s'il vous plaît.
@@ -147,9 +147,9 @@ Jouez une scène au café : commandez, posez une question et demandez l'addition
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 4 — Les vêtements et les achats
+# Unité 4 — Les vêtements et les achats
 
-**Can-do:** Décrire des vêtements et demander la couleur, la taille et le prix.
+**Objectif :** Décrire des vêtements et demander la couleur, la taille et le prix.
 
 ## Découvrir
 Je cherche une chemise bleue. Vous l'avez en taille moyenne ? Est-ce que je peux l'essayer ?
@@ -186,9 +186,9 @@ Jouez le rôle du client et du vendeur : choisissez un article, vérifiez la tai
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 5 — Les activités quotidiennes
+# Unité 5 — Les activités quotidiennes
 
-**Can-do:** Décrire une journée habituelle et la fréquence des activités.
+**Objectif :** Décrire une journée habituelle et la fréquence des activités.
 
 ## Découvrir
 Je me réveille généralement à sept heures, je prends mon petit-déjeuner et je vais au travail. J'étudie parfois le soir.
@@ -225,9 +225,9 @@ Interrogez un partenaire sur sa journée et présentez trois informations.
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 6 — La ville, les lieux et les directions
+# Unité 6 — La ville, les lieux et les directions
 
-**Can-do:** Demander où se trouvent les lieux et indiquer un itinéraire simple.
+**Objectif :** Demander où se trouvent les lieux et indiquer un itinéraire simple.
 
 ## Découvrir
 La bibliothèque est en face du parc. Allez tout droit, tournez à gauche à la banque et traversez la rue.
@@ -264,9 +264,9 @@ Expliquez le chemin entre une gare et un lieu public.
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 7 — Les voyages et l'hébergement
+# Unité 7 — Les voyages et l'hébergement
 
-**Can-do:** Parler des transports, des réservations et des besoins à l'hôtel.
+**Objectif :** Parler des transports, des réservations et des besoins à l'hôtel.
 
 ## Découvrir
 J'ai une réservation pour deux nuits. À quelle heure le train part-il ? Le petit-déjeuner est-il compris ?
@@ -303,9 +303,9 @@ Jouez une arrivée à l'hôtel et confirmez les dates et le petit-déjeuner.
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 8 — Le travail et les études
+# Unité 8 — Le travail et les études
 
-**Can-do:** Nommer les tâches, les lieux et les horaires habituels.
+**Objectif :** Nommer les tâches, les lieux et les horaires habituels.
 
 ## Découvrir
 Je travaille dans un bureau. Nous avons une réunion à neuf heures et j'étudie une nouvelle matière ce semestre.
@@ -342,9 +342,9 @@ Décrivez une journée de travail ou d'études et demandez une date limite.
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 9 — Le corps et les besoins de santé courants
+# Unité 9 — Le corps et les besoins de santé courants
 
-**Can-do:** Nommer des parties du corps et décrire un symptôme simple ou un besoin.
+**Objectif :** Nommer des parties du corps et décrire un symptôme simple ou un besoin.
 
 ## Découvrir
 J'ai mal à la tête et j'ai mal à la gorge. Y a-t-il une pharmacie près d'ici ?
@@ -381,9 +381,9 @@ Entraînez-vous à demander un rendez-vous et à expliquer un symptôme simple.
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 10 — La météo, les saisons et les loisirs
+# Unité 10 — La météo, les saisons et les loisirs
 
-**Can-do:** Décrire le temps et organiser une activité de loisir.
+**Objectif :** Décrire le temps et organiser une activité de loisir.
 
 ## Découvrir
 Il fait beau aujourd'hui ; allons nous promener. S'il pleut demain, nous pouvons regarder un film.
@@ -420,9 +420,9 @@ Choisissez une activité, un lieu et une heure, puis proposez une solution s'il 
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 11 — Les sentiments, les préférences et les opinions
+# Unité 11 — Les sentiments, les préférences et les opinions
 
-**Can-do:** Décrire des émotions, exprimer ses goûts et donner une raison simple.
+**Objectif :** Décrire des émotions, exprimer ses goûts et donner une raison simple.
 
 ## Découvrir
 J'aime apprendre les langues parce que c'est utile. Je suis parfois nerveux quand je parle, mais je continue à pratiquer.
@@ -459,9 +459,9 @@ Discutez d'une activité et répondez poliment à un avis différent.
 - [ ] Je sais quelles expressions je dois réviser.
 
 ---
-# Unit 12 — Construire son système de vocabulaire
+# Unité 12 — Construire son système de vocabulaire
 
-**Can-do:** Utiliser les collocations, les familles de mots et la révision espacée.
+**Objectif :** Utiliser les collocations, les familles de mots et la révision espacée.
 
 ## Découvrir
 Apprenez une expression, créez un exemple personnel, puis testez votre mémoire demain, dans trois jours et dans une semaine.
