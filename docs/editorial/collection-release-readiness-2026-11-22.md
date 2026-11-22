@@ -92,3 +92,18 @@ No `public/books/` directory exists on the current `main` branch. Do not restore
 For each edition, add a signed review record containing reviewer role/name, date, findings and resolution; rights evidence; accessibility/visual proof; source commit; workflow run; final and sample PDF filenames, page counts and SHA-256; owner approval; and verified public preview/download URLs.
 
 **Final decision:** This pass improved status accuracy and completed targeted consistency checks, but does not manufacture professional human sign-off. Keep all six editions unpublished until the mandatory release blockers above are evidenced.
+
+
+## Latest technical QA rerun after PR #36 — 2026-11-22
+
+PR #36 was merged into `main` as commit `1481cfa77540f9426ed9ee973810a73ac1099b67`. The source commit used for the updated review candidates was `8f74a7e9f665226b5842a7def48c558200e97dba`.
+
+Successful workflows:
+- [Book 01 independent editions — run #45078048226](https://github.com/gpldroid/edubooks/actions/runs/45078048226): EN 10 pages / 4,149 extracted words; FR 11 pages / 4,647 words; ES 10 pages / 4,109 words. Each five-page internal sample was generated.
+- [Book 02 independent editions — run #45078048251](https://github.com/gpldroid/edubooks/actions/runs/45078048251): EN 13 pages / 2,780 extracted words; FR 14 pages / 3,224 words; ES 13 pages / 2,735 words. Final-page extracted word counts were EN 302, FR 264 and ES 381. Each five-page internal sample was generated.
+- [Astro validation and responsive browser tests — run #45078048273](https://github.com/gpldroid/edubooks/actions/runs/45078048273): successful.
+- [Legacy Book 01 PDF workflow — run #45078048294](https://github.com/gpldroid/edubooks/actions/runs/45078048294): successful.
+
+The updated QA reports confirm all detected fonts are embedded. All six PDFs still report `Tagged: no`; they are not tagged PDFs and no PDF/UA or screen-reader conformance is claimed. The Book 02 heading-reservation adjustment passed the rebuild, but page counts remained unchanged. It is a pagination refinement, not proof that all whitespace concerns are resolved. Full-page visual inspection remains open, particularly Book 01 FR page 11 and Book 02 FR page 14.
+
+**Publication decision remains unchanged:** all six catalogue entries remain drafts. No full PDFs or samples were copied to `public/books/` or `public/previews/`. No public preview or download is enabled. Human language review, pedagogical review, itemized asset rights/attribution, accessible PDF remediation and verification, complete visual proof, and edition-specific owner approval remain release blockers.
