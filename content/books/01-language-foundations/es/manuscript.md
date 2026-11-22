@@ -442,4 +442,4 @@ Utiliza la rúbrica de autoevaluación de seis puntos incluida en la unidad. El 
 
 ## Nota editorial y condiciones de publicación
 
-Este manuscrito editorial está en desarrollo. No es un producto educativo terminado, no constituye una certificación lingüística y no debe ponerse a la venta. Los ejemplos, instrucciones, ejercicios, soluciones, referencias y derechos deben someterse a una revisión independiente antes de publicar el PDF.
+Este manuscrito editorial está en desarrollo y no está aprobado para su difusión pública en el sitio web de EduBooks. No constituye una certificación lingüística. Los ejemplos, instrucciones, ejercicios, soluciones, referencias y derechos deben someterse a una revisión independiente antes de publicar el PDF final, la muestra PDF o la ficha del catálogo.
