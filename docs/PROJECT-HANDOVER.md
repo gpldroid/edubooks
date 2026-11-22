@@ -101,3 +101,10 @@ The shared design files are in docs/production/. Use the manuscript template for
 - Series index: https://github.com/gpldroid/edubooks/blob/main/docs/series-01-detailed-contents.md
 - Book 01 manuscript: https://github.com/gpldroid/edubooks/blob/main/content/books/01-language-foundations/manuscript.md
 - Book 01 review: https://github.com/gpldroid/edubooks/blob/main/docs/book-01-editorial-review.md
+
+
+## Book 02 — current independent-edition status (2026-11-22)
+
+Three first-draft monolingual manuscripts now exist under `content/books/02-essential-vocabulary/{en,fr,es}/manuscript.md`. Each covers the 12 planned topics and includes localized practice, answer checks, project, final review test and answer key. A dedicated matrix workflow builds and structurally validates one PDF per language.
+
+**Do not mark Book 02 complete yet.** The drafts require qualified independent language and pedagogical review, correction of reviewer findings, PDF visual proof for all three artifacts, rights/metadata review and explicit release approval. Keep all Gumroad products unpublished. The original trilingual source remains preserved as the reference source. PR #1 remains a draft/source PR; the independent-edition work is tracked separately.
