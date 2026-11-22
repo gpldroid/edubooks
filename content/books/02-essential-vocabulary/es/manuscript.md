@@ -542,7 +542,6 @@ Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio
 |---|---|---|---|---|---|---|
 | | | | | | | |
 | | | | | | | |
-| | | | | | | |
 
 # Glosario
 - **Colocación:** combinación de palabras que suele aparecer junta.
@@ -553,6 +552,6 @@ Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio
 - **Repaso espaciado:** volver a estudiar la información en intervalos cada vez mayores.
 
 # Nota editorial y condiciones de publicación
-Esta edición de trabajo requiere revisión lingüística y pedagógica independiente. Antes de publicarla, deben verificarse la naturalidad, los usos regionales, la progresión, todos los ejercicios y sus respuestas, los derechos, las fuentes tipográficas y la accesibilidad. Registra las personas revisoras, las fechas y sus decisiones.
+**Estado de publicación: NO AUTORIZADO PARA LA VENTA.** Borrador de trabajo; requiere revisión lingüística, pedagógica, de derechos y accesibilidad.
 
 **Estado de publicación: NO AUTORIZADO PARA LA VENTA.** Este borrador requiere una revisión humana independiente y una comprobación final del PDF.
