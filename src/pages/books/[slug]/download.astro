@@ -10,9 +10,10 @@ export function getStaticPaths() {
 }
 const { book } = Astro.props;
 if (!book.downloadPdf) throw new Error(`Missing downloadPdf for ${book.slug}`);
-const pdfFile = resolve(process.cwd(), 'public', book.downloadPdf.replace(/^\\//, ''));
+const relativePdfPath = book.downloadPdf.startsWith('/') ? book.downloadPdf.slice(1) : book.downloadPdf;
+const pdfFile = resolve(process.cwd(), 'public', relativePdfPath);
 if (!existsSync(pdfFile)) throw new Error(`Download file not found: ${book.downloadPdf}`);
-const downloadUrl = `${import.meta.env.BASE_URL}${book.downloadPdf.replace(/^\\//, '')}`;
+const downloadUrl = `${import.meta.env.BASE_URL}${relativePdfPath}`;
 ---
 <BaseLayout title={`Download ${book.title} — EduBooks`} description={`Download page for ${book.title}.`}>
   <section class="page-hero"><div class="container"><a class="back-link" href={`${import.meta.env.BASE_URL}books/`} data-en="← All books" data-fr="← Tous les livres" data-es="← Todos los libros">← All books</a><span class="section-label">DOWNLOAD CENTRE</span><h1 data-en="Your book is almost ready." data-fr="Votre livre est presque prêt." data-es="Tu libro está casi listo.">Your book is almost ready.</h1><p data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</p></div></section>
