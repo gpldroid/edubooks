@@ -99,3 +99,17 @@ test('application source contains no unfinished implementation placeholders', ()
     assert.doesNotMatch(source, /TODO|FIXME|write logic here|add rest of code/i, `Placeholder found in ${path}`);
   }
 });
+
+test('book library uses a navigable category sidebar and responsive 3D grid', () => {
+  const page = read('src/pages/books/index.astro');
+  const card = read('src/components/books/BookCard.astro');
+  for (const token of ['category-sidebar', 'category-nav', 'data-category-link', 'aria-current', 'categoryCounts', 'catalog-layout', 'book-grid']) {
+    assert.ok(page.includes(token), `Missing library layout feature: ${token}`);
+  }
+  for (const token of ['perspective:', 'transform-style:preserve-3d', 'rotateX(', 'prefers-reduced-motion', '@media(max-width:760px)']) {
+    assert.ok(page.includes(token) || card.includes(token), `Missing 3D/responsive behavior: ${token}`);
+  }
+  assert.ok(page.includes('window.addEventListener(\'popstate\''));
+  assert.ok(page.includes('history.pushState'));
+  assert.ok(!page.includes('category-chips'));
+});
