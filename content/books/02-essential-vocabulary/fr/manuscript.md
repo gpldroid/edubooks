@@ -5,7 +5,7 @@
 **Édition française · Niveau indicatif : A1–A2 ; ce cahier ne constitue pas une certification officielle du CECRL.**  
 **Statut éditorial :** Version de travail autonome, à faire relire par des spécialistes de la langue et de la pédagogie.
 
-## Publication note
+## Note de publication
 This is a self-study vocabulary workbook for familiar everyday situations. Vocabulary is selected for practical learning and is not presented as a statistically ranked frequency list. Regional alternatives are noted where useful. This is an independent resource and is not an official examination or certification.
 
 ## Bienvenue
@@ -527,7 +527,7 @@ Créez un portfolio en cinq parties : personnes, maison, alimentation, routine e
 1. Oncle.
 2. a.
 3. verre.
-4. (l’) — par exemple : essayer le vêtement.
+4. l’essayer.
 5. Réponse libre : vérifier l’emploi du présent et la clarté de la routine.
 6. Réponse libre : vérifier l’emploi de l’impératif et l’ordre logique des indications.
 7. Réponse libre : vérifier la politesse et la clarté de la question.
@@ -553,7 +553,7 @@ Créez un portfolio en cinq parties : personnes, maison, alimentation, routine e
 - **Rappel actif :** fait de retrouver une information sans consulter le support.
 - **Révision espacée :** fait de revoir une information à des intervalles progressivement plus longs.
 
-# Editorial and Release Note
-This independent-language edition has been adapted for monolingual learning. The answer key is aligned to the closed-ended exercises included in this draft; open activities are assessed using the criteria above. Before publication, a qualified native-level language editor and a language-teaching reviewer must verify naturalness, regional usage, level progression, instructions, every exercise and every answer. Record reviewer names, dates and decisions in the editorial report. Check all cover assets, fonts, permissions and accessibility before release.
+# Note éditoriale et conditions de publication
+Cette édition autonome a été conçue pour un apprentissage en français. Le corrigé correspond aux exercices à réponse fermée de cette version ; les activités ouvertes sont évaluées à l’aide des critères indiqués. Avant toute publication, un réviseur qualifié de langue maternelle ou de niveau équivalent et un spécialiste de l’enseignement des langues devront vérifier le naturel des formulations, les usages régionaux, la progression, les consignes, chaque exercice et chaque réponse. Consignez les noms des réviseurs, les dates et leurs décisions dans le rapport éditorial. Vérifiez également les couvertures, les polices, les autorisations et l’accessibilité.
 
 **Statut de publication : VENTE NON AUTORISÉE.** Cette version de travail doit faire l’objet d’une révision humaine indépendante et d’une vérification finale du PDF.
