@@ -72,6 +72,8 @@ jobs:
               grep -Fq '2. a.' "$FILE"
               grep -Fq '4. Complétez : Puis-je ____ ?' "$FILE"
               grep -Fq '4. l’essayer.' "$FILE"
+              grep -Fq "1) Aujourd'hui, le temps est ____" "$FILE"
+              grep -Fq 'beau / ensoleillé; froid' "$FILE"
               ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
               ;;
             es)
@@ -84,6 +86,8 @@ jobs:
               grep -Fq '2. Completa: ____ dos sillas' "$FILE"
               grep -Fq '2. Hay.' "$FILE"
               grep -Fq '4. la —' "$FILE"
+              grep -Fq '1) Me duele la ____ (cabeza).' "$FILE"
+              grep -Fq 'cabeza; tos;' "$FILE"
               ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
               ;;
           esac
@@ -132,6 +136,8 @@ jobs:
           pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
           PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
           test "$PAGES" -ge 12
+          LAST_PAGE_WORDS="$(pdftotext -f "$PAGES" -l "$PAGES" "$PDF" - | wc -w)"
+          test "$LAST_PAGE_WORDS" -ge 40
           pdftotext "$PDF" "$TXT"
           test "$(wc -w < "$TXT")" -gt 1000
           grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
