@@ -61,7 +61,7 @@ Cross-language comparison activities in the source must be rewritten as target-l
 
 ## 5. Current decision
 
-No independent Book 02 edition is complete yet. No reviewer sign-off is inferred from automated checks. The existing trilingual PDF is only a review candidate and does not satisfy the three-edition requirement. Keep PR #1 in Draft state, do not merge to `main`, and keep all Gumroad products unpublished.
+Three separate first-draft manuscripts now exist, one per language. They are not yet approved editions. No reviewer sign-off is inferred from automated checks. The existing trilingual PDF is not a substitute for the three independent editions. Keep PR #9 in Draft state, do not merge to `main`, and keep all Gumroad products unpublished.
 
 
 ## 6. First independent manuscript drafts authored
