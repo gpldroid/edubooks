@@ -252,6 +252,123 @@ On utilise **à** pour indiquer l’heure d’un événement : *à huit heures*.
 **Critère de réussite :** Je peux reconnaître des nombres courants, écrire une date clairement et demander ou donner l’heure.
 
 
+## Unité 7 — Informations personnelles et questions
+
+**Objectif :** Vous pourrez poser et comprendre des questions simples sur le nom, le lieu de résidence, les langues et les coordonnées, tout en respectant la vie privée.
+
+### Poser des questions
+- **Comment** : « Comment vous appelez-vous ? »
+- **Où** : « Où habitez-vous ? »
+- **Quand** : « Quand est votre rendez-vous ? »
+- **Qui** : « Qui est cette personne ? »
+- **Quelles / quels** : « Quelles langues parlez-vous ? »
+
+En français, la question peut se construire avec l’intonation (« Vous habitez ici ? »), avec **est-ce que** (« Est-ce que vous habitez ici ? ») ou avec l’inversion dans un registre plus soutenu (« Habitez-vous ici ? »). Pour débuter, entraînez-vous d’abord avec *est-ce que* et l’intonation.
+
+### Protéger ses informations
+Vous pouvez utiliser des informations fictives. Ne communiquez pas une adresse réelle, un numéro de téléphone ou d’autres données privées dans une activité publique. Si un formulaire demande une information que vous ne souhaitez pas donner, demandez pourquoi elle est nécessaire.
+
+### Activités
+1. Complétez : « ____ habitez-vous ? » (Où / Quand)
+2. Complétez : « ____ vous parlez français ? » (Est-ce que / Où)
+3. Transformez en question : « Vous habitez à Lyon. »
+4. Associez : qui / où / quand / comment à personne / lieu / moment / manière.
+5. Écrivez trois questions pour un camarade fictif et répondez avec des informations inventées.
+
+**Critère de réussite :** Je peux formuler des questions simples et répondre sans révéler de données privées.
+
+## Unité 8 — Langue de la classe et de l’apprentissage
+
+**Objectif :** Vous pourrez comprendre des consignes courantes et demander de l’aide pendant un cours.
+
+### Expressions utiles
+- « Ouvrez votre livre, s’il vous plaît. »
+- « Écoutez et répétez. »
+- « Travaillez avec un partenaire. »
+- « Écrivez la réponse. »
+- « Pourriez-vous répéter, s’il vous plaît ? »
+- « Que signifie ce mot ? »
+- « Comment prononce-t-on ce mot ? »
+- « Je ne comprends pas. »
+- « Pourriez-vous parler plus lentement ? »
+
+Les consignes utilisent souvent l’impératif : **ouvrez**, **écoutez**, **écrivez**. Ajoutez *s’il vous plaît* pour adoucir une demande. Pour demander de l’aide, vous pouvez employer **Pouvez-vous… ?** ou **Pourriez-vous… ?**
+
+### Apprendre efficacement
+Quand vous ne comprenez pas, identifiez la difficulté : un mot, une consigne, un son ou l’idée générale. Posez une question précise. Dans votre carnet, notez un mot avec une courte phrase d’exemple plutôt qu’une traduction isolée.
+
+### Activités
+1. Quelle expression est une consigne de classe : (a) « Écoutez et répétez » ; (b) « Vous habitez où ? »
+2. Complétez : « Pourriez-vous parler plus ____ ? » (lentement / lente)
+3. Écrivez une demande polie pour faire répéter le professeur.
+4. Associez : prononcer / signification / répéter à dire clairement un son / sens d’un mot / dire une nouvelle fois.
+5. Écrivez trois consignes pour un partenaire qui fait un exercice d’association.
+
+**Critère de réussite :** Je peux suivre des consignes courantes et demander une clarification poliment.
+
+## Unité 9 — Les premières phrases
+
+**Objectif :** Vous pourrez construire des phrases affirmatives et négatives simples avec **être** et des verbes au présent.
+
+### Modèles de phrases
+Avec **être** :
+- Je suis débutant. / Je suis débutante.
+- Elle est à la maison.
+- Ils sont prêts.
+
+Avec un verbe au présent :
+- J’apprends le français.
+- Il étudie le français.
+- Nous habitons en ville.
+
+Pour la négation, encadrez généralement le verbe conjugué avec **ne… pas** : « Je ne suis pas fatigué » ; « Elle n’habite pas ici ». À l’oral familier, *ne* est souvent omis, mais apprenez d’abord la forme écrite complète.
+
+### Ordre des mots
+Une phrase déclarative simple suit souvent l’ordre **sujet + verbe + complément** : « Mon ami lit un livre. » Un complément de temps peut se placer au début ou à la fin : « Chaque jour, je pratique » / « Je pratique chaque jour ».
+
+### Activités
+1. Complétez : « Ils ____ prêts. » (est / sont)
+2. Complétez : « Mina ____ le français chaque jour. » (étudie / étudies)
+3. Mettez à la forme négative : « Je travaille ici. »
+4. Corrigez : « Il ne aime pas le thé. »
+5. Remettez dans l’ordre : chaque matin / lit / elle / un livre.
+6. Écrivez quatre phrases : deux sur une personne fictive et deux phrases négatives.
+
+**Critère de réussite :** Je peux écrire des phrases simples affirmatives et négatives avec un ordre compréhensible.
+
+## Unité 10 — Projet intégré pour débutants
+
+**Objectif :** Vous pourrez combiner les compétences du cahier dans une courte présentation et un échange d’informations.
+
+### Projet : mon profil de débutant
+Créez une page de présentation pour vous-même ou pour une personne fictive. Ajoutez :
+1. Un prénom et une salutation.
+2. Trois informations : origine, lieu de résidence et langues parlées.
+3. Deux centres d’intérêt ou activités quotidiennes.
+4. Une date ou une heure pour un événement fictif.
+5. Trois questions qu’un autre apprenant pourrait poser.
+6. Un dialogue de quatre à six répliques.
+
+Écrivez des phrases complètes. Vérifiez les majuscules, l’orthographe, les formes du verbe **être**, les verbes au présent et les points d’interrogation.
+
+### Activité orale
+Lisez votre profil à voix haute. Faites une pause entre les idées. Posez deux questions à un partenaire et répondez à deux questions. Si vous travaillez seul, enregistrez les deux rôles du dialogue.
+
+### Grille d’autoévaluation
+Attribuez-vous un point pour chaque élément :
+- Les informations sont organisées et faciles à suivre.
+- Mes phrases comportent un sujet et un verbe clairs.
+- Je peux poser et comprendre des questions simples.
+- J’utilise des salutations et des formules de politesse.
+- Je peux indiquer une date ou une heure clairement.
+- J’ai vérifié l’orthographe et la ponctuation.
+
+**Interprétation :** 5–6 points : prêt pour un échange de révision ; 3–4 : retravaillez les éléments manquants ; 0–2 : reprenez les unités concernées puis recommencez. Cette grille est un outil d’apprentissage, pas un examen officiel.
+
+### Bilan personnel
+Quelle compétence a le plus progressé ? Quelle expression allez-vous utiliser dans une vraie conversation ? Fixez un petit objectif pour les sept prochains jours.
+
+
 ## Corrigé
 
 Non approuvé à ce stade. Un corrigé complet devra être rédigé après la finalisation des exercices de cette édition. Les réponses partielles de la source conservée ne doivent pas être reprises sans vérification.
