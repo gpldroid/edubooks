@@ -3,7 +3,7 @@ import '../styles/legacy.css';
 import '../styles/site.css';
 import MobileTabBar from '../components/navigation/MobileTabBar.astro';
 import ScrollControls from '../components/ui/ScrollControls.astro';
-interface Props { title?: string; description?: string; robots?: string; alternates?: { lang: string; href: string }[]; }
+interface Props { title?: string; titleAr?: string; description?: string; descriptionAr?: string; robots?: string; alternates?: { lang: string; href: string }[]; }
 const { title = 'EduBooks — Learn. Practice. Grow.', description = 'Practical digital learning resources for every stage of the learning journey.', robots = 'index, follow, max-image-preview:large', alternates = [] } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonicalPath = Astro.url.pathname.startsWith(base) ? Astro.url.pathname : base + Astro.url.pathname.replace(/^\/+/, '');
