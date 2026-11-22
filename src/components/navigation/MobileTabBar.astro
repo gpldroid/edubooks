@@ -16,7 +16,7 @@ const active = currentPath.includes("/books") ? "books" : currentPath.includes("
 <nav class="mobile-tabbar" aria-label="Quick navigation" data-mobile-tabbar>
   {items.map((item) => (
     <a href={item.href} data-tab-key={item.key} aria-current={active === item.key ? "page" : undefined}>
-      <Icon3D name={item.icon as "home" | "compass" | "book" | "help" | "user"} label={item.label} size={24} />
+      <Icon3D name={item.icon} label={item.label} size={24} />
       <span data-en={item.label} data-fr={item.fr} data-es={item.es}>{item.label}</span>
     </a>
   ))}
