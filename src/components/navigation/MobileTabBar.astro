@@ -9,7 +9,8 @@ const items = [
   { label: "About", fr: "À propos", es: "Acerca de", href: base + "about/", key: "about", icon: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M4 21a8 8 0 0 1 16 0z" }
 ];
 const currentPath = Astro.url.pathname;
-const active = currentPath.includes("/books") ? "books" : currentPath.includes("/faq") ? "faq" : currentPath.includes("/about") ? "about" : currentPath === base || currentPath === base.replace(/\\/?$/, "/") ? "home" : "";
+const homePath = base.endsWith("/") ? base : `${base}/`;
+const active = currentPath.includes("/books") ? "books" : currentPath.includes("/faq") ? "faq" : currentPath.includes("/about") ? "about" : currentPath === homePath || currentPath === base ? "home" : "";
 ---
 <nav class="mobile-tabbar" aria-label="Quick navigation" data-mobile-tabbar>
   {items.map((item) => (
