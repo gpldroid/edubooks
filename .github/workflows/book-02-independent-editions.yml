@@ -128,6 +128,7 @@ jobs:
             grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
           done
           if [ "$LANG_CODE" = "fr" ]; then
+            grep -q "Table des matières" "$TXT"
             grep -q "Sommaire" "$TXT"
             ! grep -q "Contents" "$TXT"
             ! grep -q "This is a self-study vocabulary workbook" "$TXT"
