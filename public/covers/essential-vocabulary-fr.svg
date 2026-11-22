@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+<title id="title">VOCABULAIRE ESSENTIEL</title><desc id="desc">ÉDITION FRANÇAISE review edition cover for EduBooks.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c615e"/><stop offset="1" stop-color="#16877b"/></linearGradient><linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".12"/><stop offset="1" stop-color="#ffffff" stop-opacity=".025"/></linearGradient></defs>
+<rect width="900" height="1200" fill="url(#bg)"/><circle cx="760" cy="185" r="230" fill="#c5eadc" opacity=".12"/><circle cx="95" cy="1030" r="250" fill="#fff" opacity=".045"/>
+<path d="M70 70h760v1060H70z" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="2"/><path d="M110 110h680v980H110z" fill="url(#panel)" stroke="#fff" stroke-opacity=".12"/>
+<text x="145" y="185" fill="#c5eadc" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="8">EDUBOOKS</text>
+<text x="145" y="245" fill="#fff" opacity=".78" font-family="Arial,sans-serif" font-size="19" letter-spacing="5">LEARNING SERIES · 02</text>
+<path d="M145 330h150" stroke="#c5eadc" stroke-width="8" stroke-linecap="round"/>
+<text x="145" y="515" fill="#fff" font-family="Arial,sans-serif" font-size="64" font-weight="800" letter-spacing="1">VOCABULAIRE</text>
+<text x="145" y="600" fill="#fff" font-family="Arial,sans-serif" font-size="66" font-weight="800" letter-spacing="1">ESSENTIEL</text>
+<text x="145" y="690" fill="#c5eadc" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5">ÉDITION FRANÇAISE</text>
+<g transform="translate(145 785)"><rect width="610" height="175" rx="22" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".18"/><text x="35" y="67" fill="#fff" font-family="Arial,sans-serif" font-size="24" font-weight="700">PREPARED FOR REVIEW</text><text x="35" y="112" fill="#fff" opacity=".72" font-family="Arial,sans-serif" font-size="19">Not approved for public distribution</text></g>
+<text x="145" y="1040" fill="#fff" opacity=".7" font-family="Arial,sans-serif" font-size="18" letter-spacing="3">LEARN · PRACTICE · GROW</text>
+<text x="755" y="1045" text-anchor="end" fill="#c5eadc" font-family="Arial,sans-serif" font-size="58" font-weight="800">02</text>
+</svg>
