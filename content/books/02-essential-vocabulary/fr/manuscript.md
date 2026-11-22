@@ -510,9 +510,9 @@ Créez un portfolio en cinq parties : personnes, maison, alimentation, routine e
 # Test de révision final
 
 1. Comment appelle-t-on le frère de votre mère ?
-2. Complétez : Il ____ deux chaises dans la pièce.
+2. Complétez : Il y ____ deux chaises dans la pièce.
 3. Complétez l’expression de quantité : un ____ d’eau.
-4. Complétez l’expression : essayer ____.
+4. Complétez : Puis-je ____ ?
 5. Écrivez une phrase sur votre routine quotidienne.
 6. Donnez deux indications claires pour rejoindre un lieu public.
 7. Écrivez une question polie à poser à la réception d’un hôtel.
