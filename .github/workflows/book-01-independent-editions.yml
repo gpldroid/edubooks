@@ -121,7 +121,7 @@ jobs:
             echo "Tagged PDF: ${TAGGED:-not reported}"
             echo "Font embedding: all detected fonts embedded"
             echo "Font package: $(cat dist/rights/dejavu-package-version.txt)"
-            echo "PDF SHA-256: $(cut -d \" \" -f1 \"$PDF.sha256\")"
+            echo "PDF SHA-256: $(sha256sum "$PDF" | awk '{print $1}')"
             echo "Accessibility status: NOT CERTIFIED; manual tagging, reading-order and screen-reader review remain required"
           } | tee "dist/books/$LANG_CODE/qa-report.txt"
           echo "Validated $LANG_CODE review candidate: $PAGES pages; tagged status: ${TAGGED:-not reported}."
