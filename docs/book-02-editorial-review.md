@@ -69,3 +69,11 @@ The three learning and explanation languages remain English, French and Spanish.
 **Current decision: review candidate only — not approved for sale.**
 
 Publication requires independent language review in all three languages, pedagogical review, correction of issues, final PDF proof inspection, rights clearance and approval of author attribution, edition and licence. Do not describe the book as certified or professionally proofread until the corresponding reviews are actually completed.
+
+## Independent-edition migration audit (2026-11-22)
+
+The source structure has now been checked programmatically: 1,239 lines, 12 units, and the expected Discover, Guided practice, Communicate and Self-check sections in all 12 units (Unit 12 uses a numbered instructional structure). The source includes trilingual vocabulary tables and examples, but most instructions, grammar explanations, pronunciation notes, practice prompts, project directions, review-test prompts and answer-key commentary are primarily in English.
+
+**Consequence:** extracting table columns alone would not create independent French and Spanish learner books. The three editions require target-language re-authoring and localized exercise/answer-key alignment. A migration plan is maintained at `docs/editorial/book-02/independent-editions-plan.md` on the working branch `work/book-02-independent-editions`.
+
+No language, pedagogical, rights or accessibility review is being marked complete by this automated source audit. PR #1 remains Draft; no merge or commercial release is authorized.
