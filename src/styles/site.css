@@ -21,7 +21,7 @@
   text-size-adjust: 100%;
 }
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
-body { min-width: 320px; overflow-x: clip; font-size: clamp(15px, .35vw + 14px, 17px); line-height: 1.7; }
+body { min-width: 320px; font-size: clamp(15px, .35vw + 14px, 17px); line-height: 1.7; }
 img, picture, video, canvas, svg { max-width: 100%; }
 img, video { height: auto; }
 button, input, textarea, select { font: inherit; }
