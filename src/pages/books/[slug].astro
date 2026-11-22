@@ -23,7 +23,7 @@ export function getStaticPaths() {
 const { book } = Astro.props;
 const category = categories.find((item) => item.slug === book.category);
 const editionFamily = books.filter((item) => item.slug.replace(/-(en|fr|es)$/, '') === book.slug.replace(/-(en|fr|es)$/, ''));
-const alternates = editionFamily.map((item) => ({
+const alternates: { lang: string; href: string }[] = editionFamily.map((item) => ({
   lang: item.language,
   href: new URL(import.meta.env.BASE_URL + 'books/' + item.slug + '/', Astro.site).href
 }));
