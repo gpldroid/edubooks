@@ -147,6 +147,10 @@ PR #17 and PR #18 have been merged after all required CI jobs and artifact uploa
 
 The Book 01 workflow `.github/workflows/book-01-pdf.yml` currently builds the preserved trilingual source, not three independent sale editions. PR #4 produced a 28-page A4 review candidate with embedded fonts; it is useful as a source/reference proof only and does not satisfy the standalone-edition requirement. PR #17 adds three independent Book 02 PDF builds; CI run #44986040328 passed EN/FR/ES manuscript checks, PDF builds, output validation and artifact uploads. The PDFs remain temporary review candidates, not approved books. PR #18 fixes the four-page A1 preview threshold; GitHub Actions run #44986069717 passed and uploaded the review artifact. This legacy preview contains Arabic support text and is not one of the approved six language editions. Full-page editorial and accessibility proof remains outstanding. Never upload a review candidate to Gumroad.
 
+## Remaining work
+
+See the [prioritized remaining-work register](docs/REMAINING-WORK-REGISTER.md) for the current technical, editorial, visual, accessibility and deferred commercial tasks.
+
 ## Continuation guide
 
 Read these documents in order:
