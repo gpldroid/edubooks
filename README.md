@@ -1,3 +1,7 @@
+## Latest execution update — 2026-11-22
+
+PR #25 contains the responsive library overflow fix, an updated category-navigation browser test, and a Book 01 workflow enhancement that creates five-page internal sample artifacts for EN/FR/ES. These sample PDFs are CI artifacts only; they are not public downloads or approved sale files. The catalogue intentionally remains empty until each edition passes its release gates. See [the technical audit and execution log](docs/TECHNICAL-AUDIT-2026-11-22.md) and [PR #25](https://github.com/gpldroid/edubooks/pull/25).
+
 ## Verified Book 01 production update — 2026-11-22
 
 The latest production workflow has now built and committed three standalone PDF files to `public/books/`:
