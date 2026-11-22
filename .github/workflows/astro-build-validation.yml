@@ -31,3 +31,11 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Run responsive browser tests
         run: npm run test:e2e
+      - name: Upload responsive visual proofs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-visual-proofs
+          path: test-results/**/*.png
+          if-no-files-found: ignore
+          retention-days: 3
