@@ -1,3 +1,16 @@
+## Verified technical update — 2026-11-22
+
+- [x] Merge PR #22: separate information-only Preview and timed Download routes; inner-page typography is scoped separately from the homepage.
+- [x] Run [PDF publishing #44996350390](https://github.com/gpldroid/edubooks/actions/runs/44996350390): EN/FR/ES Book 01 PDFs built, validated and committed to `public/books/`.
+- [x] Confirm the three files exist on GitHub: EN 79,833 bytes; FR 84,973 bytes; ES 80,334 bytes.
+- [x] Run [Pages deployment #44996350403](https://github.com/gpldroid/edubooks/actions/runs/44996350403): build and deploy succeeded for commit `38dd982`.
+- [ ] Deploy again from a commit that includes bot commit `838acdc`; the successful Pages run above predates the PDF commit, so the current Pages artifact is not yet confirmed to contain the PDFs.
+- [ ] Create and validate 3–5-page preview PDFs for each Book 01 language and add them under `public/previews/`.
+- [ ] Verify all three SVG cover masters and convert/approve production cover formats before catalogue publication.
+- [ ] Add Book 01 EN/FR/ES catalogue records only after descriptions, localized TOCs, level, page counts, cover paths and preview PDF paths have been verified.
+- [ ] Keep catalogue publication status at draft until documented editorial, pedagogical, rights, accessibility and full-page visual review is complete.
+- [ ] Update stale historical status notes in this register/handover when each stage is completed.
+
 # EduBooks — Remaining Work Register
 
 **Updated:** 2026-11-22  
