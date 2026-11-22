@@ -63,7 +63,599 @@ jobs:
               grep -q '^# Final Review Test' "$FILE"
               grep -q '^# Final Review — Answer Key' "$FILE"
               grep -q '^# Editorial and Release Note' "$FILE"
-              test "$(grep -c '^## Answer check$' "$FILE")" -eq 12
+              test "$(grep -c '^## Answer check
+              ;;
+            fr)
+              grep -q 'Édition française' "$FILE"
+              grep -q '^# Projet intégré' "$FILE"
+              grep -q '^# Test de révision final' "$FILE"
+              grep -q '^# Corrigé du test final' "$FILE"
+              grep -q '^# Note éditoriale et conditions de publication' "$FILE"
+              test "$(grep -c '^## Corrigé
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+            es)
+              grep -q 'Edición española' "$FILE"
+              grep -q '^# Proyecto integrado' "$FILE"
+              grep -q '^# Prueba final de repaso' "$FILE"
+              grep -q '^# Soluciones de la prueba final' "$FILE"
+              grep -q '^# Nota editorial y condiciones de publicación' "$FILE"
+              test "$(grep -c '^## Soluciones
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+          esac
+
+      - name: Build PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          case "$LANG_CODE" in
+            en) BOOK_TITLE="Essential Vocabulary — English Edition";;
+            fr) BOOK_TITLE="Vocabulaire essentiel — Édition française";;
+            es) BOOK_TITLE="Vocabulario esencial — Edición española";;
+          esac
+          mkdir -p "dist/books/$LANG_CODE"
+          pandoc "content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md" \
+            --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
+            --include-in-header=docs/production/latex-preamble.tex \
+            --include-in-header=docs/production/book-02-layout.tex \
+            --resource-path=. \
+            -V mainfont="DejaVu Sans" -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" -V geometry:paper=a4paper -V geometry:margin=18mm \
+            -V fontsize=10pt -V colorlinks=true \
+            -V title="$BOOK_TITLE" -V author="EduBooks" \
+            -V subject="Independent monolingual vocabulary workbook" \
+            -V keywords="vocabulary,A1,A2,$LANG_CODE" \
+            -o "dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+
+      - name: Validate PDF output
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+          TXT="dist/books/$LANG_CODE/extracted.txt"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          test "$PAGES" -ge 12
+          pdftotext "$PDF" "$TXT"
+          test "$(wc -w < "$TXT")" -gt 1000
+          grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit";;
+            fr) UNIT_LABEL="Unité";;
+            es) UNIT_LABEL="Unidad";;
+          esac
+          for unit in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
+          done
+          if [ "$LANG_CODE" = "fr" ]; then
+            grep -q "Table des matières" "$TXT"
+            grep -q "Sommaire" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          elif [ "$LANG_CODE" = "es" ]; then
+            grep -q "Índice" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          fi
+          echo "Validated $LANG_CODE edition: $PAGES pages."
+
+      - name: Upload review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-02-${{ matrix.edition }}-review-candidate
+          path: dist/books/${{ matrix.edition }}/*.pdf
+          if-no-files-found: error
+          retention-days: 90
+ "$FILE")" -eq 12
+              grep -Fq '2. Complete: There ____ two chairs' "$FILE"
+              grep -Fq '2. are.' "$FILE"
+              grep -Fq '4. on.' "$FILE"
+              ;;
+            fr)
+              grep -q 'Édition française' "$FILE"
+              grep -q '^# Projet intégré' "$FILE"
+              grep -q '^# Test de révision final' "$FILE"
+              grep -q '^# Corrigé du test final' "$FILE"
+              grep -q '^# Note éditoriale et conditions de publication' "$FILE"
+              test "$(grep -c '^## Corrigé$' "$FILE")" -eq 12
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+            es)
+              grep -q 'Edición española' "$FILE"
+              grep -q '^# Proyecto integrado' "$FILE"
+              grep -q '^# Prueba final de repaso' "$FILE"
+              grep -q '^# Soluciones de la prueba final' "$FILE"
+              grep -q '^# Nota editorial y condiciones de publicación' "$FILE"
+              test "$(grep -c '^## Soluciones$' "$FILE")" -eq 12
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+          esac
+
+      - name: Build PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          case "$LANG_CODE" in
+            en) BOOK_TITLE="Essential Vocabulary — English Edition";;
+            fr) BOOK_TITLE="Vocabulaire essentiel — Édition française";;
+            es) BOOK_TITLE="Vocabulario esencial — Edición española";;
+          esac
+          mkdir -p "dist/books/$LANG_CODE"
+          pandoc "content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md" \
+            --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
+            --include-in-header=docs/production/latex-preamble.tex \
+            --include-in-header=docs/production/book-02-layout.tex \
+            --resource-path=. \
+            -V mainfont="DejaVu Sans" -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" -V geometry:paper=a4paper -V geometry:margin=18mm \
+            -V fontsize=10pt -V colorlinks=true \
+            -V title="$BOOK_TITLE" -V author="EduBooks" \
+            -V subject="Independent monolingual vocabulary workbook" \
+            -V keywords="vocabulary,A1,A2,$LANG_CODE" \
+            -o "dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+
+      - name: Validate PDF output
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+          TXT="dist/books/$LANG_CODE/extracted.txt"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          test "$PAGES" -ge 12
+          pdftotext "$PDF" "$TXT"
+          test "$(wc -w < "$TXT")" -gt 1000
+          grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit";;
+            fr) UNIT_LABEL="Unité";;
+            es) UNIT_LABEL="Unidad";;
+          esac
+          for unit in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
+          done
+          if [ "$LANG_CODE" = "fr" ]; then
+            grep -q "Table des matières" "$TXT"
+            grep -q "Sommaire" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          elif [ "$LANG_CODE" = "es" ]; then
+            grep -q "Índice" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          fi
+          echo "Validated $LANG_CODE edition: $PAGES pages."
+
+      - name: Upload review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-02-${{ matrix.edition }}-review-candidate
+          path: dist/books/${{ matrix.edition }}/*.pdf
+          if-no-files-found: error
+          retention-days: 90
+ "$FILE")" -eq 12
+              grep -Fq '2. Complétez : Il y ____ deux chaises' "$FILE"
+              grep -Fq '2. a.' "$FILE"
+              grep -Fq '4. Puis-je ____ ?' "$FILE"
+              grep -Fq '4. l’essayer.' "$FILE"
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+            es)
+              grep -q 'Edición española' "$FILE"
+              grep -q '^# Proyecto integrado' "$FILE"
+              grep -q '^# Prueba final de repaso' "$FILE"
+              grep -q '^# Soluciones de la prueba final' "$FILE"
+              grep -q '^# Nota editorial y condiciones de publicación' "$FILE"
+              test "$(grep -c '^## Soluciones$' "$FILE")" -eq 12
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+          esac
+
+      - name: Build PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          case "$LANG_CODE" in
+            en) BOOK_TITLE="Essential Vocabulary — English Edition";;
+            fr) BOOK_TITLE="Vocabulaire essentiel — Édition française";;
+            es) BOOK_TITLE="Vocabulario esencial — Edición española";;
+          esac
+          mkdir -p "dist/books/$LANG_CODE"
+          pandoc "content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md" \
+            --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
+            --include-in-header=docs/production/latex-preamble.tex \
+            --include-in-header=docs/production/book-02-layout.tex \
+            --resource-path=. \
+            -V mainfont="DejaVu Sans" -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" -V geometry:paper=a4paper -V geometry:margin=18mm \
+            -V fontsize=10pt -V colorlinks=true \
+            -V title="$BOOK_TITLE" -V author="EduBooks" \
+            -V subject="Independent monolingual vocabulary workbook" \
+            -V keywords="vocabulary,A1,A2,$LANG_CODE" \
+            -o "dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+
+      - name: Validate PDF output
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+          TXT="dist/books/$LANG_CODE/extracted.txt"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          test "$PAGES" -ge 12
+          pdftotext "$PDF" "$TXT"
+          test "$(wc -w < "$TXT")" -gt 1000
+          grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit";;
+            fr) UNIT_LABEL="Unité";;
+            es) UNIT_LABEL="Unidad";;
+          esac
+          for unit in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
+          done
+          if [ "$LANG_CODE" = "fr" ]; then
+            grep -q "Table des matières" "$TXT"
+            grep -q "Sommaire" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          elif [ "$LANG_CODE" = "es" ]; then
+            grep -q "Índice" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          fi
+          echo "Validated $LANG_CODE edition: $PAGES pages."
+
+      - name: Upload review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-02-${{ matrix.edition }}-review-candidate
+          path: dist/books/${{ matrix.edition }}/*.pdf
+          if-no-files-found: error
+          retention-days: 90
+ "$FILE")" -eq 12
+              grep -Fq '2. Complete: There ____ two chairs' "$FILE"
+              grep -Fq '2. are.' "$FILE"
+              grep -Fq '4. on.' "$FILE"
+              ;;
+            fr)
+              grep -q 'Édition française' "$FILE"
+              grep -q '^# Projet intégré' "$FILE"
+              grep -q '^# Test de révision final' "$FILE"
+              grep -q '^# Corrigé du test final' "$FILE"
+              grep -q '^# Note éditoriale et conditions de publication' "$FILE"
+              test "$(grep -c '^## Corrigé$' "$FILE")" -eq 12
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+            es)
+              grep -q 'Edición española' "$FILE"
+              grep -q '^# Proyecto integrado' "$FILE"
+              grep -q '^# Prueba final de repaso' "$FILE"
+              grep -q '^# Soluciones de la prueba final' "$FILE"
+              grep -q '^# Nota editorial y condiciones de publicación' "$FILE"
+              test "$(grep -c '^## Soluciones$' "$FILE")" -eq 12
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+          esac
+
+      - name: Build PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          case "$LANG_CODE" in
+            en) BOOK_TITLE="Essential Vocabulary — English Edition";;
+            fr) BOOK_TITLE="Vocabulaire essentiel — Édition française";;
+            es) BOOK_TITLE="Vocabulario esencial — Edición española";;
+          esac
+          mkdir -p "dist/books/$LANG_CODE"
+          pandoc "content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md" \
+            --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
+            --include-in-header=docs/production/latex-preamble.tex \
+            --include-in-header=docs/production/book-02-layout.tex \
+            --resource-path=. \
+            -V mainfont="DejaVu Sans" -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" -V geometry:paper=a4paper -V geometry:margin=18mm \
+            -V fontsize=10pt -V colorlinks=true \
+            -V title="$BOOK_TITLE" -V author="EduBooks" \
+            -V subject="Independent monolingual vocabulary workbook" \
+            -V keywords="vocabulary,A1,A2,$LANG_CODE" \
+            -o "dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+
+      - name: Validate PDF output
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+          TXT="dist/books/$LANG_CODE/extracted.txt"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          test "$PAGES" -ge 12
+          pdftotext "$PDF" "$TXT"
+          test "$(wc -w < "$TXT")" -gt 1000
+          grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit";;
+            fr) UNIT_LABEL="Unité";;
+            es) UNIT_LABEL="Unidad";;
+          esac
+          for unit in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
+          done
+          if [ "$LANG_CODE" = "fr" ]; then
+            grep -q "Table des matières" "$TXT"
+            grep -q "Sommaire" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          elif [ "$LANG_CODE" = "es" ]; then
+            grep -q "Índice" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          fi
+          echo "Validated $LANG_CODE edition: $PAGES pages."
+
+      - name: Upload review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-02-${{ matrix.edition }}-review-candidate
+          path: dist/books/${{ matrix.edition }}/*.pdf
+          if-no-files-found: error
+          retention-days: 90
+ "$FILE")" -eq 12
+              grep -Fq '2. Completa: ____ dos sillas' "$FILE"
+              grep -Fq '2. Hay.' "$FILE"
+              grep -Fq '4. la —' "$FILE"
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+          esac
+
+      - name: Build PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          case "$LANG_CODE" in
+            en) BOOK_TITLE="Essential Vocabulary — English Edition";;
+            fr) BOOK_TITLE="Vocabulaire essentiel — Édition française";;
+            es) BOOK_TITLE="Vocabulario esencial — Edición española";;
+          esac
+          mkdir -p "dist/books/$LANG_CODE"
+          pandoc "content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md" \
+            --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
+            --include-in-header=docs/production/latex-preamble.tex \
+            --include-in-header=docs/production/book-02-layout.tex \
+            --resource-path=. \
+            -V mainfont="DejaVu Sans" -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" -V geometry:paper=a4paper -V geometry:margin=18mm \
+            -V fontsize=10pt -V colorlinks=true \
+            -V title="$BOOK_TITLE" -V author="EduBooks" \
+            -V subject="Independent monolingual vocabulary workbook" \
+            -V keywords="vocabulary,A1,A2,$LANG_CODE" \
+            -o "dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+
+      - name: Validate PDF output
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+          TXT="dist/books/$LANG_CODE/extracted.txt"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          test "$PAGES" -ge 12
+          pdftotext "$PDF" "$TXT"
+          test "$(wc -w < "$TXT")" -gt 1000
+          grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit";;
+            fr) UNIT_LABEL="Unité";;
+            es) UNIT_LABEL="Unidad";;
+          esac
+          for unit in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
+          done
+          if [ "$LANG_CODE" = "fr" ]; then
+            grep -q "Table des matières" "$TXT"
+            grep -q "Sommaire" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          elif [ "$LANG_CODE" = "es" ]; then
+            grep -q "Índice" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          fi
+          echo "Validated $LANG_CODE edition: $PAGES pages."
+
+      - name: Upload review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-02-${{ matrix.edition }}-review-candidate
+          path: dist/books/${{ matrix.edition }}/*.pdf
+          if-no-files-found: error
+          retention-days: 90
+ "$FILE")" -eq 12
+              grep -Fq '2. Complete: There ____ two chairs' "$FILE"
+              grep -Fq '2. are.' "$FILE"
+              grep -Fq '4. on.' "$FILE"
+              ;;
+            fr)
+              grep -q 'Édition française' "$FILE"
+              grep -q '^# Projet intégré' "$FILE"
+              grep -q '^# Test de révision final' "$FILE"
+              grep -q '^# Corrigé du test final' "$FILE"
+              grep -q '^# Note éditoriale et conditions de publication' "$FILE"
+              test "$(grep -c '^## Corrigé$' "$FILE")" -eq 12
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+            es)
+              grep -q 'Edición española' "$FILE"
+              grep -q '^# Proyecto integrado' "$FILE"
+              grep -q '^# Prueba final de repaso' "$FILE"
+              grep -q '^# Soluciones de la prueba final' "$FILE"
+              grep -q '^# Nota editorial y condiciones de publicación' "$FILE"
+              test "$(grep -c '^## Soluciones$' "$FILE")" -eq 12
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+          esac
+
+      - name: Build PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          case "$LANG_CODE" in
+            en) BOOK_TITLE="Essential Vocabulary — English Edition";;
+            fr) BOOK_TITLE="Vocabulaire essentiel — Édition française";;
+            es) BOOK_TITLE="Vocabulario esencial — Edición española";;
+          esac
+          mkdir -p "dist/books/$LANG_CODE"
+          pandoc "content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md" \
+            --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
+            --include-in-header=docs/production/latex-preamble.tex \
+            --include-in-header=docs/production/book-02-layout.tex \
+            --resource-path=. \
+            -V mainfont="DejaVu Sans" -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" -V geometry:paper=a4paper -V geometry:margin=18mm \
+            -V fontsize=10pt -V colorlinks=true \
+            -V title="$BOOK_TITLE" -V author="EduBooks" \
+            -V subject="Independent monolingual vocabulary workbook" \
+            -V keywords="vocabulary,A1,A2,$LANG_CODE" \
+            -o "dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+
+      - name: Validate PDF output
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+          TXT="dist/books/$LANG_CODE/extracted.txt"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          test "$PAGES" -ge 12
+          pdftotext "$PDF" "$TXT"
+          test "$(wc -w < "$TXT")" -gt 1000
+          grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit";;
+            fr) UNIT_LABEL="Unité";;
+            es) UNIT_LABEL="Unidad";;
+          esac
+          for unit in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
+          done
+          if [ "$LANG_CODE" = "fr" ]; then
+            grep -q "Table des matières" "$TXT"
+            grep -q "Sommaire" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          elif [ "$LANG_CODE" = "es" ]; then
+            grep -q "Índice" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          fi
+          echo "Validated $LANG_CODE edition: $PAGES pages."
+
+      - name: Upload review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-02-${{ matrix.edition }}-review-candidate
+          path: dist/books/${{ matrix.edition }}/*.pdf
+          if-no-files-found: error
+          retention-days: 90
+ "$FILE")" -eq 12
+              grep -Fq '2. Complétez : Il y ____ deux chaises' "$FILE"
+              grep -Fq '2. a.' "$FILE"
+              grep -Fq '4. Puis-je ____ ?' "$FILE"
+              grep -Fq '4. l’essayer.' "$FILE"
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+            es)
+              grep -q 'Edición española' "$FILE"
+              grep -q '^# Proyecto integrado' "$FILE"
+              grep -q '^# Prueba final de repaso' "$FILE"
+              grep -q '^# Soluciones de la prueba final' "$FILE"
+              grep -q '^# Nota editorial y condiciones de publicación' "$FILE"
+              test "$(grep -c '^## Soluciones$' "$FILE")" -eq 12
+              ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
+              ;;
+          esac
+
+      - name: Build PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          case "$LANG_CODE" in
+            en) BOOK_TITLE="Essential Vocabulary — English Edition";;
+            fr) BOOK_TITLE="Vocabulaire essentiel — Édition française";;
+            es) BOOK_TITLE="Vocabulario esencial — Edición española";;
+          esac
+          mkdir -p "dist/books/$LANG_CODE"
+          pandoc "content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md" \
+            --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
+            --include-in-header=docs/production/latex-preamble.tex \
+            --include-in-header=docs/production/book-02-layout.tex \
+            --resource-path=. \
+            -V mainfont="DejaVu Sans" -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" -V geometry:paper=a4paper -V geometry:margin=18mm \
+            -V fontsize=10pt -V colorlinks=true \
+            -V title="$BOOK_TITLE" -V author="EduBooks" \
+            -V subject="Independent monolingual vocabulary workbook" \
+            -V keywords="vocabulary,A1,A2,$LANG_CODE" \
+            -o "dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+
+      - name: Validate PDF output
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+          TXT="dist/books/$LANG_CODE/extracted.txt"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          test "$PAGES" -ge 12
+          pdftotext "$PDF" "$TXT"
+          test "$(wc -w < "$TXT")" -gt 1000
+          grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit";;
+            fr) UNIT_LABEL="Unité";;
+            es) UNIT_LABEL="Unidad";;
+          esac
+          for unit in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
+          done
+          if [ "$LANG_CODE" = "fr" ]; then
+            grep -q "Table des matières" "$TXT"
+            grep -q "Sommaire" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          elif [ "$LANG_CODE" = "es" ]; then
+            grep -q "Índice" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          fi
+          echo "Validated $LANG_CODE edition: $PAGES pages."
+
+      - name: Upload review candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-02-${{ matrix.edition }}-review-candidate
+          path: dist/books/${{ matrix.edition }}/*.pdf
+          if-no-files-found: error
+          retention-days: 90
+ "$FILE")" -eq 12
+              grep -Fq '2. Complete: There ____ two chairs' "$FILE"
+              grep -Fq '2. are.' "$FILE"
+              grep -Fq '4. on.' "$FILE"
               ;;
             fr)
               grep -q 'Édition française' "$FILE"
