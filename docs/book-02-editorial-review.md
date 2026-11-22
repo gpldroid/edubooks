@@ -77,3 +77,15 @@ The source structure has now been checked programmatically: 1,239 lines, 12 unit
 **Consequence:** extracting table columns alone would not create independent French and Spanish learner books. The three editions require target-language re-authoring and localized exercise/answer-key alignment. A migration plan is maintained at `docs/editorial/book-02/independent-editions-plan.md` on the working branch `work/book-02-independent-editions`.
 
 No language, pedagogical, rights or accessibility review is being marked complete by this automated source audit. PR #1 remains Draft; no merge or commercial release is authorized.
+
+
+## Independent monolingual drafts authored (2026-11-22)
+
+Created three separate first-draft manuscripts:
+- `content/books/02-essential-vocabulary/en/manuscript.md`
+- `content/books/02-essential-vocabulary/fr/manuscript.md`
+- `content/books/02-essential-vocabulary/es/manuscript.md`
+
+Each has 12 units, target-language instructions and practice, unit-level answer checks, a portfolio project, a final review test and a corresponding answer key. This is a substantive editorial draft, not a reviewer-approved edition. Human reviewers must verify naturalness, grammar, level progression, regional usage and every answer before release.
+
+Added the matrix PDF workflow `.github/workflows/book-02-independent-editions.yml` to build and validate one PDF per language and upload each as a review candidate. CI validation is technical only and does not certify editorial quality.
