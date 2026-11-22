@@ -2,22 +2,38 @@ import { expect, test } from '@playwright/test';
 
 const libraryPath = '/edubooks/books/';
 
-test('book library explains publication status and does not expose draft manuscripts', async ({ page }) => {
+test('book library lists six language editions as review-only entries', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(libraryPath);
-  await expect(page.getByRole('heading', { name: 'The library is being prepared' })).toBeVisible();
-  await expect(page.getByText(/editorial and quality review/i)).toBeVisible();
-  await expect(page.locator('.book-card')).toHaveCount(0);
-  await expect(page.getByText(/Language Foundations/i)).toHaveCount(0);
-  await expect(page.getByText(/Essential Vocabulary/i)).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Explore the library' })).toBeVisible();
+  await expect(page.locator('.book-card')).toHaveCount(6);
+  await expect(page.locator('.review-status')).toHaveCount(6);
+  await expect(page.locator('.edition-pill')).toHaveCount(6);
+  await expect(page.getByRole('link', { name: /download pdf/i })).toHaveCount(0);
+  await expect(page.getByText(/Language Foundations/i)).toHaveCount(3);
+  await expect(page.getByText(/Essential Vocabulary/i)).toHaveCount(3);
 });
 
-test('library search and category controls remain usable without published books', async ({ page }) => {
+test('library search and category controls remain usable with review-only editions', async ({ page }) => {
   await page.goto(libraryPath);
-  await page.getByRole('searchbox', { name: 'Search the library' }).fill('grammar');
+  const search = page.getByRole('searchbox', { name: 'Search the library' });
+  await search.fill('grammar');
   await page.getByRole('link', { name: /Language learning/i }).click();
-  await expect(page.locator('.empty-state')).toBeVisible();
+  await expect(page.locator('#no-results')).toBeVisible();
+  await expect(page.locator('.empty-state')).toHaveCount(0);
+  await search.fill('');
   await expect(page.locator('#no-results')).toBeHidden();
+  await expect(page.locator('.book-card')).toHaveCount(6);
+});
+
+test('draft edition details are noindex and keep all PDF actions disabled', async ({ page }) => {
+  await page.goto('/edubooks/books/language-foundations-fr/');
+  await expect(page.getByRole('heading', { name: 'Fondements de l’apprentissage des langues' })).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex,follow');
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
+  await expect(page.locator('.edition-switch a')).toHaveCount(3);
+  await expect(page.getByText('Révision éditoriale en cours')).toBeVisible();
+  await expect(page.locator('a[href$="/download/"], a[href$=".pdf"]')).toHaveCount(0);
 });
 
 test('book library contains no purchase, checkout or Gumroad links', async ({ page }) => {
