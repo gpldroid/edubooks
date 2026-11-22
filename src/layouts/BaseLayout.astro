@@ -17,7 +17,7 @@ const siteUrl = new URL(base, Astro.site).href;
 <meta name="robots" content="index, follow, max-image-preview:large" /><link rel="canonical" href={canonical} />
 <meta name="author" content="Imad Limrani" /><meta property="og:type" content="website" /><meta property="og:title" content={title} />
 <meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:site_name" content="EduBooks" /><meta property="og:locale" content="en_US" />
-<meta name="twitter:card" content="summary" /><title>{title}</title>
+<meta name="twitter:card" content="summary" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><title>{title}</title>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"EduBooks","url":siteUrl,"description":description,"inLanguage":["en","fr","es"],"publisher":{"@type":"Person","name":"Imad Limrani"}})} />
 <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
