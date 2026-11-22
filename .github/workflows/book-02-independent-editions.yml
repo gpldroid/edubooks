@@ -1,5 +1,7 @@
 name: Build Book 02 Independent Language Editions
 
+# Keep each language edition independently validated and packaged.
+
 on:
   workflow_dispatch:
   pull_request:
