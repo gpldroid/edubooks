@@ -391,7 +391,7 @@ Les réponses ci-dessous concernent les questions à réponse déterminée. Pour
 ### Unité 3
 1. livre : 1 ; salut : 2 ; chocolat : 3.
 2. (b) chocolat.
-3. ca ; mi ; lé.
+3. Il faut écouter les groupes de mots pour percevoir les enchaînements et le rythme naturel de la phrase.
 4. Plusieurs lettres peuvent former un seul son, par exemple *ch* dans *chat*.
 5–6. Activités orales individuelles ; évaluer l’écoute d’un modèle, le repérage des syllabes et l’intelligibilité, sans exiger un accent particulier.
 
