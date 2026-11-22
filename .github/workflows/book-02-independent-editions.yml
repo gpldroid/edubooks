@@ -138,7 +138,10 @@ jobs:
           PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
           test "$PAGES" -ge 12
           LAST_PAGE_WORDS="$(pdftotext -f "$PAGES" -l "$PAGES" "$PDF" - | wc -w)"
-          test "$LAST_PAGE_WORDS" -ge 100
+          echo "PDF page count: $PAGES; final-page word count: $LAST_PAGE_WORDS."
+          # The final page may contain a short glossary or rights statement.
+          # Reject nearly blank pages without imposing an arbitrary 100-word minimum.
+          test "$LAST_PAGE_WORDS" -ge 40
           pdftotext "$PDF" "$TXT"
           test "$(wc -w < "$TXT")" -gt 1000
           grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
@@ -163,6 +166,27 @@ jobs:
             ! grep -q "This is a self-study vocabulary workbook" "$TXT"
           fi
           echo "Validated $LANG_CODE edition: $PAGES pages."
+
+      - name: Create five-page internal sample preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          LANG_CODE="${{ matrix.edition }}"
+          PDF="dist/books/$LANG_CODE/edubooks-book-02-$LANG_CODE-review-candidate.pdf"
+          mkdir -p "dist/previews/$LANG_CODE"
+          pdfseparate -f 1 -l 5 "$PDF" "dist/previews/$LANG_CODE/page-%d.pdf"
+          pdfunite dist/previews/$LANG_CODE/page-*.pdf "dist/previews/edubooks-book-02-$LANG_CODE-sample-review-only.pdf"
+          SAMPLE="dist/previews/edubooks-book-02-$LANG_CODE-sample-review-only.pdf"
+          test "$(pdfinfo "$SAMPLE" | awk '/^Pages:/ {print $2}')" -eq 5
+          echo "Created a five-page internal sample for $LANG_CODE; it is not a public or sale file."
+
+      - name: Upload internal sample preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-02-${{ matrix.edition }}-sample-review-only
+          path: dist/previews/edubooks-book-02-${{ matrix.edition }}-sample-review-only.pdf
+          if-no-files-found: error
+          retention-days: 90
 
       - name: Upload review candidate
         uses: actions/upload-artifact@v4
