@@ -38,7 +38,7 @@ A successful build does not constitute editorial approval.
 - Validate language, metadata, file existence, size, page count and SHA-256 during release.
 - Preview PDFs must be clearly identified samples containing only intended sample pages.
 - Never link GitHub Actions review artifacts from public pages.
-- Do not treat the legacy PDFs in `public/books/` as approved final files without a new documented review.
+- Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory; do not restore or reuse them without a new documented review.
 
 ## Build and deployment
 - Authoritative manuscripts: `content/books/<book-id>/<language>/manuscript.md`.
