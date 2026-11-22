@@ -11,8 +11,8 @@ No book edition may enter the public catalogue until rights and attribution have
 | Material | Evidence required | Status |
 |---|---|---|
 | Manuscript text | Author/rights-holder confirmation and record of any third-party excerpts | Owner confirmation received 2026-11-22 for all six editions; third-party excerpts still require itemized source review |
-| Illustrations and cover artwork | Creator, source, licence/permission and required attribution | Pending per asset |
-| Fonts | Font family, source and licence compatible with PDF embedding and web use | Review required |
+| Six current catalogue covers | Owner confirmation for website use and PDF embedding | Confirmed by owner 2026-11-22; exact six `public/covers/*.svg` paths recorded in `docs/editorial/asset-rights-audit-2026-11-22.md` |\n| Other illustrations, icons and interface assets | Creator, source, licence/permission and required attribution | Pending itemized review; legacy `public/images/gumroad-covers/` excluded |
+| PDF font — DejaVu Sans | Exact package/version and licence compatible with PDF embedding | CI now installs `fonts-dejavu-core` explicitly and archives package version and `/usr/share/doc/fonts-dejavu-core/copyright` in internal review artifacts; capture and inspect these artifacts for every final run |\n| Web fonts / SVG fallback | Runtime source and licence for any downloaded or bundled font | Source scan found no local font binary; `Arial,sans-serif` in SVG is a fallback declaration, not a bundled font. Confirm no runtime external font fetch before release |
 | Icons and interface assets | Source and applicable licence | Review required |
 | External quotations or extracts | Exact source, permitted use, attribution and any limits | Pending per occurrence |
 | PDF and preview files | Source manuscript commit, production run and checksum | Required at release |
@@ -36,7 +36,7 @@ For each asset, record:
 - Internal PDF review candidates must remain GitHub Actions artifacts and must not be copied to `public/`.
 - Historical PDFs removed from the public directory are not approved for reuse.
 - Do not add a permissive repository-wide `LICENSE` until the owner has selected a licence and confirmed that every included file can be distributed under it.
-- Third-party fonts, artwork, icons and quoted material must be documented independently.
+- Third-party fonts, artwork, icons and quoted material must be documented independently.\n- The owner's cover confirmation does not extend to legacy Gumroad covers or other third-party assets.
 
 ## Approval record
 
