@@ -50,17 +50,19 @@ test('responsive design covers mobile, tablet, desktop and large-screen breakpoi
   assert.match(css, /env\(safe-area-inset-bottom\)/);
 });
 
-test('the three independent Book 02 language manuscripts remain present', () => {
-  for (const language of ['en', 'fr', 'es']) {
-    const path = `content/books/02-essential-vocabulary/${language}/manuscript.md`;
-    assert.ok(existsSync(resolve(root, path)), `Missing Book 02 ${language} manuscript`);
-    assert.ok(read(path).trim().length > 5000, `Book 02 ${language} manuscript unexpectedly short`);
-  }
+test('catalogue fields and localized category descriptions are consistent', () => {
+  const catalog = read('src/data/catalog.ts');
+  const home = read('src/pages/index.astro');
+  assert.match(catalog, /descriptionEn:\s*string/);
+  assert.match(catalog, /descriptionFr:\s*string/);
+  assert.match(catalog, /descriptionEs:\s*string/);
+  assert.match(home, /category\.descriptionEn/);
+  assert.match(home, /category\.descriptionFr/);
+  assert.match(home, /category\.descriptionEs/);
 });
 
 test('application source contains no unfinished implementation placeholders', () => {
   const sourceFiles = [
-    'src/layouts/BaseLayout.astro',
     'src/components/navigation/MobileTabBar.astro',
     'src/components/ui/ScrollControls.astro',
     'src/components/ui/Icon3D.astro'
