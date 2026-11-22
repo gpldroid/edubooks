@@ -36,9 +36,10 @@ Each manuscript contains twelve units with a localized welcome, learning outcome
 
 A first prompt-to-answer crosswalk across all twelve units in EN/FR/ES is recorded in [answer-key-crosscheck-2026-11-22.md](answer-key-crosscheck-2026-11-22.md).
 
-Two alignment issues were corrected on PR #27:
+Two alignment issues and one page-layout issue were corrected on PR #27:
 1. French Unit 10: the sentence now reads `Aujourd'hui, le temps est ____`, making both accepted answers (*beau* / *ensoleillé*) grammatical.
 2. Spanish Unit 9: the body-part clue now specifies `cabeza`, matching the single supplied answer.
+3. Spanish editorial note: shortened to reduce the orphaned continuation on the final PDF page; verify the regenerated PDF.
 
 No other obvious prompt/key mismatch was identified in this first pass. Re-run the manuscript checks and PDF proof after PR #27 merges.
 
@@ -47,7 +48,7 @@ No other obvious prompt/key mismatch was identified in this first pass. Re-run t
 1. Qualified English, French and Spanish language editing for naturalness, vocabulary frequency, collocations, register and regional usage.
 2. Pedagogical review of the A1–A2 learning target, progression, unit balance, review test and assessment criteria.
 3. Full review of vocabulary selection and accepted answer variants.
-4. Correct the known Spanish editorial note that continues onto a mostly empty final page.
+4. Rebuild and inspect the Spanish PDF after shortening the editorial note to prevent a widowed continuation on the final page.
 5. Inspect every page of all three PDF proofs; verify page breaks, typography, headers, footers, tables, links and metadata.
 6. Complete rights, attribution and licence checks for text, fonts and visual assets.
 7. Complete accessibility review, including reading order, tagged structure and screen-reader behaviour.
