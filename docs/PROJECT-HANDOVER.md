@@ -1,6 +1,6 @@
 # EduBooks — Project Handover and Continuation Guide
 
-Last updated: 2026-11-21  
+Last updated: 2026-11-22  
 Repository: https://github.com/gpldroid/edubooks  
 Website: https://gpldroid.github.io/edubooks/  
 Store: https://edupdf.gumroad.com
@@ -12,8 +12,20 @@ The project is not commercially launched. The six language-specific Gumroad prod
 GitHub changes merged to `main`:
 - [PR #8 — footer store link, six SVG cover masters, README and handover updates](https://github.com/gpldroid/edubooks/pull/8).
 - [PR #7 — independent language-edition architecture, Book 01 EN/FR/ES draft manuscripts, Book 01 source inventory and Book 02 source audit](https://github.com/gpldroid/edubooks/pull/7).
+- [PR #13 — mobile UI and PDF preview improvements](https://github.com/gpldroid/edubooks/pull/13).
 - The footer now points to `https://edupdf.gumroad.com`.
 - Astro build validation passed on PR #8 before its documentation-only follow-up commits. Re-run the site build/deploy workflow after the merged commits.
+
+## 1A. Current pull-request and review state (2026-11-22)
+
+- PR #13 is merged (mobile UI/PDF preview).
+- PR #12 is closed without merge; its four-page A1 sample preview failed only because the workflow required at least five pages.
+- PR #14 is the replacement draft. It changes the minimum to four pages and adds a fix-branch push trigger. Astro validation passed, but the dedicated PDF workflow has not yet been confirmed.
+- PR #15 is a draft repairing the corrupted Book 01 EN/FR/ES outline formatting and French/Spanish boilerplate. It does not complete the books.
+- PR #9 is a draft with three Book 02 manuscripts and three successful CI PDF builds. It is stacked on PR #1.
+- PR #4 is a successful legacy trilingual Book 01 PDF build, not a set of independent editions.
+- PR #1 is the draft integrated trilingual Book 02 source used as PR #9's base.
+- No draft PR has been merged as part of this review. All Gumroad products remain unpublished, and no PDF is approved for attachment or sale.
 
 ## 2. Approved publishing model
 
@@ -23,7 +35,7 @@ Two titles, each as three separate, monolingual learner books:
 
 Each edition needs its own title/front matter, explanations, examples, exercises, answer key, glossary and back matter in its target language. Cross-language comparison activities must be rewritten as appropriate target-language exercises. Do not use automatic block splitting as the final editorial method.
 
-The architecture and migration policy are in `docs/editorial/independent-language-editions.md`. Book 01 has draft manuscripts at `content/books/01-language-foundations/{en,fr,es}/manuscript.md` and a migration inventory at `docs/editorial/book-01/source-inventory.md`. The original multilingual manuscript remains preserved. Book 02 has a 1,238-line trilingual working manuscript on draft PR #1 (`feat/book-02-essential-vocabulary`), not on `main`. PR #1 remains open/draft. The three separate manuscripts still need to be authored/adapted. See `docs/editorial/book-02/source-audit.md` for verified details.
+The architecture and migration policy are in `docs/editorial/independent-language-editions.md`. Book 01 has three outline-stage manuscripts at `content/books/01-language-foundations/{en,fr,es}/manuscript.md`. Their current main-branch files were found to have every character split onto its own line; PR #15 repairs that formatting and localizes French/Spanish metadata and boilerplate. Even after that repair, these remain outlines and need full lesson authoring. The original multilingual manuscript remains preserved. Book 02 has a 1,238-line trilingual source on PR #1 (`feat/book-02-essential-vocabulary`) and three independent first-draft manuscripts on PR #9 (`work/book-02-independent-editions`). PR #9 is stacked on PR #1's branch and should not be merged independently without reconciling that dependency. See `docs/editorial/book-02/source-audit.md` and PR #9 for the migration record.
 
 ## 3. Gumroad store state
 
@@ -59,7 +71,9 @@ Detailed store procedure: `docs/STORE-OPERATIONS.md`.
 - Shared layout/footer: `src/layouts/BaseLayout.astro`.
 - Pages: `src/pages/`.
 - Deployment: `.github/workflows/deploy.yml`.
-- PDF build: `.github/workflows/book-01-pdf.yml`.
+- Legacy Book 01 source PDF build: `.github/workflows/book-01-pdf.yml`.
+- Book 02 independent edition matrix build (PR #9): `.github/workflows/book-02-independent-editions.yml`.
+- Book 01 A1 review-only sample preview (PR #14): `.github/workflows/english-starter-a1-preview.yml`.
 - Book sources: `content/books/`.
 - Production design files: `docs/production/`.
 
@@ -77,17 +91,17 @@ Pages must use GitHub Actions as the deployment source. Do not add secrets to re
 ## 5. Book production status
 
 ### Book 01 — Language Foundations
-- Legacy source: `content/books/01-language-foundations/manuscript.md`.
-- It contains mixed English, French and Spanish content.
-- It is not yet three complete, independently reviewed editions.
-- Preserve source and perform a content inventory before extraction/re-authoring.
-- Existing editorial report: `docs/book-01-editorial-review.md`.
-- PDF workflow produces a review candidate only; it does not approve publication.
+- Legacy source: `content/books/01-language-foundations/manuscript.md`; it contains mixed English, French and Spanish content.
+- The independent EN/FR/ES files on `main` are outline-stage drafts, not complete books. A source-format defect split their body into single-character lines; PR #15 repairs this and localizes French/Spanish front matter and status text.
+- The current Book 01 PDF workflow still builds the legacy trilingual source. PR #4 produced a 28-page A4 review candidate with embedded fonts, but it is not three independent editions.
+- PR #15 must pass review before merge. After that, author all missing lessons, exercises, assessment material and answer keys before designing separate PDF workflows.
+- Existing editorial report: `docs/book-01-editorial-review.md`. No language, pedagogical, rights or accessibility sign-off is complete.
 
 ### Book 02 — Essential Vocabulary
-- Audit the manuscript and current PR/source branch before claiming completeness.
-- Build English, French and Spanish editions independently.
-- Keep exercises and answer keys aligned after localization.
+- PR #1 preserves the original integrated trilingual source and its legacy PDF workflow. It is still a draft.
+- PR #9 creates three separate EN/FR/ES working manuscripts, each with 12 units, localized practice, answer checks, an integrated project, final review test, answer key and glossary.
+- The PR #9 matrix CI passed for all three languages and generated review PDFs (EN 13 pages, FR 14 pages, ES 14 pages). Initial visual sampling found readable layouts, localized headings and embedded fonts. Full visual proof, language editing, pedagogy, answer-key reconciliation and rights review remain incomplete.
+- PR #9 is based on PR #1's branch; preserve this dependency and do not merge out of order.
 
 ## 6. Release gates — each edition independently
 
@@ -108,12 +122,12 @@ See `docs/EDITORIAL-RELEASE-CHECKLIST.md`.
 
 1. Convert the six SVG cover masters to PNG/JPEG, upload each to its matching Gumroad draft and verify the product pages.
 2. Resolve the pricing conflict: the selected policy was `same` (uniform price), while six different amounts were supplied and are currently configured. Confirm one common EUR price or explicitly retain the six amounts.
-3. Continue Book 01 EN/FR/ES manuscripts, filling all missing units, exercises, answer keys and end matter; complete qualified language and pedagogical reviews.
-4. Author Book 02 EN/FR/ES manuscripts from the source audit and verify each vocabulary entry, example, exercise and answer key.
-5. Add per-edition PDF workflows/build configuration and generate six review candidates.
-6. Proofread and approve all six editions; complete rights, accessibility and commercial checks.
-7. Update website catalogue and attach approved PDFs to the matching Gumroad drafts.
-8. Publish only after explicit release authorization.
+3. Review and merge PR #15 only after confirming the reconstructed Book 01 markdown reads correctly; then author complete EN/FR/ES lessons, exercises and answer keys.
+4. Run the dedicated A1 preview workflow on PR #14 and verify the four-page PDF artifact before considering that fix complete.
+5. Review PR #9's three Book 02 manuscripts and PDFs in full; obtain qualified English, French and Spanish review, verify every answer key and resolve its PR #1 base dependency.
+6. Create separate Book 01 PDF workflows only after the three manuscripts are complete; do not treat PR #4's legacy trilingual PDF as a standalone edition.
+7. Complete full PDF proof, accessibility and rights checks for all six editions.
+8. Update catalogue and attach approved PDFs to matching Gumroad drafts only after explicit owner approval; publish only after a separate explicit release authorization.
 
 ## 8. Safety and continuity
 
