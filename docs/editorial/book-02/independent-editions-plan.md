@@ -90,3 +90,5 @@ The PDF workflow was repaired after a malformed validation edit caused a workflo
 
 
 The legacy `.github/workflows/book-02-pdf.yml` workflow for the former combined trilingual manuscript has been retired on this branch. Only the independent-edition matrix workflow should produce Book 02 review candidates.
+
+The final-review prompt/key checks were added after the French final test exposed two cloze wording issues; those prompts now match their answer-key completions. An incremental workflow-file edit then introduced malformed YAML and a run failed before creating jobs. The entire workflow was rewritten from a clean source, the legacy push trigger was removed to prevent duplicate matrix installations, and concurrency is now shared across the PR workflow. The current PR validation run is #44971077152; it has started the three edition jobs but is still installing the PDF toolchain. Do not call this run green until all three jobs and artifacts complete.
