@@ -3,21 +3,20 @@ import type { Book, LearningCategory } from '../../data/catalog';
 interface Props { book: Book; category?: LearningCategory; base: string; }
 const { book, category, base } = Astro.props;
 const detailUrl = `${base}books/${book.slug}/`;
-const downloadUrl = `${detailUrl}download/`;
 const searchable = [book.title, book.titleFr, book.titleEs, book.description, book.descriptionFr, book.descriptionEs].join(' ');
 const coverUrl = `${base}${book.cover.slice(1)}`;
 ---
 <article class="book-card" data-category={book.category} data-search={searchable}>
-  <a href={detailUrl} class="book-card-link" aria-label={`Preview ${book.title}`}>
-    <div class="book-cover"><img src={coverUrl} alt={book.coverAlt} loading="lazy" decoding="async"><span class="preview-badge" data-en="BOOK DETAILS" data-fr="DÉTAILS DU LIVRE" data-es="DETALLES DEL LIBRO">BOOK DETAILS</span></div>
+  <a href={detailUrl} class="book-card-link" aria-label={`View ${book.title} details`}>
+    <div class="book-cover"><img src={coverUrl} alt={book.coverAlt} loading="lazy" decoding="async"><span class="preview-badge" data-en="EDITION DETAILS" data-fr="DÉTAILS DE L’ÉDITION" data-es="DETALLES DE LA EDICIÓN">BOOK DETAILS</span></div>
   </a>
   <div class="book-card-copy">
-    <span class="book-category" data-en={category?.nameEn ?? 'Learning'} data-fr={category?.nameFr ?? 'Apprentissage'} data-es={category?.nameEs ?? 'Aprendizaje'}>{category?.nameEn ?? 'Learning'}</span>
+    <div class="book-card-meta"><span class="book-category" data-en={category?.nameEn ?? 'Learning'} data-fr={category?.nameFr ?? 'Apprentissage'} data-es={category?.nameEs ?? 'Aprendizaje'}>{category?.nameEn ?? 'Learning'}</span><span class="edition-pill">{book.language.toUpperCase()}</span></div>
     <h2><a href={detailUrl} data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</a></h2>
     <p data-en={book.description} data-fr={book.descriptionFr} data-es={book.descriptionEs}>{book.description}</p>
     <div class="book-card-actions">
-      <a class="button-3d button-3d--compact" href={detailUrl} data-en="Preview" data-fr="Aperçu" data-es="Vista previa">Preview</a>
-      <a class="button-3d button-3d--compact button-3d--dark" href={downloadUrl} data-en="Download" data-fr="Télécharger" data-es="Descargar">Download</a>
+      <a class="button-3d button-3d--compact" href={detailUrl} data-en="View details" data-fr="Voir les détails" data-es="Ver detalles">View details</a>
+      <span class="review-status" data-en="In review" data-fr="En révision" data-es="En revisión">In review</span>
     </div>
   </div>
 </article>
@@ -31,7 +30,7 @@ const coverUrl = `${base}${book.cover.slice(1)}`;
 .book-card:hover .book-cover img{transform:scale(1.035)}
 .preview-badge{position:absolute;right:12px;bottom:12px;padding:6px 10px;border-radius:999px;background:#183452;color:#fff;font-size:10px;font-weight:800;letter-spacing:.06em;box-shadow:0 4px 10px rgb(0 0 0 / 15%)}
 .book-card-copy{position:relative;padding:19px 20px 20px;transform:translateZ(5px)}
-.book-category{font-size:11px;color:#388b82;font-weight:800}
+.book-card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px}.book-category{font-size:11px;color:#388b82;font-weight:800}.edition-pill{flex:none;padding:5px 8px;border-radius:7px;background:#eef3f2;color:#35566b;font-size:10px;font-weight:900;letter-spacing:.08em}.review-status{display:inline-flex;align-items:center;justify-content:center;flex:1 1 110px;min-height:38px;padding:8px 10px;border:1px solid #e7e2d2;border-radius:9px;background:#faf8f0;color:#76633c;font-size:11px;font-weight:800}
 .book-card h2{font-size:clamp(19px,2vw,23px);line-height:1.3;margin:8px 0;color:#183452}
 .book-card h2 a{color:inherit;text-decoration:none}
 .book-card p{font-size:14px;color:#586a7a;margin:0 0 18px;line-height:1.7}
