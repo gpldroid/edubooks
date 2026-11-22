@@ -9,7 +9,8 @@
 - Re-read the Book 01 EN/FR/ES manuscript structure and checked the exercise/answer-key examples in Units 7 and 9 against their prompts.
 - Re-read the Book 02 EN/FR/ES editorial status sections and the existing source-audit and answer-key cross-check records.
 - Confirmed the six manuscripts have independent target-language learner-facing content; Book 01 has ten units per language and Book 02 has twelve units per language.
-- Confirmed the public catalogue is empty. The repository tree contains three legacy Book 01 PDFs under `public/books/`, but no approved sample PDFs under `public/previews/`.
+- Verified that `src/data/catalog.ts` contains six separate draft entries: Book 01 EN/FR/ES and Book 02 EN/FR/ES. None is marked published.
+- Verified that `public/books/` and `public/previews/` are absent on `main`; no public PDF downloads or samples are present.
 - Updated the six manuscript release notices so they describe the actual website-only publication gate rather than the retired sales model.
 - This branch changes manuscript source files and is intended to trigger the independent PDF review workflows. The resulting PDFs are internal review candidates only.
 
@@ -55,14 +56,13 @@ The prior answer-key cross-check records the French Unit 10 weather-cloze correc
 
 ## Legacy PDF handling
 
-The three files currently under `public/books/` are legacy artifacts, not approved final editions. They must not be linked from the catalogue as final downloads until reviewed and replaced with newly approved output. Do not delete them as part of this review without a separate repository cleanup decision.
+No `public/books/` directory exists on the current `main` branch. Do not restore historical PDF artifacts from prior commits. Generate new review candidates from the current manuscripts and keep them as internal workflow artifacts until all release gates are satisfied.
 
 ## Current catalogue and publication status
 
-- `src/data/catalog.ts` remains intentionally empty.
-- No approved sample PDFs are registered.
-- No edition is marked as website-published.
-- Existing review artifacts from GitHub Actions must remain internal and must never be linked as public download URLs.
+- `src/data/catalog.ts` contains six draft entries and no published editions.
+- No public sample PDFs or full PDFs are registered; `public/books/` and `public/previews/` do not exist on `main`.
+- All six editions remain unpublished. Internal review artifacts from GitHub Actions must never be linked as public download URLs.
 
 ## Evidence to add before release
 
