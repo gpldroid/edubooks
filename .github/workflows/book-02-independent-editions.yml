@@ -98,9 +98,7 @@ jobs:
             --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
             --include-in-header=docs/production/latex-preamble.tex \
             --resource-path=. \
-            -V mainfont="DejaVu Sans" \\
-            -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" \
-            -V geometry:paper=a4paper -V geometry:margin=18mm \
+            -V mainfont="DejaVu Sans" -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" -V geometry:paper=a4paper -V geometry:margin=18mm \
             -V fontsize=10pt -V colorlinks=true \
             -V title="$BOOK_TITLE" -V author="EduBooks" \
             -V subject="Independent monolingual vocabulary workbook" \
