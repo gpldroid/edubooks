@@ -37,13 +37,6 @@ export type Book = {
   previewPdf: string;
   samplePageCount: number;
   downloadPdf?: string;
-  // Commercial fields are retained for backwards-compatible editorial metadata only.
-  // Public templates intentionally never render checkout or download links.
-  price?: number | null;
-  currency?: 'USD' | 'EUR';
-  gumroadUrl?: string;
-  paypalUrl?: string;
-  downloadUrl?: string;
 };
 
 export const categories: LearningCategory[] = [
@@ -80,6 +73,9 @@ export function validateBookCatalog(catalog: readonly Book[]): string[] {
     }
     if (!book.previewPdf.startsWith('/previews/') || !book.previewPdf.endsWith('.pdf') || book.previewPdf.includes('..')) {
       errors.push(`${prefix}: previewPdf must point to a PDF inside /previews/.`);
+    }
+    if (!book.downloadPdf || !book.downloadPdf.startsWith('/books/') || !book.downloadPdf.endsWith('.pdf') || book.downloadPdf.includes('..')) {
+      errors.push(`${prefix}: downloadPdf must point to a full PDF inside /books/.`);
     }
     if (!Number.isInteger(book.samplePageCount) || book.samplePageCount < 3 || book.samplePageCount > 5) {
       errors.push(`${prefix}: samplePageCount must be an integer from 3 to 5.`);
