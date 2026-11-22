@@ -75,4 +75,22 @@ Existing Gumroad drafts are historical external account state only. This reposit
 - Three historical, unapproved Book 01 PDFs have been removed from deployable public assets.
 - No edition is currently approved for public distribution.
 
+## Latest technical review — 2026-11-22
+
+- [x] Add per-edition PDF QA reports to internal review artifacts (page count, extracted word count, embedded-font audit and tagged-PDF status).
+- [x] Correct the Poppler `pdffonts` parser to inspect the actual embedded-font column.
+- [x] Refine Book 02 heading reservation from 6/3 baselines to 4/2 to reduce unnecessary pagination gaps without removing heading/content grouping.
+- [x] Rebuild all six EN/FR/ES internal PDF candidates and five-page samples after the refinement.
+- [x] Confirm all detected fonts are embedded in the six latest candidates.
+- [x] Record that all six candidates report `Tagged: no`; PDF tagging, semantic reading order and screen-reader validation remain open.
+- [x] Pass Astro/TypeScript, regression, production build and responsive browser checks.
+- [x] Merge PR #36 (commit `1481cfa77540f9426ed9ee973810a73ac1099b67`).
+
+Latest evidence:
+- Book 01 independent PDF review: https://github.com/gpldroid/edubooks/actions/runs/45078048226
+- Book 02 independent PDF review: https://github.com/gpldroid/edubooks/actions/runs/45078048251
+- Astro and responsive validation: https://github.com/gpldroid/edubooks/actions/runs/45078048273
+
+The French Book 02 candidate remains 14 pages; its final page contains 264 extracted words. The pagination refinement reduces heading reservation but does not establish final visual approval. Inspect all pages at full resolution before release. Book 01 French remains 11 pages and also requires full-page visual sign-off.
+
 **Release principle:** publish each edition only after its language, pedagogy, rights, accessibility and visual proof are complete. Once approved, offer it free as browser preview plus direct PDF download.

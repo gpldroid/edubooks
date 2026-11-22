@@ -19,13 +19,13 @@ EduBooks is a **free, website-only PDF library**. Readers will be able to open a
 
 - Website: Astro 5, hosted at https://gpldroid.github.io/edubooks/.
 - Repository: https://github.com/gpldroid/edubooks.
-- Main branch includes PR #27 (internal-only PDF review builds) and PR #28 (post-merge deployment verification).
-- Latest verified deployment after PR #27: [workflow run #45045145911](https://github.com/gpldroid/edubooks/actions/runs/45045145911).
-- The public catalogue in `src/data/catalog.ts` is intentionally empty. Do not list a book until its three language editions have passed the release gates and the corresponding public PDF and cover assets exist.
-- Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory. No book edition is currently approved or exposed in the public catalogue.
-- Book 01 and Book 02 each have English, French and Spanish working manuscripts. Technical PDF review artifacts are not final public editions.
-- No edition is currently approved for public release. No Gumroad or PayPal integration is to be developed for this project.
-
+- PR #32 and PR #33 established the six draft catalogue entries, rights register and internal PDF review pipeline. PR #36 added per-edition PDF QA evidence and a modest Book 02 pagination refinement; it is merged in commit `1481cfa77540f9426ed9ee973810a73ac1099b67`.
+- The public catalogue in `src/data/catalog.ts` contains six separate draft entries: Book 01 EN/FR/ES and Book 02 EN/FR/ES. None is marked published.
+- `public/books/` and `public/previews/` remain absent; no public PDF downloads or samples are exposed.
+- Latest internal review builds: [Book 01 workflow #45078048226](https://github.com/gpldroid/edubooks/actions/runs/45078048226), [Book 02 workflow #45078048251](https://github.com/gpldroid/edubooks/actions/runs/45078048251). Both generated three language PDFs and five-page internal samples; QA reports confirm embedded fonts and report `Tagged: no`.
+- Astro validation and responsive browser tests passed in [workflow #45078048273](https://github.com/gpldroid/edubooks/actions/runs/45078048273).
+- These PDFs remain internal review candidates only. They are not final public editions, and no GitHub Actions artifact is linked from the site.
+- No edition is approved for public release. Qualified language and pedagogical reviews, itemized asset-rights evidence, accessibility remediation/testing, final visual proof and edition-specific owner authorization remain mandatory.
 ## The first collection
 
 | Book | English | French | Spanish | Draft scope |
