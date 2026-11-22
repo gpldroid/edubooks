@@ -553,5 +553,3 @@ Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio
 
 # Nota editorial y condiciones de publicación
 **Estado de publicación: NO AUTORIZADO PARA LA VENTA.** Borrador de trabajo; requiere revisión lingüística, pedagógica, de derechos y accesibilidad.
-
-**Estado de publicación: NO AUTORIZADO PARA LA VENTA.** Este borrador requiere una revisión humana independiente y una comprobación final del PDF.
