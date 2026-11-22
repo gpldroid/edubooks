@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { books, categories } from '../../data/catalog';
+import BookPreview from '../../components/books/BookPreview.astro';
+import { books, categories, validateBookCatalog } from '../../data/catalog';
+
+const catalogErrors = validateBookCatalog(books);
+if (catalogErrors.length > 0) throw new Error(catalogErrors.join('\\n'));
 
 export function getStaticPaths() {
   return books.filter((book) => book.status === 'published').map((book) => ({
@@ -11,23 +15,22 @@ export function getStaticPaths() {
 
 const { book } = Astro.props;
 const category = categories.find((item) => item.slug === book.category);
-const hasCheckout = Boolean(book.gumroadUrl || book.paypalUrl);
 ---
-<BaseLayout
-  title={`${book.title} — EduBooks`}
-
-  description={book.description}
-  
->
-  <section class="page-hero"><div class="container"><a href="../" class="back-link" data-en="← All books" data-fr="← Tous les livres" data-es="← Todos los libros">← All books</a><span class="section-label">{category?.nameEn ?? 'EduBooks'}</span><h1>{book.title}</h1><p>{book.description}</p></div></section>
-  <section class="content-section"><div class="container detail-grid">
-    <div class="detail-cover">{book.cover ? <img src={book.cover} alt={book.title} /> : <span>EduBooks</span>}</div>
-    <div><h2 data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</h2><p data-en={book.description} data-fr={book.descriptionFr} data-es={book.descriptionEs}>{book.description}</p><dl><dt data-en="Category" data-fr="Catégorie" data-es="Categoría">Category</dt><dd>{category?.nameEn ?? book.category}</dd><dt data-en="Format" data-fr="Format" data-es="Formato">Format</dt><dd>{book.format}</dd><dt data-en="Language" data-fr="Langue" data-es="Idioma">Language</dt><dd>{book.language}</dd></dl>{book.gumroadUrl && <a class="button" href={book.gumroadUrl} target="_blank" rel="noopener noreferrer nofollow" data-en="Buy with Gumroad" data-fr="Acheter avec Gumroad" data-es="Comprar con Gumroad">Buy with Gumroad</a>}
-      {book.paypalUrl && <a class="button secondary" href={book.paypalUrl} target="_blank" rel="noopener noreferrer nofollow" data-en="Pay with PayPal" data-fr="Payer avec PayPal" data-es="Pagar con PayPal">Pay with PayPal</a>}
-      {!hasCheckout && <p class="availability-note" data-en="Purchase options will appear when this title is ready." data-fr="Les options d’achat seront disponibles lorsque ce titre sera prêt." data-es="Las opciones de compra estarán disponibles cuando este título esté listo.">Purchase options will appear when this title is ready.</p>}
-      {book.downloadUrl && <a class="button" href={book.downloadUrl} rel="nofollow" data-en="Access digital file" data-fr="Accéder au fichier numérique" data-es="Acceder al archivo digital">Access digital file</a>}</div>
-  </div></section>
+<BaseLayout title={`${book.title} — EduBooks`} description={book.description}>
+  <section class="page-hero">
+    <div class="container">
+      <a href={`${import.meta.env.BASE_URL}books/`} class="back-link" data-en="← All books" data-fr="← Tous les livres" data-es="← Todos los libros">← All books</a>
+      <span class="section-label" data-en={category?.nameEn ?? 'EduBooks'} data-fr={category?.nameFr ?? 'EduBooks'} data-es={category?.nameEs ?? 'EduBooks'}>{category?.nameEn ?? 'EduBooks'}</span>
+      <h1 data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</h1>
+      <p data-en={book.description} data-fr={book.descriptionFr} data-es={book.descriptionEs}>{book.description}</p>
+    </div>
+  </section>
+  <section class="content-section">
+    <div class="container">
+      <BookPreview book={book} base={import.meta.env.BASE_URL} />
+    </div>
+  </section>
   <style>
-    .back-link{display:block;color:#b9dcd5;margin-bottom:18px;font-size:13px}.detail-grid{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:50px;align-items:start}.detail-cover{min-height:380px;background:#f1f2ed;display:grid;place-items:center;color:#388b82;font-size:26px;font-weight:800}.detail-cover img{width:100%;height:auto}.detail-grid h2{color:#183452}.detail-grid dl{display:grid;grid-template-columns:120px 1fr;gap:10px;color:#657585}.detail-grid dt{font-weight:700}.detail-grid dd{margin:0}.button{display:inline-flex;padding:13px 18px;background:#183452;color:white;border-radius:6px;margin:8px 8px 8px 0}.button.secondary{background:#388b82}.availability-note{font-size:13px;color:#657585}@media(max-width:650px){.detail-grid{grid-template-columns:1fr}}
+    .back-link{display:inline-flex;color:#b9dcd5;margin-bottom:18px;font-size:13px;text-decoration:none}
   </style>
 </BaseLayout>
