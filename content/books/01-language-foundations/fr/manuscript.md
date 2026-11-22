@@ -369,9 +369,78 @@ Attribuez-vous un point pour chaque élément :
 Quelle compétence a le plus progressé ? Quelle expression allez-vous utiliser dans une vraie conversation ? Fixez un petit objectif pour les sept prochains jours.
 
 
-## Corrigé
+## Corrigé et critères d’évaluation
 
-Non approuvé à ce stade. Un corrigé complet devra être rédigé après la finalisation des exercices de cette édition. Les réponses partielles de la source conservée ne doivent pas être reprises sans vérification.
+Les réponses ci-dessous concernent les questions à réponse déterminée. Pour les activités personnelles, orales et écrites, acceptez toute réponse qui respecte la consigne, utilise un français compréhensible et démontre l’objectif annoncé. Les informations personnelles peuvent être fictives.
+
+### Unité 1
+1. (a) compréhension orale ; (b) expression écrite ; (c) compréhension écrite ; (d) expression orale.
+2. Exemple : « Lundi, mercredi et vendredi, j’étudie quinze minutes et j’écris trois phrases chaque jour. »
+3. Se rappeler → apprendre → utiliser.
+4. Programme personnel ; vérifier qu’il comporte trois jours et quinze minutes par séance.
+5. Réponse personnelle ; vérifier que l’apprenant nomme une compétence et donne une raison.
+
+### Unité 2
+1. A, E, I, O, U, Y.
+2. « Je m’appelle Sam et j’habite à Paris. »
+3. écrit.
+4. (b) « Pourriez-vous répéter, s’il vous plaît ? »
+5. LIVRE ; TAXI ; ÉCOLE.
+6. Dialogue libre ; vérifier que l’épellation est confirmée et que la demande est polie.
+
+### Unité 3
+1. livre : 1 ; salut : 2 ; chocolat : 3.
+2. (b) chocolat.
+3. ca ; mi ; lé.
+4. Plusieurs lettres peuvent former un seul son, par exemple *ch* dans *chat*.
+5–6. Activités orales individuelles ; évaluer l’écoute d’un modèle, le repérage des syllabes et l’intelligibilité, sans exiger un accent particulier.
+
+### Unité 4
+1. Bonjour.
+2. s’il vous.
+3. « Excusez-moi ».
+4. (a) 2 ; (b) 3 ; (c) 1.
+5. Dialogue libre ; vérifier la salutation, la question, la demande polie et le remerciement.
+
+### Unité 5
+1. viens.
+2. habite.
+3. « J’habite en France. »
+4–5. Activités libres ; vérifier l’emploi de *venir de*, *habiter à/en/au/aux* et des questions proposées.
+
+### Unité 6
+1. quatorze ; quarante.
+2. 80.
+3. le cinq mai deux mille vingt-six.
+4. à.
+5. Il est six heures et quart.
+6. Phrase libre ; vérifier la cohérence du jour, de la date et de l’heure.
+
+### Unité 7
+1. Où.
+2. Est-ce que.
+3. « Est-ce que vous habitez à Lyon ? » ou « Vous habitez à Lyon ? »
+4. qui—personne ; où—lieu ; quand—moment ; comment—manière.
+5. Activité libre ; vérifier la structure des questions et l’usage de données fictives.
+
+### Unité 8
+1. (a) « Écoutez et répétez ».
+2. lentement.
+3. Exemple : « Pourriez-vous répéter, s’il vous plaît ? »
+4. prononcer—dire clairement un son ; signification—sens d’un mot ; répéter—dire une nouvelle fois.
+5. Activité libre ; vérifier que les consignes sont compréhensibles et réalisables.
+
+### Unité 9
+1. sont.
+2. étudie.
+3. « Je ne travaille pas ici. »
+4. « Il n’aime pas le thé. »
+5. « Elle lit un livre chaque matin. »
+6. Activité libre ; vérifier la négation et l’accord sujet-verbe.
+
+### Unité 10
+Utilisez la grille d’autoévaluation à six points de l’unité. Le profil peut présenter une personne fictive. Ne demandez aucune donnée privée. Cette grille sert à guider l’apprentissage et ne constitue pas un examen officiel.
+
 
 ## Note éditoriale et conditions de publication
 
