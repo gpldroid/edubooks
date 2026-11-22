@@ -90,10 +90,11 @@ jobs:
           esac
           mkdir -p "dist/books/$LANG_CODE"
           pandoc "content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md" \
-            --from=gfm --standalone --toc --toc-depth=3 --pdf-engine=xelatex \
+            --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
             --include-in-header=docs/production/latex-preamble.tex \
             --resource-path=. \
-            -V mainfont="DejaVu Sans" \
+            -V mainfont="DejaVu Sans" \\
+            -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" \
             -V geometry:paper=a4paper -V geometry:margin=18mm \
             -V fontsize=10pt -V colorlinks=true \
             -V title="$BOOK_TITLE" -V author="EduBooks" \
@@ -115,9 +116,23 @@ jobs:
           pdftotext "$PDF" "$TXT"
           test "$(wc -w < "$TXT")" -gt 1000
           grep -Eiq 'Answer Key|Answer check|Corrigé|Soluciones' "$TXT"
+          case "$LANG_CODE" in
+            en) UNIT_LABEL="Unit";;
+            fr) UNIT_LABEL="Unité";;
+            es) UNIT_LABEL="Unidad";;
+          esac
           for unit in 1 2 3 4 5 6 7 8 9 10 11 12; do
-            grep -E "Unit $unit([[:space:]]|—)" "$TXT" >/dev/null
+            grep -F "$UNIT_LABEL $unit" "$TXT" >/dev/null
           done
+          if [ "$LANG_CODE" = "fr" ]; then
+            grep -q "Sommaire" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          elif [ "$LANG_CODE" = "es" ]; then
+            grep -q "Índice" "$TXT"
+            ! grep -q "Contents" "$TXT"
+            ! grep -q "This is a self-study vocabulary workbook" "$TXT"
+          fi
           echo "Validated $LANG_CODE edition: $PAGES pages."
 
       - name: Upload review candidate
