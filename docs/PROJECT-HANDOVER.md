@@ -100,6 +100,10 @@ Pages must use GitHub Actions as the deployment source. Do not add secrets to re
 - The PR #17 matrix CI passed for all three languages and generated review PDFs (EN 13 pages, FR 14 pages, ES 14 pages). Initial visual sampling found readable layouts, localized headings and embedded DejaVu Sans fonts, with no blank pages in the inspected samples. The Spanish editorial note continues onto a mostly empty final page; refine pagination. Full page-by-page proof, language editing, pedagogy, answer-key reconciliation and rights review remain incomplete.
 - PR #17 is merged; the original trilingual source remains preserved by PR #1.
 
+## 5A. Remaining work register
+
+Use docs/REMAINING-WORK-REGISTER.md as the prioritized checklist for all unfinished work. Book 01 remains outline-stage; Book 02 remains three technical review candidates. Full-page visual proof is deliberately editable and pending. No edition is approved for sale.
+
 ## 6. Release gates — each edition independently
 
 1. Complete standalone manuscript and front/back matter.
