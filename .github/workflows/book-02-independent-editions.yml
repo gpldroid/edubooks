@@ -135,6 +135,9 @@ jobs:
           TXT="dist/books/$LANG_CODE/extracted.txt"
           test -s "$PDF"
           pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
+          pdffonts "$PDF" | tee "dist/books/$LANG_CODE/pdffonts.txt"
+          # Every font used in the review candidate must be embedded.
+          pdffonts "$PDF" | awk 'NR > 2 && $(NF-4) != "yes" {bad=1} END {exit bad}'
           PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
           test "$PAGES" -ge 12
           LAST_PAGE_WORDS="$(pdftotext -f "$PAGES" -l "$PAGES" "$PDF" - | wc -w)"
@@ -165,7 +168,18 @@ jobs:
             ! grep -q "Contents" "$TXT"
             ! grep -q "This is a self-study vocabulary workbook" "$TXT"
           fi
-          echo "Validated $LANG_CODE edition: $PAGES pages."
+          TAGGED="$(pdfinfo "$PDF" | awk -F: '/^Tagged:/ {gsub(/^[ \t]+/, "", $2); print $2}')"
+          WORDS="$(wc -w < "$TXT")"
+          {
+            echo "Edition: Book 02 / $LANG_CODE"
+            echo "Pages: $PAGES"
+            echo "Extracted words: $WORDS"
+            echo "Final-page words: $LAST_PAGE_WORDS"
+            echo "Tagged PDF: ${TAGGED:-not reported}"
+            echo "Font embedding: all detected fonts embedded"
+            echo "Accessibility status: NOT CERTIFIED; manual tagging, reading-order and screen-reader review remain required"
+          } | tee "dist/books/$LANG_CODE/qa-report.txt"
+          echo "Validated $LANG_CODE edition: $PAGES pages; tagged status: ${TAGGED:-not reported}."
 
       - name: Create five-page internal sample preview
         shell: bash
@@ -192,6 +206,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: book-02-${{ matrix.edition }}-review-candidate
-          path: dist/books/${{ matrix.edition }}/*.pdf
+          path: dist/books/${{ matrix.edition }}/
           if-no-files-found: error
           retention-days: 90
