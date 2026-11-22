@@ -9,7 +9,6 @@ const base = import.meta.env.BASE_URL;
 const catalogErrors = validateBookCatalog(books);
 if (catalogErrors.length > 0) throw new Error(catalogErrors.join('\\n'));
 const catalogBooks = books;
-const publishedBooks = catalogBooks.filter((book) => book.status === 'published');
 for (const book of catalogBooks) {
   const coverFile = resolve(process.cwd(), 'public', book.cover.slice(1));
   if (!existsSync(coverFile)) throw new Error(`Missing cover for "${book.slug}": ${book.cover}`);
