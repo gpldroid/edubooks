@@ -20,6 +20,22 @@ jobs:
         with:
           node-version: 24
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
+      - name: Validate Astro components and TypeScript
+        run: npm run check
+      - name: Run project regression tests
+        run: npm test
       - name: Build Astro site
         run: npm run build
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run responsive browser tests
+        run: npm run test:e2e
+      - name: Upload responsive visual proofs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-visual-proofs
+          path: test-results/**/*.png
+          if-no-files-found: ignore
+          retention-days: 3

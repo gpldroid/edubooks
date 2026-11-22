@@ -85,13 +85,22 @@ edubooks/
 Requirements: Node.js 22+ (CI uses Node.js 24).
 
 ```bash
-npm install
+npm ci
 npm run dev
+npm run check
+npm test
 npm run build
 npm run preview
 ```
 
-Build output: `dist/`.
+Responsive browser tests (Chromium):
+
+```bash
+npx playwright install chromium
+npm run test:e2e
+```
+
+Build output: `dist/`. Pull requests run Astro/TypeScript diagnostics, project regression tests, a production build, and responsive Playwright checks before review. See [the responsive UI and stability audit](docs/RESPONSIVE-UI-AUDIT.md).
 
 ## GitHub Pages
 

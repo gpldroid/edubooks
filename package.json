@@ -6,9 +6,19 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "node --test tests/*.test.js",
+    "validate": "npm run check && npm test && npm run build",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "astro": "^5.16.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.9.3",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0"
   }
 }
