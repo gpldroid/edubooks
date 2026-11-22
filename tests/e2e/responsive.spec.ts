@@ -82,3 +82,50 @@ test('reduced-motion preference disables smooth page scrolling', async ({ page }
   const behavior = await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior);
   expect(behavior).toBe('auto');
 });
+
+
+test('mobile language selector is positioned above scroll controls', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(homePath);
+  await page.evaluate(() => window.scrollTo(0, 420));
+  const language = page.locator('[data-language-widget]');
+  const controls = page.locator('[data-scroll-controls]');
+  await expect(language).toBeVisible();
+  await expect(controls).toHaveClass(/is-visible/);
+  const languageBox = await language.boundingBox();
+  const controlsBox = await controls.boundingBox();
+  expect(languageBox).not.toBeNull();
+  expect(controlsBox).not.toBeNull();
+  expect(languageBox!.y + languageBox!.height).toBeLessThan(controlsBox!.y);
+});
+
+test('mobile tab routes are unique and remain inside the configured site base', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(homePath);
+  const hrefs = await page.locator('[data-mobile-tabbar] a').evaluateAll((links) =>
+    links.map((link) => (link as HTMLAnchorElement).getAttribute('href'))
+  );
+  expect(hrefs).toEqual([
+    '/edubooks/',
+    '/edubooks/#categories',
+    '/edubooks/books/',
+    '/edubooks/faq/',
+    '/edubooks/about/'
+  ]);
+  expect(new Set(hrefs).size).toBe(hrefs.length);
+  expect(hrefs.every((href) => href?.startsWith('/edubooks/') && !href.startsWith('/edubooks/edubooks/'))).toBe(true);
+});
+
+test('footer social icons keep fixed touch targets and wrap without overflow', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 844 });
+  await page.goto(homePath);
+  const icons = page.locator('.social-icons .social-icon');
+  await expect(icons).toHaveCount(7);
+  const dimensions = await icons.first().evaluate((element) => {
+    const rect = element.getBoundingClientRect();
+    return { width: rect.width, height: rect.height, display: getComputedStyle(element).display };
+  });
+  expect(dimensions.width).toBe(43);
+  expect(dimensions.height).toBe(43);
+  expect(dimensions.display).toBe('inline-grid');
+});
