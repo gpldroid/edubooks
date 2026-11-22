@@ -8,12 +8,14 @@ on:
     paths:
       - 'content/books/02-essential-vocabulary/**'
       - 'docs/production/latex-preamble.tex'
+      - 'docs/production/book-02-layout.tex'
       - '.github/workflows/book-02-independent-editions.yml'
   push:
     branches: [work/book-02-independent-editions]
     paths:
       - 'content/books/02-essential-vocabulary/**'
       - 'docs/production/latex-preamble.tex'
+      - 'docs/production/book-02-layout.tex'
       - '.github/workflows/book-02-independent-editions.yml'
 
 permissions:
@@ -97,6 +99,7 @@ jobs:
           pandoc "content/books/02-essential-vocabulary/$LANG_CODE/manuscript.md" \
             --from=gfm --standalone --toc --toc-depth=1 --pdf-engine=xelatex \
             --include-in-header=docs/production/latex-preamble.tex \
+            --include-in-header=docs/production/book-02-layout.tex \
             --resource-path=. \
             -V mainfont="DejaVu Sans" -V lang="$([ "$LANG_CODE" = "fr" ] && echo fr-FR || ([ "$LANG_CODE" = "es" ] && echo es-ES || echo en-GB))" -V geometry:paper=a4paper -V geometry:margin=18mm \
             -V fontsize=10pt -V colorlinks=true \
