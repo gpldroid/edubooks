@@ -1,0 +1,22 @@
+---
+import type { Book, LearningCategory } from '../../data/catalog';
+interface Props { book: Book; category?: LearningCategory; base: string; }
+const { book, category, base } = Astro.props;
+const detailUrl = `${base}books/${book.slug}/`;
+const searchable = [book.title, book.titleFr, book.titleEs, book.description, book.descriptionFr, book.descriptionEs].join(' ');
+const coverUrl = `${base}${book.cover.slice(1)}`;
+---
+<article class="book-card" data-category={book.category} data-search={searchable}>
+  <a href={detailUrl} class="book-card-link" aria-label={`Preview ${book.title}`}>
+    <div class="book-cover"><img src={coverUrl} alt={book.coverAlt} loading="lazy" decoding="async"><span class="preview-badge" data-en="PDF preview" data-fr="Aperçu PDF" data-es="Vista previa PDF">PDF preview</span></div>
+    <div class="book-card-copy">
+      <span class="book-category" data-en={category?.nameEn ?? 'Learning'} data-fr={category?.nameFr ?? 'Apprentissage'} data-es={category?.nameEs ?? 'Aprendizaje'}>{category?.nameEn ?? 'Learning'}</span>
+      <h2 data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</h2>
+      <p data-en={book.description} data-fr={book.descriptionFr} data-es={book.descriptionEs}>{book.description}</p>
+      <span class="preview-link" data-en="Read description & preview" data-fr="Lire la description et l’aperçu" data-es="Leer descripción y vista previa">Read description &amp; preview <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>
+<style>
+.book-card{min-width:0;overflow:hidden;border:1px solid #e3e9e8;border-radius:16px;background:#fff;box-shadow:0 8px 24px rgb(16 31 50 / 5%);transition:transform .2s ease,box-shadow .2s ease}.book-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgb(16 31 50 / 11%)}.book-card[hidden]{display:none}.book-card-link{display:block;height:100%;color:inherit;text-decoration:none}.book-cover{position:relative;display:grid;place-items:center;aspect-ratio:4/3;overflow:hidden;background:#edf2f0}.book-cover img{width:100%;height:100%;object-fit:cover;object-position:center 35%}.preview-badge{position:absolute;right:12px;bottom:12px;padding:6px 10px;border-radius:999px;background:#183452;color:#fff;font-size:11px;font-weight:800}.book-card-copy{padding:20px}.book-category{font-size:11px;color:#388b82;font-weight:800}.book-card h2{font-size:clamp(18px,2vw,22px);margin:8px 0;color:#183452}.book-card p{font-size:13px;color:#586a7a;margin:0 0 16px;line-height:1.65}.preview-link{display:inline-flex;gap:8px;align-items:center;color:#28776f;font-size:13px;font-weight:800}@media(prefers-reduced-motion:reduce){.book-card{transition:none}.book-card:hover{transform:none}}
+</style>

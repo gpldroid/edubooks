@@ -1,0 +1,38 @@
+---
+interface Props {
+  src: string;
+  title: string;
+}
+
+const { src, title } = Astro.props;
+---
+<section class="pdf-preview" aria-labelledby="pdf-preview-heading">
+  <div class="pdf-preview-heading">
+    <div>
+      <span class="eyebrow" data-en="SAMPLE PAGES" data-fr="PAGES D’APERÇU" data-es="PÁGINAS DE MUESTRA">SAMPLE PAGES</span>
+      <h2 id="pdf-preview-heading" data-en="Read the PDF preview" data-fr="Lire l’aperçu PDF" data-es="Leer la vista previa PDF">Read the PDF preview</h2>
+      <p data-en="The preview contains the cover, book description, table of contents and a short selection of sample pages." data-fr="L’aperçu contient la couverture, la description, le sommaire et une courte sélection de pages." data-es="La vista previa incluye la portada, la descripción, el índice y una breve selección de páginas.">The preview contains the cover, book description, table of contents and a short selection of sample pages.</p>
+    </div>
+    <a class="open-pdf" href={src} target="_blank" rel="noopener noreferrer" data-en="Open PDF in new tab" data-fr="Ouvrir le PDF dans un nouvel onglet" data-es="Abrir PDF en una pestaña nueva">Open PDF in new tab ↗</a>
+  </div>
+  <div class="pdf-frame">
+    <iframe src={src} title={title} loading="lazy">
+      <p data-en="Your browser cannot display embedded PDFs." data-fr="Votre navigateur ne peut pas afficher les PDF intégrés." data-es="Tu navegador no puede mostrar PDF incrustados.">Your browser cannot display embedded PDFs.</p>
+      <a href={src} target="_blank" rel="noopener noreferrer">Open the PDF preview</a>
+    </iframe>
+  </div>
+  <p class="pdf-note" data-en="PDF controls depend on your browser. Public preview files may be saved or printed by visitors." data-fr="Les commandes PDF dépendent de votre navigateur. Les fichiers d’aperçu publics peuvent être enregistrés ou imprimés." data-es="Los controles PDF dependen de tu navegador. Los visitantes pueden guardar o imprimir los archivos públicos.">PDF controls depend on your browser. Public preview files may be saved or printed by visitors.</p>
+</section>
+
+<style>
+  .pdf-preview{margin-top:clamp(36px,5vw,64px);padding:clamp(18px,3vw,30px);border:1px solid #e2e9e7;border-radius:18px;background:#f7f9f8}
+  .pdf-preview-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+  .eyebrow{font-size:10px;letter-spacing:.16em;font-weight:800;color:#388b82}
+  .pdf-preview h2{font-size:clamp(22px,3vw,30px);margin:5px 0;color:#183452}
+  .pdf-preview-heading p{max-width:620px;margin:0;color:#586a7a;font-size:13px}
+  .open-pdf{flex:none;padding:10px 14px;border-radius:9px;background:#183452;color:white;font-size:12px;font-weight:800;text-decoration:none}
+  .pdf-frame{height:clamp(480px,72vw,850px);overflow:hidden;border:1px solid #d9e2df;border-radius:12px;background:#e8edeb}
+  .pdf-frame iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+  .pdf-note{margin:12px 2px 0;color:#71808c;font-size:11px}
+  @media(max-width:650px){.pdf-preview-heading{align-items:flex-start;flex-direction:column}.open-pdf{width:100%;text-align:center}.pdf-frame{height:68vh;min-height:420px}}
+</style>
