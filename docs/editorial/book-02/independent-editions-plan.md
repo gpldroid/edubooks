@@ -80,4 +80,10 @@ These are substantive first drafts, not certified translations and not final edi
 
 Added `.github/workflows/book-02-independent-editions.yml`. It runs a separate matrix job for EN, FR and ES; checks that each manuscript contains 12 unit headings and required project/test/answer-key/release sections; builds an individual XeLaTeX PDF; extracts text; checks page count and unit presence; and uploads each PDF as a review-candidate artifact.
 
-A green workflow means the technical build and automated structural checks passed. It does not replace human editorial approval.
+A green workflow means the technical build and automated structural/language-section checks passed. It does not prove idiomaticity or answer correctness and does not replace human editorial approval.
+
+## 8. Editorial alignment pass (2026-11-22)
+
+The first audit found English headings, learner-facing checklists and trilingual final-review questions remaining in the French and Spanish drafts. These were rewritten into language-specific front matter, unit navigation, self-checks, assessment rubrics, final tests, answer keys, glossaries and release notes. The English final test was also made English-only. A final scan confirms 12 units and 12 unit answer-check sections per edition. Cross-language comparison remains only where it is itself the learning objective (the false-friend examples in Unit 12).
+
+The PDF workflow was repaired after a malformed validation edit caused a workflow run to fail before creating jobs. The corrected workflow now validates the correct project/test/answer-key headings separately for EN, FR and ES, and checks the 12 unit answer-check sections for each language. The latest run must pass before treating PDFs as current review candidates.
