@@ -1,3 +1,17 @@
+## Verified Book 01 production update — 2026-11-22
+
+The latest production workflow has now built and committed three standalone PDF files to `public/books/`:
+
+- `public/books/edubooks-book-01-en.pdf` (79,833 bytes)
+- `public/books/edubooks-book-01-fr.pdf` (84,973 bytes)
+- `public/books/edubooks-book-01-es.pdf` (80,334 bytes)
+
+The publishing workflow run [#44996350390](https://github.com/gpldroid/edubooks/actions/runs/44996350390) completed successfully. Its bot commit is [838acdc](https://github.com/gpldroid/edubooks/commit/838acdc46bbdb1523cbb99c7b27038e78f85ef8a). This proves the files were generated and committed; it does not prove editorial approval, full-page visual review, accessibility compliance, or commercial readiness.
+
+The Pages build/deploy run [#44996350403](https://github.com/gpldroid/edubooks/actions/runs/44996350403) also succeeded, but it built commit `38dd982`, immediately before the PDF bot commit. Therefore, the deployed Pages artifact is not yet confirmed to include the three PDFs. A subsequent main-branch deployment must be verified after the documentation/triggering commit is merged.
+
+The current public catalogue remains intentionally empty (`books = []`). There is no `public/previews/` directory yet, and the current Book 01 covers are SVG masters under `public/images/gumroad-covers/`. Do not add published catalogue entries until valid preview assets, verified edition metadata and cover paths exist. Keep all editions out of published status until the editorial and visual gates pass. Gumroad and PayPal sales integration remain deferred; do not add checkout controls or publish products.
+
 # EduBooks
 
 **Learn. Practice. Grow.**  
