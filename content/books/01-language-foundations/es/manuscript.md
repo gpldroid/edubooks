@@ -367,9 +367,78 @@ Asigna un punto por cada elemento:
 ¿Qué destreza ha mejorado más? ¿Qué expresión utilizarás en una conversación real? Elige una meta pequeña para los próximos siete días.
 
 
-## Soluciones
+## Soluciones y criterios de evaluación
 
-Aún no está aprobado. Se deberá elaborar una clave de respuestas completa después de finalizar los ejercicios de esta edición. No se deben copiar sin verificar las respuestas parciales de la fuente conservada.
+Las respuestas siguientes corresponden a las preguntas con una solución definida. En las actividades personales, orales y escritas, acepta cualquier respuesta que cumpla la consigna, utilice un español comprensible y demuestre el objetivo indicado. Los datos personales pueden ser ficticios.
+
+### Unidad 1
+1. (a) comprensión auditiva; (b) expresión escrita; (c) comprensión lectora; (d) expresión oral.
+2. Ejemplo: «Los lunes, miércoles y viernes estudiaré quince minutos y escribiré tres frases cada día».
+3. Recordar → aprender → usar.
+4. Plan personal; comprueba que incluya tres días y quince minutos por sesión.
+5. Reflexión personal; comprueba que identifica una destreza y explica una razón.
+
+### Unidad 2
+1. A, E, I, O, U.
+2. «Me llamo Sam y vivo en Madrid».
+3. escribe.
+4. (b) «¿Puedes repetirlo, por favor?»
+5. LIBRO; TAXI; NIÑO.
+6. Diálogo abierto; comprueba que la persona confirma la escritura y formula una petición cortés.
+
+### Unidad 3
+1. sol: 1; casa: 2; teléfono: 4.
+2. (b) teléfono.
+3. ca; mi; lé.
+4. La pronunciación de c y z varía según la región; ambas variedades son válidas.
+5–6. Actividades orales individuales; valora el uso de un modelo, la identificación de sílabas y la claridad, no la imitación de un acento concreto.
+
+### Unidad 4
+1. Buenos días.
+2. por favor.
+3. «Disculpe».
+4. (a) 2; (b) 3; (c) 1.
+5. Diálogo abierto; comprueba el saludo, la pregunta, la petición cortés y el agradecimiento.
+
+### Unidad 5
+1. soy.
+2. vive.
+3. «Soy de México».
+4–5. Actividades abiertas; comprueba el uso de *ser de*, *vivir en* y las preguntas propuestas.
+
+### Unidad 6
+1. dieciséis; sesenta.
+2. 80.
+3. cinco de mayo de dos mil veintiséis.
+4. a.
+5. Son las seis y cuarto.
+6. Frase abierta; comprueba la coherencia del día, la fecha y la hora.
+
+### Unidad 7
+1. Dónde.
+2. Qué.
+3. «¿Dónde vive tu compañero?»
+4. quién—persona; dónde—lugar; cuándo—momento; cómo—manera.
+5. Actividad abierta; comprueba la estructura de las preguntas y el uso de datos ficticios.
+
+### Unidad 8
+1. (a) «Escucha y repite».
+2. despacio.
+3. Ejemplo: «¿Podría repetirlo, por favor?»
+4. pronunciar—decir un sonido claramente; significado—lo que expresa una palabra; repetir—decir otra vez.
+5. Actividad abierta; comprueba que las instrucciones sean claras y realizables.
+
+### Unidad 9
+1. están.
+2. estudia.
+3. «No trabajo aquí».
+4. «Él no estudia inglés».
+5. «Ella lee un libro cada mañana».
+6. Actividad abierta; comprueba la negación y la concordancia entre sujeto y verbo.
+
+### Unidad 10
+Utiliza la rúbrica de autoevaluación de seis puntos incluida en la unidad. El perfil puede contener datos ficticios. No exijas información privada. La rúbrica es formativa y no constituye una prueba oficial de nivel.
+
 
 ## Nota editorial y condiciones de publicación
 
