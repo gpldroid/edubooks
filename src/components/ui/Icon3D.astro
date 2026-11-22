@@ -1,6 +1,6 @@
 ---
-interface Props { name: "book" | "compass" | "spark" | "home" | "help" | "user"; label: string; size?: number }
-const { name, label, size = 28 } = Astro.props;
+interface Props { name: "book" | "compass" | "spark" | "home" | "help" | "user"; label: string; size?: number; decorative?: boolean }
+const { name, label, size = 28, decorative = false } = Astro.props;
 const paths = {
   book: "M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z M4 4.5v17 M8 6h8 M8 10h8",
   compass: "M12 2.8 14.5 9.5 21.2 12l-6.7 2.5L12 21.2l-2.5-6.7L2.8 12l6.7-2.5z",
@@ -10,6 +10,6 @@ const paths = {
   user: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M4 21a8 8 0 0 1 16 0z"
 };
 ---
-<span class="icon-3d" role="img" aria-label={label} style={`--icon-size:${size}px`}>
+<span class="icon-3d" role={decorative ? undefined : "img"} aria-label={decorative ? undefined : label} aria-hidden={decorative ? "true" : undefined} style={`--icon-size:${size}px`}>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={paths[name]}/></svg>
 </span>
