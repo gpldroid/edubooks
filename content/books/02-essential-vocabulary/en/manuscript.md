@@ -539,11 +539,11 @@ Create a five-part portfolio: people, home, food, daily routine and leisure. For
 
 # Personal Vocabulary Record
 
-| Date | Word or expression | Meaning in context | My example | Review 1 | Review 2 | Review 3 |
-|---|---|---|---|---|---|---|
-| | | | | | | |
-| | | | | | | |
-| | | | | | | |
+| Date | Word or expression | Meaning in context | Example and review dates |
+|---|---|---|---|
+| | | | |
+| | | | |
+| | | | |
 
 # Glossary
 - **Collocation:** a combination of words that commonly occurs together.
