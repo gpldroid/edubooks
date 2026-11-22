@@ -29,7 +29,7 @@ const categoryCounts = Object.fromEntries(categories.map((category) => [category
     <h2 class="visually-hidden" id="catalog-heading" data-en="Books in the catalogue" data-fr="Livres du catalogue" data-es="Libros del catálogo">Books in the catalogue</h2>
     <div class="catalog-tools">
       <div class="catalog-field"><label class="search-label" for="book-search" data-en="Search the library" data-fr="Rechercher dans la bibliothèque" data-es="Buscar en la biblioteca">Search the library</label><input id="book-search" type="search" placeholder="Search books..." data-placeholder-en="Search books..." data-placeholder-fr="Rechercher des livres..." data-placeholder-es="Buscar libros..." autocomplete="off"></div>
-      <p class="catalog-count" id="catalog-count" aria-live="polite" data-en={`${catalogBooks.length} catalogue editions`} data-fr={`${catalogBooks.length} éditions au catalogue`} data-es={`${catalogBooks.length} ediciones en el catálogo`}>{catalogBooks.length} books available</p>
+      <p class="catalog-count" id="catalog-count" aria-live="polite" data-en={`${catalogBooks.length} catalogue editions`} data-fr={`${catalogBooks.length} éditions au catalogue`} data-es={`${catalogBooks.length} ediciones en el catálogo`}>{catalogBooks.length} editions listed</p>
     </div>
     <div class="catalog-layout">
       <aside class="category-sidebar" aria-labelledby="category-heading">
