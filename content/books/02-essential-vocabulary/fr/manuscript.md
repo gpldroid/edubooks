@@ -539,11 +539,26 @@ Créez un portfolio en cinq parties : personnes, maison, alimentation, routine e
 
 # Fiche personnelle de vocabulaire
 
-| Date | Mot ou expression | Sens en contexte | Exemple et dates de révision |
-|---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+**Fiche de vocabulaire 1**
+- Date : ______________________________
+- Mot ou expression : ______________________________
+- Sens en contexte : ______________________________
+- Mon exemple : ______________________________
+- Dates de révision 1 / 2 / 3 : ______________________________
+
+**Fiche de vocabulaire 2**
+- Date : ______________________________
+- Mot ou expression : ______________________________
+- Sens en contexte : ______________________________
+- Mon exemple : ______________________________
+- Dates de révision 1 / 2 / 3 : ______________________________
+
+**Fiche de vocabulaire 3**
+- Date : ______________________________
+- Mot ou expression : ______________________________
+- Sens en contexte : ______________________________
+- Mon exemple : ______________________________
+- Dates de révision 1 / 2 / 3 : ______________________________
 
 # Petit glossaire
 - **Association de mots (collocation) :** combinaison de mots qui apparaît fréquemment ensemble.
