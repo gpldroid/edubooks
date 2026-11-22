@@ -1,8 +1,9 @@
 ---
-import type { Book } from '../../data/catalog';
+import { categories, type Book } from '../../data/catalog';
 interface Props { book: Book; base: string; }
 const { book, base } = Astro.props;
 const coverUrl = `${base}${book.cover.slice(1)}`;
+const category = categories.find((item) => item.slug === book.category);
 ---
 <article class="book-detail">
   <div class="book-intro">
@@ -12,7 +13,7 @@ const coverUrl = `${base}${book.cover.slice(1)}`;
       <h2 data-en="About this book" data-fr="À propos de ce livre" data-es="Sobre este libro">About this book</h2>
       <p class="description" data-en={book.description} data-fr={book.descriptionFr} data-es={book.descriptionEs}>{book.description}</p>
       <dl class="book-facts">
-        <div><dt data-en="Category" data-fr="Catégorie" data-es="Categoría">Category</dt><dd>{book.category}</dd></div>
+        <div><dt data-en="Category" data-fr="Catégorie" data-es="Categoría">Category</dt><dd data-en={category?.nameEn ?? book.category} data-fr={category?.nameFr ?? book.category} data-es={category?.nameEs ?? book.category}>{category?.nameEn ?? book.category}</dd></div>
         <div><dt data-en="Language" data-fr="Langue" data-es="Idioma">Language</dt><dd>{book.language.toUpperCase()}</dd></div>
         <div><dt data-en="Format" data-fr="Format" data-es="Formato">Format</dt><dd>PDF</dd></div>
         {book.level && <div><dt data-en="Level" data-fr="Niveau" data-es="Nivel">Level</dt><dd>{book.level}</dd></div>}
