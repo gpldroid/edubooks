@@ -40,4 +40,4 @@ For each asset, record:
 
 ## Approval record
 
-The owner confirmed on 2026-11-22 that they hold copyright and distribution rights for the texts and materials used in all six editions and authorize preparation for free publication on EduBooks. This is recorded as an owner declaration. It does not replace itemized asset/source records, independent review, accessibility and PDF proof, or edition-specific release approval.
+The owner confirmed on 2026-11-22 that they hold copyright and distribution rights for the texts and materials used in all six editions and authorize preparation for free publication on EduBooks. This is recorded as an owner declaration in this internal register, not as learner-facing book content. It does not replace itemized asset/source records, independent review, accessibility and PDF proof, or edition-specific release approval.
