@@ -89,7 +89,7 @@ jobs:
           pdfinfo "$PDF" | tee "dist/books/$LANG_CODE/pdfinfo.txt"
           pdffonts "$PDF" | tee "dist/books/$LANG_CODE/pdffonts.txt"
           # Every font used in the review candidate must be embedded.
-          pdffonts "$PDF" | awk 'NR > 2 && $4 != "yes" {bad=1} END {exit bad}'
+          pdffonts "$PDF" | awk 'NR > 2 && $(NF-4) != "yes" {bad=1} END {exit bad}'
           PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
           test "$PAGES" -ge 10
           pdftotext "$PDF" "$TXT"
