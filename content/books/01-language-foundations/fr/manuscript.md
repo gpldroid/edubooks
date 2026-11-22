@@ -145,6 +145,113 @@ Les liaisons et les enchaînements peuvent modifier la façon dont les mots se s
 **Critère de réussite :** Je peux repérer des syllabes simples, écouter le rythme d’une phrase et m’entraîner à partir d’un modèle.
 
 
+## Unité 4 — Salutations et politesse
+
+**Objectif :** Vous pourrez saluer quelqu’un, choisir une formule de politesse et terminer un court échange quotidien.
+
+### 4.1 Saluer selon la situation
+On peut dire **Bonjour**, **Bonsoir** ou, dans un contexte familier, **Salut**. *Bonjour* convient dans la plupart des situations pendant la journée. *Bonsoir* s’emploie généralement en fin de journée ou le soir. *Salut* est familier et convient surtout aux personnes que l’on connaît.
+
+Pour prendre congé, dites **Au revoir**, **À bientôt** ou **Bonne journée**. La formule dépend du contexte et de la relation.
+
+### 4.2 Expressions de politesse
+- **S’il vous plaît** accompagne une demande polie.
+- **Merci** exprime la gratitude.
+- **Je vous en prie** peut répondre à un remerciement dans un registre poli.
+- **Excusez-moi** sert à attirer l’attention ou à interrompre poliment.
+- **Pardon** peut signaler une excuse ou une demande de répétition.
+
+Dans une relation familière, on peut employer *s’il te plaît* et *excuse-moi*. Choisissez entre **tu** et **vous** selon la relation et la situation.
+
+### 4.3 Un court échange
+A : Bonjour, comment allez-vous ?  
+B : Très bien, merci. Et vous ?  
+A : Bien, merci. Excusez-moi, cette place est-elle libre ?  
+B : Oui, bien sûr.  
+A : Merci beaucoup.  
+B : Je vous en prie.
+
+### Activités
+1. Choisissez une salutation adaptée à 10 h : Bonjour / Bonne nuit.
+2. Complétez : « Un café, ____ ____ plaît. »
+3. Quelle expression peut-on utiliser pour attirer poliment l’attention : « Excusez-moi » ou « Je vous en prie » ?
+4. Associez : (a) Merci ; (b) Pardon ; (c) Bonjour — (1) salutation ; (2) remerciement ; (3) excuse ou demande de répétition.
+5. Écrivez un dialogue de quatre répliques : saluer, demander comment va la personne, faire une demande polie et remercier.
+
+**Critère de réussite :** Je peux commencer et terminer un bref échange en utilisant des expressions de politesse adaptées.
+
+## Unité 5 — Se présenter
+
+**Objectif :** Vous pourrez vous présenter en indiquant votre nom, votre origine, votre lieu de résidence et un centre d’intérêt.
+
+### 5.1 Modèles utiles
+- « Je m’appelle Lina. » / « Moi, c’est Lina. » (familier)
+- « Je suis originaire du Maroc. » / « Je viens du Maroc. »
+- « J’habite à Rabat. »
+- « Je parle arabe et un peu français. »
+- « J’apprends le français. »
+- « J’aime la musique et la lecture. »
+
+Utilisez **habiter à** devant une ville : *J’habite à Rabat*. Utilisez **habiter au / en / aux** selon le nom du pays : *au Canada*, *en France*, *aux États-Unis*. Pour l’origine, *venir de* change aussi selon le pays : *du Maroc*, *de France*, *des États-Unis*.
+
+### 5.2 Poser des questions
+- « Comment vous appelez-vous ? »
+- « Vous venez d’où ? »
+- « Où habitez-vous ? »
+- « Quelles langues parlez-vous ? »
+- « Qu’est-ce que vous aimez faire ? »
+
+Lors d’une première rencontre, restez cordial et ne forcez personne à communiquer des renseignements personnels. Vous pouvez inventer des informations pour l’exercice.
+
+### 5.3 Exemple
+« Bonjour. Je m’appelle Lina. Je viens du Maroc et j’habite à Rabat. Je parle arabe et anglais. J’apprends le français parce que j’aime découvrir de nouvelles cultures. J’aime aussi lire. »
+
+### Activités
+1. Complétez : « Je ____ de France. » (viens / vient)
+2. Complétez : « Elle ____ à Madrid. » (habite / habites)
+3. Choisissez : « J’habite en France » ou « J’habite à France ».
+4. Écrivez trois phrases pour présenter une personne fictive.
+5. Écrivez deux questions à poser à un nouveau camarade.
+
+**Critère de réussite :** Je peux me présenter en quatre ou cinq phrases claires et poser deux questions simples.
+
+## Unité 6 — Nombres, dates et heure
+
+**Objectif :** Vous pourrez reconnaître les nombres courants, donner une date simple et demander ou indiquer l’heure.
+
+### 6.1 Les nombres utiles
+Révisez ces groupes :
+- 0–10 : zéro, un, deux, trois, quatre, cinq, six, sept, huit, neuf, dix.
+- 11–20 : onze, douze, treize, quatorze, quinze, seize, dix-sept, dix-huit, dix-neuf, vingt.
+- Dizaines : trente, quarante, cinquante, soixante, soixante-dix, quatre-vingts, quatre-vingt-dix, cent.
+
+En français, certaines dizaines se forment de manière particulière : *soixante-dix* (70), *quatre-vingts* (80) et *quatre-vingt-dix* (90). Apprenez-les par groupes et entraînez-vous à les reconnaître à l’oral.
+
+### 6.2 Les dates
+En français, on écrit généralement le jour, le mois et l’année : **5 mai 2026**. Les mois et les jours de la semaine prennent une minuscule : *lundi*, *mai*. Pour le premier jour du mois, on écrit **1er** : *le 1er juin*.
+
+Pour demander la date : « Quelle est la date aujourd’hui ? » Pour demander le jour : « On est quel jour ? »
+
+### 6.3 Dire l’heure
+- « Il est trois heures. »
+- « Il est quatre heures et demie. » (4 h 30)
+- « Il est six heures et quart. » (6 h 15)
+- « Il est huit heures moins le quart. » (7 h 45)
+- « Le cours commence à neuf heures. »
+
+On utilise **à** pour indiquer l’heure d’un événement : *à huit heures*. Dans un contexte pratique, l’écriture numérique 8 h 30 est également courante.
+
+### Activités
+1. Écrivez 14 et 40 en lettres.
+2. Quel nombre correspond à *quatre-vingts* : 18 ou 80 ?
+3. Écrivez le 5 mai 2026 en toutes lettres.
+4. Complétez : « Le cours commence ____ 8 h 30. »
+5. Écrivez 6 h 15 avec l’expression « et quart ».
+6. Rédigez une phrase contenant un jour, une date et une heure pour un rendez-vous fictif.
+
+**Critère de réussite :** Je peux reconnaître des nombres courants, écrire une date clairement et demander ou donner l’heure.
+
+
 ## Corrigé
 
 Non approuvé à ce stade. Un corrigé complet devra être rédigé après la finalisation des exercices de cette édition. Les réponses partielles de la source conservée ne doivent pas être reprises sans vérification.
