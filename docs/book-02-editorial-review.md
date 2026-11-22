@@ -5,7 +5,7 @@
 **Series:** EduBooks Multilingual Learning Series 01  
 **Target:** A1–A2 approximate learning target; not official CEFR certification  
 **Languages:** English, French and Spanish  
-**Status:** First complete working manuscript / internal review candidate — not approved for sale.
+**Status:** Three independent first-draft manuscripts / technical PDF review candidates — not approved for sale.
 
 ## Editorial basis and project compliance
 
