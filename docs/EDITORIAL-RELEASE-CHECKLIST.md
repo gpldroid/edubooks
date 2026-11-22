@@ -11,7 +11,10 @@ Complete this checklist separately for each of the six editions. Every checked i
 ## Editorial and pedagogical approval
 - [ ] All planned units and appendices are present.
 - [ ] Qualified target-language review completed and recorded.
+- [ ] AI-assisted editorial review findings have been resolved or explicitly accepted by the human reviewer.
+- [ ] Human reviewer has checked AI suggestions against the source and documented corrections; AI output is not treated as sign-off.
 - [ ] Pedagogical review completed and recorded.
+- [ ] AI-assisted pedagogical review completed as a preliminary check; human reviewer has independently validated learning outcomes, progression, exercises and assessment.
 - [ ] Learning outcomes and level claims are accurate and appropriately qualified.
 - [ ] Examples are idiomatic, culturally suitable and correct.
 - [ ] Exercises are understandable and answerable in the target language.
@@ -29,10 +32,14 @@ Complete this checklist separately for each of the six editions. Every checked i
 - [ ] Final PDF metadata, title and language are correct.
 - [ ] PDF text is selectable/searchable and extraction is readable.
 - [ ] Fonts are embedded; accents and special characters render correctly.
+- [ ] Exact font package/version and licence notice are archived with the build evidence.
 - [ ] Headings, reading order, contrast and links are accessible.
 - [ ] Contents, bookmarks, page numbers, headers and page breaks are checked.
 - [ ] Every page has been inspected at full resolution.
 - [ ] PDF has been checked on desktop and mobile-sized screens.
+- [ ] PDF contains semantic tags for document language, headings, paragraphs, lists, tables, links and meaningful images.
+- [ ] Logical reading order and alt text are verified.
+- [ ] PDF passes an appropriate accessibility checker and manual screen-reader test.
 - [ ] Accessibility/tagged-PDF status is documented; do not claim compliance without evidence.
 
 ## Website assets and reader experience
@@ -52,6 +59,7 @@ Complete this checklist separately for each of the six editions. Every checked i
 - [ ] Responsive browser tests pass where configured.
 - [ ] Source commit and successful PDF build run are recorded.
 - [ ] Full PDF and preview PDF filenames, page counts and SHA-256 checksums are recorded.
+- [ ] SHA-256 sidecars match the exact artifacts approved by the owner.
 - [ ] Public preview and download URLs are verified after deployment.
 - [ ] Owner explicitly authorizes website publication for this edition.
 

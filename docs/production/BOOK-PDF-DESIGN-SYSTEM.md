@@ -56,3 +56,23 @@ A consistent print/digital-PDF system for all six standalone books in Multilingu
 
 ## Applying the system
 Use `.github/workflows/publish-book-01-pdfs.yml` as the internal-only Book 01 PDF review workflow after PR #27 is merged. It must build into temporary review storage and upload GitHub Actions artifacts only; it must not commit PDFs to `public/books/`. Use `.github/workflows/book-02-independent-editions.yml` for Book 02 review builds. Keep book-specific title-page and layout resources under `docs/production/`.
+
+
+## Accessibility release gate — mandatory
+
+The current Pandoc/XeLaTeX workflows produce searchable PDFs with embedded DejaVu fonts, but the latest technical QA reports identify `Tagged: no`. Searchable text and embedded fonts do not create a semantic structure tree.
+
+A final PDF must not be described as accessible or PDF/UA-conformant until:
+- The PDF has a semantic structure tree with correct document language and title metadata.
+- Headings, paragraphs, lists, tables, links and meaningful graphics are correctly tagged.
+- Reading order is verified independently of visual order.
+- Decorative elements are artifacts and meaningful images have appropriate alternative text.
+- Keyboard navigation, link annotations and text extraction are checked.
+- An appropriate automated PDF accessibility checker is run and its report archived.
+- A manual screen-reader test is recorded for each language edition.
+
+Do not attempt to satisfy this gate by merely changing the PDF metadata or setting a tagged flag. If the current XeLaTeX route cannot produce reliable tags, select a tagged-PDF-capable production route and validate the resulting structure tree. Keep the six editions in draft until this is complete.
+
+## AI-assisted review boundary
+
+AI review may identify likely language, structure, consistency and exercise issues. It is a preliminary quality-control input only. A qualified target-language editor and an independent language-teaching reviewer must validate the manuscript and record their own decisions. AI must not be named as a professional reviewer or used to claim certification.

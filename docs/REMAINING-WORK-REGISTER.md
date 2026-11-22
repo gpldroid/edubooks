@@ -1,6 +1,6 @@
 # EduBooks — Remaining work register
 
-**Updated:** 2026-11-22  
+**Updated:** 2026-11-22 (AI-assisted review and release audit)  
 **Publication model:** Free website-only library; in-browser PDF preview and direct PDF download. No sales, checkout, Gumroad or PayPal.
 
 Technical CI, editorial approval and public release are separate states.
@@ -58,6 +58,24 @@ Technical CI, editorial approval and public release are separate states.
 - [ ] Run `npm run check`, `npm test`, `npm run build` and responsive browser tests.
 - [ ] Merge, deploy and verify public URLs.
 - [ ] Record publication commit, deployment run, preview URL, download URL and date.
+
+## Latest AI-assisted release audit — 2026-11-22
+
+- [x] Inspect all six EN/FR/ES manuscript files; confirm 10 Book 01 units and 12 Book 02 units per language.
+- [x] Run structural scan for TODO/FIXME/placeholder markers and explicit external URLs; none were detected in the six manuscripts by this scan.
+- [x] Record AI-assisted language and pedagogical first-pass findings in `docs/editorial/ai-assisted-six-edition-review-2026-11-22.md`.
+- [x] Record owner confirmation for all six current catalogue SVG covers; legacy Gumroad covers remain excluded.
+- [x] Update PDF workflows to install DejaVu Sans explicitly, archive its Debian copyright/licence notice and package version, and generate SHA-256 sidecars for full PDFs and samples.
+- [ ] Inspect archived font package/version and licence evidence from both final six-language workflow runs; verify any external runtime font fetch is absent or licensed.
+- [ ] Obtain qualified language and pedagogical reviewer sign-off for each edition; AI review is not a substitute.
+- [ ] Complete itemized third-party source/quotation/asset clearance.
+- [ ] Inspect every rendered PDF page at full resolution; current workflows still create technical QA artifacts, not AI visual sign-off.
+- [ ] Implement semantic PDF tagging with correct document language, heading hierarchy, link annotations, reading order and alt text; validate with a PDF accessibility checker and screen reader. Existing XeLaTeX/Pandoc output reports `Tagged: no`; this is a hard release blocker.
+- [x] Rebuild all six internal review candidates; verify manuscript structure, searchable text and embedded fonts; record page counts, package version, source commit, workflow runs and SHA-256 in `docs/editorial/six-edition-pdf-rebuild-report-2026-11-22.md`.\n- [ ] Rebuild the six final publication PDFs after all language, pedagogical, visual and accessibility corrections; current hashes are review-candidate hashes only.
+- [ ] Obtain owner approval for the exact six final PDF checksums.
+- [ ] Only then publish six full PDFs and six previews, update catalogue status and deploy GitHub Pages.
+
+AI-assisted review is a preliminary quality-control layer. It does not certify language quality, pedagogy, copyright, plagiarism status, PDF/UA or accessibility. Do not mark any unchecked item complete.
 
 ## Explicitly out of scope
 - Gumroad product setup, prices, cover uploads, checkout, file attachments or publication.
