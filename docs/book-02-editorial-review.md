@@ -79,13 +79,15 @@ The source structure has now been checked programmatically: 1,239 lines, 12 unit
 No language, pedagogical, rights or accessibility review is being marked complete by this automated source audit. PR #1 remains Draft; no merge or commercial release is authorized.
 
 
-## Independent monolingual drafts authored (2026-11-22)
+## Independent monolingual drafts and language-alignment pass (2026-11-22)
 
-Created three separate first-draft manuscripts:
+Created and revised three separate first-draft manuscripts:
 - `content/books/02-essential-vocabulary/en/manuscript.md`
 - `content/books/02-essential-vocabulary/fr/manuscript.md`
 - `content/books/02-essential-vocabulary/es/manuscript.md`
 
-Each has 12 units, target-language instructions and practice, unit-level answer checks, a portfolio project, a final review test and a corresponding answer key. This is a substantive editorial draft, not a reviewer-approved edition. Human reviewers must verify naturalness, grammar, level progression, regional usage and every answer before release.
+Each has 12 units, target-language instructions and practice, 12 unit-level answer checks, a portfolio project, a monolingual final review test and a corresponding answer key. The French and Spanish front matter, section headings, self-checks, assessment criteria, glossary and release notes were localized after an audit found residual English template text. The English final test was also made English-only. Unit 12 retains limited English comparison because it explicitly teaches false friends; the foreign-language terms are the subject matter, not untranslated instructions.
 
-Added the matrix PDF workflow `.github/workflows/book-02-independent-editions.yml` to build and validate one PDF per language and upload each as a review candidate. CI validation is technical only and does not certify editorial quality.
+A first audit of unit-level closed-answer pairs found the keyed responses aligned with the prompts in the current draft. This is an internal consistency pass, not native-level proof. Human reviewers must verify naturalness, grammar, level progression, regional usage and every answer before release.
+
+The matrix PDF workflow `.github/workflows/book-02-independent-editions.yml` now checks language-specific section headings and all 12 unit answer-check sections before building and uploading one review candidate per language. One intermediate workflow revision was malformed and failed before jobs were created; the workflow has since been rewritten cleanly. A fresh green run is required to verify the corrected version. CI validation is technical only and does not certify editorial quality.
