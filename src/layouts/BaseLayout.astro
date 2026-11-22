@@ -23,7 +23,7 @@ const siteUrl = new URL(base, Astro.site).href;
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class={Astro.url.pathname === base || Astro.url.pathname === `${base}index.html` ? 'home-page' : 'inner-page'}>
 <a class="skip-link" href="#main" data-en="Skip to content" data-fr="Aller au contenu" data-es="Ir al contenido">Skip to content</a>
 <header class="site-header"><div class="container nav-wrap">
 <a class="brand" href={base} aria-label="EduBooks home"><span class="brand-mark">E</span><span class="brand-name">Edu<span>Books</span><small>BY IMAD LIMRANI</small></span></a>
