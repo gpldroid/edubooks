@@ -509,33 +509,33 @@ Create a five-part portfolio: people, home, food, daily routine and leisure. For
 
 # Final Review Test
 
-1. Name a family member who is your mother's brother.
-2. Complete: There ____ two chairs in the room. (en) / Il ____ deux chaises. (fr) / ____ dos sillas. (es)
-3. Complete the phrase for a quantity: a ____ of water / un ____ d'eau / un ____ de agua.
-4. Complete: try it ____ / l'essayer / probármela.
-5. Write one sentence about a daily routine.
-6. Give two directions to a public place.
-7. Write one polite question at a hotel reception.
-8. Name one task at work or in a class.
+1. What word describes your mother's brother?
+2. Complete: There ____ two chairs in the room.
+3. Complete the quantity phrase: a ____ of water.
+4. Complete the expression: try it ____.
+5. Write one sentence about your daily routine.
+6. Give two clear directions to a public place.
+7. Write one polite question to ask at a hotel reception.
+8. Name one task you do at work or in a class.
 9. Write one sentence describing a simple symptom.
-10. Describe today's weather.
-11. Express a preference and give a reason.
-12. Complete the collocation: do ____ / faire ses ____ / hacer los ____.
+10. Describe the weather today in one sentence.
+11. State a preference and give one reason.
+12. Complete the collocation: do ____.
 
 # Final Review — Answer Key
 
-1. Uncle / oncle / tío.
-2. are / y a / Hay.
-3. glass / verre / vaso.
-4. on / (l') / (la) — context-dependent; acceptable full phrase: try it on / l'essayer / probármela.
-5. Open response: check present tense and a clear routine.
-6. Open response: check imperative forms and sequence.
-7. Open response: check a polite, understandable question.
+1. Uncle.
+2. are.
+3. glass.
+4. on.
+5. Open response: check the present tense and a clear routine.
+6. Open response: check imperative forms and a logical sequence.
+7. Open response: check that the question is polite and understandable.
 8. Open response: accept relevant work or study vocabulary.
 9. Open response: accept a simple symptom phrase; this is language practice, not medical advice.
 10. Open response: check an appropriate weather expression.
-11. Open response: preference plus a reason.
-12. homework / devoirs / deberes.
+11. Open response: accept a clear preference with a reason.
+12. homework.
 
 # Personal Vocabulary Record
 
