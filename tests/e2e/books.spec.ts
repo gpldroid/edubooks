@@ -15,7 +15,7 @@ test('book library explains publication status and does not expose draft manuscr
 test('library search and category controls remain usable without published books', async ({ page }) => {
   await page.goto(libraryPath);
   await page.getByRole('searchbox', { name: 'Search the library' }).fill('grammar');
-  await page.getByLabel('Learning area', { exact: true }).selectOption('language-learning');
+  await page.getByRole('link', { name: /Language learning/i }).click();
   await expect(page.locator('.empty-state')).toBeVisible();
   await expect(page.locator('#no-results')).toBeHidden();
 });
