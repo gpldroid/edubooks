@@ -88,6 +88,7 @@ jobs:
               grep -Fq '4. la —' "$FILE"
               grep -Fq '1) Me duele la ____ (cabeza).' "$FILE"
               grep -Fq 'cabeza; tos;' "$FILE"
+              test "$(grep -c 'Estado de publicación: NO AUTORIZADO PARA LA VENTA' "$FILE")" -eq 1
               ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
               ;;
           esac
