@@ -250,6 +250,123 @@ Para indicar cuándo ocurre una actividad, utiliza **a**: «La clase empieza a l
 **Criterio de logro:** Puedo reconocer números frecuentes, escribir una fecha claramente y preguntar o decir la hora.
 
 
+## Unidad 7 — Información personal y preguntas
+
+**Objetivo:** Podrás formular y comprender preguntas sencillas sobre el nombre, el lugar de residencia, los idiomas y los datos de contacto, respetando la privacidad.
+
+### Preguntar y responder
+- **Qué**: «¿Qué idiomas hablas?»
+- **Dónde**: «¿Dónde vives?»
+- **Cuándo**: «¿Cuándo es la cita?»
+- **Quién**: «¿Quién es esa persona?»
+- **Cómo**: «¿Cómo te llamas?»
+
+En español, las preguntas directas llevan signos de apertura y cierre: **¿...?**. Las palabras interrogativas llevan tilde cuando preguntan: *qué, dónde, cuándo, quién, cómo*. Practica la entonación y la escritura completa de la pregunta.
+
+### Proteger los datos personales
+Puedes utilizar datos ficticios. No compartas una dirección real, un número de teléfono ni otra información privada en una actividad pública. Si un formulario solicita un dato que no quieres proporcionar, pregunta para qué se necesita.
+
+### Actividades
+1. Completa: «¿____ vives?» (Dónde / Cuándo)
+2. Completa: «¿____ idiomas hablas?» (Qué / Quién)
+3. Añade los signos de interrogación: «Dónde vive tu compañero»
+4. Relaciona: quién / dónde / cuándo / cómo con persona / lugar / momento / manera.
+5. Escribe tres preguntas para un compañero ficticio y respóndelas con información inventada.
+
+**Criterio de logro:** Puedo formular preguntas básicas y responder sin revelar datos privados.
+
+## Unidad 8 — Lenguaje del aula y del aprendizaje
+
+**Objetivo:** Podrás comprender y utilizar instrucciones habituales y pedir ayuda durante una clase.
+
+### Expresiones útiles
+- «Abre el libro, por favor».
+- «Escucha y repite».
+- «Trabaja con un compañero».
+- «Escribe la respuesta».
+- «¿Puedes repetirlo, por favor?»
+- «¿Qué significa esta palabra?»
+- «¿Cómo se pronuncia?»
+- «No lo entiendo».
+- «¿Puedes hablar más despacio?»
+
+Las instrucciones suelen utilizar el imperativo: **abre**, **escucha**, **escribe**. Añade *por favor* para que una petición suene más cortés. También puedes usar **¿Puedes…?** o **¿Podrías…?** para pedir ayuda.
+
+### Estrategias de aprendizaje
+Cuando no entiendas algo, identifica el problema: una palabra, una instrucción, un sonido o la idea general. Haz una pregunta concreta. En tu cuaderno, anota cada palabra con una frase breve de ejemplo, no solo con una traducción.
+
+### Actividades
+1. Elige una instrucción de clase: (a) «Escucha y repite»; (b) «¿Dónde vives?»
+2. Completa: «¿Puedes hablar más ____?» (despacio / lenta)
+3. Escribe una petición educada para pedir al profesor que repita.
+4. Relaciona: pronunciar / significado / repetir con decir un sonido claramente / lo que expresa una palabra / decir otra vez.
+5. Escribe tres instrucciones para un compañero que realiza una actividad de relacionar.
+
+**Criterio de logro:** Puedo seguir instrucciones habituales y pedir aclaraciones con educación.
+
+## Unidad 9 — Las primeras frases
+
+**Objetivo:** Podrás construir oraciones afirmativas y negativas sencillas con **ser**, **estar** y el presente.
+
+### Modelos de oración
+Con **ser** o **estar**:
+- Soy estudiante.
+- Ella está en casa.
+- Estamos preparados.
+
+Con el presente:
+- Estudio español.
+- Él estudia español.
+- Vivimos en una ciudad.
+
+Para negar, coloca **no** delante del verbo: «No estoy cansado»; «Ella no vive aquí». En preguntas, conserva los signos de interrogación: «¿No trabajas hoy?»
+
+### Orden de las palabras
+Una oración afirmativa sencilla suele seguir el orden **sujeto + verbo + complementos**: «Mi amiga lee un libro». El sujeto puede omitirse cuando la forma verbal deja claro quién realiza la acción: «Leo cada día».
+
+### Actividades
+1. Completa: «Ellos ____ preparados». (está / están)
+2. Completa: «Mina ____ español cada día». (estudia / estudio)
+3. Escribe en negativo: «Trabajo aquí».
+4. Corrige: «Él no estudias inglés».
+5. Ordena: cada mañana / lee / ella / un libro.
+6. Escribe cuatro frases: dos sobre una persona ficticia y dos negativas.
+
+**Criterio de logro:** Puedo escribir oraciones afirmativas y negativas sencillas con un orden comprensible.
+
+## Unidad 10 — Proyecto integrado para principiantes
+
+**Objetivo:** Podrás combinar las destrezas del cuaderno en una presentación breve y un intercambio sencillo de información.
+
+### Proyecto: mi perfil de principiante
+Crea una página de presentación sobre ti o sobre una persona ficticia. Incluye:
+1. Un nombre y un saludo.
+2. Tres datos: origen, lugar de residencia e idiomas.
+3. Dos aficiones o actividades cotidianas.
+4. Una fecha u hora para un acontecimiento ficticio.
+5. Tres preguntas que otro estudiante podría hacer.
+6. Un diálogo de cuatro a seis intervenciones.
+
+Escribe oraciones completas. Revisa las mayúsculas, la ortografía, los verbos **ser** y **estar**, las formas del presente y los signos de interrogación.
+
+### Actividad oral
+Lee tu perfil en voz alta. Haz pausas entre las ideas. Formula dos preguntas a un compañero y responde a dos preguntas. Si trabajas solo, graba los dos papeles del diálogo.
+
+### Rúbrica de autoevaluación
+Asigna un punto por cada elemento:
+- La información está organizada y se entiende con facilidad.
+- Mis oraciones tienen un sujeto y un verbo claros.
+- Puedo formular y responder preguntas sencillas.
+- Utilizo saludos y expresiones de cortesía.
+- Puedo decir una fecha o una hora claramente.
+- He revisado la ortografía y la puntuación.
+
+**Interpretación:** 5–6 puntos: preparado para una conversación de repaso; 3–4: revisa los aspectos pendientes; 0–2: vuelve a estudiar las unidades necesarias y repite la actividad. Esta rúbrica es una herramienta de aprendizaje, no un examen oficial.
+
+### Reflexión final
+¿Qué destreza ha mejorado más? ¿Qué expresión utilizarás en una conversación real? Elige una meta pequeña para los próximos siete días.
+
+
 ## Soluciones
 
 Aún no está aprobado. Se deberá elaborar una clave de respuestas completa después de finalizar los ejercicios de esta edición. No se deben copiar sin verificar las respuestas parciales de la fuente conservada.
