@@ -151,6 +151,114 @@ Stress can vary by accent. The examples are common models, not a claim that ever
 **Success check:** I can count syllables in familiar words, notice a stressed beat and use a model to practise pronunciation.
 
 
+## Unit 4 — Greetings and Politeness
+
+**Learning goal:** You can greet someone, choose a suitable polite expression and close a short everyday exchange.
+
+### 4.1 Greetings depend on the situation
+Common greetings include **Hello**, **Hi**, **Good morning**, **Good afternoon** and **Good evening**. *Hi* is informal. *Hello* works in many situations. Use *Good morning* earlier in the day; the exact time people change to *Good afternoon* or *Good evening* varies.
+
+To ask how someone is, say “How are you?” Common replies include “I’m fine, thanks”, “I’m well, thank you” and “I’m okay”. A brief “And you?” returns the question.
+
+### 4.2 Polite words
+- **Please** makes a request more polite: “A coffee, please.”
+- **Thank you / Thanks** show gratitude.
+- **You’re welcome** responds to thanks.
+- **Excuse me** gets attention or introduces a polite interruption.
+- **Sorry** apologizes or expresses regret.
+
+### 4.3 A short exchange
+A: Good morning. How are you?  
+B: I’m fine, thanks. And you?  
+A: Very well, thank you.  
+B: Excuse me, is this seat free?  
+A: Yes, it is.  
+B: Thank you.  
+A: You’re welcome.
+
+Notice that a polite question often sounds more natural than a direct command.
+
+### Practice
+1. Choose a suitable greeting for 9:00 a.m.: Good morning / Good night.
+2. Complete: “A glass of water, ____.”
+3. What can you say before asking a stranger for help: “Excuse me” or “You’re welcome”?
+4. Match: (a) Thank you; (b) Sorry; (c) Hello — (1) greeting; (2) gratitude; (3) apology.
+5. Write a four-line dialogue: greet someone, ask how they are, make a polite request and say thank you.
+
+**Success check:** I can begin and close a short exchange and use basic polite expressions appropriately.
+
+## Unit 5 — Introducing Yourself
+
+**Learning goal:** You can give a simple introduction with your name, where you are from, where you live and one interest.
+
+### 5.1 Useful introduction patterns
+- “My name is Lina.” / “I’m Lina.”
+- “I’m from Morocco.” (origin)
+- “I live in Rabat.” (current home)
+- “I speak Arabic and a little English.”
+- “I’m learning English.”
+- “I like music and reading.”
+
+Use **I am / I’m** before a name or description. Use **I live in** before a town or country where you live. Use **I’m from** to talk about origin.
+
+### 5.2 Ask another person
+- “What’s your name?”
+- “Where are you from?”
+- “Where do you live?”
+- “What languages do you speak?”
+- “What do you like doing?”
+
+For a first meeting, keep questions friendly and allow the other person not to answer personal questions. You may invent details for practice.
+
+### 5.3 Model introduction
+“Hello. I’m Lina. I’m from Morocco, and I live in Rabat. I speak Arabic and French. I’m learning English because I want to communicate when I travel. I like reading.”
+
+### Practice
+1. Complete: “I ____ from Spain.” (am / is)
+2. Complete: “She ____ in Madrid.” (live / lives)
+3. Choose the correct phrase for origin: “I live from…” / “I’m from…”
+4. Write three sentences introducing a fictional learner.
+5. Write two questions you can ask a new classmate.
+
+**Success check:** I can introduce myself in four or five clear sentences and ask two simple questions.
+
+## Unit 6 — Numbers, Dates and Time
+
+**Learning goal:** You can recognize common numbers, give a simple date and ask or answer the time.
+
+### 6.1 Numbers for everyday use
+Practise these number groups:
+- 0–10: zero, one, two, three, four, five, six, seven, eight, nine, ten.
+- 11–20: eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty.
+- Tens: thirty, forty, fifty, sixty, seventy, eighty, ninety, one hundred.
+
+Pay attention to similar forms such as **thirteen / thirty**, **fourteen / forty** and **fifteen / fifty**. The stressed syllable helps distinguish many teen numbers from the corresponding tens.
+
+### 6.2 Dates
+In British English, dates are commonly written day–month–year: **5 May 2026**. In American English, month–day–year is common: **May 5, 2026**. Say the month clearly to avoid confusion with all-numeric dates.
+
+Months begin with a capital letter: January, February, March. Days also begin with a capital: Monday, Tuesday.
+
+### 6.3 Asking the time
+- “What time is it?”
+- “It’s three o’clock.”
+- “It’s half past four.” (4:30)
+- “It’s quarter past six.” (6:15)
+- “It’s quarter to eight.” (7:45)
+
+Digital-style expressions such as “six fifteen” and “seven forty-five” are also common. Use **at** with a clock time: “The lesson starts at nine.”
+
+### Practice
+1. Write 14 and 40 in words.
+2. Which number is fifty: 15 / 50?
+3. Write 5 May 2026 in a common American date format.
+4. Complete: “The class starts ____ 8:30.”
+5. Write 6:15 using “quarter past”.
+6. Write one sentence with a day, a date and a time for a fictional appointment.
+
+**Success check:** I can recognize common numbers, write a date clearly and ask or answer a simple time question.
+
+
 ## Answer key
 
 Not yet approved. A complete answer key must be authored after the exercises in this edition are finalized. The partial answers in the preserved source must not be copied without verification.
