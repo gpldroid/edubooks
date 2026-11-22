@@ -367,7 +367,7 @@ J'ai mal à la tête et j'ai mal à la gorge. Y a-t-il une pharmacie près d'ici
 Pour exprimer une douleur, utilisez « avoir mal à » : j'ai mal à la tête. Ces expressions servent à apprendre la langue et ne constituent pas un conseil médical.
 
 ## Exercices guidés
-1) J'ai mal à la ____. (head) 2) Il a ____ (a cough). 3) Demandez où se trouve la pharmacie la plus proche.
+1) J'ai mal à la ____. (la tête) 2) Il a ____ (une toux). 3) Demandez où se trouve la pharmacie la plus proche.
 
 ## Corrigé
 tête; une toux; Où se trouve la pharmacie la plus proche ?
@@ -406,7 +406,7 @@ Il fait beau aujourd'hui ; allons nous promener. S'il pleut demain, nous pouvons
 Pour la météo, dites « il fait froid » ou « il pleut ». Pour proposer une activité, utilisez « On peut… » ou « Allons… ».
 
 ## Exercices guidés
-1) Aujourd'hui, il fait ____ (sunny). 2) En hiver, il fait souvent ____. 3) Invitez un ami à sortir.
+1) Aujourd'hui, il fait ____ (beau et lumineux). 2) En hiver, il fait souvent ____. 3) Invitez un ami à sortir.
 
 ## Corrigé
 beau / ensoleillé; froid; réponses personnelles
@@ -445,7 +445,7 @@ J'aime apprendre les langues parce que c'est utile. Je suis parfois nerveux quan
 Utilisez « aimer/préférer + nom ou infinitif ». Distinguez « ennuyeux » (qui provoque l'ennui) et « ennuyé » (qui ressent l'ennui).
 
 ## Exercices guidés
-1) Ce film est ____ (boring). 2) J'aime lire ____ c'est reposant. 3) Donnez un avis avec une raison.
+1) Ce film est ____ (qui provoque l'ennui). 2) J'aime lire ____ c'est reposant. 3) Donnez un avis avec une raison.
 
 ## Corrigé
 ennuyeux; parce que; réponses personnelles
