@@ -1,5 +1,7 @@
 # EduBooks Responsive UI and Build-Stability Audit
 
+> **Historical audit snapshot — superseded on 2026-11-22.** This document records an earlier project state and must not be used as the current release checklist. The active distribution policy is the free, website-only PDF library described in [SITE-ONLY-PUBLISHING-MODEL.md](SITE-ONLY-PUBLISHING-MODEL.md). The current catalogue remains empty; unapproved legacy PDFs have been removed from the deployable public directory. See [PROJECT-HANDOVER.md](PROJECT-HANDOVER.md) and [REMAINING-WORK-REGISTER.md](REMAINING-WORK-REGISTER.md) for current status.
+
 **Scope:** Astro site source on `main`, responsive design, navigation, typography, browser behavior, and build validation.  
 **Implementation branch:** `feat/responsive-3d-ui-audit`  
 **Pull request:** [#10 — Responsive Astro UI, typography and project stability audit](https://github.com/gpldroid/edubooks/pull/10)
