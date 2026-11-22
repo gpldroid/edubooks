@@ -7,26 +7,22 @@ Store: https://edupdf.gumroad.com
 
 ## 1. Read this first
 
-The project is not commercially launched. The six language-specific Gumroad products are unpublished drafts only. No approved final PDF editions are attached. The next developer/editor must preserve that state.
+The project is not commercially launched. The six language-specific Gumroad products are unpublished drafts only. No approved final PDF editions are attached. The next developer/editor must preserve that state. Selling remains explicitly deferred until the six editions pass all release gates and the owner authorizes release.
 
 GitHub changes merged to `main`:
 - [PR #8 — footer store link, six SVG cover masters, README and handover updates](https://github.com/gpldroid/edubooks/pull/8).
 - [PR #7 — independent language-edition architecture, Book 01 EN/FR/ES draft manuscripts, Book 01 source inventory and Book 02 source audit](https://github.com/gpldroid/edubooks/pull/7).
 - [PR #13 — mobile UI and PDF preview improvements](https://github.com/gpldroid/edubooks/pull/13).
 - The footer now points to `https://edupdf.gumroad.com`.
-- Astro build validation passed on PR #8 before its documentation-only follow-up commits. Re-run the site build/deploy workflow after the merged commits.
+- PR #17 and PR #18 have now also been merged after successful CI and artifact verification; see the authoritative status below.
 
 ## 1A. Current pull-request and review state (2026-11-22)
 
-- PR #13 is merged (mobile UI/PDF preview).
-- PR #12 is closed without merge; its four-page A1 sample preview failed only because the workflow required at least five pages.
-- PR #14 is the replacement draft. It changes the minimum to four pages and adds a fix-branch push trigger. The exact Pandoc/XeLaTeX build passed locally: A4, four pages, 638 extracted words and all required text checks. Astro validation passed; the dedicated GitHub Actions artifact upload remains unconfirmed. The preview contains Arabic support text and is a legacy internal sample, not one of the six approved editions.
-- PR #15 is a draft repairing the corrupted Book 01 EN/FR/ES outline formatting and French/Spanish boilerplate. It does not complete the books.
-- PR #9 is a draft with three Book 02 manuscripts and three successful CI PDF builds. It is stacked on PR #1.
-- PR #4 is a successful legacy trilingual Book 01 PDF build, not a set of independent editions.
-- PR #1 is the draft integrated trilingual Book 02 source used as PR #9's base.
-- PR #16 updates this README and handover with the verified status and initial PDF QA findings.
-- No draft PR has been merged as part of this review. All Gumroad products remain unpublished, and no PDF is approved for attachment or sale.
+- PR #17 is merged: three independent Book 02 EN/FR/ES manuscripts, language matrix PDF workflow and layout safeguards. Run #44986040328 passed all three jobs and uploaded three review-candidate PDFs.
+- PR #18 is merged: four-page English Starter A1 internal preview workflow. Run #44986069717 passed and uploaded its review artifact. This is a legacy internal sample, not one of the six editions.
+- PR #15, #16, #1 and #4 are merged as documented in the README. PR #17 and #14 were superseded/closed; their clean replacements are #17 and #18.
+- Astro validation and Book 01 legacy PDF workflow also passed in the PR #17 CI cycle.
+- Technical CI success does not constitute editorial, pedagogical, visual, rights or accessibility approval. No final PDFs are approved, no PDF is attached to Gumroad, and all six products remain unpublished.
 
 ## 2. Approved publishing model
 
@@ -36,7 +32,7 @@ Two titles, each as three separate, monolingual learner books:
 
 Each edition needs its own title/front matter, explanations, examples, exercises, answer key, glossary and back matter in its target language. Cross-language comparison activities must be rewritten as appropriate target-language exercises. Do not use automatic block splitting as the final editorial method.
 
-The architecture and migration policy are in `docs/editorial/independent-language-editions.md`. Book 01 has three outline-stage manuscripts at `content/books/01-language-foundations/{en,fr,es}/manuscript.md`. Their current main-branch files were found to have every character split onto its own line; PR #15 repairs that formatting and localizes French/Spanish metadata and boilerplate. Even after that repair, these remain outlines and need full lesson authoring. The original multilingual manuscript remains preserved. Book 02 has a 1,238-line trilingual source on PR #1 (`feat/book-02-essential-vocabulary`) and three independent first-draft manuscripts on PR #9 (`work/book-02-independent-editions`). PR #9 is stacked on PR #1's branch and should not be merged independently without reconciling that dependency. See `docs/editorial/book-02/source-audit.md` and PR #9 for the migration record.
+The architecture and migration policy are in `docs/editorial/independent-language-editions.md`. Book 01 has three outline-stage manuscripts at `content/books/01-language-foundations/{en,fr,es}/manuscript.md`. Their current main-branch files were found to have every character split onto its own line; PR #15 repairs that formatting and localizes French/Spanish metadata and boilerplate. Even after that repair, these remain outlines and need full lesson authoring. The original multilingual manuscript remains preserved. Book 02 has a 1,238-line trilingual source on PR #1 (`feat/book-02-essential-vocabulary`) and three independent first-draft manuscripts now merged to `main` by PR #17. PR #17 also adds the matrix PDF workflow and layout safeguards; the original trilingual source remains preserved. See `docs/editorial/book-02/source-audit.md` and PR #9 for the migration record.
 
 ## 3. Gumroad store state
 
@@ -74,7 +70,7 @@ Detailed store procedure: `docs/STORE-OPERATIONS.md`.
 - Deployment: `.github/workflows/deploy.yml`.
 - Legacy Book 01 source PDF build: `.github/workflows/book-01-pdf.yml`.
 - Book 02 independent edition matrix build (PR #9): `.github/workflows/book-02-independent-editions.yml`.
-- Book 01 A1 review-only sample preview (PR #14): `.github/workflows/english-starter-a1-preview.yml`.
+- Book 01 A1 review-only sample preview (PR #18): `.github/workflows/english-starter-a1-preview.yml`.
 - Book sources: `content/books/`.
 - Production design files: `docs/production/`.
 
@@ -95,14 +91,14 @@ Pages must use GitHub Actions as the deployment source. Do not add secrets to re
 - Legacy source: `content/books/01-language-foundations/manuscript.md`; it contains mixed English, French and Spanish content.
 - The independent EN/FR/ES files on `main` are outline-stage drafts, not complete books. A source-format defect split their body into single-character lines; PR #15 repairs this and localizes French/Spanish front matter and status text.
 - The current Book 01 PDF workflow still builds the legacy trilingual source. PR #4 produced a 28-page A4 review candidate with embedded fonts, but it is not three independent editions.
-- PR #15 must pass review before merge. After that, author all missing lessons, exercises, assessment material and answer keys before designing separate PDF workflows.
+- PR #15 is merged; the manuscripts remain incomplete. After that, author all missing lessons, exercises, assessment material and answer keys before designing separate PDF workflows.
 - Existing editorial report: `docs/book-01-editorial-review.md`. No language, pedagogical, rights or accessibility sign-off is complete.
 
 ### Book 02 — Essential Vocabulary
 - PR #1 preserves the original integrated trilingual source and its legacy PDF workflow. It is still a draft.
 - PR #9 creates three separate EN/FR/ES working manuscripts, each with 12 units, localized practice, answer checks, an integrated project, final review test, answer key and glossary.
-- The PR #9 matrix CI passed for all three languages and generated review PDFs (EN 13 pages, FR 14 pages, ES 14 pages). Initial visual sampling found readable layouts, localized headings and embedded DejaVu Sans fonts, with no blank pages in the inspected samples. The Spanish editorial note continues onto a mostly empty final page; refine pagination. Full page-by-page proof, language editing, pedagogy, answer-key reconciliation and rights review remain incomplete.
-- PR #9 is based on PR #1's branch; preserve this dependency and do not merge out of order.
+- The PR #17 matrix CI passed for all three languages and generated review PDFs (EN 13 pages, FR 14 pages, ES 14 pages). Initial visual sampling found readable layouts, localized headings and embedded DejaVu Sans fonts, with no blank pages in the inspected samples. The Spanish editorial note continues onto a mostly empty final page; refine pagination. Full page-by-page proof, language editing, pedagogy, answer-key reconciliation and rights review remain incomplete.
+- PR #17 is merged; the original trilingual source remains preserved by PR #1.
 
 ## 6. Release gates — each edition independently
 
