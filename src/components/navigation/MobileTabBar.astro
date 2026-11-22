@@ -2,6 +2,9 @@
 import Icon3D from '../ui/Icon3D.astro';
 interface Props { base: string }
 const { base } = Astro.props;
+const currentPath = Astro.url.pathname;
+const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+const route = (segment = "") => `${normalizedBase}${segment}`;
 const items = [
   { label: "Home", fr: "Accueil", es: "Inicio", href: route(), key: "home", icon: "home" },
   { label: "Explore", fr: "Explorer", es: "Explorar", href: `${route()}#categories`, key: "explore", icon: "compass" },
@@ -9,9 +12,7 @@ const items = [
   { label: "FAQ", fr: "FAQ", es: "FAQ", href: route("faq/"), key: "faq", icon: "help" },
   { label: "About", fr: "À propos", es: "Acerca de", href: route("about/"), key: "about", icon: "user" }
 ] as const;
-const currentPath = Astro.url.pathname;
-const normalizedBase = base.endsWith("/") ? base : `${base}/`;
-const route = (segment = "") => `${normalizedBase}${segment}`;
+
 const homePath = normalizedBase;
 const active = currentPath.includes("/books") ? "books" : currentPath.includes("/faq") ? "faq" : currentPath.includes("/about") ? "about" : currentPath === homePath || currentPath === base ? "home" : "";
 ---
