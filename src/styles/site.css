@@ -92,7 +92,7 @@ p, li { line-height: 1.75; }
   border-radius: 999px;
   background: var(--eb-teal);
 }
-.mobile-tabbar .tab-icon {
+.mobile-tabbar .icon-3d {
   width: 24px;
   height: 24px;
   overflow: visible;
@@ -190,7 +190,7 @@ p, li { line-height: 1.75; }
   .brand-name small { font-size: 7px; letter-spacing: 1.4px; }
   .menu-toggle { padding: 8px 10px; }
   .mobile-tabbar a { font-size: 9px; }
-  .mobile-tabbar .tab-icon { width: 22px; height: 22px; }
+  .mobile-tabbar .icon-3d { width: 22px; height: 22px; }
   .publication-card { padding: 13px; }
   .publication-cover { min-height: 210px; padding: 20px; }
 }
