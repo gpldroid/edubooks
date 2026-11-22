@@ -12,6 +12,8 @@ on:
 permissions:
   contents: read
 
+# Internal-only release QA: capture font licence evidence and PDF SHA-256.
+
 concurrency:
   group: book-01-independent-editions
   cancel-in-progress: true
