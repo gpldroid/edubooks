@@ -406,7 +406,7 @@ Il fait beau aujourd'hui ; allons nous promener. S'il pleut demain, nous pouvons
 Pour la météo, dites « il fait froid » ou « il pleut ». Pour proposer une activité, utilisez « On peut… » ou « Allons… ».
 
 ## Exercices guidés
-1) Aujourd'hui, il fait ____ (beau et lumineux). 2) En hiver, il fait souvent ____. 3) Invitez un ami à sortir.
+1) Aujourd'hui, le temps est ____ (beau et lumineux). 2) En hiver, il fait souvent ____. 3) Invitez un ami à sortir.
 
 ## Corrigé
 beau / ensoleillé; froid; réponses personnelles
