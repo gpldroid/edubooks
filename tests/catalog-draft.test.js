@@ -9,7 +9,7 @@ test('catalogue defines both titles in EN, FR and ES', () => {
   assert.match(catalog, /editions\(foundationsBase, 'language-foundations'\)/);
   assert.match(catalog, /editions\(vocabularyBase, 'essential-vocabulary'\)/);
   assert.match(catalog, /\['en', 'fr', 'es'\] as const/);
-  assert.equal((catalog.match(/status: 'draft'/g) ?? []).length, 2);
+  assert.equal((catalog.match(/status: 'draft',/g) ?? []).length, 2);
 });
 
 test('every review-only language edition has a clearly marked cover asset', () => {
