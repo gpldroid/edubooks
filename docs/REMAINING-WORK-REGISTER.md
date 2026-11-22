@@ -13,7 +13,7 @@ Technical CI, editorial approval and public release are separate states.
 - [ ] Ensure preview opens in-browser and download serves the full PDF from EduBooks, respecting `/edubooks`.
 - [ ] Verify preview and download on desktop and mobile after Pages deployment.
 - [ ] Keep internal review artifacts outside `public/`; never link GitHub Actions artifacts publicly.
-- [ ] Treat the three existing Book 01 PDFs in `public/books/` as legacy, unapproved artifacts until re-reviewed.
+- [x] Remove three unapproved legacy Book 01 PDFs from deployable public assets.
 
 ## P1 — Book 01: Language Foundations (EN / FR / ES)
 - [x] Complete first-draft manuscripts across ten units in each language.
