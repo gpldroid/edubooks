@@ -1,22 +1,14 @@
 ---
 import type { Book } from '../../data/catalog';
 import PdfViewer from './PdfViewer.astro';
-
-interface Props {
-  book: Book;
-  base: string;
-}
-
+interface Props { book: Book; base: string; }
 const { book, base } = Astro.props;
-const coverUrl = `${base}${book.cover.replace(/^\\//, '')}`;
-const pdfUrl = `${base}${book.previewPdf.replace(/^\\//, '')}`;
+const coverUrl = `${base}${book.cover.slice(1)}`;
+const pdfUrl = `${base}${book.previewPdf.slice(1)}`;
 ---
 <article class="book-detail">
   <div class="book-intro">
-    <figure class="detail-cover">
-      <img src={coverUrl} alt={book.coverAlt} decoding="async">
-      <figcaption data-en="Book cover" data-fr="Couverture du livre" data-es="Portada del libro">Book cover</figcaption>
-    </figure>
+    <figure class="detail-cover"><img src={coverUrl} alt={book.coverAlt} decoding="async"><figcaption data-en="Book cover" data-fr="Couverture du livre" data-es="Portada del libro">Book cover</figcaption></figure>
     <div class="book-summary">
       <span class="preview-label" data-en="FREE READING PREVIEW" data-fr="APERÇU DE LECTURE" data-es="VISTA PREVIA DE LECTURA">FREE READING PREVIEW</span>
       <h2 data-en="About this book" data-fr="À propos de ce livre" data-es="Sobre este libro">About this book</h2>
@@ -32,49 +24,12 @@ const pdfUrl = `${base}${book.previewPdf.replace(/^\\//, '')}`;
       <p class="no-checkout" data-en="This page is for reading and exploring the book. No purchase or payment is available here." data-fr="Cette page permet de découvrir et de lire un aperçu du livre. Aucun achat ni paiement n’est proposé ici." data-es="Esta página permite conocer y leer una muestra del libro. Aquí no hay compras ni pagos disponibles.">This page is for reading and exploring the book. No purchase or payment is available here.</p>
     </div>
   </div>
-
   <section class="toc-section" aria-labelledby="toc-heading">
-    <div class="toc-heading-row">
-      <div>
-        <span class="preview-label" data-en="INSIDE THE BOOK" data-fr="DANS LE LIVRE" data-es="DENTRO DEL LIBRO">INSIDE THE BOOK</span>
-        <h2 id="toc-heading" data-en="Table of contents" data-fr="Sommaire" data-es="Índice">Table of contents</h2>
-      </div>
-      <span class="toc-count">{book.toc.length} <span data-en="sections" data-fr="rubriques" data-es="secciones">sections</span></span>
-    </div>
-    <ol class="toc-list">
-      {book.toc.map((item) => (
-        <li>
-          <span class="toc-title" data-en={item.titleEn} data-fr={item.titleFr} data-es={item.titleEs}>{item.titleEn}</span>
-          {item.page && <span class="toc-page" aria-label={`Page ${item.page}`}>{item.page}</span>}
-        </li>
-      ))}
-    </ol>
+    <div class="toc-heading-row"><div><span class="preview-label" data-en="INSIDE THE BOOK" data-fr="DANS LE LIVRE" data-es="DENTRO DEL LIBRO">INSIDE THE BOOK</span><h2 id="toc-heading" data-en="Table of contents" data-fr="Sommaire" data-es="Índice">Table of contents</h2></div><span class="toc-count">{book.toc.length} <span data-en="sections" data-fr="rubriques" data-es="secciones">sections</span></span></div>
+    <ol class="toc-list">{book.toc.map((item) => <li><span class="toc-title" data-en={item.titleEn} data-fr={item.titleFr} data-es={item.titleEs}>{item.titleEn}</span>{item.page && <span class="toc-page" aria-label={`Page ${item.page}`}>{item.page}</span>}</li>)}</ol>
   </section>
-
   <PdfViewer src={pdfUrl} title={`${book.title} — PDF preview`} />
 </article>
-
 <style>
-  .book-detail{max-width:1080px;margin:0 auto}
-  .book-intro{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:clamp(28px,5vw,58px);align-items:start}
-  .detail-cover{position:relative;margin:0;padding:12px;border:1px solid #e3e9e8;border-radius:16px;background:#f2f5f3;box-shadow:0 16px 36px rgb(16 31 50 / 9%)}
-  .detail-cover img{display:block;width:100%;height:auto;border-radius:8px}
-  .detail-cover figcaption{padding:9px 4px 0;text-align:center;color:#71808c;font-size:11px}
-  .book-summary{min-width:0}.preview-label{font-size:10px;letter-spacing:.15em;color:#388b82;font-weight:900}
-  .book-summary h2,.toc-section h2{font-size:clamp(25px,3vw,34px);color:#183452;margin:7px 0 12px}
-  .description{color:#586a7a;line-height:1.85;margin:0 0 22px}
-  .book-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
-  .book-facts div{padding:12px;border:1px solid #e4ebe8;border-radius:10px;background:#fbfcfb}
-  .book-facts dt{font-size:10px;color:#71808c;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-  .book-facts dd{margin:3px 0 0;color:#20354b;font-size:13px;font-weight:700;overflow-wrap:anywhere}
-  .no-checkout{margin:20px 0 0;padding:12px 14px;border-left:3px solid #388b82;background:#f1f7f5;color:#49655f;font-size:12px}
-  .toc-section{margin-top:clamp(38px,6vw,72px);padding:clamp(20px,3vw,34px);border:1px solid #e3eae7;border-radius:16px;background:#fff}
-  .toc-heading-row{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:16px}
-  .toc-section h2{margin-bottom:0}.toc-count{flex:none;padding:6px 10px;border-radius:30px;background:#edf5f2;color:#388b82;font-size:11px;font-weight:800}
-  .toc-list{list-style:none;margin:0;padding:0;counter-reset:toc}
-  .toc-list li{display:flex;align-items:baseline;gap:14px;padding:13px 2px;border-bottom:1px solid #edf0ef;counter-increment:toc}
-  .toc-list li:last-child{border-bottom:0}.toc-list li::before{content:counter(toc,decimal-leading-zero);color:#388b82;font-size:11px;font-weight:900}
-  .toc-title{flex:1;color:#20354b;font-size:14px;font-weight:600}.toc-page{color:#8a969f;font-size:12px;font-variant-numeric:tabular-nums}
-  @media(max-width:700px){.book-intro{grid-template-columns:minmax(0,1fr)}.detail-cover{width:min(100%,320px);margin-inline:auto}.book-facts{grid-template-columns:1fr 1fr}}
-  @media(max-width:380px){.book-facts{grid-template-columns:1fr}}
+.book-detail{max-width:1080px;margin:0 auto}.book-intro{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:clamp(28px,5vw,58px);align-items:start}.detail-cover{position:relative;margin:0;padding:12px;border:1px solid #e3e9e8;border-radius:16px;background:#f2f5f3;box-shadow:0 16px 36px rgb(16 31 50 / 9%)}.detail-cover img{display:block;width:100%;height:auto;border-radius:8px}.detail-cover figcaption{padding:9px 4px 0;text-align:center;color:#71808c;font-size:11px}.book-summary{min-width:0}.preview-label{font-size:10px;letter-spacing:.15em;color:#388b82;font-weight:900}.book-summary h2,.toc-section h2{font-size:clamp(25px,3vw,34px);color:#183452;margin:7px 0 12px}.description{color:#586a7a;line-height:1.85;margin:0 0 22px}.book-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}.book-facts div{padding:12px;border:1px solid #e4ebe8;border-radius:10px;background:#fbfcfb}.book-facts dt{font-size:10px;color:#71808c;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.book-facts dd{margin:3px 0 0;color:#20354b;font-size:13px;font-weight:700;overflow-wrap:anywhere}.no-checkout{margin:20px 0 0;padding:12px 14px;border-left:3px solid #388b82;background:#f1f7f5;color:#49655f;font-size:12px}.toc-section{margin-top:clamp(38px,6vw,72px);padding:clamp(20px,3vw,34px);border:1px solid #e3eae7;border-radius:16px;background:#fff}.toc-heading-row{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:16px}.toc-section h2{margin-bottom:0}.toc-count{flex:none;padding:6px 10px;border-radius:30px;background:#edf5f2;color:#388b82;font-size:11px;font-weight:800}.toc-list{list-style:none;margin:0;padding:0;counter-reset:toc}.toc-list li{display:flex;align-items:baseline;gap:14px;padding:13px 2px;border-bottom:1px solid #edf0ef;counter-increment:toc}.toc-list li:last-child{border-bottom:0}.toc-list li::before{content:counter(toc,decimal-leading-zero);color:#388b82;font-size:11px;font-weight:900}.toc-title{flex:1;color:#20354b;font-size:14px;font-weight:600}.toc-page{color:#8a969f;font-size:12px;font-variant-numeric:tabular-nums}@media(max-width:700px){.book-intro{grid-template-columns:minmax(0,1fr)}.detail-cover{width:min(100%,320px);margin-inline:auto}.book-facts{grid-template-columns:1fr 1fr}}@media(max-width:380px){.book-facts{grid-template-columns:1fr}}
 </style>
