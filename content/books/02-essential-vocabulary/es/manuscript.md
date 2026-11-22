@@ -73,10 +73,10 @@ Presenta a dos personas, explica qué relación tienen contigo y menciona una cu
 
 **Can-do:** Nombrar habitaciones y objetos y explicar dónde están.
 
-## Discover
+## Descubre
 Las llaves están sobre la mesa. La cocina está al lado del salón. Hay una lámpara junto al sofá.
 
-## Vocabulary in context
+## Vocabulario en contexto
 - piso
 - dormitorio
 - baño
@@ -90,32 +90,32 @@ Las llaves están sobre la mesa. La cocina está al lado del salón. Hay una lá
 - al lado de
 - debajo de
 
-## Language focus
+## Punto de lengua
 Usa hay para expresar existencia y estar para localizar algo concreto. Utiliza en, sobre, debajo de, detrás de y al lado de.
 
-## Guided practice
+## Práctica guiada
 1) ____ dos sillas en la cocina. 2) Las llaves están ____ la mesa (encima de). 3) Escribe tres frases de ubicación.
 
-## Answer check
+## Soluciones
 Hay; sobre / encima de; respuestas personales
 
-## Communicate
+## Comunica
 Describe una habitación con cinco objetos y tres expresiones de lugar.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 3 — La comida y las comidas
 
 **Can-do:** Hablar de comidas, gustos, cantidades y pedidos educados.
 
-## Discover
+## Descubre
 Para desayunar tomo fruta y pan. En la cafetería quisiera un bocadillo y un vaso de agua, por favor.
 
-## Vocabulary in context
+## Vocabulario en contexto
 - desayuno
 - almuerzo
 - cena
@@ -129,32 +129,32 @@ Para desayunar tomo fruta y pan. En la cafetería quisiera un bocadillo y un vas
 - menú
 - cuenta
 
-## Language focus
+## Punto de lengua
 Aprende los nombres con sus artículos cuando sea necesario. Para pedir algo con cortesía, puedes decir «Quisiera…» o «¿Me trae…?».
 
-## Guided practice
+## Práctica guiada
 1) Un ____ de agua. 2) Quisiera ____ manzana. 3) Escribe un pedido educado en una cafetería.
 
-## Answer check
+## Soluciones
 vaso; una; respuestas personales
 
-## Communicate
+## Comunica
 Representa una visita a una cafetería: pide algo, haz una pregunta y solicita la cuenta.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 4 — La ropa y las compras
 
 **Can-do:** Describir ropa y preguntar por el color, la talla y el precio.
 
-## Discover
+## Descubre
 Busco una camisa azul. ¿La tiene en talla mediana? ¿Me la puedo probar?
 
-## Vocabulary in context
+## Vocabulario en contexto
 - camisa
 - camiseta
 - pantalones
@@ -168,32 +168,32 @@ Busco una camisa azul. ¿La tiene en talla mediana? ¿Me la puedo probar?
 - caro
 - probarse
 
-## Language focus
+## Punto de lengua
 Los adjetivos concuerdan normalmente con el sustantivo: una camisa roja, unos zapatos rojos. Pregunta el precio con «¿Cuánto cuesta?».
 
-## Guided practice
+## Práctica guiada
 1) Estas botas son muy ____ (caras). 2) ¿Me puedo ____ la chaqueta? 3) Escribe una pregunta sobre el precio.
 
-## Answer check
+## Soluciones
 caras; probar; respuestas personales
 
-## Communicate
+## Comunica
 Cliente y dependiente: busca una prenda, comprueba la talla y paga.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 5 — Las rutinas diarias
 
 **Can-do:** Describir un día habitual y decir con qué frecuencia haces algo.
 
-## Discover
+## Descubre
 Normalmente me despierto a las siete, desayuno y voy al trabajo. A veces estudio por la noche.
 
-## Vocabulary in context
+## Vocabulario en contexto
 - despertarse
 - levantarse
 - vestirse
@@ -207,32 +207,32 @@ Normalmente me despierto a las siete, desayuno y voy al trabajo. A veces estudio
 - a menudo
 - a veces
 
-## Language focus
+## Punto de lengua
 Usa el presente para las rutinas. Los verbos reflexivos llevan pronombre: me despierto, te despiertas, se despierta.
 
-## Guided practice
+## Práctica guiada
 1) Ella ____ a las cinco (terminar). 2) Yo ____ levanto temprano. 3) Escribe tres frases sobre tu rutina.
 
-## Answer check
+## Soluciones
 termina; me; respuestas personales
 
-## Communicate
+## Comunica
 Entrevista a un compañero sobre un día laborable y cuenta tres datos.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 6 — La ciudad, los lugares y las indicaciones
 
 **Can-do:** Preguntar dónde están los lugares y dar indicaciones sencillas.
 
-## Discover
+## Descubre
 La biblioteca está enfrente del parque. Sigue todo recto, gira a la izquierda en el banco y cruza la calle.
 
-## Vocabulary in context
+## Vocabulario en contexto
 - biblioteca
 - estación
 - farmacia
@@ -246,32 +246,32 @@ La biblioteca está enfrente del parque. Sigue todo recto, gira a la izquierda e
 - seguir recto
 - cruzar
 
-## Language focus
+## Punto de lengua
 Usa «¿Dónde está…?» para preguntar y el imperativo para dar indicaciones: sigue, gira, cruza. «Enfrente de» indica que algo está delante, al otro lado.
 
-## Guided practice
+## Práctica guiada
 1) Gira a la ____ en la próxima calle. 2) El café está ____ el banco y la tienda. 3) Da dos indicaciones.
 
-## Answer check
+## Soluciones
 izquierda; entre; respuestas personales
 
-## Communicate
+## Comunica
 Explica cómo llegar desde una estación hasta un lugar público.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 7 — Los viajes y el alojamiento
 
 **Can-do:** Hablar de transporte, reservas y necesidades básicas en un hotel.
 
-## Discover
+## Descubre
 Tengo una reserva para dos noches. ¿A qué hora sale el tren? ¿Está incluido el desayuno?
 
-## Vocabulary in context
+## Vocabulario en contexto
 - billete
 - andén
 - horario
@@ -284,32 +284,32 @@ Tengo una reserva para dos noches. ¿A qué hora sale el tren? ¿Está incluido 
 - salir
 - registrarse
 
-## Language focus
+## Punto de lengua
 Usa «tener una reserva» para hablar de una habitación reservada. Pregunta los horarios con «¿A qué hora…?».
 
-## Guided practice
+## Práctica guiada
 1) Tengo una ____ en el hotel. 2) ¿A qué hora ____ el autobús? (salir) 3) Escribe una pregunta en recepción.
 
-## Answer check
+## Soluciones
 reserva; sale; respuestas personales
 
-## Communicate
+## Comunica
 Representa la llegada a un hotel y confirma las fechas y el desayuno.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 8 — El trabajo y los estudios
 
 **Can-do:** Nombrar tareas, lugares y horarios.
 
-## Discover
+## Descubre
 Trabajo en una oficina. Tenemos una reunión a las nueve y estoy estudiando una asignatura nueva este trimestre.
 
-## Vocabulary in context
+## Vocabulario en contexto
 - oficina
 - compañero
 - reunión
@@ -323,32 +323,32 @@ Trabajo en una oficina. Tenemos una reunión a las nueve y estoy estudiando una 
 - tomar apuntes
 - trabajar en
 
-## Language focus
+## Punto de lengua
 Usa un/una con sustantivos contables singulares. El presente continuo describe una actividad en curso o temporal: estoy estudiando.
 
-## Guided practice
+## Práctica guiada
 1) Tenemos ____ reunión. 2) Él ____ (estudiar) inglés este mes. 3) Escribe un horario de estudio o trabajo.
 
-## Answer check
+## Soluciones
 una; está estudiando; respuestas personales
 
-## Communicate
+## Comunica
 Describe un día de trabajo o estudio y pregunta por una fecha límite.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 9 — El cuerpo y las necesidades básicas de salud
 
 **Can-do:** Nombrar partes del cuerpo y describir síntomas sencillos o necesidades.
 
-## Discover
+## Descubre
 Me duele la cabeza y tengo dolor de garganta. ¿Hay una farmacia cerca de aquí?
 
-## Vocabulary in context
+## Vocabulario en contexto
 - cabeza
 - garganta
 - estómago
@@ -362,32 +362,32 @@ Me duele la cabeza y tengo dolor de garganta. ¿Hay una farmacia cerca de aquí?
 - cita
 - farmacia
 
-## Language focus
+## Punto de lengua
 Usa «me duele» con un sustantivo singular y «me duelen» con plural. Estas expresiones sirven para practicar el idioma, no son consejos médicos.
 
-## Guided practice
+## Práctica guiada
 1) Me duele la ____ (parte del cuerpo). 2) Tengo ____ (síntoma: tos). 3) Pregunta dónde está la farmacia más cercana.
 
-## Answer check
+## Soluciones
 cabeza; tos; ¿Dónde está la farmacia más cercana?
 
-## Communicate
+## Comunica
 Practica cómo pedir una cita y explicar un síntoma sencillo.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 10 — El tiempo, las estaciones y el ocio
 
 **Can-do:** Describir el tiempo y organizar un plan de ocio.
 
-## Discover
+## Descubre
 Hoy hace sol, así que vamos a dar un paseo. Si mañana llueve, podemos ver una película.
 
-## Vocabulary in context
+## Vocabulario en contexto
 - soleado
 - nublado
 - lluvioso
@@ -401,32 +401,32 @@ Hoy hace sol, así que vamos a dar un paseo. Si mañana llueve, podemos ver una 
 - ir a nadar
 - hacer fotos
 
-## Language focus
+## Punto de lengua
 Para hablar del tiempo usa hace frío, hace sol o llueve. Para proponer un plan, usa «podemos…» o «vamos a…».
 
-## Guided practice
+## Práctica guiada
 1) Hoy está ____ (con nubes). 2) En invierno hace ____. 3) Invita a un amigo a salir.
 
-## Answer check
+## Soluciones
 nublado; frío; respuestas personales
 
-## Communicate
+## Comunica
 Acordad una actividad, un lugar y una hora; después proponed un plan alternativo si llueve.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 11 — Los sentimientos, las preferencias y las opiniones
 
 **Can-do:** Describir emociones, expresar gustos y dar una razón sencilla.
 
-## Discover
+## Descubre
 Me gusta aprender idiomas porque es útil. A veces me pongo nervioso al hablar, pero sigo practicando.
 
-## Vocabulary in context
+## Vocabulario en contexto
 - feliz
 - triste
 - cansado
@@ -440,32 +440,32 @@ Me gusta aprender idiomas porque es útil. A veces me pongo nervioso al hablar, 
 - en mi opinión
 - porque
 
-## Language focus
+## Punto de lengua
 Usa gustar con la estructura adecuada: me gusta el libro / me gustan los libros. Distingue estar aburrido (sentir aburrimiento) de ser aburrido (causar aburrimiento).
 
-## Guided practice
+## Práctica guiada
 1) La película es ____ (que causa aburrimiento). 2) Me gusta leer ____ es relajante. 3) Da una opinión con una razón.
 
-## Answer check
+## Soluciones
 aburrida; porque; respuestas personales
 
-## Communicate
+## Comunica
 Habla de una actividad y responde con respeto a una opinión diferente.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Unit 12 — Crear tu sistema de vocabulario
 
 **Can-do:** Usar colocaciones, familias de palabras y repasos espaciados.
 
-## Discover
+## Descubre
 Aprende una expresión, crea un ejemplo personal y comprueba lo que recuerdas mañana, dentro de tres días y dentro de una semana.
 
-## Vocabulary in context
+## Vocabulario en contexto
 - tomar una decisión
 - hacer los deberes
 - hacer una foto
@@ -477,22 +477,22 @@ Aprende una expresión, crea un ejemplo personal y comprueba lo que recuerdas ma
 - repasar
 - cuaderno
 
-## Language focus
+## Punto de lengua
 Aprende palabras en grupos naturales. Una forma parecida no garantiza el mismo significado. Repasa intentando recordar sin mirar la respuesta.
 
-## Guided practice
+## Práctica guiada
 1) ____ los deberes. 2) Prestar ____. 3) ¿La palabra inglesa «actually» significa lo mismo que «actualmente»?
 
-## Answer check
+## Soluciones
 hacer; atención; no: actually significa «en realidad»; actualmente significa «en este momento»
 
-## Communicate
+## Comunica
 Enseña cinco palabras a un compañero con significado, combinación frecuente y ejemplo.
 
-## Self-check
-- [ ] I can use the vocabulary in a complete sentence.
-- [ ] I can complete the unit task without copying the example.
-- [ ] I know which expressions I need to review.
+## Autoevaluación
+- [ ] Puedo utilizar el vocabulario en una frase completa.
+- [ ] Puedo realizar la actividad sin copiar el ejemplo.
+- [ ] Sé qué expresiones necesito repasar.
 
 ---
 # Proyecto integrado — Portafolio de vocabulario
@@ -500,11 +500,11 @@ Enseña cinco palabras a un compañero con significado, combinación frecuente y
 Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio. Para cada tema, anota ocho palabras, tres expresiones frecuentes, tres frases propias y un diálogo breve. Añade una fecha de repaso a cada elemento.
 
 ## Criterios de evaluación
-- Relevance and range of vocabulary.
-- Correct use of articles, agreement and verb forms.
-- Natural word combinations.
-- Clear communication in the target language.
-- A realistic review plan.
+- Pertinencia y variedad del vocabulario.
+- Uso correcto de artículos, concordancia y formas verbales.
+- Combinaciones de palabras naturales.
+- Comunicación clara en español.
+- Un plan de repaso realista.
 
 # Prueba final de repaso
 
@@ -555,4 +555,4 @@ Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio
 # Editorial and Release Note
 This independent-language edition has been adapted for monolingual learning. The answer key is aligned to the closed-ended exercises included in this draft; open activities are assessed using the criteria above. Before publication, a qualified native-level language editor and a language-teaching reviewer must verify naturalness, regional usage, level progression, instructions, every exercise and every answer. Record reviewer names, dates and decisions in the editorial report. Check all cover assets, fonts, permissions and accessibility before release.
 
-**Release status: NOT APPROVED FOR SALE.** This is an editorial working draft pending independent human review and final PDF proof.
+**Estado de publicación: NO AUTORIZADO PARA LA VENTA.** Este borrador requiere una revisión humana independiente y una comprobación final del PDF.
