@@ -5,7 +5,7 @@
 **Edición española · Nivel orientativo: A1–A2; este cuaderno no es una certificación oficial del MCER.**  
 **Estado editorial:** Borrador independiente pendiente de revisión lingüística y pedagógica especializada.
 
-## Publication note
+## Nota de publicación
 This is a self-study vocabulary workbook for familiar everyday situations. Vocabulary is selected for practical learning and is not presented as a statistically ranked frequency list. Regional alternatives are noted where useful. This is an independent resource and is not an official examination or certification.
 
 ## Bienvenida
@@ -552,7 +552,7 @@ Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio
 - **Práctica de recuperación:** recordar información sin consultar el material.
 - **Repaso espaciado:** volver a estudiar la información en intervalos cada vez mayores.
 
-# Editorial and Release Note
-This independent-language edition has been adapted for monolingual learning. The answer key is aligned to the closed-ended exercises included in this draft; open activities are assessed using the criteria above. Before publication, a qualified native-level language editor and a language-teaching reviewer must verify naturalness, regional usage, level progression, instructions, every exercise and every answer. Record reviewer names, dates and decisions in the editorial report. Check all cover assets, fonts, permissions and accessibility before release.
+# Nota editorial y condiciones de publicación
+Esta edición independiente se ha preparado para aprender español. Las soluciones corresponden a los ejercicios de respuesta cerrada de este borrador; las actividades abiertas se evalúan con los criterios indicados. Antes de publicar, una persona revisora cualificada, nativa o con dominio equivalente del idioma, y una persona especialista en enseñanza de lenguas deberán comprobar la naturalidad, los usos regionales, la progresión, las instrucciones, todos los ejercicios y todas las respuestas. Anota en el informe editorial los nombres de quienes revisen, las fechas y sus decisiones. Comprueba también las cubiertas, las fuentes tipográficas, los permisos y la accesibilidad.
 
 **Estado de publicación: NO AUTORIZADO PARA LA VENTA.** Este borrador requiere una revisión humana independiente y una comprobación final del PDF.
