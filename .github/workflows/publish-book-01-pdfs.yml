@@ -1,6 +1,11 @@
 name: Build Book 01 PDFs for internal review only
 
 on:
+  pull_request:
+    paths:
+      - 'content/books/01-language-foundations/**'
+      - 'docs/production/latex-preamble.tex'
+      - '.github/workflows/publish-book-01-pdfs.yml'
   push:
     branches: [main]
     paths:
@@ -15,13 +20,13 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build-and-review:
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
         uses: actions/checkout@v6
         with:
-          ref: main
+          ref: ${{ github.sha }}
           fetch-depth: 1
       - name: Install PDF toolchain
         run: |
