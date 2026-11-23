@@ -15,21 +15,21 @@ const pdfFile = resolve(process.cwd(), 'public', relativePdfPath);
 if (!existsSync(pdfFile)) throw new Error(`Download file not found: ${book.downloadPdf}`);
 const downloadUrl = `${import.meta.env.BASE_URL}${relativePdfPath}`;
 ---
-<BaseLayout title={`Download ${book.title} — EduBooks`} description={`Free PDF download for ${book.title}.`}>
+<BaseLayout title={`Download ${book.title} PDF — EduBooks`} description={`Download the complete free PDF workbook ${book.title}. Read the sample online or save the full book for offline learning.`} keywords={[book.title, ...(book.subjects ?? []), book.language, "free PDF download", "educational workbook", "language learning"].join(", ")}>
   <section class="page-hero"><div class="container"><a class="back-link" href={`${import.meta.env.BASE_URL}books/`} data-en="← All books" data-fr="← Tous les livres" data-es="← Todos los libros">← All books</a><span class="section-label">EDUBOOKS FREE PDF LIBRARY</span><h1 data-en="Download your free PDF." data-fr="Téléchargez votre PDF gratuit." data-es="Descarga tu PDF gratuito.">Download your free PDF.</h1><p data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</p></div></section>
   <section class="content-section"><div class="container"><div class="download-panel">
     <div class="download-icon" aria-hidden="true">PDF</div><h2 data-en="Your book is ready" data-fr="Votre livre est prêt" data-es="Tu libro está listo">Your book is ready</h2>
-    <p data-en="This complete PDF is free. Select the button below to download it directly from EduBooks." data-fr="Ce PDF complet est gratuit. Utilisez le bouton ci-dessous pour le télécharger directement depuis EduBooks." data-es="Este PDF completo es gratuito. Pulsa el botón para descargarlo directamente desde EduBooks.">This complete PDF is free. Select the button below to download it directly from EduBooks.</p>
+    <p data-en="Download the complete book directly from the EduBooks library." data-fr="Téléchargez le livre complet directement depuis la bibliothèque EduBooks." data-es="Descarga el libro completo directamente desde la biblioteca EduBooks.">Download the complete book directly from the EduBooks library.</p>
     <a class="button-3d button-3d--dark download-button" href={downloadUrl} download data-en="Download PDF" data-fr="Télécharger le PDF" data-es="Descargar PDF">Download PDF</a>
-    <p class="download-note" data-en="No account or payment is required." data-fr="Aucun compte ni paiement n’est nécessaire." data-es="No se necesita cuenta ni pago.">No account or payment is required.</p>
+    
     <a class="return-link" href={`${import.meta.env.BASE_URL}books/`} data-en="Return to the library" data-fr="Retour à la bibliothèque" data-es="Volver a la biblioteca">Return to the library</a>
   </div></div></section>
   <style>
     .back-link{display:inline-flex;color:#b9dcd5;margin-bottom:18px;font-size:13px;text-decoration:none}
     .download-panel{width:min(100%,680px);margin:0 auto;padding:clamp(26px,5vw,52px);text-align:center;border:1px solid #e3e9e8;border-radius:20px;background:#fff;box-shadow:0 18px 44px rgb(16 31 50 / 8%)}
     .download-icon{display:grid;place-items:center;width:72px;height:72px;margin:0 auto 18px;border-radius:20px;background:#eaf3f1;color:#183452;font-size:20px;font-weight:900}
-    .download-panel h2{font-size:clamp(24px,3vw,32px);line-height:1.25;color:#183452;margin:0 0 12px}
-    .download-panel>p{color:#586a7a;line-height:1.75}
+    .download-panel h2{font-family:inherit;font-size:clamp(1.6rem,2.8vw,2rem);line-height:1.2;letter-spacing:-.025em;color:#183452;margin:0 0 12px}
+    .download-panel>p{max-width:58ch;margin:0 auto;color:#586a7a;font-size:1rem;line-height:1.75}
     .download-button{text-decoration:none;min-width:190px;margin-top:12px}
     .download-note{font-size:13px}
     .return-link{display:inline-block;margin-top:18px;color:#28776f;font-size:13px;font-weight:700}
