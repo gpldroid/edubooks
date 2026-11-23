@@ -135,7 +135,8 @@ test('informational pages share the site typography on desktop and mobile', asyn
     '/edubooks/faq/',
     '/edubooks/about/',
     '/edubooks/terms/',
-    '/edubooks/privacy/'
+    '/edubooks/privacy/',
+    '/edubooks/contact/'
   ];
 
   for (const width of [390, 1366]) {
@@ -164,8 +165,8 @@ test('informational pages share the site typography on desktop and mobile', asyn
   }
 });
 
-test('About contact section uses the same editorial surface and typography', async ({ page }) => {
-  await page.goto('/edubooks/about/#contact');
+test('Contact page uses the same editorial surface and typography', async ({ page }) => {
+  await page.goto('/edubooks/contact/');
   const contact = page.locator('.editorial-contact-panel');
   await expect(contact).toBeVisible();
   await expect(contact.locator('h2')).toHaveCSS('font-weight', '800');
