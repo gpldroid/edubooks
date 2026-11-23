@@ -207,6 +207,6 @@ test('shared SEO metadata avoids obsolete keyword stuffing and emits page-specif
 
 test('published book detail pages emit their Book structured data', () => {
   const detail = read('src/pages/books/[slug].astro');
-  assert.ok(detail.includes('"@type": \'Book\''));
+  assert.ok(detail.includes("'@type': 'Book'"));
   assert.ok(detail.includes('set:html={JSON.stringify(bookSchema)}'));
 });
