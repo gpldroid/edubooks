@@ -3,7 +3,7 @@
 **Edition:** English (EN)  
 **Series:** EduBooks — Beginner Language Learning  
 **Level target:** Pre-A1 to A1 (learning target, not certification)  
-**Editorial status:** Working draft — not for sale or publication
+**Publication status:** Published free PDF edition on the EduBooks website. Human editorial review and accessibility assessment are handled separately; this notice does not claim either certification.
 
 ## Welcome
 
