@@ -92,7 +92,7 @@ test('mobile tab bar Search opens the catalogue and focuses its search field', a
 test('generated sitemap contains public routes and all published editions but no drafts', async ({ page }) => {
   const response = await page.goto('/edubooks/sitemap.xml');
   expect(response?.status()).toBe(200);
-  expect(response?.headers()['content-type']).toMatch(/(?:application|text)\\/xml/);
+  expect(response?.headers()['content-type']).toMatch(/(?:application|text)\/xml/);
   const xml = await response?.text();
   expect(xml).toContain('https://gpldroid.github.io/edubooks/books/');
   expect(xml).toContain('https://gpldroid.github.io/edubooks/faq/');
