@@ -40,6 +40,13 @@ test('responsive design covers mobile, tablet, desktop and large-screen breakpoi
   }
 });
 
+test('homepage language edition links are visually separated', () => {
+  const css = read('src/styles/site.css');
+  assert.ok(css.includes('.home-edition-links{display:flex'));
+  assert.ok(css.includes('gap:8px'));
+  assert.ok(css.includes('.home-edition-links a{'));
+});
+
 test('catalogue fields and localized category descriptions are consistent', () => {
   const catalog = read('src/data/catalog.ts');
   const home = read('src/pages/index.astro');
