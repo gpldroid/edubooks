@@ -167,9 +167,9 @@ test('mobile tab bar replaces Explore with a direct, accessible library search d
   assert.ok(library.includes("window.location.hash==='#book-search'"));
 });
 
-test('FAQ content explains the on-page PDF preview and links to key library routes', () => {
+test('FAQ explains direct browser PDF reading and links to key library routes', () => {
   const faq = read('src/pages/faq.astro');
-  for (const token of ['Preview PDF', 'Download PDF', 'books/', 'terms/', 'contact/', 'data-en=', 'data-fr=', 'data-es=']) {
+  for (const token of ['Read book online', 'complete PDF directly', 'No file upload', 'Download PDF', 'books/', 'terms/', 'contact/', 'data-en=', 'data-fr=', 'data-es=']) {
     assert.ok(faq.includes(token), 'Missing FAQ content or internal link: ' + token);
   }
 });
