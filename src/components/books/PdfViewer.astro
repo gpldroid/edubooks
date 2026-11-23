@@ -21,7 +21,6 @@ const { src, title } = Astro.props;
       <a href={src} target="_blank" rel="noopener noreferrer">Open the PDF preview</a>
     </iframe>
   </div>
-  <p class="pdf-note" data-en="PDF controls depend on your browser. Public preview files may be saved or printed by visitors." data-fr="Les commandes PDF dépendent de votre navigateur. Les fichiers d’aperçu publics peuvent être enregistrés ou imprimés." data-es="Los controles PDF dependen de tu navegador. Los visitantes pueden guardar o imprimir los archivos públicos.">PDF controls depend on your browser. Public preview files may be saved or printed by visitors.</p>
 </section>
 
 <style>
@@ -33,6 +32,5 @@ const { src, title } = Astro.props;
   .open-pdf{flex:none;padding:10px 14px;border-radius:9px;background:#183452;color:white;font-size:12px;font-weight:800;text-decoration:none}
   .pdf-frame{height:clamp(480px,72vw,850px);overflow:hidden;border:1px solid #d9e2df;border-radius:12px;background:#e8edeb}
   .pdf-frame iframe{display:block;width:100%;height:100%;border:0;background:#fff}
-  .pdf-note{margin:12px 2px 0;color:#71808c;font-size:11px}
   @media(max-width:650px){.pdf-preview-heading{align-items:flex-start;flex-direction:column}.open-pdf{width:100%;text-align:center}.pdf-frame{height:68vh;min-height:420px}}
 </style>
