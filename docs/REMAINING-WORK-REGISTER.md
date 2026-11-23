@@ -1,7 +1,7 @@
 # EduBooks — Current work register
 
 **Updated:** 2026-11-23  
-**Publication model:** Free website-only library with embedded PDF samples and direct full-PDF downloads.
+**Publication model:** Free website-only library with on-demand in-page PDF sample dialogs and direct full-PDF downloads.
 
 ## Published collection
 
@@ -10,9 +10,11 @@
 - [x] Generate a complete PDF and a separate five-page sample for every edition.
 - [x] Publish the six editions in the Astro catalogue.
 - [x] Provide edition-specific detail pages and language-switch links.
-- [x] Provide embedded PDF previews and direct full-PDF downloads.
+- [x] Provide same-page PDF sample dialogs; load the sample only after activation and unload it on close.
+- [x] Keep complete-PDF downloads separate from sample previews.
+- [x] Provide fallback links to open or download the sample when embedded PDF rendering is unavailable.
 - [x] Remove sales, checkout and external-store flows from the public product experience.
-- [x] Update the homepage and library copy to describe the live free PDF experience.
+- [x] Update the homepage, library copy, README and project documentation to describe the free PDF experience.
 - [x] Align all six authoritative manuscript publication notices with the live free website distribution model. These notices explicitly distinguish publication availability from human review or accessibility certification.
 
 ## Website quality and discoverability
@@ -22,9 +24,17 @@
 - [x] Filter empty learning categories from the visible library navigation.
 - [x] Remove decorative numbering and catalogue-count badges from cards and page sections.
 - [x] Align shared typography across informational, library, book and download pages.
-- [x] Update README and project handover documents to reflect the live publishing model.
-- [ ] Verify every internal URL, canonical URL, hreflang alternate and PDF path after the latest manuscript rebuild.
+- [x] Document the native HTML dialog, lazy iframe assignment, cleanup behavior and browser PDF support limitations.
+- [ ] Verify every internal URL, canonical URL, hreflang alternate and PDF path after the latest production deployment.
 - [ ] Review search snippets and structured data in search-engine tools after recrawl.
+
+## Release validation
+
+- [x] Add regression coverage for initial no-source state, user-triggered preview loading and source cleanup on close.
+- [x] Add Playwright coverage for same-page dialog open/close, preview fallback links and the separate full-book download.
+- [ ] Confirm all required GitHub Actions checks pass for the final pull-request head.
+- [ ] Merge the approved change and verify the GitHub Pages deployment succeeds.
+- [ ] Smoke-test the live preview and complete-book downloads on desktop and mobile browsers.
 
 ## Publisher-led human review
 

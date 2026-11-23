@@ -7,7 +7,7 @@
 
 ## Current product decision
 
-EduBooks is a free, website-only PDF library. Visitors can browse books, read a sample PDF in the browser and download the complete PDF directly from the website. There are no paid products, sales, checkout, subscriptions, payment buttons or external store delivery. Gumroad and PayPal are not part of this project.
+EduBooks is a free, website-only PDF library. Visitors can browse books, open a sample in a large same-page modal dialog and download the complete PDF directly from the website. The sample is loaded only after the visitor activates the preview control and is unloaded when the dialog closes. There are no paid products, sales, checkout, subscriptions, payment buttons or external store delivery. Gumroad and PayPal are not part of this project.
 
 The supported website and publication languages are English, French and Spanish. Every title is issued as three independent monolingual editions.
 
@@ -33,8 +33,13 @@ All six editions are registered in `src/data/catalog.ts`. Each has a public cove
 - Project-site base path: `/edubooks`.
 - The GitHub Actions production workflow builds the six PDFs from the authoritative Markdown manuscripts, creates separate five-page samples, runs technical PDF checks and stages the generated assets for the Pages site.
 - The catalogue validates required metadata and public PDF paths.
-- Book detail pages include a browser PDF preview, direct download action, table of contents and links to the other language editions.
+- Book detail pages include an on-demand, browser-native PDF preview dialog, a separate full-book download action, a table of contents and links to the other language editions.
+- The preview dialog is implemented in `src/components/books/BookPreview.astro` with native HTML `<dialog>`; its iframe source is assigned on user activation and cleared on close. It does not add a PDF.js runtime dependency.
 - The site metadata includes canonical URLs, localized alternates, page descriptions, keyword metadata and structured website data.
+
+## PDF preview regression checks
+
+The regression tests assert that the sample is not loaded on initial page render, opens in the same-page dialog after a click, and is unloaded on close. The Playwright suite also checks the separate complete-book download link and fallback sample links.
 
 ## Editorial and accessibility status
 
@@ -51,7 +56,8 @@ Do not add human reviewer names, dates, approvals or accessibility claims unless
 - `src/data/catalog.ts`
 - `src/pages/index.astro`
 - `src/pages/books/`
-- `src/components/books/`
+- `src/components/books/BookCard.astro`
+- `src/components/books/BookPreview.astro`
 - `src/layouts/BaseLayout.astro`
 - `src/styles/site.css`
 - `.github/workflows/`

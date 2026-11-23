@@ -27,20 +27,30 @@ test('library search and category controls remain usable with published editions
   await expect(page.locator('.book-card')).toHaveCount(6);
 });
 
-test('published edition detail exposes indexable preview and download actions', async ({ page }) => {
+test('published edition opens its sample in an on-demand same-page PDF dialog', async ({ page }) => {
   await page.goto('/edubooks/books/language-foundations-en/');
   await expect(page.getByRole('heading', { name: 'Language Foundations' })).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /index/);
   await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
   await expect(page.locator('.edition-switch a')).toHaveCount(3);
-  await expect(page.getByRole('link', { name: 'Preview PDF' })).toHaveAttribute('href', /language-foundations-en-sample\.pdf$/);
-  await expect(page.locator('.related-editions a')).toHaveCount(2);
+  const previewButton = page.getByRole('button', { name: 'Preview PDF' });
+  await expect(previewButton).toHaveAttribute('aria-haspopup', 'dialog');
+  const dialog = page.getByRole('dialog', { name: 'PDF preview' });
+  await expect(dialog).toBeHidden();
+  const frame = page.locator('[data-pdf-frame]');
+  await expect(frame).not.toHaveAttribute('src', /.+/);
   await expect(page.getByRole('link', { name: 'Download PDF' })).toHaveAttribute('href', /books\/language-foundations-en\/download\/$/);
-  await expect(page.getByText('Editorial review in progress')).toHaveCount(0);
+  await expect(page.locator('.related-editions a')).toHaveCount(2);
 
-  await page.goto('/edubooks/books/language-foundations-en/download/');
-  await expect(page.getByRole('heading', { name: 'Download your free PDF.' })).toBeVisible();
-  await expect(page.locator('a[download]')).toHaveAttribute('href', /books\/language-foundations-en\.pdf$/);
+  await previewButton.click();
+  await expect(dialog).toBeVisible();
+  await expect(frame).toHaveAttribute('src', /language-foundations-en-sample\.pdf$/);
+  await expect(page.locator('[data-pdf-open]')).toHaveAttribute('href', /language-foundations-en-sample\.pdf$/);
+  await expect(page.locator('[data-pdf-download]')).toHaveAttribute('href', /language-foundations-en-sample\.pdf$/);
+
+  await page.getByRole('button', { name: /close/i }).click();
+  await expect(dialog).toBeHidden();
+  await expect(frame).not.toHaveAttribute('src', /.+/);
 });
 
 test('book library contains no purchase, checkout or Gumroad links', async ({ page }) => {
@@ -57,10 +67,9 @@ test('book library does not overflow on compact and desktop viewports', async ({
       viewport: document.documentElement.clientWidth,
       document: document.documentElement.scrollWidth
     }));
-    expect(dimensions.document, `Horizontal overflow at ${width}px`).toBeLessThanOrEqual(dimensions.viewport + 1);
+    expect(dimensions.document, 'Horizontal overflow at ' + width + 'px').toBeLessThanOrEqual(dimensions.viewport + 1);
   }
 });
-
 
 test('homepage links directly to all six language editions without decorative card numbering', async ({ page }) => {
   await page.goto('/edubooks/');
