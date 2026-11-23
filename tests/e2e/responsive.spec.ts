@@ -180,7 +180,7 @@ test('Contact page uses the same editorial surface and typography', async ({ pag
   const contact = page.locator('.editorial-contact-panel');
   await expect(contact).toBeVisible();
   await expect(contact.locator('h2')).toHaveCSS('font-weight', '800');
-  await expect(contact.locator('p')).toHaveCSS('font-family', /DM Sans/);
+  await expect(contact.locator('p').first()).toHaveCSS('font-family', /DM Sans/);
 });
 
 
