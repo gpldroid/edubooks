@@ -177,6 +177,14 @@ test('FAQ content explains the on-page PDF preview and links to key library rout
   }
 });
 
+test('About page describes the ongoing editorial process without claiming completed manual review', () => {
+  const about = read('src/pages/about.astro');
+  assert.ok(about.includes('Ongoing improvements to accuracy, language quality and usability'));
+  assert.ok(!about.includes('before publication'));
+  assert.ok(about.includes('appropriate permission'));
+});
+
+
 test('sitemap lists canonical public routes and published editions only', () => {
   const sitemap = read('src/pages/sitemap.xml.ts');
   const robots = read('public/robots.txt');
