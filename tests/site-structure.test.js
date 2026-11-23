@@ -63,7 +63,7 @@ test('public book pages provide free browser PDF preview and direct full-PDF dow
   const route = read('src/pages/books/[slug].astro');
   const download = read('src/pages/books/[slug]/download.astro');
   const catalog = read('src/data/catalog.ts');
-  for (const token of ['data-en="Explore book"', 'review-status', 'data-en="Free PDF"']) assert.ok(card.includes(token), `Missing review-only card action: ${token}`);
+  for (const token of ['data-en="Explore book"', 'free-access-label', 'data-en="Free PDF"']) assert.ok(card.includes(token), `Missing review-only card action: ${token}`);
   for (const token of ['Table of contents', 'Preview PDF', 'Download PDF', 'book.previewPdf', 'download/']) assert.ok(detail.includes(token), `Missing free PDF reader feature: ${token}`);
   assert.ok(detail.includes('PdfViewer'));
   assert.ok(route.includes("book.status === 'published'"));
