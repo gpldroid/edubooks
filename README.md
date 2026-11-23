@@ -15,18 +15,16 @@ EduBooks is a **free, website-only PDF library**. Readers will be able to open a
 - **Hosting:** GitHub Pages. Cloudflare remains deferred.
 - **No commerce:** Gumroad and PayPal are not part of the product or release workflow. Existing seller drafts are historical account state only; do not edit, attach files to, publish, or use them.
 
-## Current publication status — 2026-11-22
+## Current publication status — 2026-11-23
 
 - Website: Astro 5, hosted at https://gpldroid.github.io/edubooks/.
 - Repository: https://github.com/gpldroid/edubooks.
-- The catalogue contains six independent draft editions: Book 01 EN/FR/ES and Book 02 EN/FR/ES. All six remain `draft`; public downloads are not approved.
-- The owner confirmed rights to use and distribute the six current catalogue covers in `public/covers/` on the website and embedded in PDFs. The exact six file paths and allowed uses are recorded in the rights register and asset audit. Legacy Gumroad-format covers remain excluded.
-- An AI-assisted first-pass review of all six manuscripts is documented in [the six-edition editorial review](docs/editorial/ai-assisted-six-edition-review-2026-11-22.md). Structural scan: Book 01 has 10 units per language; Book 02 has 12 units per language; no TODO/FIXME/placeholder markers or explicit external URLs were detected. This is not professional proofreading, plagiarism clearance or pedagogical sign-off.
-- Existing answer-key reports document first-pass checks and corrections: Book 01 French Unit 3; Book 02 French Unit 10 and Spanish Unit 9. Fresh PDFs must be checked against the final source manuscripts.
-- PDF workflows now explicitly install `fonts-dejavu-core`, archive its package version and copyright/licence notice, and record SHA-256 sidecars for full PDFs and five-page samples. These are internal review artifacts only.
-- The previous six review candidates embedded their fonts but reported `Tagged: no`. Current Pandoc/XeLaTeX output is not certified as PDF/UA or screen-reader accessible. Semantic tagging, reading-order checks and screen-reader testing remain release blockers.
-- Qualified EN/FR/ES language review, independent pedagogical review, itemized third-party source/asset clearance, full-page visual proof and exact-checksum owner approval remain required.
-- No final PDFs or samples have been copied to `public/books/` or `public/previews/`; no catalogue entry has been marked `published`. Do not link GitHub Actions artifacts from the public site.
+- The six independent editions (Book 01 EN/FR/ES and Book 02 EN/FR/ES) are configured as free website publications in PR #43.
+- The GitHub Pages build generates all six full PDFs from the authoritative Markdown manuscripts, creates a separate five-page sample for each edition, verifies tagged-PDF metadata, embedded fonts, extractable text, unit headings and minimum page counts, and calculates SHA-256 checksums. Astro then verifies that every catalogue PDF path exists before generating the site.
+- The six current catalogue covers are owner-authorized for website use and PDF embedding. The cover artwork now identifies each edition as a free PDF edition; legacy Gumroad-format covers remain excluded.
+- Book 01 contains 10 units per language; Book 02 contains 12 units per language. Existing answer-key reports document first-pass checks and corrections: Book 01 French Unit 3; Book 02 French Unit 10 and Spanish Unit 9.
+- The owner will supply the human editorial-review and accessibility-certification statements separately. The site and PDF metadata do not claim that these human certifications have already been completed. Tagged PDF metadata is a technical property, not proof of PDF/UA conformance or screen-reader usability.
+- PR #43 must be merged and its GitHub Pages deployment must succeed before the six editions are considered live. Do not link review artifacts from GitHub Actions as public files.
 
 ## Latest release audit and evidence
 
@@ -60,18 +58,18 @@ Each approved edition will have:
 
 Public assets will use stable paths under `public/previews/` and `public/books/`. The catalogue must reference only files that exist and have passed review. A build check must fail if a published entry points to a missing PDF or cover. Do not expose GitHub Actions review artifacts as public download links.
 
-## Quality gates before website publication
+## Production checks and owner-led review statements
 
 For each of the six editions, separately:
-- Complete qualified language review in the target language.
-- Complete pedagogical review and verify level claims.
+- The owner will add the human editorial-review statement after completing their review of each edition.
+- The owner will add the accessibility-certification statement after completing their accessibility review.
 - Reconcile every closed exercise with its answer key; provide rubrics/model answers for open tasks.
 - Clear rights and attribution for all text, images, fonts and assets.
 - Inspect every PDF page, including page breaks, contents, bookmarks, links, fonts and page numbering.
-- Review PDF accessibility, reading order, headings, contrast and selectable text.
+- Technical build checks confirm tagged-PDF metadata, embedded fonts, extractable text and stable output checksums; they do not certify PDF/UA or screen-reader accessibility.
 - Produce final full PDF and a clearly marked preview PDF.
 - Record reviewer names/roles, dates, source commit, build run, filenames and SHA-256 checksums.
-- Obtain explicit owner approval to publish that edition on the website.
+- Human-review and accessibility statements are owner-supplied follow-up information; they are not fabricated by CI.
 
 Technical CI success is not editorial approval. An internal review PDF is not a final public PDF.
 
@@ -79,7 +77,8 @@ Technical CI success is not editorial approval. An internal review PDF is not a 
 
 ```text
 edubooks/
-├── .github/workflows/       # Astro deployment and internal PDF review builds
+├── .github/workflows/       # Astro deployment and PDF production/validation
+├── .github/scripts/         # shared six-edition PDF and preview generator
 ├── content/books/           # authoritative EN/FR/ES manuscripts
 ├── docs/
 │   ├── PROJECT-HANDOVER.md
@@ -88,10 +87,10 @@ edubooks/
 │   ├── SITE-ONLY-PUBLISHING-MODEL.md
 │   ├── editorial/            # audits and edition-specific review records
 │   └── production/           # manuscript and PDF design system
-├── public/books/             # approved full downloadable PDFs only
-├── public/previews/          # approved sample/preview PDFs
+├── public/books/             # generated full PDFs included in the Pages build
+├── public/previews/          # generated five-page PDF samples
 ├── public/images/            # cover artwork
-├── src/data/catalog.ts       # six independent draft editions; publication disabled
+├── src/data/catalog.ts       # six independent free editions with preview/download paths
 ├── src/pages/
 ├── astro.config.mjs
 └── package.json
