@@ -80,6 +80,28 @@ test('public book pages provide free browser PDF preview and direct full-PDF dow
   }
 });
 
+test('embedded PDF viewer includes browser fallbacks and accessible viewing controls', () => {
+  const viewer = read('src/components/books/PdfViewer.astro');
+  for (const token of [
+    '<object data={src} type="application/pdf"',
+    '<iframe src={viewerSrc}',
+    'data-pdf-viewer',
+    'data-pdf-fullscreen',
+    'requestFullscreen()',
+    'document.exitFullscreen()',
+    'target="_blank"',
+    'download',
+    'aria-label="View PDF preview in full screen"',
+    'pdf-viewer-shell:fullscreen',
+    'If the preview does not appear'
+  ]) {
+    assert.ok(viewer.includes(token), `Missing PDF viewer capability: ${token}`);
+  }
+  assert.ok(viewer.includes('toolbar=1&navpanes=0&view=FitH'));
+  assert.ok(viewer.includes('data-fr='));
+  assert.ok(viewer.includes('data-es='));
+});
+
 test('inner-page typography refinements explicitly exclude the homepage', () => {
   const layout = read('src/layouts/BaseLayout.astro');
   const css = read('src/styles/site.css');
@@ -125,11 +147,10 @@ test('book library uses a navigable category sidebar and responsive 3D grid', ()
   for (const token of ['perspective:', 'transform-style:preserve-3d', 'rotateX(', 'prefers-reduced-motion', '@media(max-width:760px)']) {
     assert.ok(page.includes(token) || card.includes(token), `Missing 3D/responsive behavior: ${token}`);
   }
-  assert.ok(page.includes('window.addEventListener(\'popstate\''));
+  assert.ok(page.includes("window.addEventListener('popstate'"));
   assert.ok(page.includes('history.pushState'));
   assert.ok(!page.includes('category-chips'));
 });
-
 
 test('published library pages include contextual SEO metadata and live reader links', () => {
   const layout = read('src/layouts/BaseLayout.astro');
