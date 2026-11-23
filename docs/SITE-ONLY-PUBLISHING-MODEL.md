@@ -1,59 +1,44 @@
 # EduBooks — Website-only PDF publishing model
 
-**Owner decision:** Publish books on the EduBooks website only. Each approved edition offers an in-browser PDF preview and a direct PDF download. All books are free.
+**Publication policy:** All books are free and distributed only through the EduBooks website. Each language edition has an information page, an in-browser PDF sample and a direct download of the complete PDF.
 
-## Product and distribution policy
-- No sale, paid download, subscription, checkout, donation gate or payment integration.
-- No Gumroad or PayPal links, buttons, product feeds or delivery dependencies.
-- Gumroad drafts and prior pricing notes are historical only. Do not modify or publish them.
-- The website is the canonical public library and the only distribution channel.
-- Website interface and book languages: English, French and Spanish.
-- The first collection consists of two books, each with three independent language editions (EN, FR, ES).
+## Distribution
 
-## Public reader experience
-For each published edition:
-1. Library card opens a book information page.
-2. Information page shows description, language, level, cover and table of contents.
-3. **Preview PDF** opens the approved sample PDF in the browser.
-4. **Download PDF** downloads the approved complete PDF directly from EduBooks.
-5. Both links must respect Astro's `/edubooks` GitHub Pages base path.
+- Free public access; no checkout, subscriptions, paid downloads or payment integrations.
+- No Gumroad or PayPal links, product feeds, buttons or delivery dependencies.
+- English, French and Spanish are the only website and publication languages for the initial collection.
+- Two titles are published as six independent monolingual editions.
 
-Suggested filenames (conventions only; not proof of existing files):
-- `public/previews/edubooks-book-01-en-preview.pdf`
-- `public/books/edubooks-book-01-en.pdf`
+## Published reader experience
 
-## Release states
-1. Manuscript draft — editable, not public.
-2. Internal PDF review candidate — CI artifact only, not public.
-3. Editorially approved — qualified language and pedagogical reviews recorded.
-4. Production-approved — rights, accessibility and full-page visual proof complete; final and preview PDFs verified.
-5. Website-published — explicit owner approval; catalogue entry references existing public files and correct cover.
+1. The [book library](https://gpldroid.github.io/edubooks/books/) lists all six editions.
+2. Each card opens its edition-specific detail page.
+3. The detail page presents the book description, language, learning level, cover and contents.
+4. The sample PDF is embedded in the page and can also be opened in a separate browser tab.
+5. The complete PDF is available through the direct download action.
+6. Related language editions link to each other.
 
-A successful build does not constitute editorial approval.
+## Public paths
 
-## PDF and catalogue safeguards
-- Draft catalogue records may be shown as clearly labelled editorial-review entries, but must not expose PDF paths or be indexed.
-- Only `published` catalogue records may expose a verified cover, preview PDF and full downloadable PDF.
-- A published catalogue record must point to an existing cover, preview PDF and full downloadable PDF.
-- Keep preview and full-download paths separate.
-- Validate language, metadata, file existence, size, page count and SHA-256 during release.
-- Preview PDFs must be clearly identified samples containing only intended sample pages.
-- Never link GitHub Actions review artifacts from public pages.
-- Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory; do not restore or reuse them without a new documented review.
+- Full PDFs: `/edubooks/books/<book-slug>.pdf`
+- Five-page samples: `/edubooks/previews/<book-slug>-sample.pdf`
+- Edition pages: `/edubooks/books/<book-slug>/`
+- Download pages: `/edubooks/books/<book-slug>/download/`
 
-## Build and deployment
-- Authoritative manuscripts: `content/books/<book-id>/<language>/manuscript.md`.
-- Matrix workflows build internal review artifacts only.
-- Approved final and preview files are added to `public/books/` and `public/previews/` through a reviewed pull request.
-- Astro catalogue validation must fail if a published entry references a missing asset.
-- Deploy from the approved main-branch commit and verify both public PDF URLs on desktop and mobile.
+The Astro `base` path must remain `/edubooks`. Use the configured base path for internal links and assets; do not hard-code root-relative site URLs that omit it.
 
-## Per-edition release evidence
-Record book ID, language, qualified language reviewer/date, pedagogical reviewer/date, rights review, accessibility and visual proof, source commit, workflow run, final and preview filenames/page counts/SHA-256, public URLs, owner authorization and publication date.
+## Technical safeguards
 
-## Current state — 2026-11-22
-- The catalogue now lists six draft edition records (Book 01 EN/FR/ES and Book 02 EN/FR/ES); all are marked as under review and `noindex`.
-- No edition is approved for public distribution and no draft has public preview or download links.
-- Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory.
-- Book 01 and Book 02 have six independent working manuscripts. CI-generated PDFs are review candidates only.
-- Rights, qualified language and pedagogical review, accessibility, full-page proof and owner approval remain mandatory before any edition is published.
+- The production workflow generates all six full PDFs and six separate samples from the authoritative manuscripts.
+- The catalogue validates metadata and safe public paths.
+- The static-site build fails when a published cover or PDF asset is missing.
+- Never expose GitHub Actions review artifacts as public download links.
+- PDF samples are intended for reading convenience, not DRM; visitors may be able to save or print public PDF files.
+
+## Human review and accessibility
+
+Human language/editorial review and accessibility assessment are separate publisher responsibilities. Automated checks and tagged-PDF metadata do not prove PDF/UA conformance or screen-reader usability. Record reviewer details, review scope, dates and findings only after the publisher has completed and confirmed the work.
+
+## Current release
+
+As of 2026-11-23, all six language editions are included in the public catalogue and the production workflow generates their sample and complete PDF files. The publisher will add human-review and accessibility statements only after those reviews are completed.
