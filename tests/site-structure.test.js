@@ -148,7 +148,8 @@ test('published library pages include contextual SEO metadata and live reader li
   const library = read('src/pages/books/index.astro');
   const detail = read('src/pages/books/[slug].astro');
   const preview = read('src/components/books/BookPreview.astro');
-  for (const token of ['name="keywords"', 'rel="canonical"', 'hreflang', 'application/ld+json']) assert.ok(layout.includes(token));
+  for (const token of ['name="description"', 'rel="canonical"', 'hreflang', 'application/ld+json', '"@type":"WebPage"']) assert.ok(layout.includes(token));
+  assert.ok(!layout.includes('name="keywords"'));
   for (const token of ['Free Educational Books', 'books/', 'language-foundations', 'essential-vocabulary']) assert.ok(home.toLowerCase().includes(token.toLowerCase()));
   assert.ok(library.includes('visibleCategories'));
   assert.ok(preview.includes('related-editions'));
@@ -156,4 +157,49 @@ test('published library pages include contextual SEO metadata and live reader li
   assert.ok(!library.includes('category-count'));
   assert.ok(!home.includes('publication-index'));
   assert.ok(!home.includes('practice-number'));
+});
+
+
+test('mobile tab bar replaces Explore with a direct, accessible library search destination', () => {
+  const nav = read('src/components/navigation/MobileTabBar.astro');
+  const icon = read('src/components/ui/Icon3D.astro');
+  const library = read('src/pages/books/index.astro');
+  assert.ok(nav.includes("label: 'Search'"));
+  assert.ok(nav.includes("route('books/#book-search')"));
+  assert.ok(!nav.includes('label: "Explore"'));
+  assert.ok(icon.includes('search:'));
+  assert.ok(library.includes("window.location.hash==='#book-search'"));
+});
+
+test('FAQ content explains the on-page PDF preview and links to key library routes', () => {
+  const faq = read('src/pages/faq.astro');
+  for (const token of ['Preview PDF', 'Download PDF', 'books/', 'terms/', 'about/#contact', 'data-en=', 'data-fr=', 'data-es=']) {
+    assert.ok(faq.includes(token), 'Missing FAQ content or internal link: ' + token);
+  }
+});
+
+test('About page describes the ongoing editorial process without claiming completed manual review', () => {
+  const about = read('src/pages/about.astro');
+  assert.ok(about.includes('Ongoing improvements to accuracy, language quality and usability'));
+  assert.ok(!about.includes('before publication'));
+  assert.ok(about.includes('appropriate permission'));
+});
+
+
+test('sitemap lists canonical public routes and published editions only', () => {
+  const sitemap = read('src/pages/sitemap.xml.ts');
+  const robots = read('public/robots.txt');
+  for (const token of ['books/', 'about/', 'faq/', 'privacy/', 'terms/', "book.status === 'published'", 'new Set', 'application/xml']) {
+    assert.ok(sitemap.includes(token), 'Missing sitemap requirement: ' + token);
+  }
+  assert.ok(robots.includes('Sitemap: https://gpldroid.github.io/edubooks/sitemap.xml'));
+  assert.ok(!sitemap.includes("book.status === 'draft'"));
+});
+
+test('shared SEO metadata avoids obsolete keyword stuffing and emits page-specific structured data', () => {
+  const layout = read('src/layouts/BaseLayout.astro');
+  assert.ok(layout.includes('rel="canonical"'));
+  assert.ok(layout.includes('application/ld+json'));
+  assert.ok(layout.includes('"@type":"WebPage"'));
+  assert.ok(!layout.includes('name="keywords"'));
 });

@@ -3,22 +3,22 @@ import Icon3D from '../ui/Icon3D.astro';
 interface Props { base: string }
 const { base } = Astro.props;
 const currentPath = Astro.url.pathname;
-const normalizedBase = base.endsWith("/") ? base : `${base}/`;
-const route = (segment = "") => `${normalizedBase}${segment}`;
+const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+const route = (segment = '') => `${normalizedBase}${segment}`;
 const items = [
-  { label: "Home", fr: "Accueil", es: "Inicio", href: route(), key: "home", icon: "home" },
-  { label: "Explore", fr: "Explorer", es: "Explorar", href: `${route()}#categories`, key: "explore", icon: "compass" },
-  { label: "Books", fr: "Livres", es: "Libros", href: route("books/"), key: "books", icon: "book" },
-  { label: "FAQ", fr: "FAQ", es: "FAQ", href: route("faq/"), key: "faq", icon: "help" },
-  { label: "About", fr: "À propos", es: "Acerca de", href: route("about/"), key: "about", icon: "user" }
+  { label: 'Home', fr: 'Accueil', es: 'Inicio', href: route(), key: 'home', icon: 'home' },
+  { label: 'Search', fr: 'Rechercher', es: 'Buscar', href: route('books/#book-search'), key: 'search', icon: 'search' },
+  { label: 'Books', fr: 'Livres', es: 'Libros', href: route('books/'), key: 'books', icon: 'book' },
+  { label: 'FAQ', fr: 'FAQ', es: 'Preguntas', href: route('faq/'), key: 'faq', icon: 'help' },
+  { label: 'About', fr: 'À propos', es: 'Acerca de', href: route('about/'), key: 'about', icon: 'user' }
 ] as const;
 
 const homePath = normalizedBase;
-const active = currentPath.includes("/books") ? "books" : currentPath.includes("/faq") ? "faq" : currentPath.includes("/about") ? "about" : currentPath === homePath || currentPath === base ? "home" : "";
+const active = currentPath.includes('/books') ? 'books' : currentPath.includes('/faq') ? 'faq' : currentPath.includes('/about') ? 'about' : currentPath === homePath || currentPath === base ? 'home' : '';
 ---
 <nav class="mobile-tabbar" aria-label="Quick navigation" data-mobile-tabbar>
   {items.map((item) => (
-    <a href={item.href} data-tab-key={item.key} aria-current={active === item.key ? "page" : undefined}>
+    <a href={item.href} data-tab-key={item.key} aria-current={active === item.key ? 'page' : undefined}>
       <Icon3D name={item.icon} label={item.label} size={24} decorative />
       <span data-en={item.label} data-fr={item.fr} data-es={item.es}>{item.label}</span>
     </a>
