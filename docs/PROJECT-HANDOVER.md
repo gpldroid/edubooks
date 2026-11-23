@@ -38,7 +38,9 @@ All six editions are registered in `src/data/catalog.ts`. Each has a public cove
 
 ## Editorial and accessibility status
 
-Automated production checks are not human editorial approval. The publisher will record human language/editorial review and accessibility assessment separately. The PDFs include tagged-PDF metadata, but that alone does not establish PDF/UA conformance, correct semantic reading order or screen-reader usability.
+The six editions are available as free website publications. Their manuscript front matter now states that publication status accurately. This does not mean that the publisher's human editorial, language, pedagogical or accessibility reviews are complete.
+
+Automated production checks are not human editorial approval. The PDFs include tagged-PDF metadata, but that alone does not establish PDF/UA conformance, correct semantic reading order or screen-reader usability.
 
 Do not add human reviewer names, dates, approvals or accessibility claims unless the publisher has supplied and confirmed them. Do not claim formal CEFR certification.
 
@@ -58,11 +60,13 @@ Do not add human reviewer names, dates, approvals or accessibility claims unless
 
 ## Continuation priorities
 
-1. Complete and document the publisher's human editorial review for each language edition.
-2. Complete the publisher's accessibility assessment and record its actual scope and findings.
-3. Correct manuscript or PDF issues found during those reviews; regenerate the affected PDF and sample.
-4. Keep the public book pages, language links, PDF paths, sitemap and metadata synchronized.
-5. Verify the public library and PDF URLs after each production deployment.
+1. Build a detailed content-enhancement plan for the existing two titles, unit by unit, preserving the independent English, French and Spanish editions.
+2. Improve practical examples, dialogues, exercise variety, answer explanations and review activities; avoid unreviewed machine translation.
+3. Reconcile every closed-answer exercise with its answer key and regenerate all affected PDFs and samples.
+4. Complete and document the publisher's human editorial review for each language edition.
+5. Complete the publisher's accessibility assessment and record its actual scope and findings.
+6. Prepare the next title only after the first collection's content and review priorities are settled.
+7. Verify the public library and PDF URLs after each production deployment.
 
 ## Security and publishing policy
 
