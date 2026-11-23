@@ -3,7 +3,7 @@
 **Edición:** Español (ES)  
 **Colección:** EduBooks — Aprendizaje de idiomas para principiantes  
 **Nivel previsto:** Pre-A1 a A1 (objetivo de aprendizaje, no certificación)  
-**Estado editorial:** Borrador de trabajo — no vender ni publicar
+**Estado de publicación:** Edición PDF publicada gratuitamente en el sitio web de EduBooks. La revisión editorial humana y la evaluación de accesibilidad se gestionan por separado; esta nota no afirma que exista una certificación.
 
 ## Bienvenida
 

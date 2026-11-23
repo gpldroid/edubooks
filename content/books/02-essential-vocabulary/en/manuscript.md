@@ -3,7 +3,7 @@
 
 **EduBooks · Multilingual Learning Series 01**  
 **English Edition · Target: A1–A2 approximate learning range; not an official CEFR certification.**  
-**Editorial status:** Independent-language working draft; requires qualified editorial and pedagogical review.
+**Publication status:** Published free PDF edition on the EduBooks website. Human editorial and pedagogical review, and accessibility assessment, are handled separately; this notice does not claim completion or certification.
 
 ## Publication note
 This is a self-study vocabulary workbook for familiar everyday situations. Vocabulary is selected for practical learning and is not presented as a statistically ranked frequency list. Regional alternatives are noted where useful. This is an independent resource and is not an official examination or certification.

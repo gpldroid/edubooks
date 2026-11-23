@@ -3,7 +3,7 @@
 
 **EduBooks · Colección de aprendizaje de idiomas 01**  
 **Edición española · Nivel orientativo: A1–A2; este cuaderno no es una certificación oficial del MCER.**  
-**Estado editorial:** Borrador independiente pendiente de revisión lingüística y pedagógica especializada.
+**Estado de publicación:** Edición PDF publicada gratuitamente en el sitio web de EduBooks. La revisión lingüística y pedagógica humana y la evaluación de accesibilidad se gestionan por separado; esta nota no afirma que estén completadas ni certificadas.
 
 ## Nota de publicación
 Este cuaderno de autoaprendizaje ofrece vocabulario útil para situaciones cotidianas. La selección prioriza las necesidades prácticas y no constituye una clasificación estadística de frecuencia. Se indican variantes regionales cuando resultan útiles. Este recurso independiente no sustituye ningún examen ni certificación oficial.

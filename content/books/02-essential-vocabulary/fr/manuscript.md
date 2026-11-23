@@ -3,7 +3,7 @@
 
 **EduBooks · Collection d’apprentissage des langues 01**  
 **Édition française · Niveau indicatif : A1–A2 ; ce cahier ne constitue pas une certification officielle du CECRL.**  
-**Statut éditorial :** Version de travail autonome, à faire relire par des spécialistes de la langue et de la pédagogie.
+**Statut de publication :** Édition PDF publiée gratuitement sur le site EduBooks. La révision linguistique et pédagogique humaine ainsi que l’évaluation de l’accessibilité sont traitées séparément ; cette mention ne prétend pas qu’elles sont achevées ou certifiées.
 
 ## Note de publication
 Ce cahier d’autoapprentissage propose du vocabulaire utile dans des situations quotidiennes. La sélection privilégie les besoins pratiques et ne constitue pas un classement statistique de fréquence. Des variantes régionales sont indiquées lorsqu’elles sont utiles. Cette ressource indépendante ne remplace aucun examen ni aucune certification officielle.
