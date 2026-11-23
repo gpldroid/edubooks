@@ -110,3 +110,15 @@ test('FAQ internal links resolve to existing public pages', async ({ page }) => 
     await expect(link).toBeVisible();
   }
 });
+
+
+test('published book detail exposes valid Book JSON-LD structured data', async ({ page }) => {
+  await page.goto('/edubooks/books/language-foundations-en/');
+  const jsonLd = await page.locator('script[type="application/ld+json"]').allTextContents();
+  const structuredData = jsonLd.map((value) => JSON.parse(value) as Record<string, unknown>);
+  const book = structuredData.find((value) => value['@type'] === 'Book');
+  expect(book).toBeTruthy();
+  expect(book?.name).toBe('Language Foundations');
+  expect(book?.inLanguage).toBe('en');
+  expect(book?.isAccessibleForFree).toBe(true);
+});
