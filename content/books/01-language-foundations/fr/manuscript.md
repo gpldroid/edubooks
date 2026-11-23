@@ -3,7 +3,7 @@
 **Édition :** Français (FR)  
 **Collection :** EduBooks — Apprentissage des langues pour débutants  
 **Niveau visé :** pré-A1 à A1 (objectif pédagogique, sans certification)  
-**Statut éditorial :** brouillon de travail — ni à vendre ni à publier
+**Statut de publication :** édition PDF publiée gratuitement sur le site EduBooks. La révision éditoriale humaine et l’évaluation de l’accessibilité sont traitées séparément ; cette mention ne revendique aucune certification.
 
 ## Bienvenue
 
