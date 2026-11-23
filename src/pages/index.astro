@@ -40,7 +40,11 @@ const base = import.meta.env.BASE_URL;
         <div class="publication-cover publication-cover--vocabulary"><span class="cover-kicker">A1 → A2</span><strong>ESSENTIAL<br/>VOCABULARY</strong><span class="cover-subtitle">WORDS IN REAL-LIFE CONTEXT</span><div class="vocabulary-orbit"><span>HOME</span><span>FOOD</span><span>TRAVEL</span><span>PEOPLE</span></div></div>
         <div class="publication-card-bottom"><div><h3>Essential Vocabulary</h3><p data-en="Everyday vocabulary" data-fr="Vocabulaire du quotidien" data-es="Vocabulario cotidiano">12 units · Everyday vocabulary</p></div></div>
         <p class="publication-disclaimer" data-en="Preview online and download the complete PDF for free." data-fr="Consultez un extrait et téléchargez le PDF complet gratuitement." data-es="Lee una muestra y descarga gratis el PDF completo.">Preview online and download the complete PDF for free.</p>
-      </a></article>
+      </a>
+        <nav class="home-edition-links" aria-label="Language editions">
+          {books.filter((edition) => edition.slug.startsWith('essential-vocabulary-')).map((edition) => <a href={base + 'books/' + edition.slug + '/'} lang={edition.language}>{edition.language.toUpperCase()}</a>)}
+        </nav>
+      </article>
       <div class="book-feature-copy">
         <span class="section-label" data-en="ESSENTIAL VOCABULARY" data-fr="VOCABULAIRE ESSENTIEL" data-es="VOCABULARIO ESENCIAL">ESSENTIAL VOCABULARY</span>
         <h2 data-en="Build vocabulary you can actually use." data-fr="Développez un vocabulaire vraiment utile." data-es="Construye un vocabulario que puedas usar.">Build vocabulary you can actually use.</h2>
