@@ -107,7 +107,7 @@ test('mobile tab routes are unique and remain inside the configured site base', 
   );
   expect(hrefs).toEqual([
     '/edubooks/',
-    '/edubooks/#categories',
+    '/edubooks/books/#book-search',
     '/edubooks/books/',
     '/edubooks/faq/',
     '/edubooks/about/'
