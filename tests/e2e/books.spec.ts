@@ -77,3 +77,36 @@ test('homepage links directly to all six language editions without decorative ca
   await expect(page.locator('.publication-index, .practice-number')).toHaveCount(0);
   await expect(page.locator('.hero a.button-3d')).toHaveAttribute('href', '/edubooks/books/');
 });
+
+test('mobile tab bar Search opens the catalogue and focuses its search field', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/edubooks/');
+  const searchTab = page.locator('.mobile-tabbar a[data-tab-key="search"]');
+  await expect(searchTab).toBeVisible();
+  await expect(searchTab).toHaveAttribute('href', '/edubooks/books/#book-search');
+  await searchTab.click();
+  await expect(page).toHaveURL(/\\/edubooks\\/books\\/#book-search$/);
+  await expect(page.getByRole('searchbox', { name: 'Search the library' })).toBeFocused();
+});
+
+test('generated sitemap contains public routes and all published editions but no drafts', async ({ page }) => {
+  const response = await page.goto('/edubooks/sitemap.xml');
+  expect(response?.status()).toBe(200);
+  expect(response?.headers()['content-type']).toContain('application/xml');
+  const xml = await response?.text();
+  expect(xml).toContain('https://gpldroid.github.io/edubooks/books/');
+  expect(xml).toContain('https://gpldroid.github.io/edubooks/faq/');
+  for (const slug of [
+    'language-foundations-en', 'language-foundations-fr', 'language-foundations-es',
+    'essential-vocabulary-en', 'essential-vocabulary-fr', 'essential-vocabulary-es'
+  ]) expect(xml).toContain(`/books/${slug}/`);
+  expect(xml).not.toContain('english-starter-a1');
+});
+
+test('FAQ internal links resolve to existing public pages', async ({ page }) => {
+  await page.goto('/edubooks/faq/');
+  for (const href of ['/edubooks/books/', '/edubooks/terms/', '/edubooks/about/#contact']) {
+    const link = page.locator(`a[href="${href}"]`).first();
+    await expect(link).toBeVisible();
+  }
+});
