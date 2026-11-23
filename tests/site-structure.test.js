@@ -64,31 +64,27 @@ test('book library requires localized metadata, a TOC and a bounded PDF sample',
   assert.ok(catalog.includes("book.status !== 'draft' && book.status !== 'published'"));
 });
 
-test('published book samples open only on demand in an accessible same-page PDF dialog', () => {
+test('published books open the complete PDF directly in the browser reader without an upload dialog', () => {
   const card = read('src/components/books/BookCard.astro');
   const detail = read('src/components/books/BookPreview.astro');
   const route = read('src/pages/books/[slug].astro');
   const download = read('src/pages/books/[slug]/download.astro');
   const catalog = read('src/data/catalog.ts');
   for (const token of ['data-en="Explore book"', 'free-access-label', 'data-en="Free PDF"']) assert.ok(card.includes(token), 'Missing review-only card action: ' + token);
-  for (const token of ['Table of contents', 'Preview PDF', 'Download PDF', 'data-pdf-preview', 'data-pdf-src', '<dialog', 'showModal()', 'data-pdf-frame', "removeAttribute('src')"]) {
-    assert.ok(detail.includes(token), 'Missing on-demand PDF preview feature: ' + token);
-  }
-  assert.ok(!detail.includes('target="_blank" rel="noopener noreferrer" data-en="Preview PDF"'));
-  assert.ok(!detail.includes('<iframe src='));
+  for (const token of ['Table of contents', 'Read book online', 'Download PDF', 'book.downloadPdf', 'target="_blank"', 'rel="noopener noreferrer"']) assert.ok(detail.includes(token), 'Missing direct PDF reader feature: ' + token);
+  assert.ok(!detail.includes('<dialog'));
+  assert.ok(!detail.includes('<iframe'));
+  assert.ok(!detail.includes('data-pdf-frame'));
+  assert.ok(!detail.includes('showModal()'));
   assert.ok(route.includes("book.status === 'published'"));
-  assert.ok(detail.includes("book.status === 'published' && book.previewPdf"));
+  assert.ok(detail.includes("book.status === 'published' && readerUrl"));
   assert.ok(!detail.includes('Editorial review in progress'));
   for (const token of ['downloadPdf', 'download', 'Download PDF']) assert.ok(download.includes(token), 'Missing direct free download feature: ' + token);
   assert.ok(!download.includes('setInterval'));
   assert.ok(catalog.includes('previewPdf:'));
   assert.ok(catalog.includes('sample.pdf'));
   assert.ok(catalog.includes('downloadPdf:'));
-  for (const source of [card, detail, route, download]) {
-    for (const forbidden of ['gumroadUrl', 'paypalUrl', 'Buy with Gumroad', 'Pay with PayPal', 'Access digital file']) {
-      assert.ok(!source.includes(forbidden), 'Commercial control leaked into public template: ' + forbidden);
-    }
-  }
+  for (const source of [card, detail, route, download]) for (const forbidden of ['gumroadUrl', 'paypalUrl', 'Buy with Gumroad', 'Pay with PayPal', 'Access digital file']) assert.ok(!source.includes(forbidden), 'Commercial control leaked into public template: ' + forbidden);
 });
 
 test('inner-page typography refinements explicitly exclude the homepage', () => {
@@ -171,9 +167,9 @@ test('mobile tab bar replaces Explore with a direct, accessible library search d
   assert.ok(library.includes("window.location.hash==='#book-search'"));
 });
 
-test('FAQ content explains the on-page PDF preview and links to key library routes', () => {
+test('FAQ explains direct browser PDF reading and links to key library routes', () => {
   const faq = read('src/pages/faq.astro');
-  for (const token of ['Preview PDF', 'Download PDF', 'books/', 'terms/', 'contact/', 'data-en=', 'data-fr=', 'data-es=']) {
+  for (const token of ['Read book online', 'complete PDF directly', 'No file upload', 'Download PDF', 'books/', 'terms/', 'contact/', 'data-en=', 'data-fr=', 'data-es=']) {
     assert.ok(faq.includes(token), 'Missing FAQ content or internal link: ' + token);
   }
 });

@@ -139,7 +139,7 @@ test('informational pages share the site typography on desktop and mobile', asyn
     '/edubooks/contact/'
   ];
 
-  for (const width of [390, 1366]) {
+  for (const width of [320, 360, 390, 430, 768, 1024, 1366]) {
     await page.setViewportSize({ width, height: 900 });
     for (const route of routes) {
       await page.goto(route);
@@ -153,7 +153,12 @@ test('informational pages share the site typography on desktop and mobile', asyn
           paragraphFont: getComputedStyle(paragraph).fontFamily,
           paragraphLineHeight: getComputedStyle(paragraph).lineHeight,
           width: content.getBoundingClientRect().width,
-          viewport: document.documentElement.clientWidth
+          viewport: document.documentElement.clientWidth,
+          documentWidth: document.documentElement.scrollWidth,
+          contentRight: content.getBoundingClientRect().right,
+          contentLeft: content.getBoundingClientRect().left,
+          headingRight: heading.getBoundingClientRect().right,
+          paragraphRight: paragraph.getBoundingClientRect().right
         };
       });
       expect(metrics.headingFont).toContain('DM Sans');
@@ -161,6 +166,11 @@ test('informational pages share the site typography on desktop and mobile', asyn
       expect(metrics.paragraphFont).toContain('DM Sans');
       expect(Number.parseFloat(metrics.paragraphLineHeight)).toBeGreaterThan(25);
       expect(metrics.width).toBeLessThanOrEqual(metrics.viewport);
+      expect(metrics.documentWidth).toBeLessThanOrEqual(metrics.viewport + 1);
+      expect(metrics.contentLeft).toBeGreaterThanOrEqual(-1);
+      expect(metrics.contentRight).toBeLessThanOrEqual(metrics.viewport + 1);
+      expect(metrics.headingRight).toBeLessThanOrEqual(metrics.viewport + 1);
+      expect(metrics.paragraphRight).toBeLessThanOrEqual(metrics.viewport + 1);
     }
   }
 });
@@ -170,5 +180,42 @@ test('Contact page uses the same editorial surface and typography', async ({ pag
   const contact = page.locator('.editorial-contact-panel');
   await expect(contact).toBeVisible();
   await expect(contact.locator('h2')).toHaveCSS('font-weight', '800');
-  await expect(contact.locator('p')).toHaveCSS('font-family', /DM Sans/);
+  await expect(contact.locator('p').first()).toHaveCSS('font-family', /DM Sans/);
+});
+
+
+test('published book reader opens the complete PDF directly and keeps the overview and contents available', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/edubooks/books/language-foundations-en/');
+  await expect(page.locator('.book-summary h2')).toContainText('About this book');
+  await expect(page.locator('.toc-section h2')).toContainText('Table of contents');
+  const readBook = page.getByRole('link', { name: 'Read book online' });
+  await expect(readBook).toHaveAttribute('href', '/edubooks/books/language-foundations-en.pdf');
+  await expect(readBook).toHaveAttribute('target', '_blank');
+  await expect(readBook).toHaveAttribute('rel', 'noopener noreferrer');
+  const download = page.getByRole('link', { name: 'Download PDF' });
+  await expect(download).toHaveAttribute('href', '/edubooks/books/language-foundations-en/download/');
+  await expect(page.locator('.pdf-preview-dialog')).toHaveCount(0);
+});
+
+
+test('book detail typography, metadata and reading actions fit narrow phone widths', async ({ page }) => {
+  const route = '/edubooks/books/language-foundations-en/';
+  for (const width of [320, 360, 390, 430, 768, 1024]) {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto(route);
+    const metrics = await page.evaluate(() => ({
+      viewport: document.documentElement.clientWidth,
+      document: document.documentElement.scrollWidth,
+      summary: document.querySelector('.book-summary')?.getBoundingClientRect().right ?? 0,
+      toc: document.querySelector('.toc-section')?.getBoundingClientRect().right ?? 0,
+      actions: document.querySelector('.reader-actions')?.getBoundingClientRect().right ?? 0
+    }));
+    expect(metrics.document, `Book detail overflow at ${width}px: ${JSON.stringify(metrics)}`).toBeLessThanOrEqual(metrics.viewport + 1);
+    expect(metrics.summary).toBeLessThanOrEqual(metrics.viewport + 1);
+    expect(metrics.toc).toBeLessThanOrEqual(metrics.viewport + 1);
+    expect(metrics.actions).toBeLessThanOrEqual(metrics.viewport + 1);
+    await expect(page.getByRole('link', { name: 'Read book online' })).toBeVisible();
+    await expect(page.locator('.book-summary .description')).toBeVisible();
+  }
 });

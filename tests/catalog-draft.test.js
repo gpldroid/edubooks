@@ -33,7 +33,9 @@ test('published catalogue editions expose both preview and full PDF paths', () =
   const download = read('src/pages/books/[slug]/download.astro');
   assert.match(catalog, /published editions require a safe PDF preview/);
   assert.match(catalog, /published editions require a full PDF/);
-  assert.match(detail, /Preview PDF/);
+  assert.match(detail, /Read book online/);
+  assert.match(detail, /book\.downloadPdf/);
+  assert.doesNotMatch(detail, /<dialog|<iframe|showModal\(\)/);
   assert.match(detail, /Download PDF/);
   assert.ok(download.includes('book.downloadPdf'));
   assert.match(download, /Download PDF/);
