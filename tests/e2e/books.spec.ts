@@ -68,5 +68,5 @@ test('homepage links directly to all six language editions without decorative ca
   await page.goto('/edubooks/');
   await expect(page.locator('.home-edition-links a')).toHaveCount(6);
   await expect(page.locator('.publication-index, .practice-number')).toHaveCount(0);
-  await expect(page.getByRole('link', { name: /Browse all books|Explore learning areas/i })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Browse free books|Explore collection/i })).toBeVisible();
 });
