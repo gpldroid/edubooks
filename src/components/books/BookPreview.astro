@@ -2,8 +2,9 @@
 import { books, categories, type Book } from '../../data/catalog';
 interface Props { book: Book; base: string; }
 const { book, base } = Astro.props;
-const coverUrl = `${base}${book.cover.slice(1)}`;
+const coverUrl = base + book.cover.slice(1);
 const category = categories.find((item) => item.slug === book.category);
+const previewUrl = book.previewPdf ? base + book.previewPdf.replace(/^\//, '') : '';
 ---
 <article class="book-detail">
   <div class="book-intro">
@@ -20,7 +21,7 @@ const category = categories.find((item) => item.slug === book.category);
         {book.pages && <div><dt data-en="Full book pages" data-fr="Pages du livre complet" data-es="Páginas del libro completo">Full book pages</dt><dd>{book.pages}</dd></div>}
         {book.author && <div><dt data-en="Author" data-fr="Auteur" data-es="Autor">Author</dt><dd>{book.author}</dd></div>}
       </dl>
-      {book.status === 'published' && book.previewPdf ? <><p class="reader-summary" data-en="Open the sample PDF in your browser or download the complete book for free." data-fr="Consultez un extrait PDF dans votre navigateur ou téléchargez gratuitement le livre complet." data-es="Abre una muestra PDF en el navegador o descarga gratis el libro completo.">Open the sample PDF in your browser or download the complete book for free.</p><div class="reader-actions"><a class="button-3d button-3d--compact preview-cta" href={base + book.previewPdf.replace(/^\//, '')} target="_blank" rel="noopener noreferrer" data-en="Preview PDF" data-fr="Aperçu PDF" data-es="Vista previa PDF">Preview PDF</a><a class="button-3d button-3d--dark download-cta" href={base + 'books/' + book.slug + '/download/'} data-en="Download PDF" data-fr="Télécharger le PDF" data-es="Descargar PDF">Download PDF</a></div></> : null}
+      {book.status === 'published' && book.previewPdf ? <><p class="reader-summary" data-en="Preview a sample of this book in an on-page reading window, or download the complete book for free." data-fr="Consultez un extrait de ce livre dans une fenêtre de lecture sur cette page, ou téléchargez gratuitement le livre complet." data-es="Previsualiza una muestra de este libro en una ventana de lectura en esta página o descarga gratis el libro completo.">Preview a sample of this book in an on-page reading window, or download the complete book for free.</p><div class="reader-actions"><button class="button-3d button-3d--compact preview-cta" type="button" data-pdf-preview data-pdf-src={previewUrl} aria-haspopup="dialog" aria-controls="pdf-preview-dialog" data-en="Preview PDF" data-fr="Aperçu PDF" data-es="Vista previa PDF">Preview PDF</button><a class="button-3d button-3d--dark download-cta" href={base + 'books/' + book.slug + '/download/'} data-en="Download PDF" data-fr="Télécharger le PDF" data-es="Descargar PDF">Download PDF</a></div></> : null}
     </div>
   </div>
   <section class="toc-section" aria-labelledby="toc-heading">
@@ -28,11 +29,69 @@ const category = categories.find((item) => item.slug === book.category);
     <ol class="toc-list">{book.toc.map((item) => <li><span class="toc-title" data-en={item.titleEn} data-fr={item.titleFr} data-es={item.titleEs}>{item.titleEn}</span></li>)}</ol>
   </section>
 </article>
+{book.status === 'published' && book.previewPdf ? <dialog class="pdf-preview-dialog" id="pdf-preview-dialog" aria-labelledby="pdf-preview-title" aria-describedby="pdf-preview-description">
+  <div class="pdf-preview-shell">
+    <header class="pdf-preview-header">
+      <div class="pdf-preview-heading">
+        <span class="preview-label" data-en="BOOK SAMPLE" data-fr="EXTRAIT DU LIVRE" data-es="MUESTRA DEL LIBRO">BOOK SAMPLE</span>
+        <h2 id="pdf-preview-title" data-en="PDF preview" data-fr="Aperçu PDF" data-es="Vista previa PDF">PDF preview</h2>
+        <p id="pdf-preview-description" data-en="Read the sample without leaving this page." data-fr="Lisez cet extrait sans quitter cette page." data-es="Lee la muestra sin salir de esta página.">Read the sample without leaving this page.</p>
+      </div>
+      <button class="pdf-preview-close" type="button" data-pdf-close aria-label="Close PDF preview" data-en="Close" data-fr="Fermer" data-es="Cerrar"><span aria-hidden="true">×</span><span class="pdf-close-label" data-en="Close" data-fr="Fermer" data-es="Cerrar">Close</span></button>
+    </header>
+    <div class="pdf-preview-stage">
+      <iframe data-pdf-frame title="PDF book sample" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="pdf-preview-fallback">
+        <span data-en="If the PDF does not appear in the reading area, open it separately or download the sample." data-fr="Si le PDF ne s’affiche pas dans la zone de lecture, ouvrez-le séparément ou téléchargez l’extrait." data-es="Si el PDF no aparece en el área de lectura, ábrelo por separado o descarga la muestra.">If the PDF does not appear in the reading area, open it separately or download the sample.</span>
+        <a data-pdf-open target="_blank" rel="noopener noreferrer" data-en="Open PDF in a new tab" data-fr="Ouvrir le PDF dans un nouvel onglet" data-es="Abrir PDF en una pestaña nueva">Open PDF in a new tab</a>
+        <a data-pdf-download download data-en="Download sample" data-fr="Télécharger l’extrait" data-es="Descargar muestra">Download sample</a>
+      </div>
+    </div>
+  </div>
+</dialog> : null}
 <nav class="related-editions" aria-label="Related language editions">
   <h2 data-en="Explore this title in another language" data-fr="Découvrir ce livre dans une autre langue" data-es="Ver este libro en otro idioma">Explore this title in another language</h2>
   {books.filter((edition) => edition.slug.replace(/-(en|fr|es)$/, '') === book.slug.replace(/-(en|fr|es)$/, '') && edition.slug !== book.slug).map((edition) => <a href={base + 'books/' + edition.slug + '/'}>{edition.title} · {edition.language.toUpperCase()}</a>)}
 </nav>
+<script>
+  const previewDialog = document.querySelector<HTMLDialogElement>('#pdf-preview-dialog');
+  const previewFrame = previewDialog?.querySelector<HTMLIFrameElement>('[data-pdf-frame]');
+  const previewOpenLink = previewDialog?.querySelector<HTMLAnchorElement>('[data-pdf-open]');
+  const previewDownloadLink = previewDialog?.querySelector<HTMLAnchorElement>('[data-pdf-download]');
+  const previewCloseButton = previewDialog?.querySelector<HTMLButtonElement>('[data-pdf-close]');
+  const previewButtons = document.querySelectorAll<HTMLButtonElement>('[data-pdf-preview]');
+
+  function closePdfPreview(): void {
+    if (!previewDialog?.open) return;
+    previewDialog.close();
+  }
+
+  previewButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const source = button.dataset.pdfSrc;
+      if (!source || !previewDialog || !previewFrame || !previewOpenLink || !previewDownloadLink) return;
+      previewFrame.src = source;
+      previewOpenLink.href = source;
+      previewDownloadLink.href = source;
+      if (!previewDialog.open) previewDialog.showModal();
+      previewCloseButton?.focus();
+    });
+  });
+
+  previewCloseButton?.addEventListener('click', closePdfPreview);
+  previewDialog?.addEventListener('click', (event: MouseEvent) => {
+    if (event.target === previewDialog) closePdfPreview();
+  });
+  previewDialog?.addEventListener('close', () => {
+    previewFrame?.removeAttribute('src');
+    previewOpenLink?.removeAttribute('href');
+    previewDownloadLink?.removeAttribute('href');
+  });
+</script>
 <style>
-.book-detail{max-width:1080px;margin:0 auto}.book-intro{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:clamp(28px,5vw,58px);align-items:start}.detail-cover{position:relative;margin:0;padding:12px;border:1px solid #e3e9e8;border-radius:16px;background:#f2f5f3;box-shadow:0 16px 36px rgb(16 31 50 / 9%)}.detail-cover img{display:block;width:100%;height:auto;border-radius:8px}.detail-cover figcaption{padding:9px 4px 0;text-align:center;color:#71808c;font-size:11px}.book-summary{min-width:0}.preview-label{font-size:10px;letter-spacing:.15em;color:#388b82;font-weight:900}.book-summary h2,.toc-section h2{font-size:clamp(25px,3vw,34px);color:#183452;margin:7px 0 12px}.description{color:#586a7a;line-height:1.85;margin:0 0 22px}.book-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}.book-facts div{padding:12px;border:1px solid #e4ebe8;border-radius:10px;background:#fbfcfb}.book-facts dt{font-size:10px;color:#71808c;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.book-facts dd{margin:3px 0 0;color:#20354b;font-size:13px;font-weight:700;overflow-wrap:anywhere}.reader-summary{margin:20px 0 0;padding:12px 14px;border-left:3px solid #388b82;background:#f1f7f5;color:#49655f;font-size:12px}.toc-section{margin-top:clamp(38px,6vw,72px);padding:clamp(20px,3vw,34px);border:1px solid #e3eae7;border-radius:16px;background:#fff}.toc-heading-row{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:16px}.toc-section h2{margin-bottom:0}.toc-count{flex:none;padding:6px 10px;border-radius:30px;background:#edf5f2;color:#388b82;font-size:11px;font-weight:800}.toc-list{list-style:none;margin:0;padding:0;}.toc-list li{display:flex;align-items:baseline;gap:14px;padding:13px 2px;border-bottom:1px solid #edf0ef;}.toc-list li:last-child{border-bottom:0}.toc-title{flex:1;color:#20354b;font-size:14px;font-weight:600}.toc-page{color:#8a969f;font-size:12px;font-variant-numeric:tabular-nums}.reader-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.reader-actions .button-3d{text-decoration:none;flex:1 1 150px;text-align:center}@media(max-width:700px){.book-intro{grid-template-columns:minmax(0,1fr)}.detail-cover{width:min(100%,320px);margin-inline:auto}.book-facts{grid-template-columns:1fr 1fr}}@media(max-width:380px){.book-facts{grid-template-columns:1fr}}
+.book-detail{max-width:1080px;margin:0 auto}.book-intro{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:clamp(28px,5vw,58px);align-items:start}.detail-cover{position:relative;margin:0;padding:12px;border:1px solid #e3e9e8;border-radius:16px;background:#f2f5f3;box-shadow:0 16px 36px rgb(16 31 50 / 9%)}.detail-cover img{display:block;width:100%;height:auto;border-radius:8px}.detail-cover figcaption{padding:9px 4px 0;text-align:center;color:#71808c;font-size:11px}.book-summary{min-width:0}.preview-label{font-size:10px;letter-spacing:.15em;color:#388b82;font-weight:900}.book-summary h2,.toc-section h2{font-size:clamp(25px,3vw,34px);color:#183452;margin:7px 0 12px}.description{color:#586a7a;line-height:1.85;margin:0 0 22px}.book-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}.book-facts div{padding:12px;border:1px solid #e4ebe8;border-radius:10px;background:#fbfcfb}.book-facts dt{font-size:10px;color:#71808c;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.book-facts dd{margin:3px 0 0;color:#20354b;font-size:13px;font-weight:700;overflow-wrap:anywhere}.reader-summary{margin:20px 0 0;padding:12px 14px;border-left:3px solid #388b82;background:#f1f7f5;color:#49655f;font-size:12px}.toc-section{margin-top:clamp(38px,6vw,72px);padding:clamp(20px,3vw,34px);border:1px solid #e3eae7;border-radius:16px;background:#fff}.toc-heading-row{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:16px}.toc-section h2{margin-bottom:0}.toc-count{flex:none;padding:6px 10px;border-radius:30px;background:#edf5f2;color:#388b82;font-size:11px;font-weight:800}.toc-list{list-style:none;margin:0;padding:0;}.toc-list li{display:flex;align-items:baseline;gap:14px;padding:13px 2px;border-bottom:1px solid #edf0ef;}.toc-list li:last-child{border-bottom:0}.toc-title{flex:1;color:#20354b;font-size:14px;font-weight:600}.toc-page{color:#8a969f;font-size:12px;font-variant-numeric:tabular-nums}.reader-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.reader-actions .button-3d{flex:1 1 150px;text-align:center;cursor:pointer;font:inherit}.reader-actions a{text-decoration:none}
+.pdf-preview-dialog{width:min(1120px,calc(100vw - 32px));max-width:none;height:min(900px,calc(100dvh - 32px));max-height:none;margin:auto;padding:0;border:0;border-radius:18px;background:#f3f6f5;color:#20354b;box-shadow:0 28px 90px rgb(0 0 0 / 38%);overflow:hidden}.pdf-preview-dialog::backdrop{background:rgb(8 20 34 / 76%);backdrop-filter:blur(4px)}.pdf-preview-shell{display:flex;width:100%;height:100%;min-height:0;flex-direction:column}.pdf-preview-header{display:flex;flex:none;align-items:center;justify-content:space-between;gap:18px;padding:16px 20px;background:#fff;border-bottom:1px solid #dce5e2}.pdf-preview-heading h2{margin:3px 0 0;color:#183452;font-size:20px;line-height:1.25}.pdf-preview-heading p{margin:2px 0 0;color:#667787;font-size:12px}.pdf-preview-close{display:inline-flex;flex:none;align-items:center;gap:8px;min-height:42px;padding:7px 13px;border:1px solid #dce5e2;border-radius:10px;background:#f7faf9;color:#183452;font-size:13px;font-weight:800;cursor:pointer}.pdf-preview-close span:first-child{font-size:24px;line-height:1}.pdf-preview-stage{display:flex;min-height:0;flex:1;flex-direction:column;background:#303943}.pdf-preview-stage iframe{display:block;width:100%;min-height:0;flex:1;border:0;background:#fff}.pdf-preview-fallback{display:flex;flex:none;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;padding:10px 16px;background:#fff;color:#657687;font-size:11px;text-align:center}.pdf-preview-fallback a{color:#28776f;font-weight:800;text-decoration:underline}
+@media(max-width:700px){.book-intro{grid-template-columns:minmax(0,1fr)}.detail-cover{width:min(100%,320px);margin-inline:auto}.book-facts{grid-template-columns:1fr 1fr}.pdf-preview-dialog{width:100vw;height:100dvh;max-height:none;border-radius:0}.pdf-preview-header{padding:12px 14px}.pdf-preview-heading h2{font-size:17px}.pdf-preview-heading p{max-width:34ch;font-size:11px}.pdf-preview-close{min-height:40px;padding:6px 10px}.pdf-close-label{display:none}.pdf-preview-fallback{gap:6px 12px;padding:9px 10px;font-size:10px}}
+@media(max-width:380px){.book-facts{grid-template-columns:1fr}}
 .related-editions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:30px;padding:20px;border:1px solid #e3eae7;border-radius:14px;background:#f7f9f8}.related-editions h2{flex-basis:100%;margin:0 0 5px;font-size:18px;color:#183452}.related-editions a{padding:8px 12px;border:1px solid #dce8e4;border-radius:8px;background:#fff;color:#28776f;font-size:13px;font-weight:700;text-decoration:none}
 </style>
