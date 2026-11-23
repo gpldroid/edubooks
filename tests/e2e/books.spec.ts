@@ -35,6 +35,8 @@ test('published edition detail exposes indexable preview and download actions', 
   await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
   await expect(page.locator('.edition-switch a')).toHaveCount(3);
   await expect(page.getByRole('link', { name: 'Preview PDF' })).toHaveAttribute('href', /language-foundations-en-sample\.pdf$/);
+  await expect(page.locator('.pdf-frame iframe')).toHaveAttribute('src', /language-foundations-en-sample\.pdf$/);
+  await expect(page.locator('.related-editions a')).toHaveCount(2);
   await expect(page.getByRole('link', { name: 'Download PDF' })).toHaveAttribute('href', /books\/language-foundations-en\/download\/$/);
   await expect(page.getByText('Editorial review in progress')).toHaveCount(0);
 
