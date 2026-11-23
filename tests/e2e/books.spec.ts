@@ -8,6 +8,7 @@ test('book library lists six free PDF language editions', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Explore the library' })).toBeVisible();
   await expect(page.locator('.book-card')).toHaveCount(6);
   await expect(page.locator('.review-status')).toHaveCount(6);
+  await expect(page.locator('.category-count, .results-total')).toHaveCount(0);
   await expect(page.getByText('Free PDF')).toHaveCount(6);
   await expect(page.locator('.edition-pill')).toHaveCount(6);
   await expect(page.getByRole('link', { name: /download pdf/i })).toHaveCount(0);
@@ -58,4 +59,12 @@ test('book library does not overflow on compact and desktop viewports', async ({
     }));
     expect(dimensions.document, `Horizontal overflow at ${width}px`).toBeLessThanOrEqual(dimensions.viewport + 1);
   }
+});
+
+
+test('homepage links directly to all six language editions without decorative card numbering', async ({ page }) => {
+  await page.goto('/edubooks/');
+  await expect(page.locator('.home-edition-links a')).toHaveCount(6);
+  await expect(page.locator('.publication-index, .practice-number')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: /Browse all books|Explore learning areas/i })).toBeVisible();
 });
