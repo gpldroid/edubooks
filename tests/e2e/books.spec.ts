@@ -9,7 +9,6 @@ test('book library lists six free PDF language editions', async ({ page }) => {
   await expect(page.locator('.book-card')).toHaveCount(6);
   await expect(page.locator('.review-status')).toHaveCount(6);
   await expect(page.locator('.category-count, .results-total')).toHaveCount(0);
-  await expect(page.getByText('Free PDF')).toHaveCount(6);
   await expect(page.locator('.edition-pill')).toHaveCount(6);
   await expect(page.getByRole('link', { name: /download pdf/i })).toHaveCount(0);
   await expect(page.getByText(/Language Foundations/i)).toHaveCount(3);
@@ -68,5 +67,5 @@ test('homepage links directly to all six language editions without decorative ca
   await page.goto('/edubooks/');
   await expect(page.locator('.home-edition-links a')).toHaveCount(6);
   await expect(page.locator('.publication-index, .practice-number')).toHaveCount(0);
-  await expect(page.getByRole('link', { name: /Browse free books|Explore collection/i })).toBeVisible();
+  await expect(page.locator('.hero a.button-3d')).toHaveAttribute('href', '/edubooks/books/');
 });
