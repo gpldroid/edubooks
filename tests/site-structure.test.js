@@ -148,7 +148,8 @@ test('published library pages include contextual SEO metadata and live reader li
   const library = read('src/pages/books/index.astro');
   const detail = read('src/pages/books/[slug].astro');
   const preview = read('src/components/books/BookPreview.astro');
-  for (const token of ['name="keywords"', 'rel="canonical"', 'hreflang', 'application/ld+json']) assert.ok(layout.includes(token));
+  for (const token of ['name="description"', 'rel="canonical"', 'hreflang', 'application/ld+json', '"@type":"WebPage"']) assert.ok(layout.includes(token));
+  assert.ok(!layout.includes('name="keywords"'));
   for (const token of ['Free Educational Books', 'books/', 'language-foundations', 'essential-vocabulary']) assert.ok(home.toLowerCase().includes(token.toLowerCase()));
   assert.ok(library.includes('visibleCategories'));
   assert.ok(preview.includes('related-editions'));
