@@ -7,8 +7,8 @@ test('book library lists six free PDF language editions', async ({ page }) => {
   await page.goto(libraryPath);
   await expect(page.getByRole('heading', { name: 'Explore the library' })).toBeVisible();
   await expect(page.locator('.book-card')).toHaveCount(6);
-  await expect(page.locator('.review-status')).toHaveCount(6);
-  await expect(page.getByText('Free PDF')).toHaveCount(6);
+  await expect(page.locator('.free-access-label')).toHaveCount(6);
+  await expect(page.locator('.category-count, .results-total')).toHaveCount(0);
   await expect(page.locator('.edition-pill')).toHaveCount(6);
   await expect(page.getByRole('link', { name: /download pdf/i })).toHaveCount(0);
   await expect(page.getByText(/Language Foundations/i)).toHaveCount(3);
@@ -34,6 +34,8 @@ test('published edition detail exposes indexable preview and download actions', 
   await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
   await expect(page.locator('.edition-switch a')).toHaveCount(3);
   await expect(page.getByRole('link', { name: 'Preview PDF' })).toHaveAttribute('href', /language-foundations-en-sample\.pdf$/);
+  await expect(page.locator('.pdf-frame iframe')).toHaveAttribute('src', /language-foundations-en-sample\.pdf$/);
+  await expect(page.locator('.related-editions a')).toHaveCount(2);
   await expect(page.getByRole('link', { name: 'Download PDF' })).toHaveAttribute('href', /books\/language-foundations-en\/download\/$/);
   await expect(page.getByText('Editorial review in progress')).toHaveCount(0);
 
@@ -58,4 +60,12 @@ test('book library does not overflow on compact and desktop viewports', async ({
     }));
     expect(dimensions.document, `Horizontal overflow at ${width}px`).toBeLessThanOrEqual(dimensions.viewport + 1);
   }
+});
+
+
+test('homepage links directly to all six language editions without decorative card numbering', async ({ page }) => {
+  await page.goto('/edubooks/');
+  await expect(page.locator('.home-edition-links a')).toHaveCount(6);
+  await expect(page.locator('.publication-index, .practice-number')).toHaveCount(0);
+  await expect(page.locator('.hero a.button-3d')).toHaveAttribute('href', '/edubooks/books/');
 });

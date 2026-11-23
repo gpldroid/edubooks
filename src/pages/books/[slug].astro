@@ -28,12 +28,13 @@ const alternates: { lang: string; href: string }[] = editionFamily.map((item) =>
   href: new URL(import.meta.env.BASE_URL + 'books/' + item.slug + '/', Astro.site).href
 }));
 const defaultEdition = editionFamily.find((item) => item.language === 'en');
+const bookSchema = { '@context': 'https://schema.org', '@type': 'Book', name: book.title, alternateName: [book.titleFr, book.titleEs], description: book.description, inLanguage: book.language, bookFormat: 'https://schema.org/EBook', isAccessibleForFree: true, learningResourceType: 'Workbook', educationalLevel: book.level, keywords: (book.subjects ?? []).join(', '), author: { '@type': 'Person', name: book.author ?? 'Imad Limrani' }, url: new URL(import.meta.env.BASE_URL + 'books/' + book.slug + '/', Astro.site).href };
 if (defaultEdition) alternates.push({
   lang: 'x-default',
   href: new URL(import.meta.env.BASE_URL + 'books/' + defaultEdition.slug + '/', Astro.site).href
 });
 ---
-<BaseLayout title={book.title + ' — EduBooks'} description={book.description} robots={book.status === 'published' ? undefined : 'noindex,follow'} alternates={alternates}>
+<BaseLayout title={book.title + ' — Free PDF Book | EduBooks'} description={book.description} keywords={[book.title, book.titleFr, book.titleEs, ...(book.subjects ?? []), category?.nameEn ?? '', book.language, 'free PDF', 'language learning workbook'].filter(Boolean).join(', ')} robots={book.status === 'published' ? undefined : 'noindex,follow'} alternates={alternates}>
   <section class="page-hero">
     <div class="container">
       <a href={import.meta.env.BASE_URL + 'books/'} class="back-link" data-en="← All books" data-fr="← Tous les livres" data-es="← Todos los libros">← All books</a>
@@ -41,7 +42,7 @@ if (defaultEdition) alternates.push({
       <h1 data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</h1>
       <p data-en={book.description} data-fr={book.descriptionFr} data-es={book.descriptionEs}>{book.description}</p>
       <nav class="edition-switch" aria-label="Available language editions">
-        <span data-en="Language edition" data-fr="Édition linguistique" data-es="Edición lingüística">Language edition</span>
+        <span data-en="Choose a language" data-fr="Choisir une langue" data-es="Elige un idioma">Choose a language</span>
         {editionFamily.map((edition) => <a href={import.meta.env.BASE_URL + 'books/' + edition.slug + '/'} aria-current={edition.slug === book.slug ? 'page' : undefined} class:list={{ active: edition.slug === book.slug }}>{edition.language.toUpperCase()}</a>)}
       </nav>
     </div>

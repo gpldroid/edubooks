@@ -63,13 +63,13 @@ test('public book pages provide free browser PDF preview and direct full-PDF dow
   const route = read('src/pages/books/[slug].astro');
   const download = read('src/pages/books/[slug]/download.astro');
   const catalog = read('src/data/catalog.ts');
-  for (const token of ['data-en="View details"', 'review-status', 'data-en="Free PDF"']) assert.ok(card.includes(token), `Missing review-only card action: ${token}`);
+  for (const token of ['data-en="Explore book"', 'free-access-label', 'data-en="Free PDF"']) assert.ok(card.includes(token), `Missing review-only card action: ${token}`);
   for (const token of ['Table of contents', 'Preview PDF', 'Download PDF', 'book.previewPdf', 'download/']) assert.ok(detail.includes(token), `Missing free PDF reader feature: ${token}`);
-  assert.ok(!detail.includes('PdfViewer'));
+  assert.ok(detail.includes('PdfViewer'));
   assert.ok(route.includes("book.status === 'published'"));
   assert.ok(detail.includes("book.status === 'published' && book.previewPdf"));
-  assert.ok(detail.includes('Editorial review in progress'));
-  for (const token of ['downloadPdf', 'download', 'No account or payment is required']) assert.ok(download.includes(token), `Missing direct free download feature: ${token}`);
+  assert.ok(!detail.includes('Editorial review in progress'));
+  for (const token of ['downloadPdf', 'download', 'Download PDF']) assert.ok(download.includes(token), `Missing direct free download feature: ${token}`);
   assert.ok(!download.includes('setInterval'));
   assert.ok(catalog.includes("book.downloadPdf.startsWith('/books/')"));
   assert.ok(catalog.includes("book.previewPdf.startsWith('/previews/')"));
@@ -119,7 +119,7 @@ test('application source contains no unfinished implementation placeholders', ()
 test('book library uses a navigable category sidebar and responsive 3D grid', () => {
   const page = read('src/pages/books/index.astro');
   const card = read('src/components/books/BookCard.astro');
-  for (const token of ['category-sidebar', 'category-nav', 'data-category-link', 'aria-current', 'categoryCounts', 'catalog-layout', 'book-grid']) {
+  for (const token of ['category-sidebar', 'category-nav', 'data-category-link', 'aria-current', 'visibleCategories', 'catalog-layout', 'book-grid']) {
     assert.ok(page.includes(token), `Missing library layout feature: ${token}`);
   }
   for (const token of ['perspective:', 'transform-style:preserve-3d', 'rotateX(', 'prefers-reduced-motion', '@media(max-width:760px)']) {
@@ -128,4 +128,22 @@ test('book library uses a navigable category sidebar and responsive 3D grid', ()
   assert.ok(page.includes('window.addEventListener(\'popstate\''));
   assert.ok(page.includes('history.pushState'));
   assert.ok(!page.includes('category-chips'));
+});
+
+
+test('published library pages include contextual SEO metadata and live reader links', () => {
+  const layout = read('src/layouts/BaseLayout.astro');
+  const home = read('src/pages/index.astro');
+  const library = read('src/pages/books/index.astro');
+  const detail = read('src/pages/books/[slug].astro');
+  const preview = read('src/components/books/BookPreview.astro');
+  for (const token of ['name="keywords"', 'rel="canonical"', 'hreflang', 'application/ld+json']) assert.ok(layout.includes(token));
+  for (const token of ['Free Educational Books', 'books/', 'language-foundations', 'essential-vocabulary']) assert.ok(home.toLowerCase().includes(token.toLowerCase()));
+  assert.ok(library.includes('visibleCategories'));
+  assert.ok(preview.includes('PdfViewer'));
+  assert.ok(preview.includes('related-editions'));
+  assert.ok(!library.includes('results-total'));
+  assert.ok(!library.includes('category-count'));
+  assert.ok(!home.includes('publication-index'));
+  assert.ok(!home.includes('practice-number'));
 });

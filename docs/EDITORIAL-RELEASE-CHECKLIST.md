@@ -1,6 +1,6 @@
-# Editorial and Website Publication Checklist
+# Editorial, Accessibility and Ongoing Quality Checklist
 
-Complete this checklist separately for each of the six editions. Every checked item must have evidence.
+Complete this checklist separately for each of the six editions. The six current PDFs are already published as free website downloads. This checklist records the publisher's ongoing human editorial, pedagogical, rights and accessibility review; it does not imply that those reviews or certifications have already been completed. Record evidence for every completed item. If a critical defect is found, correct the source and regenerate the affected PDF and sample.
 
 ## Edition identity
 - [ ] Correct book title and target language (EN, FR or ES).
@@ -42,9 +42,9 @@ Complete this checklist separately for each of the six editions. Every checked i
 - [ ] PDF passes an appropriate accessibility checker and manual screen-reader test.
 - [ ] Accessibility/tagged-PDF status is documented; do not claim compliance without evidence.
 
-## Website assets and reader experience
-- [ ] Approved complete PDF exists under `public/books/`.
-- [ ] Approved sample/preview PDF exists under `public/previews/`.
+## Current public assets and reader experience
+- [ ] The published complete PDF exists under `public/books/` and matches the current catalogue record.
+- [ ] The separate five-page sample exists under `public/previews/` and matches the current edition.
 - [ ] Correct language-specific cover exists.
 - [ ] Preview opens in the browser from the public EduBooks URL.
 - [ ] Download retrieves the complete PDF from the public EduBooks URL.
@@ -61,7 +61,7 @@ Complete this checklist separately for each of the six editions. Every checked i
 - [ ] Full PDF and preview PDF filenames, page counts and SHA-256 checksums are recorded.
 - [ ] SHA-256 sidecars match the exact artifacts approved by the owner.
 - [ ] Public preview and download URLs are verified after deployment.
-- [ ] Owner explicitly authorizes website publication for this edition.
+- [ ] Record the publisher's original authorization for website publication; any later replacement or withdrawal must also be recorded.
 
 ## Release record
 - Edition ID:
@@ -78,4 +78,4 @@ Complete this checklist separately for each of the six editions. Every checked i
 - Owner authorization / date:
 - Deployment run / publication date:
 
-**Do not publish if any required item is unchecked.**
+**Do not describe human review or accessibility certification as complete while its evidence is missing.** The six existing public editions remain available as free PDFs while the publisher completes this review. If a serious error or accessibility barrier is identified, record the affected edition and corrective action.

@@ -1,35 +1,38 @@
-# Book library and PDF preview workflow
+# Book library and PDF reader
 
-The public library is a static Astro catalogue. Only entries with `status: 'published'` are rendered. Draft manuscripts and editorial source files are never discovered or published automatically.
+The EduBooks library is a static Astro catalogue containing six free language editions. Each book has a dedicated page with a description, cover, edition selector, table of contents, embedded sample PDF and complete-PDF download action.
 
-## Add a book edition
+## Current collection
 
-1. Complete the editorial, pedagogical, rights and accessibility gates in [the release checklist](EDITORIAL-RELEASE-CHECKLIST.md).
-2. Create a cover asset under `public/images/book-covers/` (or use another reviewed root-relative public image path).
-3. Create a **separate preview PDF** under `public/previews/<book-slug>/<language>.pdf`.
-4. The preview PDF must contain, in order:
-   - the approved book cover;
-   - the public-facing book description;
-   - the complete table of contents;
-   - exactly 3–5 approved sample pages from the book.
-5. Add the edition to `books` in `src/data/catalog.ts`, including English, French and Spanish UI metadata, localized TOC titles, the preview PDF path and `samplePageCount`.
-6. Set `status: 'published'` only after the edition and preview have been explicitly approved for public website publication.
+- Language Foundations — English, French and Spanish.
+- Essential Vocabulary — English, French and Spanish.
 
-The build validates required metadata, safe asset paths, TOC localization and the 3–5 sample-page declaration. It also fails if a published book's cover or preview PDF is missing from `public/`.
+## Reader journey
 
-## Preview file safety
+1. Open the [book library](https://gpldroid.github.io/edubooks/books/).
+2. Search by title, language or learning topic.
+3. Open a book edition.
+4. Read its sample in the embedded PDF viewer or open the sample in a new tab.
+5. Download the complete PDF from the book page.
 
-- Never point `previewPdf` to a full-book PDF, manuscript source, or commercial delivery file.
-- Do not place full books in `public/`; everything there is publicly accessible on GitHub Pages.
-- A PDF embedded in a public page is not protected: visitors may be able to save or print it using their browser. The viewer is for convenient reading, not DRM.
-- The library templates intentionally do not render Gumroad, PayPal, checkout, purchase, or full-book download links. Commercial fields in the type are legacy editorial metadata only and must not be used in public templates.
+## Catalogue and assets
 
-## Local verification
+- Catalogue: `src/data/catalog.ts`
+- Book cards: `src/components/books/BookCard.astro`
+- Book detail and PDF preview: `src/components/books/BookPreview.astro`
+- PDF viewer: `src/components/books/PdfViewer.astro`
+- Detail route: `src/pages/books/[slug].astro`
+- Download route: `src/pages/books/[slug]/download.astro`
+- Covers: `public/covers/`
+- Sample PDFs: `public/previews/`
+- Complete PDFs: `public/books/`
 
-```bash
-npm ci
-npm run check
-npm test
-npm run build
-npm run test:e2e
-```
+Each published edition must reference an existing cover, sample and complete PDF. Preview and full-download paths are separate and must respect the GitHub Pages `/edubooks` base path.
+
+## Search and semantic discovery
+
+Book cards include localized titles and descriptions, category names, language identifiers and subject keywords in their searchable metadata. Page metadata should use a distinct title and description, relevant natural-language keywords, canonical URL and language alternates where appropriate. Internal links should connect the library, book detail pages, language variants and related titles.
+
+## Editorial and accessibility status
+
+Production checks validate PDF generation and technical properties. Human editorial review and accessibility assessment are recorded separately by the publisher. A tagged PDF is not automatically PDF/UA conformant or screen-reader accessible.

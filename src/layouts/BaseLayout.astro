@@ -3,8 +3,8 @@ import '../styles/legacy.css';
 import '../styles/site.css';
 import MobileTabBar from '../components/navigation/MobileTabBar.astro';
 import ScrollControls from '../components/ui/ScrollControls.astro';
-interface Props { title?: string; titleAr?: string; description?: string; descriptionAr?: string; robots?: string; alternates?: { lang: string; href: string }[]; }
-const { title = 'EduBooks — Learn. Practice. Grow.', description = 'Practical digital learning resources for every stage of the learning journey.', robots = 'index, follow, max-image-preview:large', alternates = [] } = Astro.props;
+interface Props { title?: string; titleAr?: string; description?: string; descriptionAr?: string; keywords?: string; robots?: string; alternates?: { lang: string; href: string }[]; }
+const { title = 'EduBooks — Learn. Practice. Grow.', description = 'Practical digital learning resources for every stage of the learning journey.', keywords = 'free educational books, PDF workbooks, language learning, English, French, Spanish', robots = 'index, follow, max-image-preview:large', alternates = [] } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonicalPath = Astro.url.pathname.startsWith(base) ? Astro.url.pathname : base + Astro.url.pathname.replace(/^\/+/, '');
 const canonical = new URL(canonicalPath, Astro.site).href;
@@ -14,12 +14,12 @@ const siteUrl = new URL(base, Astro.site).href;
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#142b4a" /><meta name="description" content={description} />
+<meta name="theme-color" content="#142b4a" /><meta name="description" content={description} /><meta name="keywords" content={keywords} />
 <meta name="robots" content={robots} /><link rel="canonical" href={canonical} />{alternates.map((item) => <link rel="alternate" hreflang={item.lang} href={item.href} />)}
 <meta name="author" content="Imad Limrani" /><meta property="og:type" content="website" /><meta property="og:title" content={title} />
 <meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:site_name" content="EduBooks" /><meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><title>{title}</title>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"EduBooks","url":siteUrl,"description":description,"inLanguage":["en","fr","es"],"publisher":{"@type":"Person","name":"Imad Limrani"}})} />
+<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"EduBooks","url":siteUrl,"description":description,"keywords":keywords,"inLanguage":["en","fr","es"],"publisher":{"@type":"Person","name":"Imad Limrani"}})} />
 <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" /><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>

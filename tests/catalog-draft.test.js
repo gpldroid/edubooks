@@ -36,5 +36,5 @@ test('published catalogue editions expose both preview and full PDF paths', () =
   assert.match(detail, /Preview PDF/);
   assert.match(detail, /Download PDF/);
   assert.ok(download.includes('book.downloadPdf'));
-  assert.match(download, /No account or payment is required/);
+  assert.match(download, /Download PDF/);
 });

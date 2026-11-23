@@ -1,101 +1,72 @@
 # EduBooks — Project handover
 
-**Updated:** 2026-11-22  
+**Updated:** 2026-11-23  
 **Repository:** https://github.com/gpldroid/edubooks  
-**Website:** https://gpldroid.github.io/edubooks/
+**Website:** https://gpldroid.github.io/edubooks/  
+**Public library:** https://gpldroid.github.io/edubooks/books/
 
-## 1. Current owner decision
+## Current product decision
 
-EduBooks is a **free PDF library distributed only through its website**. Readers preview PDFs in the browser and download complete PDFs directly from EduBooks. There will be no sales, paid downloads, checkout, subscriptions, Gumroad or PayPal integration.
+EduBooks is a free, website-only PDF library. Visitors can browse books, read a sample PDF in the browser and download the complete PDF directly from the website. There are no paid products, sales, checkout, subscriptions, payment buttons or external store delivery. Gumroad and PayPal are not part of this project.
 
-Do not revive old store setup or pricing instructions. Existing Gumroad drafts are historical account state only; do not modify, attach files to or publish them.
+The supported website and publication languages are English, French and Spanish. Every title is issued as three independent monolingual editions.
 
-The catalogue lists six review-only records (two titles × EN/FR/ES). Their detail pages are `noindex`; no preview or download is available while they remain drafts. No edition is approved for public release. Three historical, unapproved Book 01 PDFs have been removed from the deployable `public/books/` directory. Do not restore or reuse them without a new documented review.
+## Published collection
 
-Read [the site-only publishing model](SITE-ONLY-PUBLISHING-MODEL.md) before changing publication code.
-
-## 2. Collection architecture
-
-The first collection contains two titles, each in three independent monolingual editions:
-
-| Book | English | French | Spanish |
+| Title | English | French | Spanish |
 |---|---|---|---|
-| 01 — Language Foundations | 10 units | 10 units | 10 units |
-| 02 — Essential Vocabulary | 12 units | 12 units | 12 units |
+| Language Foundations | 10 units | 10 units | 10 units |
+| Essential Vocabulary | 12 units | 12 units | 12 units |
 
-Learning and explanation languages are English, French and Spanish. Arabic is outside the scope of the website and these books. Preserve the original source manuscripts; the six localized manuscripts are working drafts for their respective editions.
+All six editions are registered in `src/data/catalog.ts`. Each has a public cover, a five-page sample PDF, a complete PDF and a detail page with language switching.
 
-## 3. Technical state
+- [Language Foundations — EN](https://gpldroid.github.io/edubooks/books/language-foundations-en/)
+- [Language Foundations — FR](https://gpldroid.github.io/edubooks/books/language-foundations-fr/)
+- [Language Foundations — ES](https://gpldroid.github.io/edubooks/books/language-foundations-es/)
+- [Essential Vocabulary — EN](https://gpldroid.github.io/edubooks/books/essential-vocabulary-en/)
+- [Essential Vocabulary — FR](https://gpldroid.github.io/edubooks/books/essential-vocabulary-fr/)
+- [Essential Vocabulary — ES](https://gpldroid.github.io/edubooks/books/essential-vocabulary-es/)
 
-- Astro 5 static site, deployed through GitHub Pages.
-- Site base path: `/edubooks`.
-- PR #27: Book 01 PDF workflow changed to read-only internal review artifacts; it no longer commits generated PDFs into `public/books/`.
-- PR #28: post-merge verification report.
-- Post-PR #27 deployment and internal workflow verification passed: [Pages run #45045145911](https://github.com/gpldroid/edubooks/actions/runs/45045145911), [Book 01 review run #45045145899](https://github.com/gpldroid/edubooks/actions/runs/45045145899), [internal-only legacy workflow run #45045145880](https://github.com/gpldroid/edubooks/actions/runs/45045145880).
-- Book 02 EN/FR/ES review PDFs passed technical matrix checks in [run #45044583560](https://github.com/gpldroid/edubooks/actions/runs/45044583560).
-- `src/data/catalog.ts` contains six review-only edition records. Drafts must have no preview/download paths; only approved `published` records may point to verified full and sample PDFs.
-- Historical, unapproved Book 01 PDFs have been removed from deployable public assets; no edition is approved for public release.
-- No approved final PDF or preview is registered. All six catalogue records remain drafts; their review covers are marked as such.
+## Production architecture
 
-## 4. Manuscript and PDF status
+- Astro 5 static website deployed through GitHub Pages.
+- Project-site base path: `/edubooks`.
+- The GitHub Actions production workflow builds the six PDFs from the authoritative Markdown manuscripts, creates separate five-page samples, runs technical PDF checks and stages the generated assets for the Pages site.
+- The catalogue validates required metadata and public PDF paths.
+- Book detail pages include a browser PDF preview, direct download action, table of contents and links to the other language editions.
+- The site metadata includes canonical URLs, localized alternates, page descriptions, keyword metadata and structured website data.
 
-### Book 01 — Language Foundations
-- Drafts: `content/books/01-language-foundations/{en,fr,es}/manuscript.md`.
-- Ten units per edition.
-- First-pass answer-key cross-check: `docs/editorial/book-01/answer-key-reconciliation-2026-11-22.md`.
-- French Unit 3 answer key corrected in PR #26; regenerated French proof: `docs/editorial/book-01/pdf-proof-2026-11-22.md`.
-- Qualified language/pedagogical review, rights, accessibility and full-page visual proof remain open.
+## Editorial and accessibility status
 
-### Book 02 — Essential Vocabulary
-- Drafts: `content/books/02-essential-vocabulary/{en,fr,es}/manuscript.md`.
-- Twelve units per edition, plus integrated project, final test, answer key and glossary.
-- First-pass cross-check: `docs/editorial/book-02/answer-key-crosscheck-2026-11-22.md`.
-- French Unit 10 and Spanish Unit 9 prompt/answer corrections merged in PR #27.
-- French PDF last page has excessive whitespace; refine pagination without filler. Inspect every page in all three editions.
-- Qualified language/pedagogical review, rights, accessibility and full-page visual proof remain open.
+Automated production checks are not human editorial approval. The publisher will record human language/editorial review and accessibility assessment separately. The PDFs include tagged-PDF metadata, but that alone does not establish PDF/UA conformance, correct semantic reading order or screen-reader usability.
 
-Review candidates from GitHub Actions are internal-only and must not be placed in `public/`.
+Do not add human reviewer names, dates, approvals or accessibility claims unless the publisher has supplied and confirmed them. Do not claim formal CEFR certification.
 
-## 5. Website publication workflow
+## Important source locations
 
-For each edition independently:
-1. Complete language and pedagogical review.
-2. Complete rights, accessibility and full-page visual checks.
-3. Build final complete PDF and separate sample/preview PDF.
-4. Verify metadata, page count, text extraction, embedded fonts, links/bookmarks, file size and SHA-256.
-5. Add approved files under `public/books/` and `public/previews/` through a reviewed pull request.
-6. Keep each review-only catalogue record clearly marked until approved files exist and all release gates are complete.
-7. Provide **Preview PDF** (browser) and **Download PDF** (direct download) actions.
-8. Merge after CI, deploy to Pages and verify both public URLs.
-9. Record owner approval and deployment evidence.
+- `content/books/01-language-foundations/{en,fr,es}/manuscript.md`
+- `content/books/02-essential-vocabulary/{en,fr,es}/manuscript.md`
+- `src/data/catalog.ts`
+- `src/pages/index.astro`
+- `src/pages/books/`
+- `src/components/books/`
+- `src/layouts/BaseLayout.astro`
+- `src/styles/site.css`
+- `.github/workflows/`
+- `.github/scripts/`
+- `public/covers/`, `public/previews/`, `public/books/`
 
-Publish editions gradually; one approved edition need not wait for the other five.
+## Continuation priorities
 
-## 6. Priority next work
+1. Complete and document the publisher's human editorial review for each language edition.
+2. Complete the publisher's accessibility assessment and record its actual scope and findings.
+3. Correct manuscript or PDF issues found during those reviews; regenerate the affected PDF and sample.
+4. Keep the public book pages, language links, PDF paths, sitemap and metadata synchronized.
+5. Verify the public library and PDF URLs after each production deployment.
 
-1. Remove residual store/purchase language from public pages and metadata.
-2. Finish editorial and pedagogical review of Book 01 EN/FR/ES and Book 02 EN/FR/ES.
-3. Improve Book 02 French PDF pagination and conduct full-page proofs.
-4. Prepare approved sample and full PDFs for each edition.
-5. Populate the catalogue one approved edition at a time.
+## Security and publishing policy
 
-## 7. Development commands
-
-```bash
-npm ci
-npm run dev
-npm run check
-npm test
-npm run build
-npm run preview
-```
-
-Use Node.js 22+ (CI uses Node.js 24). For responsive tests: `npx playwright install chromium`, then `npm run test:e2e`.
-
-## 8. Policy and security
-
-- No selling, paid downloads, store integration or payment processing.
-- Keep secrets, access tokens and private account data out of Git.
-- Do not claim official CEFR certification.
-- Do not publish review candidates or unapproved legacy PDFs as final editions.
-- Technical CI success does not replace qualified human review or owner release approval.
+- Keep API keys, access tokens and private account data out of Git.
+- Do not restore old store integrations, sales copy or paid-download flows.
+- Do not publish internal CI artifacts as public PDFs.
+- Preserve source manuscripts and documented release evidence.
