@@ -210,3 +210,17 @@ test('published book detail pages emit their Book structured data', () => {
   assert.ok(detail.includes("'@type': 'Book'"));
   assert.ok(detail.includes('set:html={JSON.stringify(bookSchema)}'));
 });
+
+test('informational and legal pages share the editorial typography system', () => {
+  for (const route of ['faq.astro', 'about.astro', 'terms.astro', 'privacy.astro']) {
+    const page = read('src/pages/' + route);
+    assert.ok(page.includes('editorial-content'), route + ' must use the shared editorial content class');
+    assert.ok(page.includes("BaseLayout"), route + ' must use the shared site layout');
+  }
+  const about = read('src/pages/about.astro');
+  assert.ok(about.includes('editorial-contact-panel'), 'Contact section must use the shared editorial panel');
+  const css = read('src/styles/site.css');
+  for (const token of ['.editorial-content', '.editorial-contact-panel', 'font-family: inherit', 'line-height: 1.85']) {
+    assert.ok(css.includes(token), 'Missing editorial style token: ' + token);
+  }
+});
