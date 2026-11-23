@@ -1,6 +1,5 @@
 ---
 import { books, categories, type Book } from '../../data/catalog';
-import PdfViewer from './PdfViewer.astro';
 interface Props { book: Book; base: string; }
 const { book, base } = Astro.props;
 const coverUrl = `${base}${book.cover.slice(1)}`;
@@ -29,7 +28,6 @@ const category = categories.find((item) => item.slug === book.category);
     <ol class="toc-list">{book.toc.map((item) => <li><span class="toc-title" data-en={item.titleEn} data-fr={item.titleFr} data-es={item.titleEs}>{item.titleEn}</span></li>)}</ol>
   </section>
 </article>
-{book.status === 'published' && book.previewPdf && <PdfViewer src={base + book.previewPdf.replace(/^\//, '')} title={book.title} />}
 <nav class="related-editions" aria-label="Related language editions">
   <h2 data-en="Explore this title in another language" data-fr="Découvrir ce livre dans une autre langue" data-es="Ver este libro en otro idioma">Explore this title in another language</h2>
   {books.filter((edition) => edition.slug.replace(/-(en|fr|es)$/, '') === book.slug.replace(/-(en|fr|es)$/, '') && edition.slug !== book.slug).map((edition) => <a href={base + 'books/' + edition.slug + '/'}>{edition.title} · {edition.language.toUpperCase()}</a>)}

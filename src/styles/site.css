@@ -348,3 +348,10 @@ body.inner-page .book-detail h2 {
   body.inner-page .content-section .content-narrow h2,
   body.inner-page .content-section .faq-content h2 { margin-top: 28px; }
 }
+
+
+/* Keep the language edition links distinct on homepage publication cards. */
+.home-edition-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+.home-edition-links a{display:inline-flex;align-items:center;justify-content:center;min-width:42px;min-height:34px;padding:6px 11px;border:1px solid #d7e5e0;border-radius:8px;background:#fff;color:#28776f;font-size:11px;font-weight:800;line-height:1;text-decoration:none;transition:background-color .2s ease,border-color .2s ease,transform .2s ease}
+.home-edition-links a:hover{border-color:#388b82;background:#eef7f4;transform:translateY(-1px)}
+.home-edition-links a:focus-visible{outline:3px solid #70b9ae;outline-offset:3px}
