@@ -57,7 +57,7 @@ test('book library requires localized metadata, a TOC and a bounded PDF sample',
   assert.ok(catalog.includes("book.status !== 'draft' && book.status !== 'published'"));
 });
 
-test('public book pages provide free browser PDF preview and direct full-PDF download', () => {
+test('public book pages provide direct PDF sample access and full-PDF download', () => {
   const card = read('src/components/books/BookCard.astro');
   const detail = read('src/components/books/BookPreview.astro');
   const route = read('src/pages/books/[slug].astro');
@@ -65,7 +65,6 @@ test('public book pages provide free browser PDF preview and direct full-PDF dow
   const catalog = read('src/data/catalog.ts');
   for (const token of ['data-en="Explore book"', 'free-access-label', 'data-en="Free PDF"']) assert.ok(card.includes(token), `Missing review-only card action: ${token}`);
   for (const token of ['Table of contents', 'Preview PDF', 'Download PDF', 'book.previewPdf', 'download/']) assert.ok(detail.includes(token), `Missing free PDF reader feature: ${token}`);
-  assert.ok(detail.includes('PdfViewer'));
   assert.ok(route.includes("book.status === 'published'"));
   assert.ok(detail.includes("book.status === 'published' && book.previewPdf"));
   assert.ok(!detail.includes('Editorial review in progress'));
@@ -78,28 +77,6 @@ test('public book pages provide free browser PDF preview and direct full-PDF dow
       assert.ok(!source.includes(forbidden), `Commercial control leaked into public template: ${forbidden}`);
     }
   }
-});
-
-test('embedded PDF viewer includes browser fallbacks and accessible viewing controls', () => {
-  const viewer = read('src/components/books/PdfViewer.astro');
-  for (const token of [
-    '<object data={src} type="application/pdf"',
-    '<iframe src={viewerSrc}',
-    'data-pdf-viewer',
-    'data-pdf-fullscreen',
-    'requestFullscreen()',
-    'document.exitFullscreen()',
-    'target="_blank"',
-    'download',
-    'aria-label="View PDF preview in full screen"',
-    'pdf-viewer-shell:fullscreen',
-    'If the preview does not appear'
-  ]) {
-    assert.ok(viewer.includes(token), `Missing PDF viewer capability: ${token}`);
-  }
-  assert.ok(viewer.includes('toolbar=1&navpanes=0&view=FitH'));
-  assert.ok(viewer.includes('data-fr='));
-  assert.ok(viewer.includes('data-es='));
 });
 
 test('inner-page typography refinements explicitly exclude the homepage', () => {
@@ -130,7 +107,7 @@ test('application source contains no unfinished implementation placeholders', ()
   const sourceFiles = [
     'src/components/navigation/MobileTabBar.astro', 'src/components/ui/ScrollControls.astro',
     'src/components/ui/Icon3D.astro', 'src/components/books/BookCard.astro',
-    'src/components/books/BookPreview.astro', 'src/components/books/PdfViewer.astro'
+    'src/components/books/BookPreview.astro'
   ];
   for (const path of sourceFiles) {
     const source = read(path);
@@ -161,7 +138,6 @@ test('published library pages include contextual SEO metadata and live reader li
   for (const token of ['name="keywords"', 'rel="canonical"', 'hreflang', 'application/ld+json']) assert.ok(layout.includes(token));
   for (const token of ['Free Educational Books', 'books/', 'language-foundations', 'essential-vocabulary']) assert.ok(home.toLowerCase().includes(token.toLowerCase()));
   assert.ok(library.includes('visibleCategories'));
-  assert.ok(preview.includes('PdfViewer'));
   assert.ok(preview.includes('related-editions'));
   assert.ok(!library.includes('results-total'));
   assert.ok(!library.includes('category-count'));
