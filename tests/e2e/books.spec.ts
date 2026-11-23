@@ -7,7 +7,7 @@ test('book library lists six free PDF language editions', async ({ page }) => {
   await page.goto(libraryPath);
   await expect(page.getByRole('heading', { name: 'Explore the library' })).toBeVisible();
   await expect(page.locator('.book-card')).toHaveCount(6);
-  await expect(page.locator('.review-status')).toHaveCount(6);
+  await expect(page.locator('.free-access-label')).toHaveCount(6);
   await expect(page.locator('.category-count, .results-total')).toHaveCount(0);
   await expect(page.locator('.edition-pill')).toHaveCount(6);
   await expect(page.getByRole('link', { name: /download pdf/i })).toHaveCount(0);
