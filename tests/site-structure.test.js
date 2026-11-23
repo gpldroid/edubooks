@@ -157,3 +157,39 @@ test('published library pages include contextual SEO metadata and live reader li
   assert.ok(!home.includes('publication-index'));
   assert.ok(!home.includes('practice-number'));
 });
+
+\ntest('mobile tab bar replaces Explore with a direct, accessible library search destination', () => {
+  const nav = read('src/components/navigation/MobileTabBar.astro');
+  const icon = read('src/components/ui/Icon3D.astro');
+  const library = read('src/pages/books/index.astro');
+  assert.ok(nav.includes("label: 'Search'"));
+  assert.ok(nav.includes("route('books/#book-search')"));
+  assert.ok(!nav.includes('label: "Explore"'));
+  assert.ok(icon.includes('search:'));
+  assert.ok(library.includes("window.location.hash==='#book-search'"));
+});
+
+test('FAQ content explains the on-page PDF preview and links to key library routes', () => {
+  const faq = read('src/pages/faq.astro');
+  for (const token of ['Preview PDF', 'Download PDF', 'books/', 'terms/', 'about/#contact', 'data-en=', 'data-fr=', 'data-es=']) {
+    assert.ok(faq.includes(token), 'Missing FAQ content or internal link: ' + token);
+  }
+});
+
+test('sitemap lists canonical public routes and published editions only', () => {
+  const sitemap = read('src/pages/sitemap.xml.ts');
+  const robots = read('public/robots.txt');
+  for (const token of ['books/', 'about/', 'faq/', 'privacy/', 'terms/', "book.status === 'published'", 'new Set', 'application/xml']) {
+    assert.ok(sitemap.includes(token), 'Missing sitemap requirement: ' + token);
+  }
+  assert.ok(robots.includes('Sitemap: https://gpldroid.github.io/edubooks/sitemap.xml'));
+  assert.ok(!sitemap.includes("book.status === 'draft'"));
+});
+
+test('shared SEO metadata avoids obsolete keyword stuffing and emits page-specific structured data', () => {
+  const layout = read('src/layouts/BaseLayout.astro');
+  assert.ok(layout.includes('rel="canonical"'));
+  assert.ok(layout.includes('application/ld+json'));
+  assert.ok(layout.includes('"@type":"WebPage"'));
+  assert.ok(!layout.includes('name="keywords"'));
+});
