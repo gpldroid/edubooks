@@ -28,6 +28,7 @@ const alternates: { lang: string; href: string }[] = editionFamily.map((item) =>
   href: new URL(import.meta.env.BASE_URL + 'books/' + item.slug + '/', Astro.site).href
 }));
 const defaultEdition = editionFamily.find((item) => item.language === 'en');
+const bookSchema = { '@context': 'https://schema.org', '@type': 'Book', name: book.title, alternateName: [book.titleFr, book.titleEs], description: book.description, inLanguage: book.language, bookFormat: 'https://schema.org/EBook', isAccessibleForFree: true, learningResourceType: 'Workbook', educationalLevel: book.level, keywords: (book.subjects ?? []).join(', '), author: { '@type': 'Person', name: book.author ?? 'Imad Limrani' }, url: new URL(import.meta.env.BASE_URL + 'books/' + book.slug + '/', Astro.site).href };
 if (defaultEdition) alternates.push({
   lang: 'x-default',
   href: new URL(import.meta.env.BASE_URL + 'books/' + defaultEdition.slug + '/', Astro.site).href
