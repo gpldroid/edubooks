@@ -112,7 +112,7 @@ const vocabularyBase: Omit<Book, 'slug' | 'language' | 'cover' | 'coverAlt'> = {
   descriptionEs: 'Un cuaderno de autoaprendizaje de vocabulario cotidiano con doce unidades temáticas, práctica guiada, soluciones, un registro personal y un glosario.',
   category: 'language-learning',
   format: 'PDF',
-  status: 'draft',
+  status: 'published',
   level: 'A1–A2 approximate learning range; not a certification',
   subjects: ['Everyday vocabulary', 'Self-study', 'Communication', 'Spaced review'],
   toc: vocabularyToc
