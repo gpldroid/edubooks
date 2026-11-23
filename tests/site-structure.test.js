@@ -178,6 +178,22 @@ test('FAQ content explains the on-page PDF preview and links to key library rout
   }
 });
 
+test('Contact is a first-class route and no longer depends on an About-page hash', () => {
+  const layout = read('src/layouts/BaseLayout.astro');
+  const faq = read('src/pages/faq.astro');
+  const about = read('src/pages/about.astro');
+  const contact = read('src/pages/contact.astro');
+  const sitemap = read('src/pages/sitemap.xml.ts');
+  assert.ok(layout.includes('${base}contact/'));
+  assert.ok(faq.includes('${base}contact/'));
+  assert.ok(contact.includes('Contact the project'));
+  assert.ok(!about.includes('id="contact"'));
+  assert.ok(!layout.includes('about/#contact'));
+  assert.ok(!faq.includes('about/#contact'));
+  assert.ok(sitemap.includes("'contact/'"));
+});
+
+
 test('About page describes the ongoing editorial process without claiming completed manual review', () => {
   const about = read('src/pages/about.astro');
   assert.ok(about.includes('Ongoing improvements to accuracy, language quality and usability'));
