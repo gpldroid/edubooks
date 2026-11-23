@@ -85,7 +85,7 @@ test('mobile tab bar Search opens the catalogue and focuses its search field', a
   await expect(searchTab).toBeVisible();
   await expect(searchTab).toHaveAttribute('href', '/edubooks/books/#book-search');
   await searchTab.click();
-  await expect(page).toHaveURL(/\\/edubooks\\/books\\/#book-search$/);
+  await expect(page).toHaveURL(/\/edubooks\/books\/#book-search$/);
   await expect(page.getByRole('searchbox', { name: 'Search the library' })).toBeFocused();
 });
 
