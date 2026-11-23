@@ -124,7 +124,7 @@ const visibleCategories = categories.filter((category) => catalogBooks.some((boo
       event.preventDefault();
       setCategory(link.dataset.categoryLink||'all',true);
     }));
-    search?.addEventListener('input',filterBooks);
+    search?.addEventListener('input',filterBooks);\n    if(window.location.hash==='#book-search'){search?.focus({preventScroll:true});}
     window.addEventListener('popstate',()=>{
       const category=new URLSearchParams(window.location.search).get('category')||'all';
       setCategory(categoryLinks.some((link)=>link.dataset.categoryLink===category)?category:'all');
