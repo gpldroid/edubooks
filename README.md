@@ -2,7 +2,7 @@
 
 **Learn. Practice. Grow.**
 
-EduBooks is a free digital library of practical educational books and PDF workbooks. Readers can explore each title, read a sample in the browser and download the complete PDF directly from the website.
+EduBooks is a free digital library of practical educational books and PDF workbooks. Visitors can explore each title, open a sample in a large PDF reading dialog on the same page, and download the complete PDF free of charge.
 
 - **Website:** https://gpldroid.github.io/edubooks/
 - **Library:** https://gpldroid.github.io/edubooks/books/
@@ -10,7 +10,7 @@ EduBooks is a free digital library of practical educational books and PDF workbo
 - **Publisher:** Imad Limrani
 - **Languages:** English, French and Spanish
 - **Distribution:** Free access through the EduBooks website only
-- **Formats:** Browser PDF preview and complete PDF download
+- **Formats:** On-demand in-page PDF sample preview and complete PDF download
 
 ## Published collection
 
@@ -25,8 +25,11 @@ Each edition has its own book page, five-page PDF sample and complete downloadab
 
 1. Browse the [EduBooks library](https://gpldroid.github.io/edubooks/books/).
 2. Choose a title and language edition.
-3. Read the sample PDF directly on the book page.
-4. Download the complete PDF free of charge.
+3. Select **Preview PDF** to open the sample in a large dialog without leaving the book page.
+4. Read using the PDF controls provided by the browser. If inline PDF rendering is unavailable, use the dialog's fallback links to open or download the sample.
+5. Select **Download PDF** to download the complete book.
+
+The sample PDF is loaded only after the visitor opens the preview. Closing the dialog removes the iframe source, ending the embedded document session. The preview is not rendered or downloaded automatically on initial page load. The full-book download remains a separate action.
 
 No account, subscription, checkout or payment is required. EduBooks does not distribute books through Gumroad or PayPal.
 
@@ -40,7 +43,7 @@ Human editorial review and accessibility assessment are handled separately. Tech
 
 - [Project handover](docs/PROJECT-HANDOVER.md)
 - [Website publishing model](docs/SITE-ONLY-PUBLISHING-MODEL.md)
-- [Book library and PDF details](docs/BOOK-LIBRARY-PREVIEW.md)
+- [Book library and PDF preview](docs/BOOK-LIBRARY-PREVIEW.md)
 - [Editorial release checklist](docs/EDITORIAL-RELEASE-CHECKLIST.md)
 - [Rights and licence register](docs/RIGHTS-AND-LICENSE-REGISTER.md)
 - [Current work register](docs/REMAINING-WORK-REGISTER.md)
@@ -53,7 +56,8 @@ Human editorial review and accessibility assessment are handled separately. Tech
 - `public/books/` — generated complete PDFs
 - `src/data/catalog.ts` — book, language, category and PDF metadata
 - `src/pages/` — public website pages
-- `src/components/books/` — book cards, details and PDF reader
+- `src/components/books/BookCard.astro` — library cards
+- `src/components/books/BookPreview.astro` — book details, on-demand PDF dialog and preview lifecycle
 - `.github/workflows/` — automated PDF production, quality checks and GitHub Pages deployment
 
 ## Publishing principles
