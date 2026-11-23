@@ -197,3 +197,25 @@ test('published book reader opens the complete PDF directly and keeps the overvi
   await expect(download).toHaveAttribute('href', '/edubooks/books/language-foundations-en/download/');
   await expect(page.locator('.pdf-preview-dialog')).toHaveCount(0);
 });
+
+
+test('book detail typography, metadata and reading actions fit narrow phone widths', async ({ page }) => {
+  const route = '/edubooks/books/language-foundations-en/';
+  for (const width of [320, 360, 390, 430, 768, 1024]) {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto(route);
+    const metrics = await page.evaluate(() => ({
+      viewport: document.documentElement.clientWidth,
+      document: document.documentElement.scrollWidth,
+      summary: document.querySelector('.book-summary')?.getBoundingClientRect().right ?? 0,
+      toc: document.querySelector('.toc-section')?.getBoundingClientRect().right ?? 0,
+      actions: document.querySelector('.reader-actions')?.getBoundingClientRect().right ?? 0
+    }));
+    expect(metrics.document, `Book detail overflow at ${width}px: ${JSON.stringify(metrics)}`).toBeLessThanOrEqual(metrics.viewport + 1);
+    expect(metrics.summary).toBeLessThanOrEqual(metrics.viewport + 1);
+    expect(metrics.toc).toBeLessThanOrEqual(metrics.viewport + 1);
+    expect(metrics.actions).toBeLessThanOrEqual(metrics.viewport + 1);
+    await expect(page.getByRole('link', { name: 'Read book online' })).toBeVisible();
+    await expect(page.locator('.book-summary .description')).toBeVisible();
+  }
+});
