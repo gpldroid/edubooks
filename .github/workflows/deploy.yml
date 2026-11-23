@@ -24,7 +24,7 @@ jobs:
       - name: Install PDF production toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y libreoffice-writer poppler-utils fonts-dejavu-core python3-docx librsvg2-bin
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils fonts-dejavu-core python3-docx librsvg2-bin
 
       - name: Build all six language editions and five-page previews
         shell: bash
