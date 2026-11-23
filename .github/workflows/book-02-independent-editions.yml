@@ -99,7 +99,7 @@ jobs:
               grep -Fq '4. la —' "$FILE"
               grep -Fq '1) Me duele la ____ (cabeza).' "$FILE"
               grep -Fq 'cabeza; tos;' "$FILE"
-              grep -Fq '**Estado de publicación en el sitio: NO AUTORIZADO PARA SU DIFUSIÓN.**' "$FILE"
+              grep -Fq '**Distribución: EDICIÓN GRATUITA EN EL SITIO WEB.**' "$FILE"
               ! grep -Eq '^## (Publication note|Discover|Vocabulary in context|Language focus|Guided practice|Answer check|Communicate|Self-check)$' "$FILE"
               ;;
           esac

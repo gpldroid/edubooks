@@ -82,7 +82,10 @@ const editions = (base: Omit<Book, 'slug' | 'language' | 'cover' | 'coverAlt'>, 
     slug: `${bookSlug}-${language}`,
     language,
     cover: `/covers/${bookSlug}-${language}.svg`,
-    coverAlt: `${base.title} — ${language.toUpperCase()} edition cover`
+    coverAlt: `${base.title} — ${language.toUpperCase()} edition cover`,
+    previewPdf: `/previews/${bookSlug}-${language}-sample.pdf`,
+    samplePageCount: 5,
+    downloadPdf: `/books/${bookSlug}-${language}.pdf`
   }));
 
 const foundationsBase: Omit<Book, 'slug' | 'language' | 'cover' | 'coverAlt'> = {
@@ -94,7 +97,7 @@ const foundationsBase: Omit<Book, 'slug' | 'language' | 'cover' | 'coverAlt'> = 
   descriptionEs: 'Un cuaderno práctico para principiantes sobre estrategias de aprendizaje, el alfabeto, la pronunciación, los saludos, las presentaciones, los números, la información personal y las primeras frases.',
   category: 'language-learning',
   format: 'PDF',
-  status: 'draft',
+  status: 'published',
   level: 'Pre-A1–A1 learning target; not a certification',
   subjects: ['Language learning', 'Pronunciation', 'Beginner communication', 'Study skills'],
   toc: foundationsToc
@@ -109,7 +112,7 @@ const vocabularyBase: Omit<Book, 'slug' | 'language' | 'cover' | 'coverAlt'> = {
   descriptionEs: 'Un cuaderno de autoaprendizaje de vocabulario cotidiano con doce unidades temáticas, práctica guiada, soluciones, un registro personal y un glosario.',
   category: 'language-learning',
   format: 'PDF',
-  status: 'draft',
+  status: 'published',
   level: 'A1–A2 approximate learning range; not a certification',
   subjects: ['Everyday vocabulary', 'Self-study', 'Communication', 'Spaced review'],
   toc: vocabularyToc

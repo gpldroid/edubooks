@@ -2,19 +2,20 @@ import { expect, test } from '@playwright/test';
 
 const libraryPath = '/edubooks/books/';
 
-test('book library lists six language editions as review-only entries', async ({ page }) => {
+test('book library lists six free PDF language editions', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(libraryPath);
   await expect(page.getByRole('heading', { name: 'Explore the library' })).toBeVisible();
   await expect(page.locator('.book-card')).toHaveCount(6);
   await expect(page.locator('.review-status')).toHaveCount(6);
+  await expect(page.getByText('Free PDF')).toHaveCount(6);
   await expect(page.locator('.edition-pill')).toHaveCount(6);
   await expect(page.getByRole('link', { name: /download pdf/i })).toHaveCount(0);
   await expect(page.getByText(/Language Foundations/i)).toHaveCount(3);
   await expect(page.getByText(/Essential Vocabulary/i)).toHaveCount(3);
 });
 
-test('library search and category controls remain usable with review-only editions', async ({ page }) => {
+test('library search and category controls remain usable with published editions', async ({ page }) => {
   await page.goto(libraryPath);
   const search = page.getByRole('searchbox', { name: 'Search the library' });
   await search.fill('grammar');
@@ -26,14 +27,19 @@ test('library search and category controls remain usable with review-only editio
   await expect(page.locator('.book-card')).toHaveCount(6);
 });
 
-test('draft edition details are noindex and keep all PDF actions disabled', async ({ page }) => {
+test('published edition detail exposes indexable preview and download actions', async ({ page }) => {
   await page.goto('/edubooks/books/language-foundations-en/');
   await expect(page.getByRole('heading', { name: 'Language Foundations' })).toBeVisible();
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex,follow');
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /index/);
   await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
   await expect(page.locator('.edition-switch a')).toHaveCount(3);
-  await expect(page.getByText('Editorial review in progress')).toBeVisible();
-  await expect(page.locator('a[href$="/download/"], a[href$=".pdf"]')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Preview PDF' })).toHaveAttribute('href', /language-foundations-en-sample\.pdf$/);
+  await expect(page.getByRole('link', { name: 'Download PDF' })).toHaveAttribute('href', /books\/language-foundations-en\/download\/$/);
+  await expect(page.getByText('Editorial review in progress')).toHaveCount(0);
+
+  await page.goto('/edubooks/books/language-foundations-en/download/');
+  await expect(page.getByRole('heading', { name: 'Download your free PDF.' })).toBeVisible();
+  await expect(page.locator('a[download]')).toHaveAttribute('href', /books\/language-foundations-en\.pdf$/);
 });
 
 test('book library contains no purchase, checkout or Gumroad links', async ({ page }) => {

@@ -561,4 +561,4 @@ Crea un portafolio de cinco partes: personas, casa, comida, rutina diaria y ocio
 - **Repaso espaciado:** volver a estudiar la información en intervalos cada vez mayores.
 
 # Nota editorial y condiciones de publicación
-**Estado de publicación en el sitio: NO AUTORIZADO PARA SU DIFUSIÓN.** Borrador de trabajo pendiente de revisión lingüística y pedagógica independiente, comprobación de derechos y accesibilidad, y prueba final del PDF. La distribución prevista será gratuita, mediante vista previa en el navegador y descarga directa desde EduBooks.
+**Distribución: EDICIÓN GRATUITA EN EL SITIO WEB.** Este recurso de aprendizaje se ofrece gratuitamente en EduBooks. No constituye un examen oficial ni una certificación de competencia lingüística. El propietario añadirá por separado las declaraciones de revisión editorial humana y certificación de accesibilidad después de realizar esas revisiones.

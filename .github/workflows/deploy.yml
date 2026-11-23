@@ -3,6 +3,14 @@ name: Deploy Astro to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    paths:
+      - '.github/workflows/deploy.yml'
+      - '.github/scripts/**'
+      - 'content/books/**'
+      - 'public/covers/**'
+      - 'src/data/catalog.ts'
+      - 'tests/**'
   workflow_dispatch:
 
 permissions:
@@ -20,24 +28,39 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+
+      - name: Install PDF production toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils fonts-dejavu-core python3-docx librsvg2-bin
+
+      - name: Build all six language editions and five-page previews
+        run: bash .github/scripts/build_all_pdfs.sh
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
+
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
+
       - name: Validate Astro components and TypeScript
         run: npm run check
+
       - name: Run project regression tests
         run: npm test
-      - name: Build Astro site
+
+      - name: Build Astro site with all six PDF editions
         run: npm run build
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
