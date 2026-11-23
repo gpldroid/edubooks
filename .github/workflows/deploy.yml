@@ -9,7 +9,12 @@ on:
       - '.github/scripts/**'
       - 'content/books/**'
       - 'public/covers/**'
-      - 'src/data/catalog.ts'
+      - 'src/**'
+      - 'README.md'
+      - 'docs/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'astro.config.*'
       - 'tests/**'
   workflow_dispatch:
 
