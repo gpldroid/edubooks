@@ -301,3 +301,50 @@ body.inner-page .book-card-actions .button-3d { font-size: .8rem; line-height: 1
   body.inner-page .content-section h2 { font-size: clamp(1.45rem, 6vw, 1.9rem); }
   body.inner-page .content-section p, body.inner-page .content-section li { font-size: .96rem; line-height: 1.78; }
 }
+
+
+/* Shared typography for informational, legal, library and reader pages. */
+body.inner-page .content-section .content-narrow,
+body.inner-page .content-section .faq-content {
+  width: min(100%, 780px);
+  margin-inline: auto;
+  color: var(--eb-ink);
+}
+body.inner-page .content-section .content-narrow h2,
+body.inner-page .content-section .faq-content h2 {
+  margin: clamp(28px, 4vw, 42px) 0 10px;
+  color: var(--eb-navy);
+  font-family: inherit;
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -.025em;
+}
+body.inner-page .content-section .content-narrow h2:first-child,
+body.inner-page .content-section .faq-content h2:first-child { margin-top: 0; }
+body.inner-page .content-section .content-narrow p,
+body.inner-page .content-section .faq-content p,
+body.inner-page .content-section .content-narrow li {
+  color: var(--eb-muted);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+body.inner-page .content-section .content-narrow ul,
+body.inner-page .content-section .content-narrow ol { padding-inline-start: 1.35rem; }
+body.inner-page .download-panel,
+body.inner-page .pdf-preview,
+body.inner-page .book-detail { font-family: inherit; }
+body.inner-page .download-panel h2,
+body.inner-page .pdf-preview h2,
+body.inner-page .book-detail h2 {
+  font-family: inherit;
+  font-weight: 800;
+  letter-spacing: -.025em;
+}
+.publication-card-link { display: block; color: inherit; text-decoration: none; }
+.publication-card-link:focus-visible { outline: 3px solid var(--eb-teal); outline-offset: 5px; border-radius: 14px; }
+@media (max-width: 760px) {
+  body.inner-page .content-section .content-narrow h2,
+  body.inner-page .content-section .faq-content h2 { margin-top: 28px; }
+}
