@@ -6,12 +6,12 @@ const read = (path) => readFileSync(path, 'utf8');
 
 test('catalogue exposes six free editions in EN, FR and ES', () => {
   const catalog = read('src/data/catalog.ts');
-  assert.match(catalog, /editions\\(foundationsBase, 'language-foundations'\\)/);
-  assert.match(catalog, /editions\\(vocabularyBase, 'essential-vocabulary'\\)/);
-  assert.match(catalog, /\\['en', 'fr', 'es'\\] as const/);
+  assert.ok(catalog.includes("editions(foundationsBase, 'language-foundations')"));
+  assert.ok(catalog.includes("editions(vocabularyBase, 'essential-vocabulary')"));
+  assert.ok(catalog.includes("(['en', 'fr', 'es'] as const)"));
   assert.equal((catalog.match(/status: 'published',/g) ?? []).length, 2);
-  assert.match(catalog, /previewPdf: `\\/previews\\/\\$\\{bookSlug\\}-\\$\\{language\\}-sample\\.pdf`/);
-  assert.match(catalog, /downloadPdf: `\\/books\\/\\$\\{bookSlug\\}-\\$\\{language\\}\\.pdf`/);
+  assert.ok(catalog.includes("previewPdf: `/previews/${bookSlug}-${language}-sample.pdf`"));
+  assert.ok(catalog.includes("downloadPdf: `/books/${bookSlug}-${language}.pdf`"));
 });
 
 test('every published edition has a localized free-PDF cover asset', () => {
@@ -35,6 +35,6 @@ test('published catalogue editions expose both preview and full PDF paths', () =
   assert.match(catalog, /published editions require a full PDF/);
   assert.match(detail, /Preview PDF/);
   assert.match(detail, /Download PDF/);
-  assert.match(download, /book\\.downloadPdf/);
+  assert.ok(download.includes('book.downloadPdf'));
   assert.match(download, /No account or payment is required/);
 });
