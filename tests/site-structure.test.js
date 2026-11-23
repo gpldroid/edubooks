@@ -68,7 +68,7 @@ test('public book pages provide free browser PDF preview and direct full-PDF dow
   assert.ok(detail.includes('PdfViewer'));
   assert.ok(route.includes("book.status === 'published'"));
   assert.ok(detail.includes("book.status === 'published' && book.previewPdf"));
-  assert.ok(detail.includes('Editorial review in progress'));
+  assert.ok(!detail.includes('Editorial review in progress'));
   for (const token of ['downloadPdf', 'download', 'Download PDF']) assert.ok(download.includes(token), `Missing direct free download feature: ${token}`);
   assert.ok(!download.includes('setInterval'));
   assert.ok(catalog.includes("book.downloadPdf.startsWith('/books/')"));
