@@ -129,3 +129,46 @@ test('footer social icons keep fixed touch targets and wrap without overflow', a
   expect(dimensions.height).toBe(43);
   expect(dimensions.display).toBe('grid');
 });
+
+test('informational pages share the site typography on desktop and mobile', async ({ page }) => {
+  const routes = [
+    '/edubooks/faq/',
+    '/edubooks/about/',
+    '/edubooks/terms/',
+    '/edubooks/privacy/',
+    '/edubooks/contact/'
+  ];
+
+  for (const width of [390, 1366]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const route of routes) {
+      await page.goto(route);
+      const metrics = await page.locator('.editorial-content').evaluate((content) => {
+        const heading = content.querySelector('h2');
+        const paragraph = content.querySelector('p');
+        if (!heading || !paragraph) throw new Error('Editorial content is missing a heading or paragraph');
+        return {
+          headingFont: getComputedStyle(heading).fontFamily,
+          headingWeight: getComputedStyle(heading).fontWeight,
+          paragraphFont: getComputedStyle(paragraph).fontFamily,
+          paragraphLineHeight: getComputedStyle(paragraph).lineHeight,
+          width: content.getBoundingClientRect().width,
+          viewport: document.documentElement.clientWidth
+        };
+      });
+      expect(metrics.headingFont).toContain('DM Sans');
+      expect(metrics.headingWeight).toBe('800');
+      expect(metrics.paragraphFont).toContain('DM Sans');
+      expect(Number.parseFloat(metrics.paragraphLineHeight)).toBeGreaterThan(25);
+      expect(metrics.width).toBeLessThanOrEqual(metrics.viewport);
+    }
+  }
+});
+
+test('Contact page uses the same editorial surface and typography', async ({ page }) => {
+  await page.goto('/edubooks/contact/');
+  const contact = page.locator('.editorial-contact-panel');
+  await expect(contact).toBeVisible();
+  await expect(contact.locator('h2')).toHaveCSS('font-weight', '800');
+  await expect(contact.locator('p')).toHaveCSS('font-family', /DM Sans/);
+});

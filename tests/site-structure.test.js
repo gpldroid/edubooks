@@ -17,7 +17,7 @@ test('all public routes and the shared layout exist', () => {
   const routes = [
     'src/pages/index.astro', 'src/pages/about.astro', 'src/pages/faq.astro',
     'src/pages/books/index.astro', 'src/pages/books/[slug].astro',
-    'src/pages/privacy.astro', 'src/pages/terms.astro', 'src/pages/404.astro'
+    'src/pages/privacy.astro', 'src/pages/terms.astro', 'src/pages/contact.astro', 'src/pages/404.astro'
   ];
   for (const route of routes) assert.ok(existsSync(resolve(root, route)), 'Missing route: ' + route);
   assert.ok(existsSync(resolve(root, 'src/layouts/BaseLayout.astro')));
@@ -173,10 +173,26 @@ test('mobile tab bar replaces Explore with a direct, accessible library search d
 
 test('FAQ content explains the on-page PDF preview and links to key library routes', () => {
   const faq = read('src/pages/faq.astro');
-  for (const token of ['Preview PDF', 'Download PDF', 'books/', 'terms/', 'about/#contact', 'data-en=', 'data-fr=', 'data-es=']) {
+  for (const token of ['Preview PDF', 'Download PDF', 'books/', 'terms/', 'contact/', 'data-en=', 'data-fr=', 'data-es=']) {
     assert.ok(faq.includes(token), 'Missing FAQ content or internal link: ' + token);
   }
 });
+
+test('Contact is a first-class route and no longer depends on an About-page hash', () => {
+  const layout = read('src/layouts/BaseLayout.astro');
+  const faq = read('src/pages/faq.astro');
+  const about = read('src/pages/about.astro');
+  const contact = read('src/pages/contact.astro');
+  const sitemap = read('src/pages/sitemap.xml.ts');
+  assert.ok(layout.includes('${base}contact/'));
+  assert.ok(faq.includes('${base}contact/'));
+  assert.ok(contact.includes('Contact the project'));
+  assert.ok(!about.includes('id="contact"'));
+  assert.ok(!layout.includes('about/#contact'));
+  assert.ok(!faq.includes('about/#contact'));
+  assert.ok(sitemap.includes("'contact/'"));
+});
+
 
 test('About page describes the ongoing editorial process without claiming completed manual review', () => {
   const about = read('src/pages/about.astro');
@@ -189,7 +205,7 @@ test('About page describes the ongoing editorial process without claiming comple
 test('sitemap lists canonical public routes and published editions only', () => {
   const sitemap = read('src/pages/sitemap.xml.ts');
   const robots = read('public/robots.txt');
-  for (const token of ['books/', 'about/', 'faq/', 'privacy/', 'terms/', "book.status === 'published'", 'new Set', 'application/xml']) {
+  for (const token of ['books/', 'about/', 'faq/', 'privacy/', 'terms/', 'contact/', "book.status === 'published'", 'new Set', 'application/xml']) {
     assert.ok(sitemap.includes(token), 'Missing sitemap requirement: ' + token);
   }
   assert.ok(robots.includes('Sitemap: https://gpldroid.github.io/edubooks/sitemap.xml'));
@@ -209,4 +225,20 @@ test('published book detail pages emit their Book structured data', () => {
   const detail = read('src/pages/books/[slug].astro');
   assert.ok(detail.includes("'@type': 'Book'"));
   assert.ok(detail.includes('set:html={JSON.stringify(bookSchema)}'));
+});
+
+test('informational and legal pages share the editorial typography system', () => {
+  for (const route of ['faq.astro', 'about.astro', 'terms.astro', 'privacy.astro']) {
+    const page = read('src/pages/' + route);
+    assert.ok(page.includes('editorial-content'), route + ' must use the shared editorial content class');
+    assert.ok(page.includes("BaseLayout"), route + ' must use the shared site layout');
+  }
+  const contact = read('src/pages/contact.astro');
+  assert.ok(contact.includes('editorial-contact-panel'), 'Contact route must use the shared editorial panel');
+  assert.ok(contact.includes('Contact the project'));
+  assert.ok(!read('src/pages/about.astro').includes('id="contact"'), 'Contact must not remain an About-page anchor');
+  const css = read('src/styles/site.css');
+  for (const token of ['.editorial-content', '.editorial-contact-panel', 'font-family: inherit', 'line-height: 1.85']) {
+    assert.ok(css.includes(token), 'Missing editorial style token: ' + token);
+  }
 });

@@ -3,7 +3,7 @@ import { books } from '../data/catalog';
 
 const siteOrigin = 'https://gpldroid.github.io';
 const siteBase = new URL(import.meta.env.BASE_URL, siteOrigin);
-const staticPaths = ['', 'books/', 'about/', 'faq/', 'privacy/', 'terms/'] as const;
+const staticPaths = ['', 'books/', 'about/', 'faq/', 'privacy/', 'terms/', 'contact/'] as const;
 
 function escapeXml(value: string): string {
   return value
