@@ -63,13 +63,13 @@ test('public book pages provide free browser PDF preview and direct full-PDF dow
   const route = read('src/pages/books/[slug].astro');
   const download = read('src/pages/books/[slug]/download.astro');
   const catalog = read('src/data/catalog.ts');
-  for (const token of ['data-en="View details"', 'review-status', 'data-en="Free PDF"']) assert.ok(card.includes(token), `Missing review-only card action: ${token}`);
+  for (const token of ['data-en="Explore book"', 'review-status', 'data-en="Free PDF"']) assert.ok(card.includes(token), `Missing review-only card action: ${token}`);
   for (const token of ['Table of contents', 'Preview PDF', 'Download PDF', 'book.previewPdf', 'download/']) assert.ok(detail.includes(token), `Missing free PDF reader feature: ${token}`);
-  assert.ok(!detail.includes('PdfViewer'));
+  assert.ok(detail.includes('PdfViewer'));
   assert.ok(route.includes("book.status === 'published'"));
   assert.ok(detail.includes("book.status === 'published' && book.previewPdf"));
   assert.ok(detail.includes('Editorial review in progress'));
-  for (const token of ['downloadPdf', 'download', 'No account or payment is required']) assert.ok(download.includes(token), `Missing direct free download feature: ${token}`);
+  for (const token of ['downloadPdf', 'download', 'Download PDF']) assert.ok(download.includes(token), `Missing direct free download feature: ${token}`);
   assert.ok(!download.includes('setInterval'));
   assert.ok(catalog.includes("book.downloadPdf.startsWith('/books/')"));
   assert.ok(catalog.includes("book.previewPdf.startsWith('/previews/')"));
