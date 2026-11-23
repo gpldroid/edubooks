@@ -20,10 +20,10 @@ for (const book of catalogBooks) {
 
 const initialCategory = Astro.url.searchParams.get('category') ?? 'all';
 const validInitialCategory = initialCategory === 'all' || categories.some((category) => category.slug === initialCategory) ? initialCategory : 'all';
-const categoryCounts = Object.fromEntries(categories.map((category) => [category.slug, catalogBooks.filter((book) => book.category === category.slug).length]));
+const visibleCategories = categories.filter((category) => catalogBooks.some((book) => book.category === category.slug));
 ---
-<BaseLayout title="Explore Books — EduBooks" description="Browse the EduBooks digital learning library.">
-  <section class="page-hero"><div class="container"><span class="section-label">EDUBOOKS LIBRARY</span><h1 data-en="Explore the library" data-fr="Explorer la bibliothèque" data-es="Explorar la biblioteca">Explore the library</h1><p data-en="Explore the first two titles across six language editions. Each edition will provide a PDF preview and free download after approval." data-fr="Découvrez les deux premiers titres en six éditions linguistiques. Chaque édition proposera un aperçu PDF et un téléchargement gratuit après validation." data-es="Explora los dos primeros títulos en seis ediciones lingüísticas. Cada edición ofrecerá una vista previa PDF y descarga gratuita tras su aprobación.">Explore the first two titles across six language editions. Each edition will provide a PDF preview and free download after approval.</p></div></section>
+<BaseLayout title="Free Educational Books and PDF Workbooks — EduBooks" description="Browse free English, French and Spanish learning books, beginner language workbooks and practical vocabulary PDFs. Read sample pages online and download complete books." keywords="free PDF books, educational books, language learning books, English beginner workbook, French language workbook, Spanish language workbook, vocabulary practice, free learning resources">
+  <section class="page-hero"><div class="container"><span class="section-label">EDUBOOKS LIBRARY</span><h1 data-en="Explore the library" data-fr="Explorer la bibliothèque" data-es="Explorar la biblioteca">Explore the library</h1><p data-en="Browse two practical language-learning books in English, French and Spanish. Preview selected pages online and download each complete PDF for free." data-fr="Découvrez deux livres pratiques pour apprendre les langues, disponibles en anglais, français et espagnol. Consultez un extrait en ligne et téléchargez chaque PDF complet gratuitement." data-es="Descubre dos libros prácticos para aprender idiomas, disponibles en inglés, francés y español. Lee una muestra en línea y descarga gratis cada PDF completo.">Explore the first two titles across six language editions. Each edition will provide a PDF preview and free download after approval.</p></div></section>
   <section class="content-section library-section" aria-labelledby="catalog-heading"><div class="container">
     <h2 class="visually-hidden" id="catalog-heading" data-en="Books in the catalogue" data-fr="Livres du catalogue" data-es="Libros del catálogo">Books in the catalogue</h2>
     <div class="catalog-tools">
@@ -34,14 +34,14 @@ const categoryCounts = Object.fromEntries(categories.map((category) => [category
       <aside class="category-sidebar" aria-labelledby="category-heading">
         <div class="category-sidebar-heading"><span class="sidebar-kicker">BROWSE BY</span><h2 id="category-heading" data-en="Categories" data-fr="Catégories" data-es="Categorías">Categories</h2><p data-en="Choose a learning area" data-fr="Choisissez un domaine" data-es="Elige un área de aprendizaje">Choose a learning area</p></div>
         <nav class="category-nav" aria-label="Book categories">
-          <a class:list={['category-link', { 'is-active': validInitialCategory === 'all' }]} href={`${base}books/`} data-category-link="all" aria-current={validInitialCategory === 'all' ? 'page' : undefined}><span data-en="All books" data-fr="Tous les livres" data-es="Todos los libros">All books</span><span class="category-count">{catalogBooks.length}</span></a>
-          {categories.map((category) => <a class:list={['category-link', { 'is-active': validInitialCategory === category.slug }]} href={`${base}books/?category=${category.slug}`} data-category-link={category.slug} aria-current={validInitialCategory === category.slug ? 'page' : undefined}><span data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs}>{category.nameEn}</span><span class="category-count">{categoryCounts[category.slug]}</span></a>)}
+          <a class:list={['category-link', { 'is-active': validInitialCategory === 'all' }]} href={`${base}books/`} data-category-link="all" aria-current={validInitialCategory === 'all' ? 'page' : undefined}><span data-en="All books" data-fr="Tous les livres" data-es="Todos los libros">All books</span></a>
+          {visibleCategories.map((category) => <a class:list={['category-link', { 'is-active': validInitialCategory === category.slug }]} href={`${base}books/?category=${category.slug}`} data-category-link={category.slug} aria-current={validInitialCategory === category.slug ? 'page' : undefined}><span data-en={category.nameEn} data-fr={category.nameFr} data-es={category.nameEs}>{category.nameEn}</span></a>)}
         </nav>
-        <div class="sidebar-note"><span class="sidebar-note-mark" aria-hidden="true">E</span><p data-en="New learning resources are being prepared and reviewed." data-fr="De nouvelles ressources pédagogiques sont en préparation et en révision." data-es="Se están preparando y revisando nuevos recursos educativos.">New learning resources are being prepared and reviewed.</p></div>
+        
       </aside>
       <div class="catalog-results">
-        <div class="results-heading"><div><span class="section-label" data-en="THE COLLECTION" data-fr="LA COLLECTION" data-es="LA COLECCIÓN">THE COLLECTION</span><h2 id="results-title" data-en="Explore books" data-fr="Explorer les livres" data-es="Explorar libros">Explore books</h2></div><span class="results-total" id="results-total">{catalogBooks.length} / {catalogBooks.length}</span></div>
-        {catalogBooks.length > 0 ? <div class="book-grid" id="book-grid">{catalogBooks.map((book) => <BookCard book={book} category={categories.find((item) => item.slug === book.category)} base={base} />)}</div> : <div class="empty-state" id="empty-state"><span class="empty-state-mark" aria-hidden="true">E</span><h2 data-en="The library is being prepared" data-fr="La bibliothèque est en préparation" data-es="La biblioteca está en preparación">The library is being prepared</h2><p data-en="Our first six language editions are being prepared. Their details are listed here; PDF previews and downloads will appear only after each edition is approved." data-fr="Nos six premières éditions linguistiques sont en préparation. Leurs informations figurent ici ; les aperçus PDF et téléchargements seront ajoutés après validation de chaque édition." data-es="Las seis primeras ediciones lingüísticas están en preparación. Aquí se muestran sus datos; las vistas previas PDF y descargas estarán disponibles después de aprobar cada edición.">Our first six language editions are being prepared. Their details are listed here; PDF previews and downloads will appear only after each edition is approved.</p></div>}
+        <div class="results-heading"><div><span class="section-label" data-en="THE COLLECTION" data-fr="LA COLLECTION" data-es="LA COLECCIÓN">THE COLLECTION</span><h2 id="results-title" data-en="Explore books" data-fr="Explorer les livres" data-es="Explorar libros">Explore books</h2></div></div>
+        {catalogBooks.length > 0 ? <div class="book-grid" id="book-grid">{catalogBooks.map((book) => <BookCard book={book} category={categories.find((item) => item.slug === book.category)} base={base} />)}</div> : <div class="empty-state" id="empty-state"><span class="empty-state-mark" aria-hidden="true">E</span><h2 data-en="The library is being prepared" data-fr="La bibliothèque est en préparation" data-es="La biblioteca está en preparación">The library is being prepared</h2><p data-en="There are no books in this category yet. Browse all available language-learning books instead." data-fr="Aucun livre n’est encore disponible dans cette catégorie. Consultez les livres de langues disponibles." data-es="Las seis primeras ediciones lingüísticas están en preparación. Aquí se muestran sus datos; las vistas previas PDF y descargas estarán disponibles después de aprobar cada edición.">Our first six language editions are being prepared. Their details are listed here; PDF previews and downloads will appear only after each edition is approved.</p></div>}
         <p class="no-results" id="no-results" hidden data-en="No books match this search or category." data-fr="Aucun livre ne correspond à cette recherche ou catégorie." data-es="Ningún libro coincide con esta búsqueda o categoría.">No books match this search or category.</p>
       </div>
     </div>
@@ -92,7 +92,7 @@ const categoryCounts = Object.fromEntries(categories.map((category) => [category
     const search=document.querySelector<HTMLInputElement>('#book-search');
     const cards=[...document.querySelectorAll<HTMLElement>('.book-card')];
     const noResults=document.querySelector<HTMLElement>('#no-results');
-    const total=document.querySelector<HTMLElement>('#results-total');
+    
     const categoryLinks=[...document.querySelectorAll<HTMLAnchorElement>('[data-category-link]')];
     const requested=new URLSearchParams(window.location.search).get('category')||'all';
     const validCategory=categoryLinks.some((link)=>link.dataset.categoryLink===requested)?requested:'all';
@@ -121,7 +121,7 @@ const categoryCounts = Object.fromEntries(categories.map((category) => [category
         if(show)visible+=1;
       });
       if(noResults)noResults.hidden=visible>0||cards.length===0;
-      if(total)total.textContent=`${visible} / ${cards.length}`;
+      
     }
     categoryLinks.forEach((link)=>link.addEventListener('click',(event)=>{
       event.preventDefault();
