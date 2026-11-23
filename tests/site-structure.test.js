@@ -159,7 +159,8 @@ test('published library pages include contextual SEO metadata and live reader li
   assert.ok(!home.includes('practice-number'));
 });
 
-\ntest('mobile tab bar replaces Explore with a direct, accessible library search destination', () => {
+
+test('mobile tab bar replaces Explore with a direct, accessible library search destination', () => {
   const nav = read('src/components/navigation/MobileTabBar.astro');
   const icon = read('src/components/ui/Icon3D.astro');
   const library = read('src/pages/books/index.astro');
