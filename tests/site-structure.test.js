@@ -89,17 +89,18 @@ test('inner-page typography refinements explicitly exclude the homepage', () => 
   assert.ok(!css.includes('body.home-page'));
 });
 
-test('draft manuscripts are not automatically promoted into the public catalogue', () => {
+test('six free language editions are explicitly published with bounded PDF samples', () => {
   const catalog = read('src/data/catalog.ts');
   assert.ok(catalog.includes("...editions(foundationsBase, 'language-foundations')"));
   assert.ok(catalog.includes("...editions(vocabularyBase, 'essential-vocabulary')"));
   assert.ok(catalog.includes("(['en', 'fr', 'es'] as const)"));
-  assert.ok(catalog.includes("status: 'draft'"));
-  assert.ok(!catalog.includes("status: 'published',"));
-  assert.ok(catalog.includes('draft editions must not expose preview or download files'));
+  assert.equal((catalog.match(/status: 'published',/g) ?? []).length, 2);
+  assert.ok(catalog.includes("previewPdf: `/previews/${bookSlug}-${language}-sample.pdf`"));
+  assert.ok(catalog.includes("downloadPdf: `/books/${bookSlug}-${language}.pdf`"));
+  assert.ok(catalog.includes('published samplePageCount must be from 3 to 5'));
   const detail = read('src/pages/books/[slug].astro');
   const sitemap = read('src/pages/sitemap.xml.ts');
-  assert.ok(detail.includes('noindex,follow'));
+  assert.ok(detail.includes("book.status === 'published'"));
   assert.ok(sitemap.includes("book.status === 'published'"));
 });
 
