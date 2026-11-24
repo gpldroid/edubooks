@@ -8,8 +8,9 @@ const read = (path) => readFileSync(resolve(root, path), 'utf8');
 
 test('Astro project configuration preserves GitHub Pages project-site routing', () => {
   const config = read('astro.config.mjs');
-  assert.ok(config.includes("site: 'https://gpldroid.github.io'"));
-  assert.ok(config.includes("base: '/edubooks'"));
+  assert.ok(config.includes("site: process.env.URL || 'https://gpldroid.github.io'"));
+  assert.ok(config.includes("const isNetlify = process.env.NETLIFY === 'true'"));
+  assert.ok(config.includes("base: isNetlify ? '/' : '/edubooks'"));
   assert.ok(config.includes("output: 'static'"));
 });
 
