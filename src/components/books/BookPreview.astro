@@ -20,7 +20,7 @@ const readerUrl = book.downloadPdf ? pdfAssetBase + book.downloadPdf.replace(/^\
       <dl class="book-facts">
         <div><dt data-en="Category" data-fr="Catégorie" data-es="Categoría">Category</dt><dd data-en={category?.nameEn ?? book.category} data-fr={category?.nameFr ?? book.category} data-es={category?.nameEs ?? book.category}>{category?.nameEn ?? book.category}</dd></div>
         <div><dt data-en="Language" data-fr="Langue" data-es="Idioma">Language</dt><dd>{book.language.toUpperCase()}</dd></div>
-        <div><dt data-en="Format" data-fr="Format" data-es="Formato">Format</dd><dd>PDF</dd></div>
+        <div><dt data-en="Format" data-fr="Format" data-es="Formato">Format</dt><dd>PDF</dd></div>
         {book.level && <div><dt data-en="Level" data-fr="Niveau" data-es="Nivel">Level</dt><dd>{book.level}</dd></div>}
         {book.pages && <div><dt data-en="Full book pages" data-fr="Pages du livre complet" data-es="Páginas del libro completo">Full book pages</dt><dd>{book.pages}</dd></div>}
         {book.author && <div><dt data-en="Author" data-fr="Auteur" data-es="Autor">Author</dt><dd>{book.author}</dd></div>}
