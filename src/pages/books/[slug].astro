@@ -12,7 +12,7 @@ export function getStaticPaths() {
   for (const book of books) {
     const coverFile = resolve(process.cwd(), 'public', book.cover.slice(1));
     if (!existsSync(coverFile)) throw new Error('Missing cover for "' + book.slug + '": ' + book.cover);
-    if (book.status === 'published') {
+    if (book.status === 'published' && import.meta.env.BASE_URL !== '/') {
       const previewFile = resolve(process.cwd(), 'public', (book.previewPdf ?? '').slice(1));
       if (!existsSync(previewFile)) throw new Error('Missing PDF preview for "' + book.slug + '": ' + book.previewPdf);
     }
