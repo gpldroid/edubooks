@@ -39,6 +39,19 @@ The six PDFs are generated from the repository's authoritative English, French a
 
 Human editorial review and accessibility assessment are handled separately. Technical PDF tagging is not, by itself, evidence of PDF/UA conformance or screen-reader usability. No human review or accessibility certification is claimed unless it is explicitly recorded by the publisher.
 
+## Deployment configuration
+
+The Astro configuration supports multiple static hosting platforms from the same source tree:
+
+- **GitHub Pages:** the workflow explicitly sets `ASTRO_SITE=https://gpldroid.github.io` and `ASTRO_BASE_PATH=/edubooks`, preserving the project-site URL.
+- **Vercel:** automatically detects `VERCEL_URL` or `VERCEL_PROJECT_PRODUCTION_URL` and uses the domain root (`/`).
+- **Netlify:** uses its `URL` environment variable and the domain root.
+- **Cloudflare Pages:** detects `CF_PAGES_URL` and uses the domain root.
+- **Render:** detects `RENDER_EXTERNAL_URL` and uses the domain root.
+- **Other hosts:** default to the domain root. Set `ASTRO_SITE` and, if needed, `ASTRO_BASE_PATH` as build environment variables for a custom domain or subpath.
+
+Explicit `ASTRO_SITE` and `ASTRO_BASE_PATH` values take precedence over automatic detection. Vercel and other hosts still need to be connected to this GitHub repository and configured to run `npm run build` with `dist` as the output directory.
+
 ## Project records
 
 - [Project handover](docs/PROJECT-HANDOVER.md)
