@@ -244,3 +244,13 @@ test('informational and legal pages share the editorial typography system', () =
     assert.ok(css.includes(token), 'Missing editorial style token: ' + token);
   }
 });
+
+test('root-hosted deployments reuse the canonical GitHub Pages PDF assets', () => {
+  const download = read('src/pages/books/[slug]/download.astro');
+  const detail = read('src/components/books/BookPreview.astro');
+  assert.ok(download.includes("import.meta.env.BASE_URL === '/'"));
+  assert.ok(download.includes('https://gpldroid.github.io/edubooks/'));
+  assert.ok(download.includes('if (!isRootHosted && !existsSync(pdfFile))'));
+  assert.ok(detail.includes("base === '/' ? 'https://gpldroid.github.io/edubooks/' : base"));
+  assert.ok(detail.includes('pdfAssetBase + book.downloadPdf'));
+});
