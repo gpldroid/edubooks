@@ -12,7 +12,7 @@ const catalogBooks = books;
 for (const book of catalogBooks) {
   const coverFile = resolve(process.cwd(), 'public', book.cover.slice(1));
   if (!existsSync(coverFile)) throw new Error(`Missing cover for "${book.slug}": ${book.cover}`);
-  if (book.status === 'published') {
+  if (book.status === 'published' && base !== '/') {
     const previewFile = resolve(process.cwd(), 'public', (book.previewPdf ?? '').slice(1));
     if (!existsSync(previewFile)) throw new Error(`Missing PDF preview for "${book.slug}": ${book.previewPdf}`);
   }
