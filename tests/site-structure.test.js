@@ -6,11 +6,16 @@ import { resolve } from 'node:path';
 const root = process.cwd();
 const read = (path) => readFileSync(resolve(root, path), 'utf8');
 
-test('Astro project configuration preserves GitHub Pages project-site routing', () => {
+test('Astro project configuration supports GitHub Pages and multiple root-hosted platforms', () => {
   const config = read('astro.config.mjs');
-  assert.ok(config.includes("site: process.env.URL || 'https://gpldroid.github.io'"));
-  assert.ok(config.includes("const isNetlify = process.env.NETLIFY === 'true'"));
-  assert.ok(config.includes("base: isNetlify ? '/' : '/edubooks'"));
+  assert.ok(config.includes("env.ASTRO_SITE"));
+  assert.ok(config.includes("env.URL"));
+  assert.ok(config.includes("env.VERCEL_PROJECT_PRODUCTION_URL"));
+  assert.ok(config.includes("env.VERCEL_URL"));
+  assert.ok(config.includes("env.CF_PAGES_URL"));
+  assert.ok(config.includes("env.RENDER_EXTERNAL_URL"));
+  assert.ok(config.includes("env.GITHUB_PAGES === 'true'"));
+  assert.ok(config.includes("env.ASTRO_BASE_PATH ?? (isGitHubPages ? '/edubooks' : '/')"));
   assert.ok(config.includes("output: 'static'"));
 });
 
