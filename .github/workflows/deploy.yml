@@ -30,6 +30,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Preserve the project-site path on GitHub Pages.
+      # Vercel, Netlify and other hosts default to the domain root.
+      GITHUB_PAGES: 'true'
+      ASTRO_SITE: 'https://gpldroid.github.io'
+      ASTRO_BASE_PATH: '/edubooks'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
