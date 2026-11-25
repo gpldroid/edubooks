@@ -12,8 +12,12 @@ const { book } = Astro.props;
 if (!book.downloadPdf) throw new Error(`Missing downloadPdf for ${book.slug}`);
 const relativePdfPath = book.downloadPdf.startsWith('/') ? book.downloadPdf.slice(1) : book.downloadPdf;
 const pdfFile = resolve(process.cwd(), 'public', relativePdfPath);
-if (!existsSync(pdfFile)) throw new Error(`Download file not found: ${book.downloadPdf}`);
-const downloadUrl = `${import.meta.env.BASE_URL}${relativePdfPath}`;
+// GitHub Pages builds the PDFs locally before Astro. Root-hosted mirrors use
+// the canonical GitHub Pages asset URLs so they do not need LibreOffice/Pandoc.
+const isRootHosted = import.meta.env.BASE_URL === '/';
+if (!isRootHosted && !existsSync(pdfFile)) throw new Error(`Download file not found: ${book.downloadPdf}`);
+const pdfAssetBase = isRootHosted ? 'https://gpldroid.github.io/edubooks/' : import.meta.env.BASE_URL;
+const downloadUrl = `${pdfAssetBase}${relativePdfPath}`;
 ---
 <BaseLayout title={`Download ${book.title} PDF — EduBooks`} description={`Download the complete free PDF workbook ${book.title}. Read the sample online or save the full book for offline learning.`} keywords={[book.title, ...(book.subjects ?? []), book.language, "free PDF download", "educational workbook", "language learning"].join(", ")}>
   <section class="page-hero"><div class="container"><a class="back-link" href={`${import.meta.env.BASE_URL}books/`} data-en="← All books" data-fr="← Tous les livres" data-es="← Todos los libros">← All books</a><span class="section-label">EDUBOOKS FREE PDF LIBRARY</span><h1 data-en="Download your free PDF." data-fr="Téléchargez votre PDF gratuit." data-es="Descarga tu PDF gratuito.">Download your free PDF.</h1><p data-en={book.title} data-fr={book.titleFr} data-es={book.titleEs}>{book.title}</p></div></section>
@@ -21,7 +25,6 @@ const downloadUrl = `${import.meta.env.BASE_URL}${relativePdfPath}`;
     <div class="download-icon" aria-hidden="true">PDF</div><h2 data-en="Your book is ready" data-fr="Votre livre est prêt" data-es="Tu libro está listo">Your book is ready</h2>
     <p data-en="Download the complete book directly from the EduBooks library." data-fr="Téléchargez le livre complet directement depuis la bibliothèque EduBooks." data-es="Descarga el libro completo directamente desde la biblioteca EduBooks.">Download the complete book directly from the EduBooks library.</p>
     <a class="button-3d button-3d--dark download-button" href={downloadUrl} download data-en="Download PDF" data-fr="Télécharger le PDF" data-es="Descargar PDF">Download PDF</a>
-    
     <a class="return-link" href={`${import.meta.env.BASE_URL}books/`} data-en="Return to the library" data-fr="Retour à la bibliothèque" data-es="Volver a la biblioteca">Return to the library</a>
   </div></div></section>
   <style>
@@ -31,7 +34,6 @@ const downloadUrl = `${import.meta.env.BASE_URL}${relativePdfPath}`;
     .download-panel h2{font-family:inherit;font-size:clamp(1.6rem,2.8vw,2rem);line-height:1.2;letter-spacing:-.025em;color:#183452;margin:0 0 12px}
     .download-panel>p{max-width:58ch;margin:0 auto;color:#586a7a;font-size:1rem;line-height:1.75}
     .download-button{text-decoration:none;min-width:190px;margin-top:12px}
-    .download-note{font-size:13px}
     .return-link{display:inline-block;margin-top:18px;color:#28776f;font-size:13px;font-weight:700}
   </style>
 </BaseLayout>
