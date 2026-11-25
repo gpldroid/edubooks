@@ -7,8 +7,8 @@ const category = categories.find((item) => item.slug === book.category);
 // Keep generated PDF files on GitHub Pages as the canonical asset origin.
 // Root-hosted mirrors can then build without installing the PDF authoring toolchain.
 const pdfAssetBase = base === '/' ? 'https://gpldroid.github.io/edubooks/' : base;
-const previewUrl = book.previewPdf ? pdfAssetBase + book.previewPdf.replace(/^\\//, '') : '';
-const readerUrl = book.downloadPdf ? pdfAssetBase + book.downloadPdf.replace(/^\\//, '') : previewUrl;
+const previewUrl = book.previewPdf ? pdfAssetBase + book.previewPdf.replace(/^\//, '') : '';
+const readerUrl = book.downloadPdf ? pdfAssetBase + book.downloadPdf.replace(/^\//, '') : previewUrl;
 ---
 <article class="book-detail">
   <div class="book-intro">
